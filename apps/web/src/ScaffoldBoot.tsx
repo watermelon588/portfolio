@@ -1,8 +1,8 @@
 import { Navbar } from "@/components/nav/Navbar";
 
-// TEMPORARY scaffold host — NOT a designed screen. Renders the approved
-// Navbar over a plain page so it can be tested in isolation (Phase 2,
-// one component at a time). Real pages compose sections/* per FOLDER_STRUCTURE.
+// TEMPORARY scaffold host — NOT a designed screen. Renders approved components
+// in isolation for testing (Phase 2, one at a time). Real pages compose
+// sections/* per FOLDER_STRUCTURE.
 
 export function ScaffoldBoot({ note }: { note?: string }) {
   return (
@@ -27,14 +27,12 @@ export function ScaffoldBoot({ note }: { note?: string }) {
               opacity: 0.5,
             }}
           >
-            Phase 2 · Styleguide · Component 1
+            Phase 2 · Styleguide
           </p>
           <h1 style={{ margin: "0.5rem 0", fontSize: "1.5rem", fontWeight: 500 }}>
             Navbar + Staggered Menu
           </h1>
-          <p style={{ margin: 0, opacity: 0.6 }}>
-            Click “Menu” (top-right) to test the curved-edge reveal.
-          </p>
+          <p style={{ margin: 0, opacity: 0.6 }}>Open the Menu (top-right) to test it.</p>
           {note ? <p style={{ marginTop: "1rem", color: "var(--accent)" }}>{note}</p> : null}
         </div>
       </main>

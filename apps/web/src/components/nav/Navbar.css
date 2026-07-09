@@ -1,5 +1,5 @@
-/* Navbar + staggered menu overlay with curved-edge reveal.
-   Consumes tokens from tokens.css only — no hardcoded palette. */
+/* Navbar + right-opening staggered menu: accent underlay layers, straight edge,
+   1/3-width panel, magnetic fields, docked close. Tokens only — no hardcoded hex. */
 
 .nav {
   position: fixed;
@@ -9,7 +9,6 @@
   justify-content: space-between;
   padding: clamp(1rem, 2.2vw, 1.6rem) clamp(1.25rem, 4vw, 3rem);
   z-index: var(--z-nav);
-  mix-blend-mode: normal;
 }
 
 .nav-wordmark {
@@ -20,9 +19,8 @@
   font-weight: 500;
   color: var(--ink);
   text-decoration: none;
-  transition: color var(--dur-base) var(--ease);
+  will-change: transform;
 }
-
 .nav-copy {
   display: inline-block;
   transition: transform var(--dur-slow) var(--ease);
@@ -31,43 +29,47 @@
   transform: rotate(360deg);
 }
 
-/* Menu / Close toggle — pill with a vertical text swap */
+/* Open toggle — circular hamburger icon button; hidden while menu is open */
 .menu-toggle {
-  position: relative;
-  height: 2.9em;
-  padding: 0 1.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2em;
+  height: 3.2em;
+  padding: 0;
   border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
+  border-radius: 50%;
   background: transparent;
   color: var(--ink);
-  font: inherit;
-  font-size: clamp(0.85rem, 0.95vw, 0.95rem);
-  letter-spacing: 0.02em;
   cursor: pointer;
-  overflow: hidden;
-  z-index: calc(var(--z-menu) + 1);
-  transition: color var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease);
+  will-change: transform;
+  transition: opacity var(--dur-base) var(--ease), background-color var(--dur-base) var(--ease);
 }
-
-.menu-toggle-track {
-  display: block;
+.menu-toggle:hover {
+  background-color: var(--surface);
+}
+.menu-toggle-icon {
   position: relative;
-  height: 1.2em;
-  overflow: hidden;
+  width: 1.15em;
+  height: 0.6em;
 }
-.menu-toggle-word {
-  display: block;
-  height: 1.2em;
-  line-height: 1.2em;
+.menu-toggle-icon i {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
   transition: transform var(--dur-base) var(--ease);
 }
-.menu-toggle:hover .menu-toggle-word,
-.nav--open .menu-toggle-word {
-  transform: translateY(-1.2em);
+.menu-toggle-icon i:first-child {
+  top: 0;
+}
+.menu-toggle-icon i:last-child {
+  bottom: 0;
 }
 .nav--open .menu-toggle {
-  color: var(--dark-ink);
-  border-color: var(--dark-border);
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Overlay */
@@ -76,116 +78,204 @@
   inset: 0;
   z-index: var(--z-menu);
 }
-
-.menu-panel {
+.menu-backdrop {
   position: absolute;
   inset: 0;
-  background: var(--dark-bg-2);
-  color: var(--dark-ink);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: clamp(2rem, 6vh, 5rem);
-  padding: clamp(5rem, 12vh, 9rem) clamp(1.5rem, 6vw, 6rem) clamp(2.5rem, 6vh, 4rem);
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Accent underlay layers + panel — right-anchored, 1/3 width, straight edge */
+.menu-layer,
+.menu-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: max(320px, 33.333vw);
+  --curve: 0; /* 0 = hidden/flat (rest & seated), peaks mid-transition */
   will-change: transform;
 }
 
+/* Curved leading (left) edge — present during the slide, flattens when open */
+.menu-layer::after,
+.menu-panel::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 26vh;
+  height: 160%;
+  background-color: inherit;
+  border-radius: 50%;
+  transform: translate(50%, -50%) scaleX(var(--curve, 1));
+  transform-origin: right center;
+  pointer-events: none;
+}
+.menu-layer-1 {
+  background-color: var(--accent);
+  z-index: 1;
+}
+.menu-layer-2 {
+  background-color: var(--accent-deep);
+  z-index: 2;
+}
+.menu-panel {
+  background-color: var(--dark-bg-2);
+  color: var(--dark-ink);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.1rem, 3vh, 1.9rem) clamp(1.5rem, 3vw, 2.75rem) clamp(2rem, 5vh, 3rem);
+  gap: clamp(1.5rem, 4vh, 2.75rem);
+}
+
+/* Docked close (top-right of panel) — larger, no label */
+.menu-bar {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu-close {
+  background: transparent;
+  border: 0;
+  color: var(--dark-ink);
+  cursor: pointer;
+  padding: 0;
+  will-change: transform;
+}
+.menu-close-icon {
+  position: relative;
+  display: block;
+  width: 3.7em;
+  height: 3.7em;
+  border-radius: 50%;
+  border: 1px solid var(--dark-border);
+  transition: background-color var(--dur-base) var(--ease);
+}
+.menu-close:hover .menu-close-icon {
+  background-color: var(--accent);
+}
+.menu-close-icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34%;
+  height: 1.5px;
+  background: currentColor;
+}
+.menu-close-icon i:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.menu-close-icon i:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Section headings with hairline */
+.menu-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: clamp(0.75rem, 2vh, 1.25rem);
+}
+.menu-heading > span:first-child {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dark-ink-2);
+  white-space: nowrap;
+}
+.menu-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--dark-border);
+}
+
+/* Links */
 .menu-links {
   list-style: none;
   margin: 0;
   padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(0.1rem, 0.6vh, 0.4rem);
 }
 .menu-link a {
-  display: flex;
+  display: inline-flex;
   align-items: baseline;
-  gap: clamp(0.75rem, 1.5vw, 1.5rem);
-  padding: clamp(0.1rem, 0.8vh, 0.5rem) 0;
+  gap: 0.8rem;
   color: var(--dark-ink);
   text-decoration: none;
+  padding: 0.06em 0;
+  width: max-content;
+  will-change: transform;
   transition: color var(--dur-fast) var(--ease);
 }
 .menu-link a:hover {
   color: var(--accent);
 }
 .menu-index {
-  font-size: clamp(0.75rem, 1vw, 0.95rem);
+  font-size: clamp(0.68rem, 0.9vw, 0.85rem);
   color: var(--dark-ink-2);
-  transform: translateY(-0.9em);
 }
 .menu-link-mask {
   display: block;
   overflow: hidden;
-  line-height: 1.02;
+  line-height: 1.06;
 }
 .menu-link-inner {
   display: block;
-  font-size: clamp(2.75rem, 9vw, 7rem);
+  transform-origin: 0% 100%;
+  font-size: clamp(1.9rem, 3.4vw, 3.1rem);
   font-weight: 500;
   letter-spacing: -0.02em;
   will-change: transform;
 }
 
-/* Meta row */
+/* Meta / socials */
 .menu-meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(1.5rem, 5vw, 4rem);
-  justify-content: space-between;
-  border-top: 1px solid var(--dark-border);
-  padding-top: clamp(1.25rem, 3vh, 2rem);
-}
-.menu-meta-col--right {
-  text-align: right;
-}
-.menu-meta-label {
-  display: block;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--dark-ink-2);
-  margin-bottom: 0.75rem;
+  flex-direction: column;
+  gap: 0.9rem;
 }
 .menu-socials {
   display: flex;
-  gap: clamp(0.75rem, 2vw, 1.5rem);
+  gap: 0.75rem;
 }
-.menu-social,
+.menu-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.7em;
+  height: 2.7em;
+  border-radius: 50%;
+  border: 1px solid var(--dark-border);
+  color: var(--dark-ink);
+  will-change: transform;
+  transition: background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+.menu-social svg {
+  width: 1.05em;
+  height: 1.05em;
+}
+.menu-social:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
 .menu-email {
   color: var(--dark-ink);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
   text-decoration: none;
-  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
   transition: color var(--dur-fast) var(--ease);
 }
-.menu-social:hover,
 .menu-email:hover {
   color: var(--accent);
 }
 
-/* Curved leading edge (reference-proven rounded-div technique) */
-.menu-curve-wrap {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 12vh;
-  overflow: hidden;
-  pointer-events: none;
-}
-.menu-curve {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 150%;
-  height: 750%;
-  background: var(--dark-bg-2);
-  border-radius: 50%;
-  transform: translate(-50%, -86.666%);
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .menu-panel,
-  .menu-link-inner,
-  .menu-toggle-word {
+  .menu-toggle-icon i,
+  .nav-copy {
     transition: none !important;
   }
 }
