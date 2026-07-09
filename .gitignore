@@ -1,0 +1,33 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# builds
+dist/
+build/
+*.tsbuildinfo
+
+# env / secrets (templates are *.env.example, committed)
+.env
+.env.*
+!.env.example
+
+# python (apps/ai)
+apps/ai/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# editor / os
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# logs / misc
+*.log
+npm-debug.log*
+coverage/
+.turbo/

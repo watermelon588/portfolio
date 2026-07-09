@@ -1,0 +1,59 @@
+/* Design tokens — mirror of packages/shared/src/tokens (APPROVED 2026-07-09).
+   Source of truth is the TS tokens; keep these in sync (DOCUMENTATION_REVIEW.md).
+   This file is PLUMBING only — no component styling lives here. Visual work is
+   gated on approval (see DESIGN_SYSTEM.md Part X). */
+
+:root {
+  /* -------- Color · light world -------- */
+  --bg: #f6f6f6;
+  --surface: #ffffff;
+  --ink: #000000;
+  --ink-2: #9d9d9c;
+  --accent: #0049cd;
+  --accent-deep: #003aa3; /* derived — pending confirm */
+  --surface-gray: #dadada;
+  --tint: #dadada;
+  --border: rgba(0, 0, 0, 0.14);
+  --border-solid: #dadada;
+
+  /* -------- Color · dark world (selective — ADR-018) -------- */
+  --dark-bg: #000000;
+  --dark-bg-2: #0a0a0a;
+  --dark-ink: #f6f6f6;
+  --dark-ink-2: #9d9d9c;
+  --dark-border: rgba(246, 246, 246, 0.18);
+
+  /* -------- Feedback -------- */
+  --error: #ff4444;
+  --success: #24c958;
+
+  /* -------- Motion -------- */
+  --ease: cubic-bezier(0.7, 0, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.5, 0.64, 1);
+  --dur-fast: 0.3s;
+  --dur-base: 0.5s;
+  --dur-smooth: 0.7s;
+  --dur-slow: 0.9s;
+
+  /* -------- Space & shape -------- */
+  --space-section: clamp(5em, 21vh, 12em);
+  --space-container: clamp(2.5em, 8vw, 8em);
+  --space-gap: clamp(1.5em, 4vw, 2.5em);
+  --container-max: 100em;
+  --radius-pill: 2.125em;
+  --radius-card: 1.25em;
+  --hairline: 1px;
+
+  /* -------- Z-index ladder -------- */
+  --z-content: 1;
+  --z-nav: 100;
+  --z-menu: 105;
+  --z-cursor: 120;
+  --z-transition: 130;
+  --z-preloader: 140;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}

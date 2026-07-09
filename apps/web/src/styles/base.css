@@ -1,0 +1,26 @@
+/* Tailwind v4 + minimal base reset. No component/design styling here yet. */
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* Satoshi is wired in Phase 2 (self-hosted woff2). Until then, a neutral
+   system stack so the scaffold renders without a missing-font flash. */
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

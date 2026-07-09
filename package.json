@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Rohit Maity — premium animation-rich portfolio (MERN + FastAPI AI). See docs/.",
+  "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter \"./apps/web\" --filter \"./apps/api\" dev",
+    "dev:web": "pnpm --filter web dev",
+    "dev:api": "pnpm --filter api dev",
+    "build": "pnpm --filter shared build && pnpm --filter web build && pnpm --filter api build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "clean": "pnpm -r exec rimraf dist node_modules/.vite || true"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3"
+  }
+}

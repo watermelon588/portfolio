@@ -1,0 +1,8 @@
+# apps/ai — core runtime deps (Phase 1 skeleton).
+# AI vendors (anthropic, elevenlabs, voyageai, pymongo, sse-starlette, slowapi)
+# are added in Phase 6 per docs/AI_PIPELINE.md.
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.34,<1.0
+pydantic>=2.10,<3.0
+pydantic-settings>=2.7,<3.0
+structlog>=24.4
