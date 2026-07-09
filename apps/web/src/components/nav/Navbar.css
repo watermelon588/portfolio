@@ -1,0 +1,191 @@
+/* Navbar + staggered menu overlay with curved-edge reveal.
+   Consumes tokens from tokens.css only — no hardcoded palette. */
+
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(1rem, 2.2vw, 1.6rem) clamp(1.25rem, 4vw, 3rem);
+  z-index: var(--z-nav);
+  mix-blend-mode: normal;
+}
+
+.nav-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color var(--dur-base) var(--ease);
+}
+
+.nav-copy {
+  display: inline-block;
+  transition: transform var(--dur-slow) var(--ease);
+}
+.nav-wordmark:hover .nav-copy {
+  transform: rotate(360deg);
+}
+
+/* Menu / Close toggle — pill with a vertical text swap */
+.menu-toggle {
+  position: relative;
+  height: 2.9em;
+  padding: 0 1.5em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: calc(var(--z-menu) + 1);
+  transition: color var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease);
+}
+
+.menu-toggle-track {
+  display: block;
+  position: relative;
+  height: 1.2em;
+  overflow: hidden;
+}
+.menu-toggle-word {
+  display: block;
+  height: 1.2em;
+  line-height: 1.2em;
+  transition: transform var(--dur-base) var(--ease);
+}
+.menu-toggle:hover .menu-toggle-word,
+.nav--open .menu-toggle-word {
+  transform: translateY(-1.2em);
+}
+.nav--open .menu-toggle {
+  color: var(--dark-ink);
+  border-color: var(--dark-border);
+}
+
+/* Overlay */
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-menu);
+}
+
+.menu-panel {
+  position: absolute;
+  inset: 0;
+  background: var(--dark-bg-2);
+  color: var(--dark-ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(2rem, 6vh, 5rem);
+  padding: clamp(5rem, 12vh, 9rem) clamp(1.5rem, 6vw, 6rem) clamp(2.5rem, 6vh, 4rem);
+  will-change: transform;
+}
+
+.menu-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-link a {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+  padding: clamp(0.1rem, 0.8vh, 0.5rem) 0;
+  color: var(--dark-ink);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+.menu-link a:hover {
+  color: var(--accent);
+}
+.menu-index {
+  font-size: clamp(0.75rem, 1vw, 0.95rem);
+  color: var(--dark-ink-2);
+  transform: translateY(-0.9em);
+}
+.menu-link-mask {
+  display: block;
+  overflow: hidden;
+  line-height: 1.02;
+}
+.menu-link-inner {
+  display: block;
+  font-size: clamp(2.75rem, 9vw, 7rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  will-change: transform;
+}
+
+/* Meta row */
+.menu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  justify-content: space-between;
+  border-top: 1px solid var(--dark-border);
+  padding-top: clamp(1.25rem, 3vh, 2rem);
+}
+.menu-meta-col--right {
+  text-align: right;
+}
+.menu-meta-label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dark-ink-2);
+  margin-bottom: 0.75rem;
+}
+.menu-socials {
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+.menu-social,
+.menu-email {
+  color: var(--dark-ink);
+  text-decoration: none;
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  transition: color var(--dur-fast) var(--ease);
+}
+.menu-social:hover,
+.menu-email:hover {
+  color: var(--accent);
+}
+
+/* Curved leading edge (reference-proven rounded-div technique) */
+.menu-curve-wrap {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 12vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+.menu-curve {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 150%;
+  height: 750%;
+  background: var(--dark-bg-2);
+  border-radius: 50%;
+  transform: translate(-50%, -86.666%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-panel,
+  .menu-link-inner,
+  .menu-toggle-word {
+    transition: none !important;
+  }
+}
