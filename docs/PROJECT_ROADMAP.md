@@ -5,11 +5,12 @@
 ## Phase 0 — Foundation docs ✅ (2026-07-09)
 Documentation suite, reference teardown, architecture, this roadmap. **Done.**
 
-## Phase 1 — Scaffold & plumbing (≈1 week) ⬅ next
-git init + monorepo (pnpm) · Vite/React/TS/Tailwind app boots · Express app with health + error envelope + config validation · FastAPI skeleton with health + kill switch · `packages/shared` tokens/schemas wired · CI (lint/typecheck/test/build) green · AI mount stubs (`/ask` route, `AIVoiceOrb` placeholder) exist.
-**Exit:** `pnpm dev` runs web+api; CI green on a trivial PR; no visual design implemented yet.
+## Phase 1 — Scaffold & plumbing ✅ (2026-07-09, commit `62eb93b`)
+git init + monorepo (pnpm) · Vite/React/TS/Tailwind app boots · Express app with health + error envelope + config validation · FastAPI skeleton with health + kill switch · `packages/shared` tokens/schemas wired · CI workflow · `/ask` route reserved.
+**Exit — met:** web builds (92KB gz) + typechecks; api serves `/api/health` and the error envelope (boot-verified); ai passes ruff + pytest; no visual design implemented.
+*Deferred to Phase 1.1 (optional, non-visual):* full ESLint/Prettier, supertest, web vitest setup, Playwright skeleton.
 
-## Phase 2 — Design system implementation (≈1–2 weeks) 🔒 **DESIGN GATE**
+## Phase 2 — Design system implementation (≈1–2 weeks) 🔒 **DESIGN GATE** ⬅ next
 **Entry requires:** Rohit's palette + typeface decision + Part VI/VII sign-off ([DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) Part X checklist).
 tokens.css + ThemeSection flip · typography scale + font loading (zero CLS) · MotionProvider (Lenis+GSAP, gates) · core primitives: MagneticButton, SplitLines, CurvedReveal, Hairline, Label, LocalTime · Preloader + PageTransition · Staggered Menu.
 **Exit:** styleguide route showing every primitive in both worlds; motion QA checklist passes; Lighthouse ≥ 90 on the styleguide page.

@@ -12,8 +12,14 @@ All notable changes to this project. Format follows [Keep a Changelog](https://k
 
 - **Dark-world resolved** (ADR-018): selective dark on `#000000` for the preloader, contact/footer, and AI panel only; rest of the site stays light. `--dark-*` tokens finalized.
 
-### In progress
-- Phase 1 scaffold (pnpm monorepo, app skeletons, CI, shared tokens/schemas) — green-lit 2026-07-09. No visual/design code (design gate still applies to Phase 2).
+### Added — Phase 1 scaffold (commit `62eb93b`, verified)
+- pnpm monorepo: `apps/web` (React 19 + Vite + Tailwind v4), `apps/api` (Express 5 + TS), `apps/ai` (FastAPI), `packages/shared` (approved tokens + Zod contact/project schemas).
+- `apps/api`: health route, error envelope, boot-time Zod config validation, helmet/cors/pino. Boot-verified (`/api/health` → ok; unknown route → `NOT_FOUND` envelope).
+- `apps/ai`: FastAPI health + `ai_enabled` kill switch; ruff + pytest green.
+- `apps/web`: boots to a plain scaffold placeholder (no design); tokens wired as CSS vars; `/ask` route reserved for Phase 6. Prod build 92KB gz.
+- CI workflow (GitHub Actions): typecheck/test/build for web+api, ruff/pytest for ai.
+- Repo initialized with `.gitignore`, `.gitattributes`, `.env.example` per app, README.
+- No visual/design code — design gate still applies to Phase 2.
 
 ## [0.1.0] — 2026-07-09 · Phase 0: Documentation foundation
 
