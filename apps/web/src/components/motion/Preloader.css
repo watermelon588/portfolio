@@ -1,0 +1,58 @@
+/* Preloader — dark-world intro with a curved trailing edge. Tokens only. */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  background: var(--dark-bg); /* #000 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.preloader-words {
+  position: relative;
+  height: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-word {
+  position: absolute;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32em;
+  white-space: nowrap;
+  color: var(--dark-ink);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 4.5vw, 3rem);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  will-change: transform, opacity;
+}
+
+.preloader-dot {
+  width: 0.34em;
+  height: 0.34em;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Curved trailing (bottom) edge — a wide ellipse bulging just below the screen,
+   revealed as it sweeps up, then softly flattened (scaleY -> 0) on exit */
+.preloader-curve {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 160%;
+  height: 22vh;
+  margin-left: -80%;
+  margin-bottom: -11vh;
+  background: var(--dark-bg);
+  border-radius: 50%;
+  transform-origin: center top;
+  pointer-events: none;
+}
