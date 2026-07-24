@@ -52,7 +52,16 @@ function SocialIcon({ name }: { name: (typeof SOCIALS)[number] }) {
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const root = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Closed baseline (right-anchored, off to the right, no curve offset).
   useGSAP(
@@ -162,7 +171,7 @@ export function Navbar() {
       };
     });
     return () => cleanups.forEach((c) => c());
-  }, []);
+  }, [scrolled, open]);
 
   // Esc closes; lock scroll while open.
   useEffect(() => {
@@ -176,11 +185,18 @@ export function Navbar() {
 
   return (
     <div ref={root}>
-      <header className={`nav ${open ? "nav--open" : ""}`}>
-        <a className="nav-wordmark magnetic" data-strength="18" href="#" aria-label="Rohit Maity — home">
+      <header className={`nav ${scrolled ? "nav--scrolled" : ""} ${open ? "nav--open" : ""}`}>
+        <a className="nav-wordmark magnetic" data-strength="18" href="#home" aria-label="Rohit Maity — home">
           <span className="nav-copy">©</span>
-          <span>Rohit&nbsp;Maity</span>
+          <span>Code&nbsp;by&nbsp;ROHIT</span>
         </a>
+        
+        <div className="nav-links">
+          <a className="nav-link-item magnetic" data-strength="15" href="#home">Home</a>
+          <a className="nav-link-item magnetic" data-strength="15" href="#work">Work</a>
+          <a className="nav-link-item magnetic" data-strength="15" href="#contact">Contact</a>
+        </div>
+
         <button
           className="menu-toggle magnetic"
           data-strength="40"

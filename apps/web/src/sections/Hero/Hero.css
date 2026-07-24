@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Hero Section — two-column composition
+   Left column:  poster → "Get in touch" → contact cards (stacked)
+   Right column: portrait, stretched to the full height of the left column
+   The right cell inherits its height from the left cell (grid `stretch`), so
+   the portrait aligns perfectly with the poster/contact stack — no spacers.
+   ========================================================================== */
+
+.hero {
+  /* Clearance for the fixed navbar */
+  padding-top: 0;
+  /* Breathing room before the About section */
+  background-color: var(--hero-bg);
+}
+
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  align-items: stretch;
+  width: 100%;
+}
+
+
+
+/* ---- Left column ------------------------------------------------------- */
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hero-poster {
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--hero-bg);
+}
+
+.hero-poster-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero-contact {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  /* gap: clamp(1.25rem, 2.4vw, 1.85rem); */
+}
+
+.hero-contact-title {
+  font-size: clamp(1.35rem, 2vw, 1.5rem);
+  font-weight: 500;
+  color: var(--hero-bg);
+  margin: 0;
+  opacity: 0.95;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Right column ------------------------------------------------------ */
+
+.hero-right {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--hero-bg);
+}
+
+.hero-portrait-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: right top;
+}
+
+/* ==========================================================================
+   Responsive — collapse to a single stacked column
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-left {
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  /* Portrait becomes an aspect-boxed banner rather than a stretched cell */
+  .hero-right {
+    aspect-ratio: 16 / 11;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-poster {
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-right {
+    aspect-ratio: 3 / 4;
+  }
+
+  .hero-portrait-img {
+    object-position: 58% 18%;
+  }
+}

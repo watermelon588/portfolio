@@ -1,3 +1,4 @@
+
 /* Navbar + right-opening staggered menu: accent underlay layers, straight edge,
    1/3-width panel, magnetic fields, docked close. Tokens only — no hardcoded hex. */
 
@@ -9,6 +10,8 @@
   justify-content: space-between;
   padding: clamp(1rem, 2.2vw, 1.6rem) clamp(1.25rem, 4vw, 3rem);
   z-index: var(--z-nav);
+  background-color: transparent;
+  transition: padding var(--dur-base) var(--ease);
 }
 
 .nav-wordmark {
@@ -20,6 +23,7 @@
   color: var(--ink);
   text-decoration: none;
   will-change: transform;
+  transition: opacity var(--dur-base) var(--ease), transform var(--dur-base) var(--ease);
 }
 .nav-copy {
   display: inline-block;
@@ -29,29 +33,65 @@
   transform: rotate(360deg);
 }
 
-/* Open toggle — circular hamburger icon button; hidden while menu is open */
+/* Desktop Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-left: auto;
+  transition: opacity var(--dur-base) var(--ease), transform var(--dur-base) var(--ease);
+}
+
+.nav-link-item {
+  font-size: clamp(0.95rem, 1.1vw, 1.125rem); /* ~18px */
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.nav-link-item:hover {
+  color: var(--accent);
+}
+
+/* Open toggle — circular hamburger icon button; hidden by default on desktop, morphs in on scroll */
 .menu-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3.2em;
-  height: 3.2em;
+  width: 4rem; /* 64px size */
+  height: 4rem;
   padding: 0;
   border: 1px solid var(--border);
-  border-radius: 50%;
+  border-radius: var(--radius-common); /* Matches Poster, Portrait, Cards */
   background: transparent;
   color: var(--ink);
   cursor: pointer;
+  position: absolute;
+  right: clamp(1.25rem, 4vw, 3rem);
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
   will-change: transform;
-  transition: opacity var(--dur-base) var(--ease), background-color var(--dur-base) var(--ease);
+  transition: opacity var(--dur-base) var(--ease),
+              transform var(--dur-base) var(--ease),
+              background-color var(--dur-base) var(--ease),
+              border-color var(--dur-base) var(--ease),
+              color var(--dur-base) var(--ease);
 }
+
 .menu-toggle:hover {
-  background-color: var(--surface);
+  background-color: var(--accent-deep);
+  border-color: var(--accent-deep);
+  color: var(--surface);
 }
+
 .menu-toggle-icon {
   position: relative;
-  width: 1.15em;
-  height: 0.6em;
+  width: 1.3em;
+  height: 0.5em;
 }
 .menu-toggle-icon i {
   position: absolute;
@@ -68,8 +108,27 @@
   bottom: 0;
 }
 .nav--open .menu-toggle {
-  opacity: 0;
-  pointer-events: none;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Morph transitions for scrolled desktop state */
+@media (min-width: 1025px) {
+  .nav--scrolled .nav-wordmark,
+  .nav--scrolled .nav-links {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-15px);
+  }
+  
+  .nav--scrolled .menu-toggle {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) scale(1);
+    background-color: var(--accent);
+    color: var(--surface);
+    border-color: var(--accent);
+  }
 }
 
 /* Overlay */
@@ -278,4 +337,56 @@
   .nav-copy {
     transition: none !important;
   }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+
+  .menu-layer,
+  .menu-panel {
+    width: 42vw;
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .menu-layer,
+  .menu-panel {
+    width: 50vw;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) scale(1);
+    background-color: var(--accent);
+    color: var(--surface);
+    border-color: var(--accent);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .menu-layer,
+  .menu-panel {
+    width: 100vw;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .menu-panel {
+    padding-inline: 1.25rem;
+  }
+
 }

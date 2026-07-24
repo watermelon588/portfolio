@@ -4,17 +4,40 @@
    gated on approval (see DESIGN_SYSTEM.md Part X). */
 
 :root {
+
+  /* Layout */
+--container:1800px;
+
+/* Spacing */
+--space-xs:.5rem;
+--space-sm:1rem;
+--space-md:2rem;
+--space-lg:4rem;
+--space-xl:8rem;
+
+/* Radius */
+--radius-sm:.75rem;
+--radius-md:1.5rem;
+--radius-lg:2rem;
+
+/* Responsive */
+--section-padding:clamp(3rem,6vw,6rem);
+--page-padding:clamp(1rem,4vw,3rem);
+
+
   /* -------- Color · light world -------- */
-  --bg: #f6f6f6;
+  --bg: #F4F4F4;
   --surface: #ffffff;
   --ink: #000000;
   --ink-2: #9d9d9c;
+  --hero-bg:#bbbcbd;
   --accent: #0049cd;
   --accent-deep: #003aa3; /* derived — pending confirm */
   --surface-gray: #dadada;
   --tint: #dadada;
   --border: rgba(0, 0, 0, 0.14);
   --border-solid: #dadada;
+  --radius-common: 2.5rem; /* 40px common radius for visual consistency */
 
   /* -------- Color · dark world (selective — ADR-018) -------- */
   --dark-bg: #000000;

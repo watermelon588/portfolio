@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { CurveSwipe } from "./CurveSwipe";
+import { useCurveSwipe } from "../../hooks/useCurveSwipe";
 import "./Preloader.css";
 
 // Preloader — dark-world intro: cycling role-words, then the screen exits
@@ -11,15 +13,24 @@ const WORDS = ["Developer", "Designer", "Builder", "Cracked", "Weird"];
 
 export function Preloader() {
   const root = useRef<HTMLDivElement>(null);
+  const pathRef = useRef<SVGPathElement>(null);
   const [done, setDone] = useState(() => {
     if (import.meta.env.DEV) return false;
-    return typeof sessionStorage !== "undefined" && sessionStorage.getItem("preloaded") === "1";
+    return (
+      typeof sessionStorage !== "undefined" &&
+      sessionStorage.getItem("preloaded") === "1"
+    );
   });
+
+  // Reusable curve swipe swipe manager
+  const swipe = useCurveSwipe(pathRef, { direction: "up", duration: 1.7 });
 
   useGSAP(
     () => {
       if (done || !root.current) return;
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reduce = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
       document.body.style.overflow = "hidden";
 
       const finish = () => {
@@ -33,33 +44,62 @@ export function Preloader() {
       };
 
       if (reduce) {
-        gsap.to(root.current, { autoAlpha: 0, duration: 0.3, delay: 0.2, onComplete: finish });
+        gsap.to(root.current, {
+          autoAlpha: 0,
+          duration: 0.3,
+          delay: 0.2,
+          onComplete: finish,
+        });
         return;
       }
 
-      const words = gsap.utils.toArray<HTMLElement>(".preloader-word");
-      const tl = gsap.timeline({ onComplete: finish });
+      // Sub-animation: cycling through overlay words
+      const wordAnimation = () => {
+        const words = gsap.utils.toArray<HTMLElement>(".preloader-word");
+        const tl = gsap.timeline();
+        tl.set(words, { opacity: 0, y: 22 });
+        words.forEach((w, i) => {
+          const last = i === words.length - 1;
+          tl.to(
+            w,
+            { opacity: 1, y: 0, duration: 0.2, ease: "power3.out" },
+            i === 0 ? 0.15 : "<0.26",
+          );
+          if (!last)
+            tl.to(
+              w,
+              { opacity: 0, y: -22, duration: 0.16, ease: "power3.in" },
+              "<0.2",
+            );
+        });
+        return tl;
+      };
 
-      // fast word cycle
-      tl.set(words, { opacity: 0, y: 22 });
-      words.forEach((w, i) => {
-        const last = i === words.length - 1;
-        tl.to(w, { opacity: 1, y: 0, duration: 0.2, ease: "power3.out" }, i === 0 ? 0.15 : "<0.26");
-        if (!last) tl.to(w, { opacity: 0, y: -22, duration: 0.16, ease: "power3.in" }, "<0.2");
-      });
+      // Sub-animation: fading/sliding in the main content beneath
+      const mainReveal = () => {
+        return gsap.from("main", {
+          y: 70,
+          autoAlpha: 0,
+          duration: 1.5,
+          ease: "expo.out",
+        });
+      };
 
-      // exit: the curved bottom edge sweeps up (slow) and softly flattens,
-      // while the content rises to meet it — dennissnellenberg.com language
-      tl.to(".preloader", { yPercent: -100, duration: 1.35, ease: "power3.inOut" }, ">0.4")
-        .to(".preloader-curve", { scaleY: 0, duration: 0.8, ease: "power2.inOut" }, "<0.6")
-        .from("main", { y: 70, autoAlpha: 0, duration: 1.5, ease: "expo.out" }, "<");
+      // Sequenced timeline coordinating the entire preloader flow
+      const timeline = gsap.timeline({ onComplete: finish });
+      timeline
+        .add(wordAnimation())
+        .add(swipe.exit(), ">0.4")
+        .add(mainReveal(), "<0.85");
     },
     { scope: root, dependencies: [] },
   );
 
   if (done) return null;
+
   return (
     <div ref={root} className="preloader" aria-hidden="true">
+      <CurveSwipe pathRef={pathRef} />
       <div className="preloader-words">
         {WORDS.map((w) => (
           <h2 className="preloader-word" key={w}>
@@ -68,7 +108,6 @@ export function Preloader() {
           </h2>
         ))}
       </div>
-      <div className="preloader-curve" />
     </div>
   );
 }
