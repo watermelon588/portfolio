@@ -1,0 +1,24 @@
+.scroll-reveal {
+  margin: 0;
+}
+
+.scroll-reveal-text {
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 0;
+}
+
+.word {
+  display: inline-block;
+  will-change: opacity, filter;
+}
+
+/* Safety net: if the reader prefers reduced motion (or GSAP never runs the
+   scrub), keep the text fully legible instead of stuck at baseOpacity. */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal .word {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}

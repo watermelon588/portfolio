@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Selected Work
+   Flowing Menu index framed by an eyebrow + heading and a "view all" pill.
+   ========================================================================== */
+
+.work {
+  background-color: var(--bg);
+  padding-block: clamp(4rem, 9vh, 9rem);
+}
+
+.work-head {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.work-eyebrow {
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+/* ScrollReveal renders <h2.scroll-reveal.work-reveal><p.scroll-reveal-text> —
+   retype it to the heading style; the last word ("built.") keeps the accent. */
+.work-reveal,
+.work-reveal .scroll-reveal-text {
+  /* Consistent with the About statement + Footer CTA heading scale. */
+  font-size: clamp(1.9rem, 4vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.work-reveal .word:last-of-type {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* Flowing Menu needs an explicit height (its rows flex to fill it). */
+.work-menu {
+  position: relative;
+  width: 100%;
+  height: clamp(420px, 62vh, 620px);
+  border-block: 1px solid var(--border);
+}
+
+.work-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.work-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-solid);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background-color var(--dur-base) var(--ease),
+    color var(--dur-base) var(--ease),
+    border-color var(--dur-base) var(--ease);
+}
+
+.work-all svg {
+  width: 1.1em;
+  height: 1.1em;
+  transition: transform var(--dur-base) var(--ease);
+}
+
+.work-all:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--surface);
+}
+
+.work-all:hover svg {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 768px) {
+  .work-menu {
+    height: clamp(380px, 64vh, 540px);
+  }
+
+  .work-foot {
+    justify-content: stretch;
+  }
+
+  .work-all {
+    width: 100%;
+    justify-content: center;
+  }
+}

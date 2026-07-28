@@ -18,13 +18,21 @@
   width: 100%;
 }
 
-.about-statement-text {
+/* ScrollReveal renders <h2.scroll-reveal><p.scroll-reveal-text> — retype it to
+   match the original statement styling (word spans inherit these). */
+.about-statement .about-reveal,
+.about-statement .about-reveal .scroll-reveal-text {
   font-size: clamp(1.9rem, 3.8vw, 3.85rem); /* Renders as ~60px to 62px on desktop */
   font-weight: 500;
-  line-height: 1.12;
+  line-height: 1.18;
   letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0;
+}
+
+.about-statement .about-reveal {
+  /* the component skews the whole block on scroll — keep it from clipping */
+  will-change: transform;
 }
 
 .about-copy {

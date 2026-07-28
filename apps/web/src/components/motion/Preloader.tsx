@@ -11,10 +11,16 @@ import "./Preloader.css";
 
 const WORDS = ["Developer", "Designer", "Builder", "Cracked", "Weird"];
 
+// Module-scoped: the intro plays once per full page load, NOT on every
+// client-side navigation back to Home (that's the page transition's job). Resets
+// naturally on a hard reload since the module re-evaluates.
+let appPreloaded = false;
+
 export function Preloader() {
   const root = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   const [done, setDone] = useState(() => {
+    if (appPreloaded) return true;
     if (import.meta.env.DEV) return false;
     return (
       typeof sessionStorage !== "undefined" &&
@@ -35,6 +41,7 @@ export function Preloader() {
 
       const finish = () => {
         document.body.style.overflow = "";
+        appPreloaded = true;
         try {
           sessionStorage.setItem("preloaded", "1");
         } catch {
@@ -85,11 +92,18 @@ export function Preloader() {
         });
       };
 
-      // Sequenced timeline coordinating the entire preloader flow
+      // Sequenced timeline coordinating the entire preloader flow. The words
+      // ride up and fade WITH the curtain (autoAlpha at "<" == swipe start), so
+      // the last word ("Weird") never lingers over the revealed page.
       const timeline = gsap.timeline({ onComplete: finish });
       timeline
         .add(wordAnimation())
         .add(swipe.exit(), ">0.4")
+        .to(
+          ".preloader-words",
+          { autoAlpha: 0, y: -60, duration: 0.6, ease: "power2.in" },
+          "<",
+        )
         .add(mainReveal(), "<0.85");
     },
     { scope: root, dependencies: [] },
