@@ -31,7 +31,7 @@ export function PageTransition() {
   const tlRef = useRef<gsap.core.Timeline | null>(null);
   const [label, setLabel] = useState(() => pageName(pathname));
 
-  const swipe = useCurveSwipe(pathRef, { direction: "up", duration: 1.15 });
+  const swipe = useCurveSwipe(pathRef, { direction: "up", duration: 1.7 });
 
   useLayoutEffect(() => {
     // Skip the very first load — the Home preloader owns that moment.
@@ -62,9 +62,9 @@ export function PageTransition() {
     });
     tlRef.current = tl;
 
-    tl.to(labelRef.current, { autoAlpha: 1, y: 0, duration: 0.42, ease: "power3.out" }, 0)
-      .to(labelRef.current, { autoAlpha: 0, y: -34, duration: 0.5, ease: "power3.in" }, 0.5)
-      .add(swipe.exit(), 0.45);
+    tl.to(labelRef.current, { autoAlpha: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0)
+      .to(labelRef.current, { autoAlpha: 0, y: -34, duration: 0.6, ease: "power3.in" }, 0.75)
+      .add(swipe.exit(), 0.7);
 
     return () => {
       tl.kill();

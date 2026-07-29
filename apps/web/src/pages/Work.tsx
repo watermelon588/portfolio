@@ -1,3 +1,4 @@
+import { Preloader } from "@/components/motion/Preloader";
 import { Navbar } from "@/components/nav/Navbar";
 import { Footer } from "@/sections/Footer/Footer";
 import FlowingMenu from "@/components/vendor/reactbits/FlowingMenu/FlowingMenu";
@@ -9,6 +10,7 @@ import "./WorkPage.css";
 export function Work() {
   return (
     <>
+      <Preloader />
       <Navbar />
       <main className="workpage">
         <header className="workpage-head container">

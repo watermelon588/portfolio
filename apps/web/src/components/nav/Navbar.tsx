@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { navItems, socials, EMAIL } from "@/data/nav";
 import "./Navbar.css";
 
 // Navbar — right-opening staggered menu (accent underlay layers, straight edge,
 // 1/3 width), magnetic fields, docked close, headed sections, social icons.
 // Tokens from tokens.css; motion per DESIGN_SYSTEM Part V.
 
-const LINKS = ["Home", "Work", "About", "Contact"];
 const SOCIALS = ["GitHub", "X", "LinkedIn", "Instagram"] as const;
+const socialHref = (name: string) => socials.find((s) => s.name === name)?.href ?? "#";
 
 function SocialIcon({ name }: { name: (typeof SOCIALS)[number] }) {
   switch (name) {
@@ -186,15 +188,17 @@ export function Navbar() {
   return (
     <div ref={root}>
       <header className={`nav ${scrolled ? "nav--scrolled" : ""} ${open ? "nav--open" : ""}`}>
-        <a className="nav-wordmark magnetic" data-strength="18" href="#home" aria-label="Rohit Maity — home">
+        <Link className="nav-wordmark magnetic" data-strength="18" to="/" aria-label="Rohit Maity — home">
           <span className="nav-copy">©</span>
           <span>Code&nbsp;by&nbsp;ROHIT</span>
-        </a>
-        
+        </Link>
+
         <div className="nav-links">
-          <a className="nav-link-item magnetic" data-strength="15" href="#home">Home</a>
-          <a className="nav-link-item magnetic" data-strength="15" href="#work">Work</a>
-          <a className="nav-link-item magnetic" data-strength="15" href="#contact">Contact</a>
+          {navItems.map((item) => (
+            <Link key={item.path} className="nav-link-item magnetic" data-strength="15" to={item.path}>
+              {item.label}
+            </Link>
+          ))}
         </div>
 
         <button
@@ -235,14 +239,14 @@ export function Navbar() {
             <span className="menu-rule" />
           </div>
           <ul className="menu-links">
-              {LINKS.map((label, i) => (
-                <li className="menu-link" key={label}>
-                  <a className="magnetic" data-strength="24" href="#">
+              {navItems.map((item, i) => (
+                <li className="menu-link" key={item.path}>
+                  <Link className="magnetic" data-strength="24" to={item.path} onClick={() => setOpen(false)}>
                     <span className="menu-index">{`0${i + 1}`}</span>
                     <span className="menu-link-mask">
-                      <span className="menu-link-inner">{label}</span>
+                      <span className="menu-link-inner">{item.label}</span>
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -256,7 +260,9 @@ export function Navbar() {
               {SOCIALS.map((s) => (
                 <a
                   key={s}
-                  href="#"
+                  href={socialHref(s)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="menu-social magnetic"
                   data-strength="16"
                   aria-label={s}
@@ -265,8 +271,8 @@ export function Navbar() {
                 </a>
               ))}
             </div>
-            <a href="#" className="menu-email">
-              maityrohit021@gmail.com
+            <a href={`mailto:${EMAIL}`} className="menu-email">
+              {EMAIL}
             </a>
           </div>
         </div>

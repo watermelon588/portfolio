@@ -1,12 +1,12 @@
 import { Link } from "react-router";
-import FlowingMenu from "@/components/vendor/reactbits/FlowingMenu/FlowingMenu";
+import { HoverRevealList } from "@/components/motion/HoverRevealList/HoverRevealList";
 import ScrollReveal from "@/components/vendor/reactbits/ScrollReveal/ScrollReveal";
-import { projects, toMenuItems } from "@/data/projects";
+import { projects } from "@/data/projects";
 import "./Work.css";
 
-// Selected Work — the home-page index of projects, built on the ReactBits
-// Flowing Menu (DESIGN_SYSTEM Part VI). Themed to the approved palette: quiet
-// light rows, accent-blue marquee reveal on hover. Full catalogue lives on /work.
+// Selected Work — the home-page project index. Uses the cursor-follow reveal
+// interaction (a project image floats toward the cursor on hover). Full
+// catalogue lives on /work.
 export function Work() {
   return (
     <section className="work section" id="work">
@@ -24,15 +24,15 @@ export function Work() {
         </ScrollReveal>
       </div>
 
-      <div className="work-menu">
-        <FlowingMenu
-          items={toMenuItems(projects)}
-          speed={18}
-          textColor="#000000"
-          bgColor="#F4F4F4"
-          marqueeBgColor="#0049CD"
-          marqueeTextColor="#FFFFFF"
-          borderColor="rgba(0, 0, 0, 0.14)"
+      <div className="work-list container">
+        <HoverRevealList
+          items={projects.map((p) => ({
+            title: p.title,
+            role: p.role,
+            year: p.year,
+            href: p.href ?? "#",
+            image: p.image,
+          }))}
         />
       </div>
 

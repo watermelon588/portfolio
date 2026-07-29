@@ -1,7 +1,0 @@
-/* Reserved hero viewport — empty on purpose (see HeroReserve.tsx). Holds the
-   full home fold so the fixed navbar no longer overlaps the About section. */
-.hero-reserve {
-  width: 100%;
-  min-height: 100svh;
-  min-height: 100vh; /* fallback for browsers without svh */
-}

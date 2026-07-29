@@ -1,207 +1,141 @@
 /* ==========================================================================
    Contact Footer — dark world (ADR-018)
-   Reference-style closing invitation: portrait + "Let's work together"
-   headline, circular magnetic CTA, meta row, giant parallax name.
+   Borrows the navbar's staggered menu language: masked links rising into place,
+   headed sections, magnetic fields. Simplified to nav links + socials + email.
    ========================================================================== */
 
 .footer {
   position: relative;
   background: var(--dark-bg);
   color: var(--dark-ink);
-  /* Curved entry — generous domed top corners rising over the light page. */
   border-top-left-radius: clamp(2.5rem, 7vw, 6rem);
   border-top-right-radius: clamp(2.5rem, 7vw, 6rem);
   margin-top: clamp(3rem, 6vh, 6rem);
   padding-top: clamp(3.5rem, 7vh, 6rem);
-  /* horizontal clip for the oversized name; vertical stays open */
   overflow-x: clip;
 }
 
 .footer-inner {
   display: flex;
   flex-direction: column;
+  gap: clamp(1.75rem, 3.5vw, 3rem);
 }
 
-/* -------- Headline: avatar + text + rotating arrow -------- */
-.footer-headline {
+/* Section headings with hairline (borrowed from the navbar menu) */
+.footer-heading {
   display: flex;
   align-items: center;
-  gap: clamp(0.75rem, 2vw, 1.75rem);
+  gap: 1rem;
+}
+
+.footer-heading > span:first-child {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dark-ink-2);
+  white-space: nowrap;
+}
+
+.footer-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--dark-border);
+}
+
+/* Big staggered links (borrowed masked-reveal from the navbar) */
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-link {
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.footer-link:first-child {
+  border-top: 1px solid var(--dark-border);
+}
+
+.footer-link-a {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.25rem);
   text-decoration: none;
   color: var(--dark-ink);
-  width: fit-content;
-  max-width: 100%;
+  padding-block: clamp(0.55rem, 1.4vw, 1.1rem);
+  will-change: transform;
+  transition: color var(--dur-base) var(--ease);
 }
 
-.footer-avatar {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(3rem, 6vw, 5.25rem);
-  height: clamp(3rem, 6vw, 5.25rem);
-  border-radius: 50%;
-  background: var(--accent);
-  color: var(--surface);
-  font-size: clamp(0.9rem, 1.6vw, 1.4rem);
-  font-weight: 600;
-  letter-spacing: 0.02em;
+.footer-index {
+  font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+  color: var(--dark-ink-2);
+  min-width: 2ch;
 }
 
-.footer-headline-text {
-  margin: 0;
-  font-size: clamp(2rem, 6.5vw, 6rem);
+.footer-link-mask {
+  display: block;
+  overflow: hidden;
+  line-height: 1.02;
+  flex: 1;
+}
+
+.footer-link-inner {
+  display: block;
+  transform-origin: 0% 100%;
+  font-size: clamp(2.4rem, 7vw, 6rem);
   font-weight: 500;
-  line-height: 0.95;
   letter-spacing: -0.03em;
+  will-change: transform;
 }
 
-.footer-headline-arrow {
-  flex-shrink: 0;
+.footer-link-arrow {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(2.25rem, 5.5vw, 5rem);
-  height: clamp(2.25rem, 5.5vw, 5rem);
+  width: clamp(1.5rem, 2.5vw, 2.4rem);
+  height: clamp(1.5rem, 2.5vw, 2.4rem);
+  color: var(--accent);
+  opacity: 0;
+  transform: translateX(-0.7rem) rotate(-12deg);
+  transition:
+    opacity var(--dur-base) var(--ease),
+    transform var(--dur-base) var(--ease);
 }
 
-.footer-headline-arrow svg {
+.footer-link-arrow svg {
   width: 100%;
   height: 100%;
+}
+
+.footer-link-a:hover {
   color: var(--accent);
 }
 
-.footer-headline:hover .footer-headline-text {
-  color: #fff;
+.footer-link-a:hover .footer-link-arrow {
+  opacity: 1;
+  transform: translateX(0) rotate(0deg);
 }
 
-/* -------- Contact details + circular CTA -------- */
-.footer-cta-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: clamp(1.5rem, 4vw, 3.5rem);
-  margin-top: clamp(2.5rem, 6vw, 5rem);
-}
-
-.footer-contacts {
+/* Tail: socials + email + meta */
+.footer-tail {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.4rem, 1vw, 0.75rem);
-}
-
-.footer-contact {
-  font-size: clamp(1.05rem, 2.4vw, 1.85rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--dark-ink);
-  text-decoration: none;
-  width: fit-content;
-  border-bottom: 1px solid transparent;
-  transition:
-    color var(--dur-base) var(--ease),
-    border-color var(--dur-base) var(--ease);
-}
-
-.footer-contact:hover {
-  color: #fff;
-  border-color: var(--dark-border);
-}
-
-.footer-contact--muted {
-  color: var(--dark-ink-2);
-  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
-  pointer-events: none;
-}
-
-/* Circular magnetic button */
-.footer-orb {
-  flex-shrink: 0;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(104px, 11vw, 156px);
-  height: clamp(104px, 11vw, 156px);
-  border-radius: 50%;
-  background: var(--accent);
-  color: var(--surface);
-  text-decoration: none;
-  will-change: transform;
-  transition: background-color var(--dur-base) var(--ease);
-}
-
-.footer-orb:hover {
-  background: var(--accent-deep);
-}
-
-.footer-orb-label {
-  font-size: clamp(0.82rem, 1.05vw, 1rem);
-  font-weight: 500;
-  line-height: 1.15;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-}
-
-.footer-orb svg {
-  position: absolute;
-  top: clamp(0.85rem, 1.3vw, 1.3rem);
-  right: clamp(0.85rem, 1.3vw, 1.3rem);
-  width: clamp(0.85rem, 1.1vw, 1.15rem);
-  height: clamp(0.85rem, 1.1vw, 1.15rem);
-}
-
-/* -------- Divider -------- */
-.footer-divider {
-  height: 1px;
-  width: 100%;
-  background: var(--dark-border);
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
-}
-
-/* -------- Meta row -------- */
-.footer-meta {
-  display: flex;
-  align-items: center;
-  gap: clamp(1.25rem, 3vw, 2.5rem);
-  flex-wrap: wrap;
-}
-
-.footer-meta-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.footer-meta-label {
-  font-size: 0.66rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--dark-ink-2);
-}
-
-.footer-meta-value {
-  font-size: clamp(0.82rem, 1vw, 0.92rem);
-  font-weight: 500;
-  color: var(--dark-ink);
-  font-variant-numeric: tabular-nums;
+  gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .footer-socials {
   display: flex;
-  gap: 0.6rem;
-  margin-left: auto;
+  gap: 0.65rem;
 }
 
 .footer-social {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 50%;
   border: 1px solid var(--dark-border);
   color: var(--dark-ink);
@@ -212,8 +146,8 @@
 }
 
 .footer-social svg {
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 .footer-social:hover {
@@ -221,36 +155,50 @@
   color: var(--dark-bg);
 }
 
-.footer-top {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.6rem 1.1rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--dark-border);
-  background: transparent;
+.footer-email {
+  display: inline-block;
+  width: fit-content;
+  font-size: clamp(1.2rem, 2.8vw, 2.1rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
   color: var(--dark-ink);
-  font-family: inherit;
-  font-size: 0.82rem;
-  font-weight: 500;
-  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
   will-change: transform;
   transition:
-    background-color var(--dur-base) var(--ease),
-    color var(--dur-base) var(--ease);
+    color var(--dur-base) var(--ease),
+    border-color var(--dur-base) var(--ease);
 }
 
-.footer-top svg {
-  width: 0.9rem;
-  height: 0.9rem;
+.footer-email:hover {
+  color: #fff;
+  border-color: var(--dark-border);
 }
 
-.footer-top:hover {
-  background: var(--surface);
-  color: var(--dark-bg);
+.footer-metabar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2.5rem;
+  margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
+  font-size: clamp(0.82rem, 1vw, 0.92rem);
+  color: var(--dark-ink);
+  font-variant-numeric: tabular-nums;
 }
 
-/* -------- Giant parallax name — true full-bleed edge to edge -------- */
+.footer-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.footer-meta-label {
+  color: var(--dark-ink-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.72em;
+}
+
+/* Giant full-bleed name */
 .footer-bigname {
   margin-top: clamp(2rem, 5vh, 4.5rem);
   width: 100%;
@@ -262,8 +210,6 @@
   display: block;
   text-align: center;
   white-space: nowrap;
-  /* Pure vw (no rem cap) so "ROHIT MAITY" spans the full viewport width at
-     EVERY screen size and bleeds slightly off the edges. */
   font-size: 21vw;
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -272,23 +218,8 @@
   will-change: transform;
 }
 
-/* -------- Responsive -------- */
 @media (max-width: 768px) {
-  .footer-cta-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-
-  .footer-orb {
-    align-self: flex-end;
-  }
-
-  .footer-meta {
-    gap: 1.25rem 1.75rem;
-  }
-
-  .footer-socials {
-    margin-left: 0;
+  .footer-metabar {
+    gap: 0.6rem 1.5rem;
   }
 }

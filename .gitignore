@@ -31,3 +31,11 @@ Thumbs.db
 npm-debug.log*
 coverage/
 .turbo/
+
+# oversized image assets (exceed GitHub's 100MB limit / bloat the push)
+# keep on disk locally; host via Cloudinary instead of committing to git
+apps/web/src/assets/skyguide/portfolio assets/portrait.png
+apps/web/src/assets/skyguide/portfolio assets/portrait1.png
+apps/web/src/assets/images/portrait1.png
+apps/web/src/assets/forcaster/Figma/figma.png
+apps/web/src/assets/skyguide/portfolio assets/poster.png

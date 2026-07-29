@@ -1,0 +1,78 @@
+/* Placeholder page — centered, uses the site's dark/light language. */
+.placeholder {
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg);
+}
+
+.placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.75rem);
+  padding-block: clamp(7rem, 16vh, 12rem);
+}
+
+.placeholder-eyebrow {
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.placeholder-title {
+  margin: 0;
+  font-size: clamp(3rem, 11vw, 9rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.placeholder-copy {
+  max-width: 44ch;
+  margin: 0;
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--ink);
+  opacity: 0.8;
+}
+
+.placeholder-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: clamp(1rem, 2vw, 1.75rem);
+  padding: 0.85rem 1.6rem;
+  width: fit-content;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-solid);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 500;
+  text-decoration: none;
+  will-change: transform;
+  transition:
+    background-color var(--dur-base) var(--ease),
+    color var(--dur-base) var(--ease),
+    border-color var(--dur-base) var(--ease);
+}
+
+.placeholder-back svg {
+  width: 1.1em;
+  height: 1.1em;
+  transition: transform var(--dur-base) var(--ease);
+}
+
+.placeholder-back:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--surface);
+}
+
+.placeholder-back:hover svg {
+  transform: translateX(-4px);
+}

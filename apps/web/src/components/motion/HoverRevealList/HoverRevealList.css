@@ -1,0 +1,143 @@
+/* ==========================================================================
+   HoverRevealList — cursor-follow image reveal over a project list
+   ========================================================================== */
+
+.hrl {
+  position: relative;
+}
+
+.hrl-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.hrl-row {
+  border-bottom: 1px solid var(--border);
+}
+
+.hrl-link {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding-block: clamp(1.4rem, 3.2vw, 2.6rem);
+  text-decoration: none;
+  color: var(--ink);
+  position: relative;
+  transition:
+    opacity var(--dur-base) var(--ease),
+    color var(--dur-base) var(--ease);
+}
+
+.hrl-index {
+  font-size: clamp(0.72rem, 0.9vw, 0.9rem);
+  font-weight: 500;
+  color: var(--ink-2);
+  min-width: 2ch;
+  transition: transform var(--dur-base) var(--ease);
+}
+
+.hrl-title {
+  flex: 1;
+  font-size: clamp(1.9rem, 4.6vw, 4rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  will-change: transform;
+  transition:
+    transform var(--dur-smooth) var(--ease),
+    color var(--dur-base) var(--ease);
+}
+
+.hrl-meta {
+  font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+  font-weight: 500;
+  color: var(--ink-2);
+  white-space: nowrap;
+  transition: color var(--dur-base) var(--ease);
+}
+
+.hrl-arrow {
+  display: inline-flex;
+  width: clamp(1.5rem, 2.2vw, 2.1rem);
+  height: clamp(1.5rem, 2.2vw, 2.1rem);
+  color: var(--ink);
+  opacity: 0;
+  transform: translateX(-0.6rem) rotate(-12deg);
+  transition:
+    opacity var(--dur-base) var(--ease),
+    transform var(--dur-base) var(--ease);
+}
+
+.hrl-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Hover states --- */
+/* Dim the rest of the list while any row is hovered (reference-site touch). */
+.hrl-list:hover .hrl-row:not(:hover) .hrl-link {
+  opacity: 0.4;
+}
+
+.hrl-row:hover .hrl-title {
+  transform: translateX(clamp(0.75rem, 2vw, 1.75rem));
+  color: var(--accent);
+}
+
+.hrl-row:hover .hrl-meta {
+  color: var(--ink);
+}
+
+.hrl-row:hover .hrl-arrow {
+  opacity: 1;
+  transform: translateX(0) rotate(0deg);
+  color: var(--accent);
+}
+
+/* --- Floating cursor-follow preview: square, white matte, no radius --- */
+.hrl-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: clamp(260px, 26vw, 460px);
+  aspect-ratio: 4 / 3;
+  border-radius: 0; /* squared, per spec */
+  background: #fff;
+  padding: clamp(8px, 0.6vw, 14px); /* white matte / frame around the image */
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0;
+  box-shadow: 0 34px 70px -24px rgba(0, 0, 0, 0.4);
+  will-change: transform, opacity;
+}
+
+.hrl-preview-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hrl-preview-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0; /* crossfaded between two layers in JS */
+}
+
+/* Touch / no-hover: no floating preview; keep a comfortable tappable list. */
+@media (hover: none) {
+  .hrl-preview {
+    display: none;
+  }
+
+  .hrl-arrow {
+    opacity: 1;
+    transform: none;
+  }
+}

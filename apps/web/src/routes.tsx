@@ -3,19 +3,22 @@ import { ScaffoldBoot } from "./ScaffoldBoot";
 import { RootLayout } from "./RootLayout";
 import { Home } from "./pages/Home";
 import { Work } from "./pages/Work";
+import { PlaceholderPage } from "./pages/PlaceholderPage";
 
-// Phase 1 routing skeleton. Real pages (home/work/about/logs/lab/contact/404)
-// arrive in Phase 3 after design sign-off. The `/ask` stub reserves the AI
-// route from day one (Phase 6) per PROJECT_MEMORY prime directive #4.
-// All routes render under RootLayout, which hosts the page-transition curtain.
+// All routes render under RootLayout (hosts the page-transition curtain). Every
+// nav link resolves to a real route — About/Contact are placeholder pages for
+// now so navigation always leads somewhere coherent. The `/ask` stub reserves
+// the AI route (Phase 6).
 export const router = createBrowserRouter([
   {
     element: <RootLayout />,
     children: [
       { path: "/", element: <Home /> },
       { path: "/work", element: <Work /> },
+      { path: "/about", element: <PlaceholderPage title="About" index="01 — About" /> },
+      { path: "/contact", element: <PlaceholderPage title="Contact" index="02 — Contact" /> },
       { path: "/ask", element: <ScaffoldBoot note="AI assistant route — reserved (Phase 6)" /> },
-      { path: "*", element: <ScaffoldBoot note="404 — real page in Phase 3" /> },
+      { path: "*", element: <PlaceholderPage title="Not found" index="404" /> },
     ],
   },
 ]);

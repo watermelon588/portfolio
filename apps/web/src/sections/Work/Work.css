@@ -41,12 +41,10 @@
   color: var(--accent);
 }
 
-/* Flowing Menu needs an explicit height (its rows flex to fill it). */
-.work-menu {
+/* Cursor-follow reveal list (rows size to their content). */
+.work-list {
   position: relative;
   width: 100%;
-  height: clamp(420px, 62vh, 620px);
-  border-block: 1px solid var(--border);
 }
 
 .work-foot {
@@ -90,10 +88,6 @@
 }
 
 @media (max-width: 768px) {
-  .work-menu {
-    height: clamp(380px, 64vh, 540px);
-  }
-
   .work-foot {
     justify-content: stretch;
   }

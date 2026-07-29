@@ -6,8 +6,55 @@
 .about {
   /* Intentional breathing room after the hero */
   padding-top: clamp(2.5rem, 6vh, 6rem);
-  padding-bottom: clamp(6.5rem, 12vh, 14rem);
+  padding-bottom: 0;
   background-color: var(--bg);
+}
+
+/* Top line: eyebrow + availability chip */
+.about-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.about-eyebrow {
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.about-availability {
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.about-dot {
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  background: var(--success);
+  margin-right: 0.6em;
+  box-shadow: 0 0 0 0 rgba(36, 201, 88, 0.5);
+  animation: about-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes about-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(36, 201, 88, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 0.5em rgba(36, 201, 88, 0);
+  }
 }
 
 .about-grid {
@@ -50,6 +97,81 @@
   color: var(--ink);
   opacity: 0.9;
   margin: 0;
+}
+
+.about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  width: fit-content;
+  will-change: transform;
+  transition: color var(--dur-base) var(--ease);
+}
+
+.about-cta svg {
+  width: 1.1em;
+  height: 1.1em;
+  transition: transform var(--dur-base) var(--ease);
+}
+
+.about-cta:hover {
+  color: var(--accent);
+}
+
+.about-cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* -------- Tech-stack marquee -------- */
+.about-marquee {
+  margin-top: clamp(4rem, 9vh, 8rem);
+  overflow: hidden;
+  border-block: 1px solid var(--border);
+  padding-block: clamp(1.1rem, 2vw, 1.75rem);
+}
+
+.about-marquee-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation: about-marquee 34s linear infinite;
+}
+
+@keyframes about-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.about-skill {
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(1.1rem, 2vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.about-skill-star {
+  color: var(--accent);
+  margin-inline: clamp(1.25rem, 2.5vw, 2.5rem);
+  font-size: 0.7em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-dot {
+    animation: none;
+  }
+  .about-marquee-track {
+    animation: none;
+  }
 }
 
 /* ==========================================================================

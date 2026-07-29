@@ -16,10 +16,25 @@
   margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
 }
 
+.gallery-head-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .gallery-eyebrow {
   font-size: clamp(0.8rem, 1vw, 0.95rem);
   font-weight: 500;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.gallery-count {
+  font-size: clamp(0.72rem, 0.9vw, 0.85rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink-2);
 }
@@ -63,6 +78,13 @@
   border-radius: var(--radius-card);
   overflow: hidden;
   background: var(--surface-gray);
+  will-change: transform, opacity, filter;
+  /* Long, soft easing on every property → buttery. */
+  transition:
+    transform 0.7s var(--ease),
+    opacity 0.7s var(--ease),
+    filter 0.7s var(--ease),
+    box-shadow 0.7s var(--ease);
 }
 
 .gallery-item img {
@@ -71,6 +93,62 @@
   object-fit: cover;
   display: block;
   user-select: none;
+  transform: scale(1.001); /* prevent edge shimmer during transform */
+  transition: transform 0.9s var(--ease);
+}
+
+/* Hovering the reel recedes the rest; the hovered card rises and warms up. */
+.gallery-track:hover .gallery-item {
+  opacity: 0.55;
+  filter: saturate(0.8);
+  transform: scale(0.97);
+}
+
+.gallery-track:hover .gallery-item:hover {
+  opacity: 1;
+  filter: saturate(1.05);
+  transform: scale(1.05) translateY(-0.5rem);
+  box-shadow: 0 40px 70px -28px rgba(0, 0, 0, 0.45);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Hover caption — slides up from the bottom of the hovered card. */
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: clamp(0.8rem, 1.4vw, 1.2rem);
+  color: var(--dark-ink);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition:
+    opacity 0.5s var(--ease),
+    transform 0.5s var(--ease);
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-caption-index {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.gallery-caption-label {
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 /* Dark curved curtain — same SVG curve as the preloader. */
