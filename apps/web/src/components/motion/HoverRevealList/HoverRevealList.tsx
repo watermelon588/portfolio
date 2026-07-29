@@ -1,42 +1,44 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import "./HoverRevealList.css";
 
 // Cursor-follow reveal list — the reference site's "recent work" interaction,
-// refined: a plain list of project rows; hovering a row floats that project's
-// image toward the cursor with a magnetic eased follow + velocity tilt. The
-// image is a SQUARE white-matted frame (no radius). Moving between rows
-// CROSSFADES between the two project images (two stacked layers). Other rows
-// dim, the hovered title slides + colours, an arrow reveals. Desktop /
-// non-reduced-motion only; on touch it degrades to a clean tappable list.
+// upgraded: hovering a row floats a SQUARE framed preview toward the cursor
+// (magnetic eased follow + velocity tilt). Each project has its own matte colour
+// + inner aspect ratio, a horizontal-scrolling strip of 2–3 screens, and a
+// centered blue "View" button. Desktop / non-reduced-motion only.
 
 export interface HoverRevealItem {
   title: string;
   role?: string;
   year?: string;
   href?: string;
-  image?: string;
+  images: string[];
+  frameColor: string;
+  ratio: string;
 }
+
+const canHover = () =>
+  typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches;
 
 export function HoverRevealList({ items }: { items: HoverRevealItem[] }) {
   const root = useRef<HTMLDivElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
-  const imgARef = useRef<HTMLImageElement>(null);
-  const imgBRef = useRef<HTMLImageElement>(null);
-  const frontIsA = useRef(true);
+  const innerRef = useRef<HTMLDivElement>(null);
+  const stripRef = useRef<HTMLDivElement>(null);
+  const marquee = useRef<gsap.core.Tween | null>(null);
+  const [active, setActive] = useState<number | null>(null);
 
+  // Magnetic cursor-follow — set up once.
   useGSAP(
     () => {
-      const canHover = window.matchMedia("(hover: hover)").matches;
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (!canHover || reduce || !root.current || !previewRef.current) return;
+      if (!canHover() || reduce || !root.current || !previewRef.current) return;
 
       const preview = previewRef.current;
       gsap.set(preview, { xPercent: -50, yPercent: -50, scale: 0.8, autoAlpha: 0 });
 
-      // Magnetic, independently-eased follow — different durations on x/y give a
-      // subtle drag; rotation trails the horizontal velocity.
       const xTo = gsap.quickTo(preview, "x", { duration: 0.7, ease: "power3" });
       const yTo = gsap.quickTo(preview, "y", { duration: 0.8, ease: "power3" });
       const rTo = gsap.quickTo(preview, "rotate", { duration: 1.1, ease: "power3" });
@@ -47,7 +49,7 @@ export function HoverRevealList({ items }: { items: HoverRevealItem[] }) {
         const rect = root.current.getBoundingClientRect();
         xTo(e.clientX - rect.left);
         yTo(e.clientY - rect.top);
-        if (lastX !== null) rTo(gsap.utils.clamp(-14, 14, (e.clientX - lastX) * 0.7));
+        if (lastX !== null) rTo(gsap.utils.clamp(-12, 12, (e.clientX - lastX) * 0.6));
         lastX = e.clientX;
       };
       root.current.addEventListener("mousemove", onMove);
@@ -56,52 +58,62 @@ export function HoverRevealList({ items }: { items: HoverRevealItem[] }) {
     { scope: root },
   );
 
-  const canHover = () =>
-    typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches;
-
-  const enterRow = (image?: string) => {
+  // Reveal + horizontal marquee whenever the hovered project changes.
+  useEffect(() => {
     if (!canHover() || !previewRef.current) return;
 
-    if (!image) {
-      gsap.to(previewRef.current, { autoAlpha: 0, scale: 0.8, duration: 0.35, ease: "power3.out" });
+    if (active == null) {
+      gsap.to(previewRef.current, {
+        autoAlpha: 0,
+        scale: 0.8,
+        duration: 0.4,
+        ease: "power3.out",
+        overwrite: "auto",
+      });
       return;
-    }
-
-    // Crossfade: put the new image on the back layer, then swap layers.
-    const front = frontIsA.current ? imgARef.current : imgBRef.current;
-    const back = frontIsA.current ? imgBRef.current : imgARef.current;
-    if (back && front?.getAttribute("src") !== image) {
-      if (back.getAttribute("src") !== image) back.src = image;
-      gsap.to(back, { opacity: 1, duration: 0.55, ease: "power2.out", overwrite: "auto" });
-      gsap.to(front, { opacity: 0, duration: 0.55, ease: "power2.out", overwrite: "auto" });
-      frontIsA.current = !frontIsA.current;
     }
 
     gsap.to(previewRef.current, {
       autoAlpha: 1,
       scale: 1,
-      duration: 0.6,
+      duration: 0.55,
       ease: "power4.out",
       overwrite: "auto",
     });
-  };
+    // Content scrolls up into place on project change.
+    if (innerRef.current) {
+      gsap.fromTo(
+        innerRef.current,
+        { yPercent: 40, autoAlpha: 0 },
+        { yPercent: 0, autoAlpha: 1, duration: 0.6, ease: "power3.out", overwrite: "auto" },
+      );
+    }
+    // Horizontal auto-scroll through the project's screens.
+    marquee.current?.kill();
+    const imgs = items[active]?.images ?? [];
+    if (stripRef.current && imgs.length > 1) {
+      gsap.set(stripRef.current, { xPercent: 0 });
+      marquee.current = gsap.to(stripRef.current, {
+        xPercent: -50,
+        duration: imgs.length * 3.2,
+        ease: "none",
+        repeat: -1,
+      });
+    }
+    return () => {
+      marquee.current?.kill();
+    };
+  }, [active, items]);
 
-  const leaveList = () => {
-    if (!previewRef.current) return;
-    gsap.to(previewRef.current, {
-      autoAlpha: 0,
-      scale: 0.8,
-      duration: 0.45,
-      ease: "power3.out",
-      overwrite: "auto",
-    });
-  };
+  const project = active != null ? items[active] : null;
+  const imgs = project?.images ?? [];
+  const strip = imgs.length > 1 ? [...imgs, ...imgs] : imgs;
 
   return (
-    <div className="hrl" ref={root} onMouseLeave={leaveList}>
+    <div className="hrl" ref={root} onMouseLeave={() => setActive(null)}>
       <ul className="hrl-list">
         {items.map((item, i) => (
-          <li className="hrl-row" key={item.title} onMouseEnter={() => enterRow(item.image)}>
+          <li className="hrl-row" key={item.title} onMouseEnter={() => setActive(i)}>
             <a className="hrl-link" href={item.href ?? "#"}>
               <span className="hrl-index">{String(i + 1).padStart(2, "0")}</span>
               <span className="hrl-title">{item.title}</span>
@@ -127,11 +139,27 @@ export function HoverRevealList({ items }: { items: HoverRevealItem[] }) {
         ))}
       </ul>
 
-      <div className="hrl-preview" ref={previewRef} aria-hidden="true">
-        <div className="hrl-preview-inner">
-          <img ref={imgARef} className="hrl-preview-img" alt="" draggable={false} />
-          <img ref={imgBRef} className="hrl-preview-img" alt="" draggable={false} />
+      <div
+        className="hrl-preview"
+        ref={previewRef}
+        aria-hidden="true"
+        style={{ backgroundColor: project?.frameColor ?? "#ffffff" }}
+      >
+        <div
+          className="hrl-preview-inner"
+          ref={innerRef}
+          style={{ aspectRatio: project?.ratio ?? "1 / 1" }}
+        >
+          <div className="hrl-strip" ref={stripRef}>
+            {strip.map((src, i) => (
+              <img className="hrl-strip-img" key={i} src={src} alt="" draggable={false} />
+            ))}
+          </div>
         </div>
+
+        <span className="hrl-view">
+          <span className="hrl-view-label">View</span>
+        </span>
       </div>
     </div>
   );

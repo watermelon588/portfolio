@@ -96,38 +96,74 @@
   color: var(--accent);
 }
 
-/* --- Floating cursor-follow preview: square, white matte, no radius --- */
+/* --- Floating cursor-follow preview: SQUARE outer, per-project coloured matte,
+       per-project inner aspect ratio, horizontal-scroll strip + View button --- */
 .hrl-preview {
   position: absolute;
   top: 0;
   left: 0;
-  width: clamp(260px, 26vw, 460px);
-  aspect-ratio: 4 / 3;
-  border-radius: 0; /* squared, per spec */
-  background: #fff;
-  padding: clamp(8px, 0.6vw, 14px); /* white matte / frame around the image */
+  aspect-ratio: 1 / 1; /* outer stays squared */
+  width: clamp(300px, 28vw, 500px); /* a bit bigger */
+  border-radius: 0;
+  padding: clamp(18px, 1.7vw, 32px); /* thicker coloured border / matte */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
   z-index: 6;
   opacity: 0;
-  box-shadow: 0 34px 70px -24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 36px 72px -24px rgba(0, 0, 0, 0.5);
   will-change: transform, opacity;
+  transition: background-color 0.45s var(--ease); /* matte colour eases per project */
 }
 
 .hrl-preview-inner {
   position: relative;
-  width: 100%;
   height: 100%;
+  max-width: 100%;
   overflow: hidden;
+  container-type: size; /* enables 100cqw/cqh strip sizing */
+  /* aspect-ratio is set inline per project */
 }
 
-.hrl-preview-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
+.hrl-strip {
+  display: flex;
   height: 100%;
+  width: max-content;
+  will-change: transform;
+}
+
+.hrl-strip-img {
+  flex: 0 0 100cqw;
+  width: 100cqw;
+  height: 100cqh;
   object-fit: cover;
   display: block;
-  opacity: 0; /* crossfaded between two layers in JS */
+}
+
+/* Blue round "View" button, centered — mirrors the footer "Get in touch". */
+.hrl-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(74px, 7vw, 108px);
+  height: clamp(74px, 7vw, 108px);
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 14px 34px -10px rgba(0, 73, 205, 0.65);
+}
+
+.hrl-view-label {
+  font-size: clamp(0.82rem, 0.95vw, 1rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 /* Touch / no-hover: no floating preview; keep a comfortable tappable list. */

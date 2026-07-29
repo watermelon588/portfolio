@@ -5,6 +5,13 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+### Changed (footer/work/gallery polish + Forcaster art)
+- **Footer:** aligned top + bottom to the site `.container`; **socials in a single row** with the navbar's magnetic field; **arrow added to "Get in touch"**; and a **preloader-style curved reveal** — a light curtain peels up to uncover the dark footer as you scroll in. (`Footer.*`)
+- **Work preview:** thicker white matte; **fade → vertical scroll transition** between project images (two layers slide, clipped). (`HoverRevealList.*`)
+- **Gallery:** removed radius, added the same **white matte**, split into **two rows drifting in opposite directions**; hover/curtain kept. (`Gallery.*`)
+- **Forcaster** now has real art (Figma design exports copied to `assets/Forcaster/`), wired as its Work hero. (`data/projects.ts`)
+- Added **`plan.md`** — dedicated project-page plan, awaiting approval.
+
 ### Rebuilt (footer, from scratch)
 - **Footer rebuilt from scratch to match the reference site exactly**, measured from the live dennissnellenberg.com DOM: dark, flat top (no radius, no giant name), narrow left-aligned column — a scroll-rotating arrow, "Let's work / together" headline (~77px), a full-width stripe, then email + LinkedIn **outlined pills on the left** with a circular magnetic **"Get in touch"** button **on the right** (both fill on hover), and a full-width bottom bar: **Version + Local time (left), Socials text list (right)**. Reuses `useMagnetic` / `LocalTime` / `data/nav`. (`Footer.tsx`, `Footer.css` — fully replaced)
 

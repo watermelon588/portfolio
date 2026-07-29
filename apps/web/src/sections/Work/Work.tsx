@@ -31,7 +31,9 @@ export function Work() {
             role: p.role,
             year: p.year,
             href: p.href ?? "#",
-            image: p.image,
+            images: p.images,
+            frameColor: p.frameColor,
+            ratio: p.ratio,
           }))}
         />
       </div>
