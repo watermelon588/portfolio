@@ -14,8 +14,6 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@portfolio/shared": "workspace:*",
-    "@splinetool/react-spline": "^4.1.0",
-    "@splinetool/runtime": "^1.12.98",
     "gsap": "^3.15.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

@@ -5,10 +5,13 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
-### Added (hero mounted + interactive robot slot)
-- **Hero is live.** `HeroReserve` placeholder removed; `Home` now mounts the real `Hero` (poster, "Get in touch" + contact cards, portrait) plus a new headline block — eyebrow label ("Full-stack developer · India") + display name ("Rohit Maity"). (`Hero.*`, `Home.tsx`, removed `HeroReserve.*`)
-- **Interactive 3D robot companion (`SplineRobot`)** — new component at `components/motion/SplineRobot.tsx`, positioned peeking from the portrait's bottom-right corner. Lazy-loads `@splinetool/react-spline`/`runtime` as its own chunk, mounts only when in view (`IntersectionObserver`) and only when hover-capable/non-reduced-motion/not low-end; renders nothing otherwise (no placeholder art, per ADR-017). **Needs a real scene URL from Rohit before it renders anything** — see `ROBOT_SCENE_URL` in `Hero.tsx`.
-- Dev server: `vite.config.ts` port now honors `PORT` env (falls back to `5173`); `.claude/launch.json` sets `autoPort: true` so a busy 5173 doesn't block previews.
+### Rebuilt (footer, from scratch)
+- **Footer rebuilt from scratch to match the reference site exactly**, measured from the live dennissnellenberg.com DOM: dark, flat top (no radius, no giant name), narrow left-aligned column — a scroll-rotating arrow, "Let's work / together" headline (~77px), a full-width stripe, then email + LinkedIn **outlined pills on the left** with a circular magnetic **"Get in touch"** button **on the right** (both fill on hover), and a full-width bottom bar: **Version + Local time (left), Socials text list (right)**. Reuses `useMagnetic` / `LocalTime` / `data/nav`. (`Footer.tsx`, `Footer.css` — fully replaced)
+
+### Fixed (navigation) + Changed (footer borrows navbar)
+- **Every nav link now leads somewhere.** Navbar wordmark + top links + staggered menu links use react-router `<Link>` to real routes (`/`, `/work`, `/about`, `/contact`); menu closes on click; socials + email are real URLs. Added `/about` + `/contact` **placeholder pages** (and a 404) via a reusable `PlaceholderPage` that borrows the shared shell. Shared nav/socials/email live in `data/nav.ts` (single source). (`Navbar.tsx`, `routes.tsx`, `pages/PlaceholderPage.*`, `data/nav.ts`)
+- **Footer rebuilt to borrow the navbar's entrance.** Simplified to the shared nav links + socials + email; the links use the navbar's **exact masked staggered reveal** (yPercent/rotate → 0, `expo.out`, 0.09 stagger) fired on scroll-in, plus the same **magnetic field** (`useMagnetic`) turned **aggressive** (strength 36 on links). Section headings + rule borrowed from the menu; giant full-bleed name kept. (`Footer.*`)
+- **Preloader on every page.** The main `Preloader` now also mounts on `/work` and the placeholder pages (borrowed, not rewritten) so each page gets the exact intro curtain on direct load; client navigations still use the `PageTransition` curve. (`pages/Work.tsx`, `pages/PlaceholderPage.tsx`)
 
 ### Changed (design polish pass)
 - **Work preview refined to reference spec** — square (no radius), **white matte frame** around the image, and a **crossfade between projects** (two stacked layers) as you move down the list; magnetic eased follow + velocity tilt retained. (`HoverRevealList.*`)

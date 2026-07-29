@@ -5,8 +5,7 @@
       "name": "web",
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["--filter", "web", "dev"],
-      "port": 5173,
-      "autoPort": true
+      "port": 5173
     }
   ]
 }

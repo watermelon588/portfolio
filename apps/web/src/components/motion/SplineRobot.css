@@ -1,9 +1,0 @@
-.spline-robot {
-  position: absolute;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.spline-robot canvas {
-  pointer-events: auto;
-}
