@@ -1,5 +1,6 @@
 /* ==========================================================================
-   Gallery — two opposite-drifting rows of square white-matted cards
+   Gallery — two opposite-drifting rows of 3:4 cards, one coloured matte per
+   project. Rich hover micro-interactions.
    ========================================================================== */
 
 .gallery {
@@ -54,7 +55,7 @@
   color: var(--accent);
 }
 
-/* Viewport holds both rows + the curtain. */
+/* Two rows + curtain. */
 .gallery-viewport {
   position: relative;
   width: 100%;
@@ -66,6 +67,7 @@
 .gallery-row {
   width: 100%;
   overflow: hidden;
+  padding-block: clamp(0.5rem, 1vw, 1rem); /* room for hover lift */
 }
 
 .gallery-track {
@@ -76,26 +78,32 @@
   padding-inline: clamp(0.4rem, 0.75vw, 0.75rem);
 }
 
-/* Square white-matted card (same frame language as the Work preview). */
+/* SQUARE (1:1) card with per-project coloured matte (bg set inline); the image
+   inside is 4:5, centred, so the matte frames it — same as the Work preview. */
 .gallery-item {
   flex-shrink: 0;
   margin: 0;
-  background: #fff;
-  padding: clamp(10px, 0.8vw, 16px);
+  aspect-ratio: 1 / 1;
+  height: clamp(240px, 30vw, 380px);
+  padding: clamp(12px, 1vw, 20px);
   border-radius: 0;
-  box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 34px -20px rgba(0, 0, 0, 0.4);
   will-change: transform, opacity, filter;
   transition:
-    transform 0.7s var(--ease),
-    opacity 0.7s var(--ease),
-    filter 0.7s var(--ease),
-    box-shadow 0.7s var(--ease);
+    transform 0.65s var(--ease),
+    opacity 0.65s var(--ease),
+    filter 0.65s var(--ease),
+    box-shadow 0.65s var(--ease);
 }
 
 .gallery-item-inner {
   position: relative;
-  width: clamp(230px, 27vw, 430px);
-  height: clamp(150px, 18vw, 280px);
+  height: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
 }
 
@@ -105,29 +113,58 @@
   object-fit: cover;
   display: block;
   user-select: none;
-  transform: scale(1.001);
-  transition: transform 0.9s var(--ease);
+  transform: scale(1.02);
+  transition:
+    transform 0.9s var(--ease),
+    filter 0.65s var(--ease);
 }
 
-/* Hover: the reel recedes, the hovered card rises + warms. */
+/* Project badge — top-left, hidden until hover. */
+.gallery-item-badge {
+  position: absolute;
+  top: clamp(0.5rem, 0.9vw, 0.85rem);
+  left: clamp(0.5rem, 0.9vw, 0.85rem);
+  padding: 0.3em 0.7em;
+  font-size: clamp(0.6rem, 0.75vw, 0.72rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(-0.4rem);
+  transition:
+    opacity 0.45s var(--ease),
+    transform 0.45s var(--ease);
+}
+
+/* ---- Hover micro-interactions ---- */
+/* The reel recedes; hovered card rises, warms, glows, tilts subtly. */
 .gallery-track:hover .gallery-item {
-  opacity: 0.55;
-  filter: saturate(0.8);
-  transform: scale(0.97);
+  opacity: 0.5;
+  filter: saturate(0.75) brightness(0.92);
+  transform: scale(0.96);
 }
 
 .gallery-track:hover .gallery-item:hover {
   opacity: 1;
-  filter: saturate(1.05);
-  transform: scale(1.05) translateY(-0.4rem);
-  box-shadow: 0 40px 70px -28px rgba(0, 0, 0, 0.45);
+  filter: saturate(1.08) brightness(1);
+  transform: scale(1.06) translateY(-0.6rem) rotate(-0.6deg);
+  box-shadow: 0 46px 80px -30px rgba(0, 0, 0, 0.6);
 }
 
 .gallery-item:hover img {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
-/* Hover caption. */
+.gallery-item:hover .gallery-item-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Caption slides up. */
 .gallery-caption {
   position: absolute;
   left: 0;
@@ -135,12 +172,13 @@
   bottom: 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.6rem;
-  padding: clamp(0.7rem, 1.2vw, 1rem);
-  color: var(--dark-ink);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  padding: clamp(0.7rem, 1.2vw, 1.1rem);
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
   opacity: 0;
-  transform: translateY(0.6rem);
+  transform: translateY(0.7rem);
   transition:
     opacity 0.5s var(--ease),
     transform 0.5s var(--ease);
@@ -151,16 +189,18 @@
   transform: translateY(0);
 }
 
-.gallery-caption-index {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-
 .gallery-caption-label {
-  font-size: clamp(0.82rem, 1.1vw, 0.98rem);
+  font-size: clamp(0.82rem, 1.05vw, 0.98rem);
   font-weight: 500;
   letter-spacing: -0.01em;
+}
+
+.gallery-caption-view {
+  flex-shrink: 0;
+  font-size: clamp(0.72rem, 0.9vw, 0.85rem);
+  font-weight: 600;
+  color: #fff;
+  opacity: 0.85;
 }
 
 /* Dark curved curtain — same SVG curve as the preloader. */
@@ -187,8 +227,7 @@
 }
 
 @media (max-width: 768px) {
-  .gallery-item-inner {
-    width: clamp(200px, 62vw, 300px);
-    height: clamp(130px, 40vw, 200px);
+  .gallery-item {
+    height: clamp(220px, 58vw, 300px);
   }
 }

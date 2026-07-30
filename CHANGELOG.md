@@ -5,6 +5,16 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+### Changed (reveal direction + gallery-wide + i18n preloader)
+- **Footer curve reversed + slowed.** Now a curved **top** edge that bulges up then the light curtain **slides down** to uncover the footer top-first; `scrub: 1.2` lag + wider range (`top bottom → top 30%`) make it slow + buttery. (`Footer.tsx`)
+- **Skyguide preview** given a `4/5` ratio so it shows the same visible coloured border as the other projects. (`data/projects.ts`)
+- **Gallery is now all projects**, not just SkyGuide — every project's screens are globbed, tagged with the project's matte colour + name, and **interleaved** (37 screens across 4 projects). Cards are **3:4 with the per-project coloured matte** (same frame language as the Work preview), plus richer hover micro-interactions: recede/blur others, hovered card lifts + tilts + colour-glows, project **badge** fades in, caption + "View ↗" slide up, image zoom. (`data/gallery.ts`, `Gallery.*`)
+- **Preloader** cycles Hindi + Bengali role-words alongside English (डेवलपर · निर्माता · ডিজাইনার · শিল্পী). (`Preloader.tsx`)
+
+### Changed (work preview upgrade + footer reveal fix)
+- **Footer curved reveal fixed.** The old curtain reused `CurveSwipe` (window-sized viewBox) over a footer taller than the window, so the path fell outside the viewBox and nothing swept. Rebuilt with a **normalized 0–100 viewBox scrubbed curtain**: a light curtain covers the footer and sweeps up on a curved edge as you scroll in, uncovering the dark footer. (`Footer.tsx`, `Footer.css`)
+- **Work cursor preview, per project:** now shows **2–3 screens auto-scrolling horizontally**, a **per-project matte colour** (navy/violet/green/sky) and **inner aspect ratio** (1:1 / 4:5 / 3:4), a bigger **square** outer with a **thicker** border, and a centered blue round **"View"** button (mirrors "Get in touch"). (`HoverRevealList.*`, `data/projects.ts`)
+
 ### Changed (footer/work/gallery polish + Forcaster art)
 - **Footer:** aligned top + bottom to the site `.container`; **socials in a single row** with the navbar's magnetic field; **arrow added to "Get in touch"**; and a **preloader-style curved reveal** — a light curtain peels up to uncover the dark footer as you scroll in. (`Footer.*`)
 - **Work preview:** thicker white matte; **fade → vertical scroll transition** between project images (two layers slide, clipped). (`HoverRevealList.*`)

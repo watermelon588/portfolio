@@ -80,12 +80,13 @@ export function Gallery() {
     tweens.current.forEach((t) => gsap.to(t, { timeScale: 1, duration: 1.1, ease: "power2.out" }));
 
   const renderCard = (item: GalleryImage, i: number) => (
-    <figure className="gallery-item" key={i}>
+    <figure className="gallery-item" key={i} style={{ backgroundColor: item.color }}>
       <div className="gallery-item-inner">
         <img src={item.src} alt={item.label} loading="lazy" draggable={false} />
+        <span className="gallery-item-badge">{item.project}</span>
         <figcaption className="gallery-caption">
-          <span className="gallery-caption-index">{String((i % count) + 1).padStart(2, "0")}</span>
           <span className="gallery-caption-label">{item.label}</span>
+          <span className="gallery-caption-view">View ↗</span>
         </figcaption>
       </div>
     </figure>
@@ -95,8 +96,8 @@ export function Gallery() {
     <section className="gallery" id="gallery" ref={root}>
       <div className="gallery-head container">
         <div className="gallery-head-row">
-          <span className="gallery-eyebrow">Skyguide AI</span>
-          <span className="gallery-count">{String(count).padStart(2, "0")} screens</span>
+          <span className="gallery-eyebrow">Selected screens</span>
+          <span className="gallery-count">{count} screens · 4 projects</span>
         </div>
         <h2 className="gallery-title">
           A closer <em>look</em>.

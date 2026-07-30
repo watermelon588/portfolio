@@ -61,31 +61,28 @@ export function Footer() {
         created.push(tw.scrollTrigger);
       }
 
-      // Curved reveal — light curtain sweeps up (0–100 normalized space).
+      // Curved reveal — the DARK footer rises up to cover the section, merging at
+      // the top. A light cover (matching the page above) sits over the footer and
+      // its curved bottom edge RISES, uncovering the dark footer from the bottom
+      // up until it flattens/merges at the top. Normalized 0–100; scrub lag = slow.
       if (curveRef.current) {
         const path = curveRef.current;
         const draw = (p: number) => {
-          let top: number, bottom: number, ctrl: number;
-          if (p <= 0.4) {
-            const t = p / 0.4;
-            top = 0;
-            bottom = 100;
-            ctrl = 100 + 32 * t; // bottom edge bulges down
-          } else {
-            const t = (p - 0.4) / 0.6;
-            const e = t * t * (3 - 2 * t); // smoothstep
-            top = -170 * e;
-            bottom = 100 - 170 * e;
-            ctrl = 132 - 200 * e;
-          }
-          path.setAttribute("d", `M 0 ${top} L 100 ${top} L 100 ${bottom} Q 50 ${ctrl} 0 ${bottom} Z`);
+          const q = Math.min(1, Math.max(0, p));
+          // Curved edge is now the TOP edge — it sits on top of the footer and
+          // rises upward, the dark curtain sliding up to uncover the footer.
+          const top = -170 * q; // curved top edge rises 0 → -170
+          const bottom = 100 - 170 * q; // straight bottom follows
+          const bulge = Math.sin(q * Math.PI) * 34;
+          const ctrl = top - bulge; // arcs up (convex)
+          path.setAttribute("d", `M 0 ${top} Q 50 ${ctrl} 100 ${top} L 100 ${bottom} L 0 ${bottom} Z`);
         };
         draw(0);
         const st = ScrollTrigger.create({
           trigger: root.current,
-          start: "top 90%",
-          end: "top 25%",
-          scrub: true,
+          start: "top bottom",
+          end: "top 30%",
+          scrub: 1.2, // smoothing lag → slow + buttery
           onUpdate: (self) => draw(self.progress),
         });
         created.push(st);

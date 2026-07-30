@@ -25,12 +25,14 @@ import forcaster3 from "@/assets/Forcaster/03-details.jpg";
 export interface Project {
   slug: string;
   title: string;
+  /** "dev" projects show on the home Work list; all show on /work. */
+  category: "dev" | "notion";
   /** Short descriptor. */
   role?: string;
   year?: string;
   /** Case-study / live link. Defaults to "#" until provided. */
   href?: string;
-  /** Preview images (horizontal-scroll strip). First is the hero. */
+  /** Preview images (horizontal-scroll strip). First is the hero. May be empty. */
   images: string[];
   /** Frame matte colour for the cursor preview. */
   frameColor: string;
@@ -46,7 +48,7 @@ export const projects: Project[] = [
     year: "2026",
     images: [skyguide1, skyguide2, skyguide3],
     frameColor: "#0B1E3B", // deep navy — night sky
-    ratio: "1 / 1",
+    ratio: "4 / 5",
   },
   {
     slug: "neuron",

@@ -238,7 +238,7 @@
 }
 
 .footer-curtain-path {
-  fill: var(--bg);
+  fill: var(--dark-bg);
   will-change: d;
 }
 

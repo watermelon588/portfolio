@@ -9,7 +9,19 @@ import "./Preloader.css";
 // upward on a curved edge while the page content rises to meet it. Runs once
 // per session (every reload in dev, for testing). DESIGN_SYSTEM Part VII.
 
-const WORDS = ["Developer", "Designer", "Builder", "Cracked", "Weird"];
+// English role-words interleaved with Hindi + Bengali (डेवलपर = developer,
+// निर्माता = creator; ডিজাইনার = designer, শিল্পী = artist). "Weird" stays last.
+const WORDS = [
+  "Developer",
+  "Designer",
+  "डेवलपर",
+  "ডিজাইনার",
+  "Builder",
+  "निर्माता",
+  "শিল্পী",
+  "Cracked",
+  "Weird",
+];
 
 // Module-scoped: the intro plays once per full page load, NOT on every
 // client-side navigation back to Home (that's the page transition's job). Resets
