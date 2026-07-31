@@ -10,6 +10,8 @@ import "./PageTransition.css";
 // the page name, then peels away upward to reveal it. The first app load is
 // skipped (Home has its own preloader intro).
 
+import { projects } from "@/data/projects";
+
 const PAGE_NAMES: Record<string, string> = {
   "/": "Home",
   "/work": "Work",
@@ -18,6 +20,11 @@ const PAGE_NAMES: Record<string, string> = {
 
 function pageName(pathname: string): string {
   if (PAGE_NAMES[pathname]) return PAGE_NAMES[pathname];
+  if (pathname.startsWith("/work/")) {
+    const slug = pathname.substring("/work/".length);
+    const project = projects.find((p) => p.slug === slug);
+    if (project) return project.title;
+  }
   if (pathname.startsWith("/work")) return "Work";
   return "Page";
 }

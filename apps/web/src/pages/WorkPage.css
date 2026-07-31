@@ -49,12 +49,13 @@
 .workpage-menu {
   position: relative;
   width: 100%;
-  height: clamp(470px, 68vh, 740px);
+  /* Taller so all seven projects get generous rows. */
+  height: clamp(680px, 108vh, 1200px);
   border-block: 1px solid var(--border);
 }
 
 @media (max-width: 768px) {
   .workpage-menu {
-    height: clamp(400px, 68vh, 560px);
+    height: clamp(560px, 96vh, 820px);
   }
 }

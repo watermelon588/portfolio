@@ -1,24 +1,16 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CurveSwipe } from "@/components/motion/CurveSwipe";
-import { useCurveSwipe } from "@/hooks/useCurveSwipe";
 import { galleryImages, type GalleryImage } from "@/data/gallery";
 import "./Gallery.css";
 
-gsap.registerPlugin(ScrollTrigger);
-
-// Gallery — full-bleed SkyGuide showcase, TWO rows drifting in opposite
-// directions. Square white-matted cards (same frame as the Work preview),
-// buttery slow-down + lift on hover, revealed by the preloader's curved swipe.
+// Gallery — full-bleed "closer look" across ALL projects, TWO rows drifting in
+// opposite directions. Square matted cards, buttery slow-down + lift on hover.
 export function Gallery() {
   const root = useRef<HTMLElement>(null);
   const track1 = useRef<HTMLDivElement>(null);
   const track2 = useRef<HTMLDivElement>(null);
-  const pathRef = useRef<SVGPathElement>(null);
   const tweens = useRef<gsap.core.Tween[]>([]);
-  const swipe = useCurveSwipe(pathRef, { direction: "up", duration: 1.7 });
 
   const count = galleryImages.length;
   const rowA = [...galleryImages, ...galleryImages];
@@ -27,49 +19,23 @@ export function Gallery() {
 
   useGSAP(
     () => {
-      if (!root.current || !pathRef.current) return;
+      if (!root.current) return;
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const curtain = root.current.querySelector<HTMLElement>(".gallery-curtain");
       tweens.current = [];
+      if (reduce) return;
 
-      if (!reduce) {
-        if (track1.current)
-          tweens.current.push(
-            gsap.to(track1.current, { xPercent: -50, duration: 60, ease: "none", repeat: -1 }),
-          );
-        if (track2.current)
-          tweens.current.push(
-            gsap.fromTo(
-              track2.current,
-              { xPercent: -50 },
-              { xPercent: 0, duration: 60, ease: "none", repeat: -1 },
-            ),
-          );
-      }
-
-      if (reduce) {
-        if (curtain) curtain.style.display = "none";
-        return;
-      }
-
-      const w = window.innerWidth;
-      const h =
-        root.current.querySelector(".gallery-viewport")?.getBoundingClientRect().height ??
-        window.innerHeight;
-      pathRef.current.setAttribute("d", `M 0 0 L ${w} 0 L ${w} ${h} L 0 ${h} Z`);
-
-      const st = ScrollTrigger.create({
-        trigger: root.current,
-        start: "top 70%",
-        once: true,
-        onEnter: () => {
-          const tl = swipe.exit();
-          tl.eventCallback("onComplete", () => {
-            if (curtain) curtain.style.display = "none";
-          });
-        },
-      });
-      return () => st.kill();
+      if (track1.current)
+        tweens.current.push(
+          gsap.to(track1.current, { xPercent: -50, duration: 60, ease: "none", repeat: -1 }),
+        );
+      if (track2.current)
+        tweens.current.push(
+          gsap.fromTo(
+            track2.current,
+            { xPercent: -50 },
+            { xPercent: 0, duration: 60, ease: "none", repeat: -1 },
+          ),
+        );
     },
     { scope: root },
   );
@@ -114,10 +80,6 @@ export function Gallery() {
           <div className="gallery-track" ref={track2}>
             {rowB.map(renderCard)}
           </div>
-        </div>
-
-        <div className="gallery-curtain" aria-hidden="true">
-          <CurveSwipe pathRef={pathRef} />
         </div>
       </div>
     </section>

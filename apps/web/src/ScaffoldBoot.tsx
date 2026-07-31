@@ -10,7 +10,7 @@ export function ScaffoldBoot({ note }: { note?: string }) {
   }
   return (
     <>
-      <Preloader />
+      <Preloader text="Ask" />
       <Navbar />
     </>
   );

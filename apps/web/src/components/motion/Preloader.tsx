@@ -28,7 +28,7 @@ const WORDS = [
 // naturally on a hard reload since the module re-evaluates.
 let appPreloaded = false;
 
-export function Preloader() {
+export function Preloader({ text }: { text?: string }) {
   const root = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   const [done, setDone] = useState(() => {
@@ -39,6 +39,8 @@ export function Preloader() {
       sessionStorage.getItem("preloaded") === "1"
     );
   });
+
+  const displayWords = text ? [text] : WORDS;
 
   // Reusable curve swipe swipe manager
   const swipe = useCurveSwipe(pathRef, { direction: "up", duration: 1.7 });
@@ -81,14 +83,14 @@ export function Preloader() {
           const last = i === words.length - 1;
           tl.to(
             w,
-            { opacity: 1, y: 0, duration: 0.2, ease: "power3.out" },
-            i === 0 ? 0.15 : "<0.26",
+            { opacity: 1, y: 0, duration: 0.12, ease: "power3.out" },
+            i === 0 ? 0.1 : "<0.16",
           );
           if (!last)
             tl.to(
               w,
-              { opacity: 0, y: -22, duration: 0.16, ease: "power3.in" },
-              "<0.2",
+              { opacity: 0, y: -22, duration: 0.1, ease: "power3.in" },
+              "<0.12",
             );
         });
         return tl;
@@ -127,7 +129,7 @@ export function Preloader() {
     <div ref={root} className="preloader" aria-hidden="true">
       <CurveSwipe pathRef={pathRef} />
       <div className="preloader-words">
-        {WORDS.map((w) => (
+        {displayWords.map((w) => (
           <h2 className="preloader-word" key={w}>
             {w}
             <span className="preloader-dot" />

@@ -10,7 +10,7 @@ import "./WorkPage.css";
 export function Work() {
   return (
     <>
-      <Preloader />
+      <Preloader text="Work" />
       <Navbar />
       <main className="workpage">
         <header className="workpage-head container">

@@ -1,0 +1,519 @@
+/* ==========================================================================
+   Project Details Page Stylesheet — High Graphics, Viewport Pinning, Dark theme
+   Colors restricted strictly to: #000000, #F4F4F4, #0049CD
+   ========================================================================== */
+
+/* Main canvas background */
+.pp-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--dark-bg);
+}
+
+.pp-new {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  background: transparent;
+}
+
+/* 1. Master Pinned Animation Wrapper */
+.pp-pin-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 2. Hero Section (First Dimension) */
+.pp-hero-sec {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.pp-hero-banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The zooming portal frame */
+.pp-hero-frame {
+  position: absolute;
+  width: min(80vw, 780px);
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-common, 2.5rem);
+  overflow: hidden;
+  z-index: 0;
+  transform-origin: center center;
+  border: 1px solid var(--dark-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  will-change: transform, border-radius, opacity;
+}
+
+.pp-hero-img-new {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero Typography */
+.pp-hero-text {
+  position: relative;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--dark-ink);
+  pointer-events: none;
+  max-width: 920px;
+  padding: 2rem;
+  will-change: transform, opacity;
+}
+
+.pp-hero-eyebrow-new {
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.pp-hero-title-new {
+  font-size: clamp(3rem, 9.5vw, 6.75rem);
+  font-weight: 700;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0 0 1.25rem;
+  color: var(--dark-ink);
+  letter-spacing: -0.04em;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, 0.85);
+}
+
+.pp-hero-tagline-new {
+  font-size: clamp(1rem, 2.1vw, 1.35rem);
+  font-weight: 400;
+  color: var(--dark-ink-2);
+  max-width: 620px;
+  margin: 0;
+  line-height: 1.45;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8);
+}
+
+.pp-scroll-indicator {
+  margin-top: clamp(2rem, 5vh, 4rem);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--dark-ink-2);
+  animation: pp-bounce 2s infinite ease-in-out;
+}
+
+.pp-scroll-arrow {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  color: var(--accent);
+}
+
+/* 3. Horizontal Scroll Section (Second Dimension) */
+.pp-horizontal-scroll-container {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.pp-horizontal-track {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: max-content;
+  align-items: center;
+  will-change: transform;
+}
+
+.pp-slide {
+  flex-shrink: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: clamp(2rem, 6vw, 8rem);
+  box-sizing: border-box;
+}
+
+.pp-slide-inner {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  color: var(--dark-ink);
+}
+
+.pp-slide-kicker {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.pp-slide-title {
+  font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 0 0 clamp(2rem, 6vh, 4.5rem);
+  text-transform: uppercase;
+  color: var(--dark-ink);
+}
+
+/* Slide 1: Overview and Pillars */
+.pp-slide-overview {
+  background: transparent;
+}
+
+.pp-overview-lede {
+  max-width: 62ch;
+  margin: 0 0 clamp(2rem, 5vh, 3.5rem);
+  font-size: clamp(1.15rem, 1.9vw, 1.7rem);
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--dark-ink-2);
+}
+
+/* Story chapters — the long-form case study, one chapter per slide */
+.pp-slide-story .pp-slide-inner {
+  max-width: 820px;
+}
+
+.pp-story-title {
+  font-size: clamp(1.75rem, 3.4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--dark-ink);
+  margin: 0 0 clamp(1.25rem, 3vh, 2rem);
+  max-width: 22ch;
+}
+
+.pp-story-body {
+  font-size: clamp(1.05rem, 1.55vw, 1.35rem);
+  line-height: 1.62;
+  font-weight: 400;
+  color: var(--dark-ink-2);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.pp-meta-links-new {
+  display: flex;
+  gap: 1rem;
+}
+
+.pp-pill-new {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding-inline: 2rem;
+  border-radius: 999px;
+  border: 1px solid var(--dark-border);
+  color: var(--dark-ink);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  will-change: transform;
+}
+
+.pp-pill-new:hover {
+  border-color: var(--accent);
+  background: rgba(0, 73, 205, 0.1);
+}
+
+/* Slide 2: Metrics Grid */
+.pp-slide-metrics {
+  background: transparent;
+}
+
+.pp-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.pp-metric-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--dark-border);
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: var(--radius-md, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: border-color 0.4s ease, background-color 0.4s ease;
+  will-change: transform, opacity;
+}
+
+.pp-metric-card:hover {
+  border-color: var(--accent);
+  background: rgba(0, 73, 205, 0.03);
+}
+
+.pp-metric-val-new {
+  font-size: clamp(3rem, 6.5vw, 5.25rem);
+  font-weight: 700;
+  color: var(--dark-ink);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.pp-metric-lbl-new {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dark-ink-2);
+}
+
+/* Slide 3: Gallery Horizontal reel */
+.pp-slide-gallery {
+  background: transparent;
+}
+
+.pp-gallery-horizontal {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  padding-block: 1rem;
+}
+
+.pp-gallery-item {
+  width: clamp(280px, 45vw, 680px);
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-md, 1.5rem);
+  overflow: hidden;
+  border: 1px solid var(--dark-border);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pp-gallery-item img {
+  width: 110%; /* Extra width to handle parallax slide offset */
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.pp-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Slide 4: Tech Stack Chips */
+.pp-slide-stack {
+  background: transparent;
+}
+
+.pp-stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 900px;
+}
+
+.pp-stack-chip-wrap {
+  will-change: transform;
+}
+
+.pp-stack-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(52px, 5.5vw, 62px);
+  padding-inline: clamp(1.4rem, 2.2vw, 2.5rem);
+  border-radius: 999px;
+  border: 1px solid var(--dark-border);
+  color: var(--dark-ink);
+  font-weight: 500;
+  font-size: clamp(1rem, 1.1vw, 1.15rem);
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.pp-stack-chip-wrap:hover .pp-stack-chip {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--dark-ink);
+}
+
+/* 4. Next Project Section (Third Dimension) */
+.pp-next-section {
+  position: relative;
+  min-height: 85vh;
+  background: var(--dark-bg);
+  color: var(--dark-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 8rem;
+  overflow: visible;
+  z-index: 10;
+}
+
+/* Curve reveal overlay sitting above section */
+.pp-next-curve {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 4;
+}
+
+.pp-next-curve-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.pp-next-curve-path {
+  fill: var(--dark-bg);
+  will-change: d;
+}
+
+.pp-next-body {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pp-next-link-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--dark-ink);
+  cursor: pointer;
+  text-align: center;
+  will-change: transform;
+}
+
+.pp-next-eyebrow {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.pp-next-title-new {
+  font-size: clamp(3rem, 7.5vw, 6rem);
+  font-weight: 700;
+  margin: 0 0 2.5rem;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--dark-ink);
+  transition: color 0.3s ease;
+}
+
+.pp-next-link-new:hover .pp-next-title-new {
+  color: var(--accent);
+}
+
+.pp-next-preview {
+  position: relative;
+  width: clamp(280px, 40vw, 550px);
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-md, 1.5rem);
+  overflow: hidden;
+  border: 1px solid var(--dark-border);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+  will-change: transform, box-shadow;
+}
+
+.pp-next-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pp-next-link-new:hover .pp-next-preview {
+  transform: scale(1.04) rotate(1deg);
+  box-shadow: 0 20px 50px rgba(0, 73, 205, 0.25);
+}
+
+/* Animations */
+@keyframes pp-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .pp-hero-frame {
+    width: 85vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .pp-hero-frame {
+    width: 90vw;
+  }
+  .pp-hero-title-new {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+  }
+  .pp-slide {
+    padding-inline: 4vw;
+  }
+  .pp-slide-title {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+  }
+  .pp-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}

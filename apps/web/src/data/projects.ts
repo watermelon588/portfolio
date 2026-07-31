@@ -15,6 +15,12 @@ import yap3 from "@/assets/Yap chat/assets/Frame 498.jpg";
 import forcaster1 from "@/assets/Forcaster/01-forecast.jpg";
 import forcaster2 from "@/assets/Forcaster/02-hourly.jpg";
 import forcaster3 from "@/assets/Forcaster/03-details.jpg";
+import finance1 from "@/assets/images/finance_tracker_hero.png";
+import finance2 from "@/assets/images/finance_tracker_detail.png";
+import schedule1 from "@/assets/images/schedule_maker_hero.png";
+import schedule2 from "@/assets/images/schedule_maker_detail.png";
+import habit1 from "@/assets/images/habit_tracker_hero.png";
+import habit2 from "@/assets/images/habit_tracker_detail.png";
 
 /**
  * Selected-work source of truth (ADR-017: asset-driven).
@@ -44,6 +50,7 @@ export const projects: Project[] = [
   {
     slug: "skyguide-ai",
     title: "Skyguide AI",
+    category: "dev",
     role: "AI Assistant",
     year: "2026",
     images: [skyguide1, skyguide2, skyguide3],
@@ -53,6 +60,7 @@ export const projects: Project[] = [
   {
     slug: "neuron",
     title: "Neuron",
+    category: "dev",
     role: "Web Platform",
     year: "2026",
     images: [neuron1, neuron2, neuron3],
@@ -62,6 +70,7 @@ export const projects: Project[] = [
   {
     slug: "yapchat",
     title: "Yapchat",
+    category: "dev",
     role: "Realtime Chat",
     year: "2025",
     images: [yap1, yap2, yap3],
@@ -71,18 +80,53 @@ export const projects: Project[] = [
   {
     slug: "forcaster",
     title: "Forcaster",
+    category: "dev",
     role: "Weather App",
     year: "2025",
     images: [forcaster1, forcaster2, forcaster3],
     frameColor: "#123246", // deep sky blue
     ratio: "4 / 5",
   },
+  // Notion interactive-database projects (no repo/screens yet).
+  {
+    slug: "ultimate-finance-tracker",
+    title: "Ultimate Finance Tracker",
+    category: "notion",
+    role: "Notion Template",
+    year: "2025",
+    images: [finance1, finance2],
+    frameColor: "#14352A", // deep green — money
+    ratio: "4 / 5",
+  },
+  {
+    slug: "weekly-schedule-maker",
+    title: "Weekly Schedule Maker",
+    category: "notion",
+    role: "Notion Template",
+    year: "2025",
+    images: [schedule1, schedule2],
+    frameColor: "#3A2A10", // deep amber
+    ratio: "4 / 5",
+  },
+  {
+    slug: "habit-tracker",
+    title: "Habit Tracker",
+    category: "notion",
+    role: "Notion Template",
+    year: "2025",
+    images: [habit1, habit2],
+    frameColor: "#2A1640", // deep violet
+    ratio: "4 / 5",
+  },
 ];
+
+/** Home "Selected Work" shows the dev projects with hover previews. */
+export const devProjects = projects.filter((p) => p.category === "dev");
 
 /** Adapt projects into the shape FlowingMenu consumes. */
 export function toMenuItems(list: Project[] = projects): FlowingMenuItem[] {
   return list.map((p) => ({
-    link: p.href ?? "#",
+    link: `/work/${p.slug}`,
     text: p.title,
     image: p.images[0],
   }));

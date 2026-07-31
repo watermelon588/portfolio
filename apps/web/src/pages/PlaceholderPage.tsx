@@ -15,7 +15,7 @@ export function PlaceholderPage({ title, index }: { title: string; index: string
 
   return (
     <>
-      <Preloader />
+      <Preloader text={title} />
       <Navbar />
       <main className="placeholder" ref={root}>
         <div className="placeholder-inner container">

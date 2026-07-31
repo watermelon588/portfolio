@@ -69,19 +69,17 @@ export function Footer() {
         const path = curveRef.current;
         const draw = (p: number) => {
           const q = Math.min(1, Math.max(0, p));
-          // Curved edge is now the TOP edge — it sits on top of the footer and
-          // rises upward, the dark curtain sliding up to uncover the footer.
-          const top = -170 * q; // curved top edge rises 0 → -170
-          const bottom = 100 - 170 * q; // straight bottom follows
-          const bulge = Math.sin(q * Math.PI) * 34;
-          const ctrl = top - bulge; // arcs up (convex)
-          path.setAttribute("d", `M 0 ${top} Q 50 ${ctrl} 100 ${top} L 100 ${bottom} L 0 ${bottom} Z`);
+          // Curved dark edge expands from the footer section and emerges to cover the viewport
+          const top = 100 * (1 - q);
+          const bulge = Math.sin(q * Math.PI) * 30;
+          const ctrl = top - bulge;
+          path.setAttribute("d", `M 0 ${top} Q 50 ${ctrl} 100 ${top} L 100 100 L 0 100 Z`);
         };
         draw(0);
         const st = ScrollTrigger.create({
           trigger: root.current,
           start: "top bottom",
-          end: "top 30%",
+          end: "bottom bottom",
           scrub: 1.2, // smoothing lag → slow + buttery
           onUpdate: (self) => draw(self.progress),
         });

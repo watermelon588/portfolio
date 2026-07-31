@@ -5,6 +5,27 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+### Added + Fixed (case-study content + preloader speed)
+- **Full case study now renders on every project page.** The rich `caseStudies[*].sections` (SkyGuide's problem → thinking → architecture → phone-as-instrument → experience → build/deploy) were defined but **never displayed** — only overview/metrics/gallery/stack showed. Each section is now a **story chapter slide** inside the existing pinned horizontal track, so the zoom-portal + horizontal-scroll motion is unchanged; the track just grows and the pin distance auto-scales. (`pages/ProjectPage.tsx`)
+- **Sequential chapter numbering** across the whole track (`01 — Overview → 02 — Problem → … → NN — Core Stack`), computed at render so it stays coherent regardless of how many chapters/slides a project has. (`pages/ProjectPage.tsx`)
+- **Overview readability fix.** The overview used `ScrollReveal` (a *vertical*-scroll word reveal) inside the *horizontally*-pinned track, where its trigger never resolved — text sat faint/oversized and risked overflow. Replaced with a clean, fully legible lede; added dedicated `.pp-story-title` / `.pp-story-body` typography (sentence-case titles, constrained measure, vertically centred, no overlap). (`pages/ProjectPage.*`)
+- **Thinner case studies fleshed out** — Forcaster + the three Notion templates gained genuine, grounded chapters (motion/data, structure/feedback, flow/review, streaks/balance) so every page reads as a full case study. Drafts for Rohit to edit. (`data/caseStudies.ts`)
+- **Route-transition ("opening") preloader text sped up** — the page-name label now snaps in/out (0.34s in, exit at 0.46s) instead of lingering ~1.35s; its distinct larger style is kept (it's the intentional custom exception). All page preloaders already share the home preloader's `.preloader-word` size/style. (`components/motion/PageTransition.tsx`)
+
+### Fixed + Added (project-page motion)
+- **Scroll resets to the top on every route change** (SPA nav kept the old position — you'd land in the footer). Handled in `SmoothScroll` via Lenis + native fallback, then `ScrollTrigger.refresh()`. (`SmoothScroll.tsx`)
+- **Case-study page is now heavily animated:** hero image zoom-parallax; a full-bleed **feature band that enlarges + brightens into view**; highlight images reveal from **alternating sides** with inner parallax; metrics **pop in** (back-ease stagger); gallery **scales in** staggered; **bolder type** throughout. (`ProjectPage.*`)
+
+### Added (dedicated project pages + smooth scroll)
+- **Case-study pages at `/work/:slug`** — data-driven `ProjectPage`: full-bleed parallax hero → meta bar (Role/Year/Type + Live/GitHub pills) → ScrollReveal overview → metrics → alternating parallax highlight blocks → screens grid → tech chips → magnetic "next project". Reuses the shared shell + all existing effects. Adding a project = adding data. (`pages/ProjectPage.*`, `data/caseStudies.ts`, `routes.tsx`)
+- **SkyGuide AI written in depth** from its own docs (problem → thinking → 3-service architecture → phone-as-instrument → experience → build & deploy); the other three drafted from their READMEs. Live links wired (Skyguide, Yapchat) + all GitHub repos; Neuron GitHub-only; Forcaster live pending. Home Work rows + `/work` menu now deep-link to the case studies.
+- **Lenis smooth scroll** site-wide, driven off the GSAP ticker so every scrubbed effect stays in sync; disabled for reduced-motion. (`components/motion/SmoothScroll.tsx`, `RootLayout.tsx`)
+
+### Changed (gallery + footer + /work)
+- **Gallery "A closer look"** — removed the curtain/curve reveal; two-row opposite marquee across ALL projects, square cards, image 4:5.
+- **Footer curve** moved to the top edge (sits on top, rises up), dark.
+- **`/work`** — bigger rows + text; 3 **Notion** projects added (Ultimate Finance Tracker, Weekly Schedule Maker, Habit Tracker), shown on `/work` only.
+
 ### Changed (reveal direction + gallery-wide + i18n preloader)
 - **Footer curve reversed + slowed.** Now a curved **top** edge that bulges up then the light curtain **slides down** to uncover the footer top-first; `scrub: 1.2` lag + wider range (`top bottom → top 30%`) make it slow + buttery. (`Footer.tsx`)
 - **Skyguide preview** given a `4/5` ratio so it shows the same visible coloured border as the other projects. (`data/projects.ts`)

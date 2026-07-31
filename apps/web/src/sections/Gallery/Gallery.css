@@ -203,29 +203,6 @@
   opacity: 0.85;
 }
 
-/* Dark curved curtain — same SVG curve as the preloader. */
-.gallery-curtain {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  pointer-events: none;
-  overflow: visible;
-}
-
-.gallery-curtain .curve-swipe-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.gallery-curtain .curve-swipe-path {
-  fill: var(--dark-bg);
-  will-change: d;
-}
-
 @media (max-width: 768px) {
   .gallery-item {
     height: clamp(220px, 58vw, 300px);
