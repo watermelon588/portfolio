@@ -39,3 +39,14 @@ apps/web/src/assets/skyguide/portfolio assets/portrait1.png
 apps/web/src/assets/images/portrait1.png
 apps/web/src/assets/forcaster/Figma/figma.png
 apps/web/src/assets/skyguide/portfolio assets/poster.png
+
+# Resume PDF & source images
+*.pdf
+Rohit-Maity-Resume.pdf
+apps/web/src/data/*.pdf
+apps/web/public/*.pdf
+apps/web/src/assets/images/
+apps/web/src/assets/hero/
+src/assets/images/
+src/assets/hero/
+

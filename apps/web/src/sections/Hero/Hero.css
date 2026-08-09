@@ -1,111 +1,283 @@
 /* ==========================================================================
-   Hero Section — two-column composition
-   Left column:  poster → "Get in touch" → contact cards (stacked)
-   Right column: portrait, stretched to the full height of the left column
-   The right cell inherits its height from the left cell (grid `stretch`), so
-   the portrait aligns perfectly with the poster/contact stack — no spacers.
+   Hero Section — Dennis Snellenberg Reference Composition
    ========================================================================== */
 
-.hero {
-  /* Clearance for the fixed navbar */
-  padding-top: 0;
-  /* Breathing room before the About section */
-  background-color: var(--hero-bg);
-}
-
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 60fr 40fr;
-  align-items: stretch;
-  width: 100%;
-}
-
-
-
-/* ---- Left column ------------------------------------------------------- */
-
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.hero-poster {
-  width: fit-content;
-  height: fit-content;
-  background-color: var(--hero-bg);
-}
-
-.hero-poster-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.hero-contact {
-  display: flex;
-  flex-direction: column;
-  z-index: 10;
-  /* gap: clamp(1.25rem, 2.4vw, 1.85rem); */
-}
-
-.hero-contact-title {
-  font-size: clamp(1.35rem, 2vw, 1.5rem);
-  font-weight: 500;
-  color: var(--hero-bg);
-  margin: 0;
-  opacity: 0.95;
-  letter-spacing: -0.01em;
-}
-
-/* ---- Right column ------------------------------------------------------ */
-
-.hero-right {
+.hero-fold {
   position: relative;
-  width: fit-content;
-  height: fit-content;
-  background-color: var(--hero-bg);
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  height: 100vh;
+  background-color: var(--hero-bg, #bbbcbd);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* ---- Oversized typography track passing OVER the portrait ---------------- */
+
+.hero-title-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 5; /* Render OVER the portrait image (z-index 2) */
+  overflow: visible;
+}
+
+.hero-title-track {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.hero-title-text {
+  font-size: clamp(6.5rem, 17.5vw, 21rem);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  margin: 0;
+  user-select: none;
+  opacity: 0.95;
+  font-family: inherit;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Center portrait image --------------------------------------------- */
+
+.hero-portrait-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: clamp(76vh, 92vh, 98vh);
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .hero-portrait-img {
-  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100vw;
+  object-fit: contain;
+  object-position: bottom center;
+  transform: scale(1.12);
+  transform-origin: bottom center;
+  filter: contrast(1.02);
+}
+
+/* ---- Bottom control bar (Resume pill left, Role text right) ------------- */
+
+.hero-bottom-bar {
+  position: relative;
+  z-index: 10;
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: right top;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: clamp(2rem, 5vh, 4rem);
+  pointer-events: none;
+}
+
+/* Left side: Resume Pill Component */
+
+.hero-resume-pill {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #ffffff;
+  background: rgba(28, 29, 32, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 0.55rem 1.6rem 0.55rem 0.55rem;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.35s var(--ease, ease), border-color 0.35s ease, transform 0.35s ease;
+  cursor: pointer;
+}
+
+.hero-resume-pill:hover {
+  background: rgba(28, 29, 32, 0.85);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-resume-globe {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: transform 0.4s var(--ease, ease), background-color 0.3s ease;
+}
+
+.hero-resume-pill:hover .hero-resume-globe {
+  background: var(--accent, #0049cd);
+  transform: scale(1.05);
+}
+
+.hero-globe-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  animation: spinGlobe 28s linear infinite;
+}
+
+@keyframes spinGlobe {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-resume-details {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.hero-resume-sub {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+  font-weight: 500;
+}
+
+.hero-resume-title {
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+/* Right side: Role & Arrow component */
+
+.hero-role-block {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: #ffffff;
+}
+
+.hero-role-arrow-box {
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 50%;
+  background: rgba(28, 29, 32, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-role-block:hover .hero-role-arrow-box {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(28, 29, 32, 0.7);
+}
+
+.hero-role-arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #ffffff;
+  transition: transform 0.35s var(--ease, ease);
+}
+
+.hero-role-block:hover .hero-role-arrow {
+  transform: translate(3px, -3px);
+}
+
+.hero-role-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+
+.hero-role-line {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.3vw, 1.25rem);
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: -0.01em;
 }
 
 /* ==========================================================================
-   Responsive — collapse to a single stacked column
+   Responsive Adaptations
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
+  .hero-portrait-wrapper {
+    height: clamp(62vh, 78vh, 85vh);
   }
 
-  .hero-left {
-    gap: clamp(1.5rem, 4vw, 2.5rem);
-  }
-
-  /* Portrait becomes an aspect-boxed banner rather than a stretched cell */
-  .hero-right {
-    aspect-ratio: 16 / 11;
+  .hero-title-text {
+    font-size: clamp(5rem, 16vw, 12rem);
   }
 }
 
 @media (max-width: 768px) {
-  .hero-poster {
-    aspect-ratio: 4 / 5;
+  .hero-bottom-bar {
+    padding-bottom: 2rem;
+    gap: 1rem;
   }
 
-  .hero-right {
-    aspect-ratio: 3 / 4;
+  .hero-resume-pill {
+    padding: 0.5rem 1.2rem 0.5rem 0.5rem;
   }
 
-  .hero-portrait-img {
-    object-position: 58% 18%;
+  .hero-resume-globe {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .hero-globe-icon {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
+  .hero-role-arrow-box {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .hero-role-arrow {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  .hero-role-line {
+    font-size: 0.9rem;
   }
 }
+
+@media (max-width: 480px) {
+  .hero-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-role-block {
+    align-self: flex-start;
+  }
+}
+
