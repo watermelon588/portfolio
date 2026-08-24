@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import heroImg from "@/assets/hero/22.png";
+import heroImg from "@/assets/hero/66.png";
 import { useMagnetic } from "@/components/motion/useMagnetic";
 import "./Hero.css";
 
