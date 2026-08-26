@@ -99,32 +99,64 @@
   margin: 0;
 }
 
-.about-cta {
+/* Circular magnetic "About me" button (size matches footer round button) */
+.about-btn-round {
+  margin-left: clamp(3rem, 6vw, 8rem);
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  margin-top: clamp(1.5rem, 2.5vw, 2.25rem);
+  justify-content: center;
+  width: clamp(140px, 14vw, 178px);
+  height: clamp(140px, 14vw, 178px);
+  margin-top: clamp(1.75rem, 3vw, 3rem);
+  border-radius: 50%;
+  border: 0;
+  box-shadow: none;
+  background-color: var(--ink);
+  color: var(--bg);
+  text-decoration: none;
+  font-family: var(--font-sans);
   font-size: clamp(0.95rem, 1.1vw, 1.05rem);
   font-weight: 500;
-  color: var(--ink);
-  text-decoration: none;
-  width: fit-content;
+  text-align: center;
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
   will-change: transform;
-  transition: color var(--dur-base) var(--ease);
 }
 
-.about-cta svg {
-  width: 1.1em;
-  height: 1.1em;
-  transition: transform var(--dur-base) var(--ease);
+.about-btn-round span {
+  position: relative;
+  z-index: 1;
+  color: var(--bg);
+  pointer-events: none;
 }
 
-.about-cta:hover {
-  color: var(--accent);
+/* Oversized circular blue blob entering from bottom on hover */
+.about-btn-round::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  border-radius: 50%;
+  background-color: var(--accent);
+  transform: translate3d(0, 100%, 0);
+  transition: transform var(--dur-smooth) var(--ease);
+  will-change: transform;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.about-cta:hover svg {
-  transform: translateX(4px);
+/* While mouse is ON the button, blue blob fills the circle */
+.about-btn-round:hover::before {
+  transform: translate3d(0, 0, 0);
+}
+
+.about-btn-round:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 /* -------- Tech-stack marquee -------- */

@@ -1,24 +1,31 @@
+import { useRef } from "react";
+import { Link } from "react-router";
+import { useMagnetic } from "@/components/motion/useMagnetic";
 import ScrollReveal from "@/components/vendor/reactbits/ScrollReveal/ScrollReveal";
 import "./About.css";
 
 const SKILLS = [
+  "Python",
+  "Node.js",
   "React",
   "TypeScript",
-  "GSAP",
-  "Node.js",
-  "Express",
-  "MongoDB",
+  "LangGraph",
+  "PostgreSQL",
+  "Agentic AI",
+  "LLM Engineering",
   "FastAPI",
-  "Three.js",
-  "Tailwind CSS",
-  "Motion",
-  "Python",
-  "Vite",
+  "Express",
+  "WebSockets",
+  "MongoDB",
+  "n8n",
 ];
 
 export function About() {
+  const root = useRef<HTMLElement>(null);
+  useMagnetic(root);
+
   return (
-    <section className="about section" id="about">
+    <section className="about section" id="about" ref={root}>
       <div className="container">
         <div className="about-topline">
           <span className="about-eyebrow">About</span>
@@ -38,27 +45,17 @@ export function About() {
               wordAnimationEnd="bottom center+=20%"
               rotationEnd="bottom center+=20%"
             >
-              Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.
+              Helping software teams turn ambitious ideas into AI-native visions, scalable backends, and robust systems that don’t fall apart .
             </ScrollReveal>
           </div>
 
           <div className="about-copy">
             <p className="about-copy-text">
-              The combination of my passion for design, code &amp; interaction positions me in a unique place in the web design world.
+              The combination of my passion for design, code &amp; interaction positions me somewhere in the web design world.
             </p>
-            <a className="about-cta magnetic" data-strength="14" href="#work">
-              <span>See my work</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 12h14M13 5l7 7-7 7"
-                />
-              </svg>
-            </a>
+            <Link className="about-btn-round magnetic" data-strength="36" to="/about">
+              <span>ABOUT ME</span>
+            </Link>
           </div>
         </div>
       </div>
