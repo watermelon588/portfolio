@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import heroImg from "@/assets/hero/pfp.png";
 import { useMagnetic } from "@/components/motion/useMagnetic";
 import { LocalTime } from "@/components/motion/LocalTime";
 import { socials, EMAIL } from "@/data/nav";
@@ -99,7 +100,14 @@ export function Footer() {
         </span>
 
         <h2 className="footer-heading">
-          <span>Let&rsquo;s work</span>
+          <span className="footer-heading-first">
+            <img
+              src={heroImg}
+              alt="Rohit Maity profile picture"
+              className="footer-pfp"
+            />
+            <span>Let&rsquo;s work</span>
+          </span>
           <span>together</span>
         </h2>
 

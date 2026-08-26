@@ -13,12 +13,9 @@ import "./Preloader.css";
 // निर्माता = creator; ডিজাইনার = designer, শিল্পী = artist). "Weird" stays last.
 const WORDS = [
   "Developer",
-  "Designer",
   "डेवलपर",
+  "Designer",
   "ডিজাইনার",
-  "Builder",
-  "निर्माता",
-  "শিল্পী",
   "Cracked",
   "Weird",
 ];
