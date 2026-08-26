@@ -7,7 +7,8 @@
   position: relative;
   background: var(--dark-bg);
   color: var(--dark-ink);
-  padding-block: clamp(4rem, 10vh, 9rem) clamp(1.75rem, 3.5vh, 2.75rem);
+  margin-top: clamp(20rem, 10vh, 12rem);
+  padding-block: clamp(6rem, 14vh, 14rem) clamp(1.75rem, 3.5vh, 2.75rem);
   overflow: visible; /* allow curtain to expand above footer */
 }
 
@@ -43,6 +44,27 @@
   display: block;
 }
 
+.footer-heading-first {
+  display: flex !important;
+  align-items: center;
+  gap: clamp(0.75rem, 1.8vw, 1.5rem);
+}
+
+.footer-heading-first span {
+  display: inline-block;
+}
+
+.footer-pfp {
+  width: clamp(2.4rem, 5.5vw, 4.5rem);
+  height: clamp(2.4rem, 5.5vw, 4.5rem);
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+
 .footer-stripe {
   display: block;
   width: 100%;
@@ -57,6 +79,7 @@
   align-items: center;
   justify-content: space-between;
   gap: clamp(1.5rem, 4vw, 3rem);
+  position: relative;
 }
 
 .footer-contacts {
@@ -97,13 +120,11 @@
   z-index: 0;
 }
 
-.footer-pill:hover::before,
-.footer-round:hover::before {
+.footer-pill:hover::before {
   transform: scale(1);
 }
 
-.footer-pill:hover span,
-.footer-round:hover span {
+.footer-pill:hover span {
   color: var(--dark-bg);
 }
 
@@ -122,7 +143,7 @@
   border-radius: 999px;
 }
 
-/* Circular magnetic "Get in touch" (label + arrow stacked) */
+/* Circular magnetic "Get in touch" button in footer */
 .footer-round {
   flex-shrink: 0;
   display: inline-flex;
@@ -132,16 +153,65 @@
   gap: 0.5rem;
   width: clamp(140px, 14vw, 178px);
   height: clamp(140px, 14vw, 178px);
+  position: absolute;
+  right: clamp(4rem, 6vw, 10rem);
+  top: calc(-1 * clamp(2.5rem, 6vw, 5rem));
+  margin-top: calc(-0.5 * clamp(140px, 14vw, 178px));
   border-radius: 50%;
+  border: 0;
+  box-shadow: none;
+  background-color: #1c1d20;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-sans);
   font-size: clamp(0.9rem, 1.05vw, 1rem);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: -0.01em;
   text-align: center;
+  overflow: hidden;
+  will-change: transform;
+  isolation: isolate;
+  z-index: 2;
 }
 
+.footer-round span,
+.footer-round-label,
+.footer-round-arrow {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+/* Oversized circular blue fill layer: resting state at top (-100%) so exit leaves through top */
 .footer-round::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
   border-radius: 50%;
+  background-color: var(--accent);
+  transform: translate3d(0, -100%, 0);
+  transition: transform var(--dur-smooth) var(--ease);
+  will-change: transform;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer-round:hover::before {
+  animation: footer-btn-fill-enter var(--dur-smooth) var(--ease) forwards;
+}
+
+@keyframes footer-btn-fill-enter {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .footer-round-arrow {
@@ -256,6 +326,10 @@
   }
 
   .footer-round {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-top: 0;
     align-self: flex-end;
   }
 
