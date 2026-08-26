@@ -1,0 +1,336 @@
+/* ==========================================================================
+   Dedicated About Page (/about)
+   Faithful reference rebuild (Dennis Snellenberg composition)
+   ========================================================================== */
+
+.aboutpage {
+  background-color: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  padding-top: clamp(6rem, 12vh, 10rem);
+}
+
+/* Hero Section */
+.aboutpage-hero {
+  padding-top: clamp(2rem, 5vh, 4rem);
+  padding-bottom: clamp(3rem, 6vh, 6rem);
+}
+
+/* Large Dominant Editorial Headline */
+.aboutpage-headline {
+  margin: 0;
+  font-size: clamp(3.2rem, 7.5vw, 6.4rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  max-width: 18ch;
+  margin-bottom: clamp(4.5rem, 9vh, 7.5rem);
+}
+
+.aboutpage-reveal {
+  font-size: clamp(2.6rem, 6.2vw, 5.2rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+/* Divider Line Row + Blue Globe Button */
+.aboutpage-divider-row {
+  position: relative;
+  width: 100%;
+  margin-bottom: clamp(7.5rem, 14vh, 12rem);
+}
+
+.aboutpage-stripe {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border);
+}
+
+/* Large Blue Circular Globe Element sitting on the divider line toward the right */
+.aboutpage-globe-btn {
+  width: clamp(120px, 13vw, 170px);
+  height: clamp(120px, 13vw, 170px);
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: clamp(3rem, 10vw, 14rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  will-change: transform;
+  isolation: isolate;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0;
+  box-shadow: 0 10px 30px rgba(0, 73, 205, 0.25);
+  transition: transform var(--dur-base) var(--ease), background-color var(--dur-fast) var(--ease);
+}
+
+.aboutpage-globe-btn:hover {
+  background-color: var(--accent-deep);
+}
+
+.aboutpage-globe-icon {
+  width: clamp(2.4rem, 3.8vw, 3.4rem);
+  height: clamp(2.4rem, 3.8vw, 3.4rem);
+  position: relative;
+  z-index: 1;
+  stroke: #ffffff;
+  stroke-width: 1.4;
+}
+
+/* Body Grid below divider (Arrow + Copy on Left, Portrait on Right) */
+.aboutpage-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(3rem, 6vw, 7rem);
+  row-gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.aboutpage-body-left {
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.75rem);
+  align-items: flex-start;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.aboutpage-arrow-icon {
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+.aboutpage-copy {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink);
+  opacity: 0.85;
+}
+
+/* Media Containers (Controlled Image Sizes & Centered in Half) */
+.aboutpage-media {
+  width: 100%;
+  max-width: clamp(400px, 52vw, 620px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.aboutpage-portrait {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+  display: block;
+  transform: scale(1);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Section Containers */
+.aboutpage-section {
+  padding-block: clamp(4rem, 8vh, 7rem);
+}
+
+#currently {
+  padding-inline: clamp(5.5rem, 6vw, 7.5rem);
+}
+
+/* Eyebrows */
+.aboutpage-eyebrow-wrapper {
+  margin-bottom: clamp(2.5rem, 5vh, 4rem);
+}
+
+.aboutpage-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+/* Section 02 — 3-Column Editorial Grid (Reference Services Layout) */
+.aboutpage-currently-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: clamp(2.5rem, 5vw, 5.5rem);
+  row-gap: clamp(2.5rem, 5vh, 4rem);
+  align-items: start;
+}
+
+.aboutpage-currently-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutpage-currently-num {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  letter-spacing: 0.05em;
+  margin-bottom: clamp(0.75rem, 1.5vh, 1.25rem);
+}
+
+.aboutpage-currently-line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border);
+  margin-bottom: clamp(2rem, 4vh, 3.25rem);
+}
+
+.aboutpage-currently-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: clamp(1.25rem, 2.5vh, 2rem);
+}
+
+.aboutpage-currently-desc {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink);
+  opacity: 0.82;
+}
+
+/* Circular magnetic "Get in touch" CTA button */
+.aboutpage-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(5rem, 10vh, 8rem);
+  margin-bottom: clamp(5rem, 10vh, 8rem);
+}
+
+.aboutpage-btn-round {
+  flex-shrink: 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: clamp(140px, 14vw, 178px);
+  height: clamp(140px, 14vw, 178px);
+  border-radius: 50%;
+  border: 0;
+  box-shadow: none;
+  background-color: var(--ink);
+  color: var(--bg);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1.05vw, 1rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  text-align: center;
+  overflow: hidden;
+  will-change: transform;
+  isolation: isolate;
+  position: relative;
+  cursor: pointer;
+}
+
+.aboutpage-btn-round span,
+.aboutpage-btn-label,
+.aboutpage-btn-arrow {
+  position: relative;
+  z-index: 1;
+  color: var(--bg);
+  pointer-events: none;
+}
+
+.aboutpage-btn-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.aboutpage-btn-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.aboutpage-btn-round:hover .aboutpage-btn-arrow {
+  transform: translate3d(3px, -3px, 0);
+}
+
+.aboutpage-btn-round::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  border-radius: 50%;
+  background-color: var(--accent);
+  transform: translate3d(0, -100%, 0);
+  transition: transform var(--dur-smooth) var(--ease);
+  will-change: transform;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.aboutpage-btn-round:hover::before {
+  transform: translate3d(0, 0, 0);
+}
+
+.aboutpage-btn-round:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .aboutpage-body-grid {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+
+  .aboutpage-currently-grid-three {
+    grid-template-columns: 1fr;
+    row-gap: clamp(2.5rem, 5vh, 4rem);
+  }
+
+  .aboutpage-globe-btn {
+    right: clamp(1.5rem, 5vw, 4rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutpage {
+    padding-top: clamp(5rem, 10vh, 7rem);
+  }
+
+  .aboutpage-globe-btn {
+    width: 90px;
+    height: 90px;
+    right: 1rem;
+  }
+}
