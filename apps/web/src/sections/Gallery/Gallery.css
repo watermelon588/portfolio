@@ -75,21 +75,17 @@
   gap: clamp(0.75rem, 1.5vw, 1.5rem);
   width: max-content;
   will-change: transform;
-  padding-inline: clamp(0.4rem, 0.75vw, 0.75rem);
+  padding-inline: 0;
 }
 
-/* SQUARE (1:1) card with per-project coloured matte (bg set inline); the image
-   inside is 4:5, centred, so the matte frames it — same as the Work preview. */
+/* Intrinsic aspect-ratio items without card framing or artificial outer padding */
 .gallery-item {
   flex-shrink: 0;
   margin: 0;
-  aspect-ratio: 1 / 1;
   height: clamp(240px, 30vw, 380px);
-  padding: clamp(12px, 1vw, 20px);
+  width: max-content;
+  padding: 0;
   border-radius: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0 12px 34px -20px rgba(0, 0, 0, 0.4);
   will-change: transform, opacity, filter;
   transition:
@@ -102,24 +98,25 @@
 .gallery-item-inner {
   position: relative;
   height: 100%;
-  max-width: 100%;
-  aspect-ratio: 4 / 5;
+  width: max-content;
   overflow: hidden;
+  border-radius: 0;
 }
 
 .gallery-item img {
-  width: 100%;
+  width: auto;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   user-select: none;
+  border-radius: 0;
   transform: scale(1.02);
   transition:
     transform 0.9s var(--ease),
     filter 0.65s var(--ease);
 }
 
-/* Project badge — top-left, hidden until hover. */
+/* Project badge — top-left, hidden until hover, 0px border-radius. */
 .gallery-item-badge {
   position: absolute;
   top: clamp(0.5rem, 0.9vw, 0.85rem);
@@ -130,9 +127,9 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(6px);
-  border-radius: 999px;
+  border-radius: 0;
   opacity: 0;
   transform: translateY(-0.4rem);
   transition:
@@ -177,6 +174,7 @@
   padding: clamp(0.7rem, 1.2vw, 1.1rem);
   color: #fff;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  border-radius: 0;
   opacity: 0;
   transform: translateY(0.7rem);
   transition:

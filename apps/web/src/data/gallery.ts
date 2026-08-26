@@ -5,7 +5,7 @@
 
 type Mods = Record<string, string>;
 
-const skyMods = import.meta.glob("../assets/skyguide/*.{png,jpg,jpeg,webp}", {
+const skyMods = import.meta.glob("../assets/skyguide/gallery/*.{png,jpg,jpeg,webp}", {
   eager: true,
   import: "default",
 }) as Mods;
@@ -13,11 +13,11 @@ const neuronMods = import.meta.glob("../assets/Neuron/gallery/*.{png,jpg,jpeg,we
   eager: true,
   import: "default",
 }) as Mods;
-const yapMods = import.meta.glob("../assets/Yap chat/assets/*.{png,jpg,jpeg,webp}", {
+const yapMods = import.meta.glob("../assets/Yap chat/assets/gallery/*.{png,jpg,jpeg,webp}", {
   eager: true,
   import: "default",
 }) as Mods;
-const forMods = import.meta.glob("../assets/Forcaster/*.{png,jpg,jpeg,webp}", {
+const forMods = import.meta.glob("../assets/forcaster/gallery/*.{png,jpg,jpeg,webp}", {
   eager: true,
   import: "default",
 }) as Mods;

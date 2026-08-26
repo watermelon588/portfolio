@@ -3,18 +3,18 @@ import type { FlowingMenuItem } from "@/components/vendor/reactbits/FlowingMenu/
 // Real project artwork (ADR-017: asset-driven), imported so Vite fingerprints
 // them. Each project carries 2–3 preview images for the horizontal-scroll
 // cursor preview, plus a matte colour + aspect ratio for its frame.
-import skyguide1 from "@/assets/skyguide/landingPage.png";
-import skyguide2 from "@/assets/skyguide/dashboard.png";
-import skyguide3 from "@/assets/skyguide/allSkyChart.png";
-import neuron1 from "@/assets/Neuron/gallery/01-multimodal-search.jpg";
-import neuron2 from "@/assets/Neuron/gallery/02-visual-match.jpg";
-import neuron3 from "@/assets/Neuron/gallery/04-document-chat.jpg";
-import yap1 from "@/assets/Yap chat/assets/Preview.jpg";
-import yap2 from "@/assets/Yap chat/assets/Preview1.jpg";
-import yap3 from "@/assets/Yap chat/assets/Frame 498.jpg";
-import forcaster1 from "@/assets/Forcaster/01-forecast.jpg";
-import forcaster2 from "@/assets/Forcaster/02-hourly.jpg";
-import forcaster3 from "@/assets/Forcaster/03-details.jpg";
+import skyguide1 from "@/assets/skyguide/8.png";
+import skyguide2 from "@/assets/skyguide/6.png";
+import skyguide3 from "@/assets/skyguide/9.png";
+import neuron1 from "@/assets/Neuron/gallery/neuron7.png";
+import neuron2 from "@/assets/Neuron/gallery/neuron4.png";
+import neuron3 from "@/assets/Neuron/gallery/neuron5.png";
+import yap1 from "@/assets/Yap chat/assets/yapchat6.png";
+import yap2 from "@/assets/Yap chat/assets/yapchat1.png";
+import yap3 from "@/assets/Yap chat/assets/yapchat8.jpg";
+import forcaster1 from "@/assets/Forcaster/forcaster1.png";
+import forcaster2 from "@/assets/Forcaster/forcaster5.png";
+import forcaster3 from "@/assets/Forcaster/forcaster2.png";
 import finance1 from "@/assets/images/finance_tracker_hero.png";
 import finance2 from "@/assets/images/finance_tracker_detail.png";
 import schedule1 from "@/assets/images/schedule_maker_hero.png";
