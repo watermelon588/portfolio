@@ -46,12 +46,11 @@ export function Gallery() {
     tweens.current.forEach((t) => gsap.to(t, { timeScale: 1, duration: 1.1, ease: "power2.out" }));
 
   const renderCard = (item: GalleryImage, i: number) => (
-    <figure className="gallery-item" key={i} style={{ backgroundColor: item.color }}>
+    <figure className="gallery-item" key={i}>
       <div className="gallery-item-inner">
-        <img src={item.src} alt={item.label} loading="lazy" draggable={false} />
+        <img src={item.src} alt={item.project} loading="lazy" draggable={false} />
         <span className="gallery-item-badge">{item.project}</span>
         <figcaption className="gallery-caption">
-          <span className="gallery-caption-label">{item.label}</span>
           <span className="gallery-caption-view">View ↗</span>
         </figcaption>
       </div>
