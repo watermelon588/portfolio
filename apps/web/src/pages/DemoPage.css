@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Demo Page — Dedicated Full-Width Demo Experience Stylesheet
+   Minimal, immersive design matching site typography and background tokens.
+   ========================================================================== */
+
+.demo-page {
+  position: relative;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  width: 100%;
+  padding-top: clamp(6rem, 14vh, 10rem);
+  padding-bottom: clamp(6rem, 14vh, 10rem);
+}
+
+.demo-header {
+  margin-bottom: clamp(2.5rem, 5vh, 4rem);
+}
+
+.demo-kicker {
+  display: inline-block;
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.demo-title {
+  font-size: clamp(3rem, 7.5vw, 7.5rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+}
+
+.demo-video-container {
+  width: 100%;
+  position: relative;
+  background: #000000;
+  overflow: hidden;
+  border-radius: 0 !important;
+}
+
+.demo-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+.demo-audio-prompt {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.demo-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+
+.demo-audio-btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+}

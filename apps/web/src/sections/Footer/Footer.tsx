@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -32,7 +33,17 @@ function ArrowUpRight() {
   );
 }
 
-export function Footer() {
+export interface FooterProps {
+  nextProject?: {
+    title: string;
+    slug: string;
+    image?: string;
+    role?: string;
+  };
+}
+
+
+export function Footer({ nextProject }: FooterProps = {}) {
   const root = useRef<HTMLElement>(null);
   const curveRef = useRef<SVGPathElement>(null);
   useMagnetic(root);
@@ -89,53 +100,121 @@ export function Footer() {
 
       return () => created.forEach((t) => t?.kill());
     },
-    { scope: root },
+    { scope: root, dependencies: [nextProject?.slug] },
   );
 
   return (
-    <footer className="footer" id="contact" ref={root}>
+    <footer
+      className={`footer ${nextProject ? "footer--has-next-project" : ""}`}
+      id="contact"
+      ref={root}
+    >
       <div className="footer-top container">
-        <span className="footer-arrow" aria-hidden="true">
-          <ArrowUpRight />
-        </span>
+        {nextProject ? (
+          <>
+            <div className="footer-next-header">
+              <span className="footer-next-eyebrow">NEXT CASE</span>
+              <span className="footer-arrow" aria-hidden="true">
+                <ArrowUpRight />
+              </span>
+            </div>
 
-        <h2 className="footer-heading">
-          <span className="footer-heading-first">
-            <img
-              src={heroImg}
-              alt="Rohit Maity profile picture"
-              className="footer-pfp"
-            />
-            <span>Let&rsquo;s work</span>
-          </span>
-          <span>together</span>
-        </h2>
+            <div className="footer-next-content">
+              <Link
+                to={`/work/${nextProject.slug}`}
+                className="footer-next-title-link"
+              >
+                <h2 className="footer-heading footer-next-heading">
+                  {nextProject.title}
+                </h2>
+              </Link>
 
-        <span className="footer-stripe" />
+              {/* Image + Next Case button are one moving frame */}
+              {nextProject.image && (
+                <div className="footer-next-peek-viewport">
+                  <Link
+                    to={`/work/${nextProject.slug}`}
+                    className="footer-next-peek-frame"
+                  >
+                    <img
+                      src={nextProject.image}
+                      alt={nextProject.title}
+                      className="footer-next-preview-img"
+                    />
 
-        <div className="footer-cta-row">
-          <div className="footer-contacts">
-            <a className="footer-pill magnetic" data-strength="24" href={`mailto:${EMAIL}`}>
-              <span>{EMAIL}</span>
-            </a>
-            <a
-              className="footer-pill magnetic"
-              data-strength="24"
-              href={LINKEDIN}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>linkedin.com/in/rohitmaity</span>
-            </a>
-          </div>
+                    <span
+                      className="footer-round magnetic"
+                      data-strength="42"
+                    >
+                      <span className="footer-round-label">Next Case</span>
+                      <span className="footer-round-arrow">
+                        <ArrowUpRight />
+                      </span>
+                    </span>
+                  </Link>
+                </div>
+              )}
+            </div>
 
-          <a className="footer-round magnetic" data-strength="42" href={`mailto:${EMAIL}`}>
-            <span className="footer-round-label">Get in touch</span>
-            <span className="footer-round-arrow">
+            <span className="footer-stripe" />
+
+            <div className="footer-cta-row">
+              <div className="footer-contacts">
+                <Link
+                  className="footer-pill magnetic"
+                  data-strength="24"
+                  to="/work"
+                >
+                  <span>All Work &rarr;</span>
+                </Link>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <span className="footer-arrow" aria-hidden="true">
               <ArrowUpRight />
             </span>
-          </a>
-        </div>
+
+            <h2 className="footer-heading">
+              <span className="footer-heading-first">
+                <img
+                  src={heroImg}
+                  alt="Rohit Maity profile picture"
+                  className="footer-pfp"
+                />
+                <span>Let&rsquo;s work</span>
+              </span>
+              <span>together</span>
+            </h2>
+
+            <span className="footer-stripe" />
+
+            <div className="footer-cta-row">
+              <div className="footer-contacts">
+                <a className="footer-pill magnetic" data-strength="24" href={`mailto:${EMAIL}`}>
+                  <span>{EMAIL}</span>
+                </a>
+                <a
+                  className="footer-pill magnetic"
+                  data-strength="24"
+                  href={LINKEDIN}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>linkedin.com/in/rohitmaity</span>
+                </a>
+              </div>
+
+              <a className="footer-round magnetic" data-strength="42" href={`mailto:${EMAIL}`}>
+                <span className="footer-round-label">Get in touch</span>
+                <span className="footer-round-arrow">
+                  <ArrowUpRight />
+                </span>
+              </a>
+            </div>
+          </>
+        )}
       </div>
 
       <div className="footer-bottom container">

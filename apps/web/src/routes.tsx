@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import { Work } from "./pages/Work";
 import { AboutPage } from "./pages/AboutPage";
 import { ProjectPage } from "./pages/ProjectPage";
+import { DemoPage } from "./pages/DemoPage";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 
 // All routes render under RootLayout (hosts the page-transition curtain). Every
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/work", element: <Work /> },
       { path: "/work/:slug", element: <ProjectPage /> },
+      { path: "/demo", element: <DemoPage /> },
       { path: "/about", element: <AboutPage /> },
       { path: "/contact", element: <PlaceholderPage title="Contact" index="02 — Contact" /> },
       { path: "/ask", element: <ScaffoldBoot note="AI assistant route — reserved (Phase 6)" /> },

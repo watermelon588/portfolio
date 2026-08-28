@@ -55,61 +55,73 @@
   color: var(--accent);
 }
 
-/* Open toggle — circular hamburger icon button; hidden by default on desktop, morphs in on scroll */
+/* Open toggle — enlarged circular hamburger icon button; morphs in on scroll on desktop, always accessible on mobile */
 .menu-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4rem; /* 64px size */
-  height: 4rem;
+  width: clamp(4.25rem, 5vw, 5.25rem); /* ~68px to 84px */
+  height: clamp(4.25rem, 5vw, 5.25rem);
   padding: 0;
   border: 1px solid var(--border);
-  border-radius: var(--radius-common); /* Matches Poster, Portrait, Cards */
-  background: transparent;
+  border-radius: 50% !important;
+  background: var(--surface);
   color: var(--ink);
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   right: clamp(1.25rem, 4vw, 3rem);
-  top: 50%;
-  transform: translateY(-50%) scale(0);
+  top: clamp(1.25rem, 2.2vw, 2rem);
+  transform: scale(0);
   opacity: 0;
   pointer-events: none;
+  z-index: calc(var(--z-nav) + 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   will-change: transform;
   transition: opacity var(--dur-base) var(--ease),
               transform var(--dur-base) var(--ease),
               background-color var(--dur-base) var(--ease),
               border-color var(--dur-base) var(--ease),
-              color var(--dur-base) var(--ease);
+              color var(--dur-base) var(--ease),
+              box-shadow var(--dur-base) var(--ease);
 }
 
 .menu-toggle:hover {
   background-color: var(--accent-deep);
   border-color: var(--accent-deep);
   color: var(--surface);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .menu-toggle-icon {
-  position: relative;
-  width: 1.3em;
-  height: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 1.65rem;
+  height: 0.55rem;
+  pointer-events: none;
 }
+
 .menu-toggle-icon i {
-  position: absolute;
-  left: 0;
+  display: block;
   width: 100%;
-  height: 1.5px;
+  height: 2px;
   background: currentColor;
+  border-radius: 2px;
   transition: transform var(--dur-base) var(--ease);
 }
-.menu-toggle-icon i:first-child {
-  top: 0;
+
+.menu-toggle:hover .menu-toggle-icon i:first-child {
+  transform: translateY(-1px);
 }
-.menu-toggle-icon i:last-child {
-  bottom: 0;
+.menu-toggle:hover .menu-toggle-icon i:last-child {
+  transform: translateY(1px);
 }
+
 .nav--open .menu-toggle {
   opacity: 0 !important;
   pointer-events: none !important;
+  transform: scale(0) !important;
 }
 
 /* Morph transitions for scrolled desktop state */
@@ -124,7 +136,7 @@
   .nav--scrolled .menu-toggle {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(-50%) scale(1);
+    transform: scale(1);
     background-color: var(--accent);
     color: var(--surface);
     border-color: var(--accent);
@@ -366,7 +378,7 @@
   .menu-toggle {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(-50%) scale(1);
+    transform: scale(1);
     background-color: var(--accent);
     color: var(--surface);
     border-color: var(--accent);
@@ -381,12 +393,31 @@
     width: 100vw;
   }
 
+  .menu-toggle {
+    top: max(1rem, env(safe-area-inset-top));
+    right: max(1.25rem, env(safe-area-inset-right));
+    width: clamp(3.5rem, 13vw, 4.25rem);
+    height: clamp(3.5rem, 13vw, 4.25rem);
+  }
+
+  .menu-toggle-icon {
+    width: 1.45rem;
+    height: 0.55rem;
+  }
+
 }
 
 @media (max-width: 480px) {
 
   .menu-panel {
     padding-inline: 1.25rem;
+  }
+
+  .menu-toggle {
+    top: max(0.85rem, env(safe-area-inset-top));
+    right: max(1rem, env(safe-area-inset-right));
+    width: 3.5rem;
+    height: 3.5rem;
   }
 
 }

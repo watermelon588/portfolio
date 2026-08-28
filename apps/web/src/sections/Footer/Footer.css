@@ -65,12 +65,368 @@
   background: none;
 }
 
+/* Global Footer Horizontal Stripe / Divider */
 .footer-stripe {
   display: block;
   width: 100%;
   height: 1px;
   background: var(--dark-border);
   margin-block: clamp(2.5rem, 6vw, 5rem);
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   NEXT CASE — PEEKING PROJECT FRAME
+   Scoped ONLY to .footer--has-next-project
+   ========================================================================== */
+
+.footer--has-next-project {
+  /*
+    Reduce the excessive vertical breathing room that the normal contact
+    footer needs. This applies ONLY when a next project exists.
+  */
+  margin-top: clamp(8rem, 8vh, 10rem);
+  padding-top: clamp(3.5rem, 7vh, 6rem);
+}
+
+
+/* --------------------------------------------------------------------------
+   Header
+   -------------------------------------------------------------------------- */
+
+.footer--has-next-project .footer-next-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+
+/* --------------------------------------------------------------------------
+   Main next-project stage
+
+   This is the clipping "shelf".
+
+   The frame lives inside this area and is allowed to move vertically,
+   but anything outside the stage is hidden.
+   -------------------------------------------------------------------------- */
+
+.footer--has-next-project .footer-next-content {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  /*
+    Compact stage height aligned with the title
+  */
+  min-height: clamp(170px, 18vw, 250px);
+
+  margin: 0;
+  padding: 0;
+
+  overflow: visible;
+
+  isolation: isolate;
+}
+
+
+/* --------------------------------------------------------------------------
+   Project title
+   -------------------------------------------------------------------------- */
+
+.footer--has-next-project .footer-next-title-link {
+  position: relative;
+  z-index: 7;
+
+  display: inline-block;
+
+  margin-bottom: clamp(3rem, 5vw, 5.5rem);
+
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.footer--has-next-project .footer-next-heading {
+  margin: 0;
+
+  font-size: clamp(3rem, 7.5vw, 7.5rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+
+  color: var(--dark-ink);
+
+  transition:
+    color var(--dur-fast) var(--ease);
+}
+
+
+.footer--has-next-project .footer-next-title-link:hover
+.footer-next-heading {
+  color: var(--accent);
+}
+
+
+/* ==========================================================================
+   THE VIEWPORT & MOVING FRAME
+
+   Image + button are now one single object.
+
+   4:3 ratio is maintained regardless of viewport.
+   ========================================================================== */
+
+.footer--has-next-project .footer-next-peek-viewport {
+  position: absolute;
+
+  right: clamp(1rem, 7vw, 9rem);
+  bottom: 0;
+
+  width: clamp(320px, 34vw, 580px);
+
+  aspect-ratio: 4 / 3;
+
+  overflow: visible;
+  clip-path: inset(-1000px 0px 0px 0px);
+
+  pointer-events: auto;
+
+  z-index: 5;
+}
+
+.footer--has-next-project .footer-next-peek-frame {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  /*
+    The frame itself is the clipping surface.
+  */
+  overflow: hidden;
+
+  display: block;
+
+  background: var(--dark-bg-2);
+  border: 1px solid var(--dark-border);
+
+  border-radius: 0;
+
+  text-decoration: none;
+
+  /*
+    Frame starts with ~50% showing (translated down by 50%).
+  */
+  transform: translateY(50%);
+
+  transition:
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: transform;
+
+  z-index: 1;
+
+  /*
+    Entire frame is one hover target.
+  */
+  pointer-events: auto;
+
+  isolation: isolate;
+}
+
+
+/* --------------------------------------------------------------------------
+   Image
+   -------------------------------------------------------------------------- */
+
+.footer--has-next-project .footer-next-preview-img {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  /*
+    The image fills the inner framed area.
+  */
+  object-fit: cover;
+  object-position: center center;
+
+  border: 0;
+  border-radius: 0;
+
+  z-index: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   Hover
+
+   50% down  = approximately 50% visible initially
+   20% down  = approximately 80% visible on hover
+
+   Nothing else moves.
+   -------------------------------------------------------------------------- */
+
+.footer--has-next-project .footer-next-content:hover .footer-next-peek-frame,
+.footer--has-next-project .footer-next-title-link:hover ~ .footer-next-peek-viewport .footer-next-peek-frame,
+.footer--has-next-project .footer-next-peek-viewport:hover .footer-next-peek-frame {
+  transform: translateY(20%);
+}
+
+
+/* --------------------------------------------------------------------------
+   Existing Next Case button
+
+   IMPORTANT:
+   We do NOT redesign the button.
+
+   These rules simply position the existing .footer-round INSIDE
+   the moving frame.
+   -------------------------------------------------------------------------- */
+
+.footer--has-next-project .footer-next-peek-frame .footer-round {
+  position: absolute;
+
+  right: clamp(1.5rem, 4vw, 4rem);
+  top: 50%;
+
+  /*
+    Reset the old footer-round positioning.
+  */
+  margin-top: 0;
+
+  /*
+    Center it inside the frame.
+  */
+  transform: translateY(-50%);
+
+  /*
+    Keep the button's existing dimensions, colors,
+    magnetic behavior and hover animation.
+  */
+  z-index: 5;
+}
+
+
+/*
+  Do not let the button's normal footer positioning rules
+  fight with the frame.
+ */
+.footer--has-next-project .footer-next-peek-frame
+.footer-round:hover {
+  transform: translateY(-50%);
+}
+
+
+/* --------------------------------------------------------------------------
+   Divider
+
+   The divider sits above the moving frame and creates the clean
+   "behind the shelf" illusion.
+   -------------------------------------------------------------------------- */
+
+.footer--has-next-project .footer-stripe {
+  position: relative;
+
+  z-index: 10;
+
+  display: block;
+
+  width: 100%;
+  height: 1px;
+
+  margin-top: 0;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+
+  background: var(--dark-border);
+}
+
+
+/* --------------------------------------------------------------------------
+   All Work
+
+   Keep the existing pill styling completely intact.
+   -------------------------------------------------------------------------- */
+
+.footer--has-next-project .footer-cta-row {
+  position: relative;
+  z-index: 12;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-top: 0;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+  .footer--has-next-project {
+    margin-top: 6rem;
+    padding-top: 4rem;
+  }
+
+  .footer--has-next-project .footer-next-content {
+    min-height: clamp(150px, 25vw, 210px);
+  }
+
+  .footer--has-next-project .footer-next-peek-viewport {
+    right: 0;
+
+    width: clamp(260px, 42vw, 420px);
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .footer--has-next-project {
+    margin-top: 5rem;
+    padding-top: 3rem;
+  }
+
+  /*
+    On mobile the frame becomes distracting and competes
+    with the title, so keep the clean footer composition.
+  */
+  .footer--has-next-project .footer-next-peek-viewport {
+    display: none;
+  }
+
+}
+
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .footer--has-next-project .footer-next-peek-frame {
+    transition: none;
+
+    /*
+      Still show the intended resting composition.
+    */
+    transform: translateY(50%);
+  }
+
 }
 
 /* Pills (left) + round button (right) */
@@ -88,6 +444,7 @@
   align-items: flex-start;
   gap: clamp(0.75rem, 1.5vw, 1.1rem);
 }
+
 
 /* Shared outlined-button fill (round + pills fill on hover) */
 .footer-pill,
@@ -134,16 +491,16 @@
   justify-content: center;
   height: clamp(52px, 5.5vw, 64px);
   padding-inline: clamp(1.4rem, 2.4vw, 2rem);
-  border-radius: 999px;
+  border-radius: 999px !important;
   font-size: clamp(0.9rem, 1.05vw, 1.02rem);
   font-weight: 500;
 }
 
 .footer-pill::before {
-  border-radius: 999px;
+  border-radius: 999px !important;
 }
 
-/* Circular magnetic "Get in touch" button in footer */
+/* Circular magnetic button in footer / case studies */
 .footer-round {
   flex-shrink: 0;
   display: inline-flex;
@@ -157,7 +514,7 @@
   right: clamp(4rem, 6vw, 10rem);
   top: calc(-1 * clamp(2.5rem, 6vw, 5rem));
   margin-top: calc(-0.5 * clamp(140px, 14vw, 178px));
-  border-radius: 50%;
+  border-radius: 50% !important;
   border: 0;
   box-shadow: none;
   background-color: #1c1d20;
@@ -174,6 +531,8 @@
   isolation: isolate;
   z-index: 2;
 }
+
+
 
 .footer-round span,
 .footer-round-label,

@@ -83,7 +83,17 @@
   position: relative;
   z-index: 1;
   stroke: #ffffff;
-  stroke-width: 1.4;
+  stroke-width: 1.5;
+  animation: spinGlobe 28s linear infinite;
+}
+
+@keyframes spinGlobe {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Body Grid below divider (Arrow + Copy on Left, Portrait on Right) */
@@ -223,7 +233,7 @@
   display: flex;
   justify-content: center;
   margin-top: clamp(5rem, 10vh, 8rem);
-  margin-bottom: clamp(5rem, 10vh, 8rem);
+  margin-bottom: clamp(9rem, 18vh, 16rem);
 }
 
 .aboutpage-btn-round {

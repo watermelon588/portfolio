@@ -75,15 +75,13 @@ export function AboutPage() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                strokeWidth="1.5"
                 className="aboutpage-globe-icon"
                 aria-hidden="true"
               >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3.6 9h16.8M3.6 15h16.8" />
+                <path d="M11.5 3a17 17 0 0 0 0 18M12.5 3a17 17 0 0 1 0 18" />
               </svg>
             </div>
           </div>

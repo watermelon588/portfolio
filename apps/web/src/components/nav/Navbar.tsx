@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useMagnetic } from "@/components/motion/useMagnetic";
 import { navItems, socials, EMAIL } from "@/data/nav";
 import "./Navbar.css";
 
@@ -56,6 +57,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const root = useRef<HTMLDivElement>(null);
+  useMagnetic(root);
 
   useEffect(() => {
     const handleScroll = () => {
