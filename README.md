@@ -25,6 +25,36 @@ A state-of-the-art, animation-rich monorepo portfolio built with **React 19**, *
 
 ---
 
+## 🎨 Featured Projects Showcase
+
+### 1. 🌌 SkyGuide AI
+*A real-time celestial matchmaking & telescope-alignment copilot fusing observer location, telescope parameters, atmospheric conditions, and Astropy positioning telemetry.*
+
+![SkyGuide AI Showcase](apps/web/src/assets/skyguide/gallery/skyguideHero.png)
+
+---
+
+### 2. 🧠 Neuron — Multimodal Search & Document Intelligence
+*Search beyond words across text, images, audio, and video using unified CLIP query vectors with grounded document chat citations.*
+
+![Neuron Showcase](apps/web/src/assets/Neuron/gallery/neuron4.png)
+
+---
+
+### 3. 💬 Yapchat — Realtime Communication Platform
+*Private code-based chat rooms with instant Socket.IO messaging and peer-to-peer 8-way WebRTC group video calling.*
+
+![Yapchat Showcase](apps/web/src/assets/Yap%20chat/assets/yapchat6.png)
+
+---
+
+### 4. 🌤️ Forcaster — Weather UI Experience
+*Glassmorphism weather UI featuring dynamic sky theme synchronization, 5-day expandable forecasts, and 24h hourly breakdowns.*
+
+![Forcaster Showcase](apps/web/src/assets/forcaster/gallery/forcasterHero.png)
+
+---
+
 ## 🖼️ Application Pages & Routes
 
 - **`/` (Home Page)**: Editorial Hero with kinetic typography, selected work preview strip, interactive contact cards, and site footer.
