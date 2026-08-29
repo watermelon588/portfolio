@@ -13,8 +13,8 @@ import yap1 from "@/assets/Yap chat/assets/yapchat6.png";
 import yap2 from "@/assets/Yap chat/assets/yapchat1.png";
 import yap3 from "@/assets/Yap chat/assets/yapchat8.jpg";
 import forcasterHero from "@/assets/forcaster/gallery/forcasterHero.png";
-import forcaster2 from "@/assets/Forcaster/forcaster5.png";
-import forcaster3 from "@/assets/Forcaster/forcaster2.png";
+import forcaster2 from "@/assets/forcaster/forcaster5.png";
+import forcaster3 from "@/assets/forcaster/forcaster2.png";
 
 /**
  * Selected-work source of truth (ADR-017: asset-driven).
