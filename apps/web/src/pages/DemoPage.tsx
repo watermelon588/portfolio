@@ -3,16 +3,8 @@ import { Link } from "react-router";
 import { Navbar } from "@/components/nav/Navbar";
 import { Footer } from "@/sections/Footer/Footer";
 import { useMagnetic } from "@/components/motion/useMagnetic";
+import demo2Video from "@/assets/skyguide/video/demo2.mp4";
 import "./DemoPage.css";
-
-const videoModules = import.meta.glob<{ default: string }>("@/assets/skyguide/video/*.mp4", { eager: true });
-const demo2Video =
-  Object.entries(videoModules).find(([path]) => {
-    const p = decodeURIComponent(path).toLowerCase();
-    return p.includes("demo 2") || p.includes("demo2");
-  })?.[1]?.default ||
-  Object.values(videoModules)[0]?.default ||
-  "";
 
 export function DemoPage() {
   const root = useRef<HTMLElement>(null);
