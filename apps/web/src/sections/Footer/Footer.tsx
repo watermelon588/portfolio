@@ -11,12 +11,10 @@ import "./Footer.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Contact footer — faithful rebuild of the reference site's footer. The whole
-// footer is uncovered by a curved swipe (same idea as the preloader/page
-// transition): a LIGHT curtain — matching the page above — covers it, then
-// sweeps UP on a curved edge as you scroll in, revealing the dark footer.
-// Implemented with a normalized 0–100 viewBox so it works at any footer height.
-const LINKEDIN = "https://linkedin.com/in/rohitmaity";
+import { GLOBAL_LINKS } from "@/data/links";
+
+const LINKEDIN = GLOBAL_LINKS.linkedin;
+
 
 function ArrowUpRight() {
   return (
@@ -206,12 +204,12 @@ export function Footer({ nextProject }: FooterProps = {}) {
                 </a>
               </div>
 
-              <a className="footer-round magnetic" data-strength="42" href={`mailto:${EMAIL}`}>
+              <Link className="footer-round magnetic" data-strength="42" to="/contact">
                 <span className="footer-round-label">Get in touch</span>
                 <span className="footer-round-arrow">
                   <ArrowUpRight />
                 </span>
-              </a>
+              </Link>
             </div>
           </>
         )}

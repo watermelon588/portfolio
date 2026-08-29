@@ -1,6 +1,4 @@
-// Case-study content per project, keyed by slug. SkyGuide is drafted in depth
-// from its own docs (problem → thinking → architecture → build/deploy → UX);
-// the rest are drafted from their READMEs. Rohit edits/replaces freely.
+import { GLOBAL_LINKS } from "./links";
 
 export interface CaseSection {
   kicker: string;
@@ -21,8 +19,8 @@ export interface CaseStudy {
 export const caseStudies: Record<string, CaseStudy> = {
   "skyguide-ai": {
     tagline: "A real-time celestial matchmaking & telescope-alignment copilot.",
-    live: "https://skyguide-ai.vercel.app",
-    github: "https://github.com/watermelon588/skyguide-ai",
+    live: GLOBAL_LINKS.live.skyguide,
+    github: GLOBAL_LINKS.projects.skyguide,
     overview:
       "SkyGuide AI answers the one question every amateur astronomer actually has — “I have a telescope; what should I look at right now, and how do I point at it?” It fuses your location, your telescope’s capabilities, live atmospheric conditions and precise astronomy into a single real-time recommendation — then turns your phone into the instrument that guides you onto target.",
     sections: [
@@ -68,7 +66,8 @@ export const caseStudies: Record<string, CaseStudy> = {
 
   neuron: {
     tagline: "Search beyond words — one query across text, image, audio & video.",
-    github: "https://github.com/watermelon588/Neuron",
+    live: GLOBAL_LINKS.live.neuron,
+    github: GLOBAL_LINKS.projects.neuron,
     overview:
       "Neuron fuses any combination of inputs — image + query, or audio + image + query — into a single CLIP query vector, then re-ranks results by real visual similarity. Every result explains why it ranked where it did, and you can chat with your own documents, grounded in cited context.",
     sections: [
@@ -103,8 +102,8 @@ export const caseStudies: Record<string, CaseStudy> = {
 
   yapchat: {
     tagline: "Private, code-based chat rooms with voice, photos & group video.",
-    live: "https://yap-chat-five.vercel.app",
-    github: "https://github.com/watermelon588/Yap-Chat",
+    live: GLOBAL_LINKS.live.yapchat,
+    github: GLOBAL_LINKS.projects.yapchat,
     overview:
       "Yap Chat isn’t one big room for everybody. Create a room, pick your own code (or generate one), and share it as text, a link or a QR — only people holding that code appear in your sidebar. Inside: one-to-one text, photo and voice-note chats, plus group video calls for up to eight.",
     sections: [
@@ -134,7 +133,8 @@ export const caseStudies: Record<string, CaseStudy> = {
 
   forcaster: {
     tagline: "Feel the forecast — a calm, glassmorphism weather experience.",
-    github: "https://github.com/watermelon588/FORCASTR",
+    live: GLOBAL_LINKS.live.forcastr,
+    github: GLOBAL_LINKS.projects.forcastr,
     overview:
       "A weather app built around clarity, motion and calm UI rather than data overload — glassmorphism cards, theme-aware visuals, and expandable forecasts instead of cluttered tables. It’s designed to feel like weather, not just display it.",
     sections: [

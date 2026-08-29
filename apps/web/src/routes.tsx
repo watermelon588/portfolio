@@ -8,9 +8,13 @@ import { ProjectPage } from "./pages/ProjectPage";
 import { DemoPage } from "./pages/DemoPage";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 
+import { NeuronProjectPage } from "./pages/NeuronProjectPage";
+import { YapChatProjectPage } from "./pages/YapChatProjectPage";
+import { ForcasterProjectPage } from "./pages/ForcasterProjectPage";
+import { ContactPage } from "./pages/ContactPage";
+
 // All routes render under RootLayout (hosts the page-transition curtain). Every
-// nav link resolves to a real route — Contact is a placeholder page for
-// now so navigation always leads somewhere coherent. The `/ask` stub reserves
+// nav link resolves to a real route. The `/ask` stub reserves
 // the AI route (Phase 6).
 export const router = createBrowserRouter([
   {
@@ -19,11 +23,19 @@ export const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/work", element: <Work /> },
       { path: "/work/:slug", element: <ProjectPage /> },
+      { path: "/skyguide", element: <ProjectPage /> },
+      { path: "/neuron", element: <NeuronProjectPage /> },
+      { path: "/yapchat", element: <YapChatProjectPage /> },
+      { path: "/yap-chat", element: <YapChatProjectPage /> },
+      { path: "/forcaster", element: <ForcasterProjectPage /> },
+      { path: "/forcastr", element: <ForcasterProjectPage /> },
       { path: "/demo", element: <DemoPage /> },
       { path: "/about", element: <AboutPage /> },
-      { path: "/contact", element: <PlaceholderPage title="Contact" index="02 — Contact" /> },
+      { path: "/contact", element: <ContactPage /> },
+
       { path: "/ask", element: <ScaffoldBoot note="AI assistant route — reserved (Phase 6)" /> },
       { path: "*", element: <PlaceholderPage title="Not found" index="404" /> },
     ],
   },
 ]);
+

@@ -30,6 +30,10 @@ export function HoverRevealList({ items }: { items: HoverRevealItem[] }) {
   const marquee = useRef<gsap.core.Tween | null>(null);
   const [active, setActive] = useState<number | null>(null);
 
+  const xToRef = useRef<((value: number) => void) | null>(null);
+  const yToRef = useRef<((value: number) => void) | null>(null);
+  const rToRef = useRef<((value: number) => void) | null>(null);
+
   // Magnetic cursor-follow — set up once.
   useGSAP(
     () => {
@@ -39,17 +43,17 @@ export function HoverRevealList({ items }: { items: HoverRevealItem[] }) {
       const preview = previewRef.current;
       gsap.set(preview, { xPercent: -50, yPercent: -50, scale: 0.8, autoAlpha: 0 });
 
-      const xTo = gsap.quickTo(preview, "x", { duration: 0.7, ease: "power3" });
-      const yTo = gsap.quickTo(preview, "y", { duration: 0.8, ease: "power3" });
-      const rTo = gsap.quickTo(preview, "rotate", { duration: 1.1, ease: "power3" });
+      xToRef.current = gsap.quickTo(preview, "x", { duration: 0.7, ease: "power3" });
+      yToRef.current = gsap.quickTo(preview, "y", { duration: 0.8, ease: "power3" });
+      rToRef.current = gsap.quickTo(preview, "rotate", { duration: 1.1, ease: "power3" });
 
       let lastX: number | null = null;
       const onMove = (e: MouseEvent) => {
         if (!root.current) return;
         const rect = root.current.getBoundingClientRect();
-        xTo(e.clientX - rect.left);
-        yTo(e.clientY - rect.top);
-        if (lastX !== null) rTo(gsap.utils.clamp(-12, 12, (e.clientX - lastX) * 0.6));
+        xToRef.current?.(e.clientX - rect.left);
+        yToRef.current?.(e.clientY - rect.top);
+        if (lastX !== null) rToRef.current?.(gsap.utils.clamp(-12, 12, (e.clientX - lastX) * 0.6));
         lastX = e.clientX;
       };
       root.current.addEventListener("mousemove", onMove);
@@ -57,6 +61,20 @@ export function HoverRevealList({ items }: { items: HoverRevealItem[] }) {
     },
     { scope: root },
   );
+
+  const handleRowMouseEnter = (e: React.MouseEvent<HTMLLIElement>, i: number) => {
+    if (root.current && previewRef.current) {
+      const rect = root.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      // Immediately snap preview position to current mouse coordinates before fade-in
+      gsap.set(previewRef.current, { x, y });
+      xToRef.current?.(x);
+      yToRef.current?.(y);
+    }
+    setActive(i);
+  };
 
   // Reveal + horizontal marquee whenever the hovered project changes.
   useEffect(() => {
@@ -113,7 +131,7 @@ export function HoverRevealList({ items }: { items: HoverRevealItem[] }) {
     <div className="hrl" ref={root} onMouseLeave={() => setActive(null)}>
       <ul className="hrl-list">
         {items.map((item, i) => (
-          <li className="hrl-row" key={item.title} onMouseEnter={() => setActive(i)}>
+          <li className="hrl-row" key={item.title} onMouseEnter={(e) => handleRowMouseEnter(e, i)}>
             <a className="hrl-link" href={item.href ?? "#"}>
               <span className="hrl-index">{String(i + 1).padStart(2, "0")}</span>
               <span className="hrl-title">{item.title}</span>

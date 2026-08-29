@@ -48,10 +48,6 @@
   transform: translate(-50%, -50%);
   margin: 0;
 
-  font-size: clamp(0.5rem, 2vw, 2rem);
-  font-weight: 700;
-  color: var(--dark-ink);
-  
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -59,10 +55,26 @@
   opacity: 0;
 }
 
+/* Home hero cycling role-words — small font size */
+.preloader-word--small {
+  font-size: clamp(0.85rem, 2.2vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--dark-ink);
+}
+
+/* Individual page preloaders — bold big title typography */
+.preloader-word--title {
+  font-size: clamp(2.2rem, 7.5vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--dark-ink);
+}
+
 .preloader-dot {
   display: inline-block;
-  width: clamp(6px, 1.2vw, 10px);
-  height: clamp(6px, 1.2vw, 10px);
+  width: clamp(8px, 1.3vw, 14px);
+  height: clamp(8px, 1.3vw, 14px);
   margin-left: 0.25em;
   border-radius: 50%;
   background: var(--accent);

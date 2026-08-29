@@ -13,6 +13,11 @@ import {
 } from "@/components/FeatureShowcase/FeatureShowcase";
 import { projects } from "@/data/projects";
 import { caseStudies } from "@/data/caseStudies";
+import { NeuronProjectPage } from "./NeuronProjectPage";
+import { YapChatProjectPage } from "./YapChatProjectPage";
+import { ForcasterProjectPage } from "./ForcasterProjectPage";
+
+
 
 // Asset imports from gallery folder for SkyGuide AI Detailed Work
 import gallery1 from "@/assets/skyguide/gallery/1.png";
@@ -182,6 +187,17 @@ function ArrowUpRight() {
 
 export function ProjectPage() {
   const { slug } = useParams();
+  if (slug === "neuron") {
+    return <NeuronProjectPage />;
+  }
+  if (slug === "yapchat" || slug === "yap-chat") {
+    return <YapChatProjectPage />;
+  }
+  if (slug === "forcaster" || slug === "forcastr") {
+    return <ForcasterProjectPage />;
+  }
+
+
   const project = projects.find((p) => p.slug === slug);
   const cs = slug ? caseStudies[slug] : undefined;
 
