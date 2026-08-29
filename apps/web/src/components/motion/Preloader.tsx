@@ -127,7 +127,10 @@ export function Preloader({ text }: { text?: string }) {
       <CurveSwipe pathRef={pathRef} />
       <div className="preloader-words">
         {displayWords.map((w) => (
-          <h2 className="preloader-word" key={w}>
+          <h2
+            className={`preloader-word ${text ? "preloader-word--title" : "preloader-word--small"}`}
+            key={w}
+          >
             {w}
             <span className="preloader-dot" />
           </h2>

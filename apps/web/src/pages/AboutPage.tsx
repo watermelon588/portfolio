@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -7,8 +8,9 @@ import { Navbar } from "@/components/nav/Navbar";
 import { Footer } from "@/sections/Footer/Footer";
 import { useMagnetic } from "@/components/motion/useMagnetic";
 import pfpImg2 from "@/assets/hero/4.png";
-import { EMAIL } from "@/data/nav";
 import "./AboutPage.css";
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,12 +126,12 @@ export function AboutPage() {
           </div>
         </section>
 
-        {/* Circular CTA Button (Get in touch) */}
+        {/* Circular CTA Button (See all works) */}
         <div className="aboutpage-cta-wrapper container">
-          <a
+          <Link
             className="aboutpage-btn-round magnetic"
             data-strength="42"
-            href={`mailto:${EMAIL}`}
+            to="/work"
           >
             <span className="aboutpage-btn-label">See all works</span>
             <span className="aboutpage-btn-arrow">
@@ -144,7 +146,7 @@ export function AboutPage() {
                 />
               </svg>
             </span>
-          </a>
+          </Link>
         </div>
 
         <Footer />

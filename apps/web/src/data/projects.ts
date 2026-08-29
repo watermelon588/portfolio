@@ -3,8 +3,8 @@ import type { FlowingMenuItem } from "@/components/vendor/reactbits/FlowingMenu/
 // Real project artwork (ADR-017: asset-driven), imported so Vite fingerprints
 // them. Each project carries 2–3 preview images for the horizontal-scroll
 // cursor preview, plus a matte colour + aspect ratio for its frame.
+import skyguideHero from "@/assets/skyguide/gallery/skyguideHero.png";
 import skyguide1 from "@/assets/skyguide/8.png";
-import skyguide2 from "@/assets/skyguide/6.png";
 import skyguide3 from "@/assets/skyguide/9.png";
 import neuron1 from "@/assets/Neuron/gallery/neuron7.png";
 import neuron2 from "@/assets/Neuron/gallery/neuron4.png";
@@ -12,26 +12,16 @@ import neuron3 from "@/assets/Neuron/gallery/neuron5.png";
 import yap1 from "@/assets/Yap chat/assets/yapchat6.png";
 import yap2 from "@/assets/Yap chat/assets/yapchat1.png";
 import yap3 from "@/assets/Yap chat/assets/yapchat8.jpg";
-import forcaster1 from "@/assets/Forcaster/forcaster1.png";
+import forcasterHero from "@/assets/forcaster/gallery/forcasterHero.png";
 import forcaster2 from "@/assets/Forcaster/forcaster5.png";
 import forcaster3 from "@/assets/Forcaster/forcaster2.png";
-import finance1 from "@/assets/images/finance_tracker_hero.png";
-import finance2 from "@/assets/images/finance_tracker_detail.png";
-import schedule1 from "@/assets/images/schedule_maker_hero.png";
-import schedule2 from "@/assets/images/schedule_maker_detail.png";
-import habit1 from "@/assets/images/habit_tracker_hero.png";
-import habit2 from "@/assets/images/habit_tracker_detail.png";
 
 /**
  * Selected-work source of truth (ADR-017: asset-driven).
- *
- * Real case-study links still arrive from Rohit over time; each project carries
- * an optional `href` with clean empty states.
  */
 export interface Project {
   slug: string;
   title: string;
-  /** "dev" projects show on the home Work list; all show on /work. */
   category: "dev" | "notion";
   /** Short descriptor. */
   role?: string;
@@ -53,7 +43,7 @@ export const projects: Project[] = [
     category: "dev",
     role: "AI Assistant",
     year: "2026",
-    images: [skyguide1, skyguide2, skyguide3],
+    images: [skyguideHero, skyguide3, skyguide1],
     frameColor: "#0B1E3B", // deep navy — night sky
     ratio: "4 / 5",
   },
@@ -83,39 +73,8 @@ export const projects: Project[] = [
     category: "dev",
     role: "Weather App",
     year: "2025",
-    images: [forcaster1, forcaster2, forcaster3],
+    images: [forcasterHero, forcaster2, forcaster3],
     frameColor: "#123246", // deep sky blue
-    ratio: "4 / 5",
-  },
-  // Notion interactive-database projects (no repo/screens yet).
-  {
-    slug: "ultimate-finance-tracker",
-    title: "Ultimate Finance Tracker",
-    category: "notion",
-    role: "Notion Template",
-    year: "2025",
-    images: [finance1, finance2],
-    frameColor: "#14352A", // deep green — money
-    ratio: "4 / 5",
-  },
-  {
-    slug: "weekly-schedule-maker",
-    title: "Weekly Schedule Maker",
-    category: "notion",
-    role: "Notion Template",
-    year: "2025",
-    images: [schedule1, schedule2],
-    frameColor: "#3A2A10", // deep amber
-    ratio: "4 / 5",
-  },
-  {
-    slug: "habit-tracker",
-    title: "Habit Tracker",
-    category: "notion",
-    role: "Notion Template",
-    year: "2025",
-    images: [habit1, habit2],
-    frameColor: "#2A1640", // deep violet
     ratio: "4 / 5",
   },
 ];

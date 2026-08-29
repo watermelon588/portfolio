@@ -1,20 +1,42 @@
 /* ==========================================================================
-   Demo Page — Dedicated Full-Width Demo Experience Stylesheet
-   Minimal, immersive design matching site typography and background tokens.
+   Demo Page — Dark Grey (#141416) Seamless Video Showcase Stylesheet
+   Dark grey canvas (#141416), zero borders, zero shadows, zero white gap.
    ========================================================================== */
 
 .demo-page {
   position: relative;
-  background: var(--bg);
-  color: var(--ink);
+  background: #141416 !important;
+  color: #ffffff;
   min-height: 100vh;
   width: 100%;
-  padding-top: clamp(6rem, 14vh, 10rem);
-  padding-bottom: clamp(6rem, 14vh, 10rem);
+  padding-top: clamp(5rem, 10vh, 8rem);
+  padding-bottom: clamp(6rem, 12vh, 10rem);
+}
+
+.demo-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: clamp(2rem, 4vh, 3.5rem);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.demo-back-btn:hover {
+  background: #ffffff;
+  color: #141416;
+  border-color: #ffffff;
 }
 
 .demo-header {
-  margin-bottom: clamp(2.5rem, 5vh, 4rem);
+  margin-bottom: clamp(2rem, 4vh, 3.5rem);
 }
 
 .demo-kicker {
@@ -23,51 +45,65 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-2);
+  color: rgba(255, 255, 255, 0.5);
   margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
 .demo-title {
-  font-size: clamp(3rem, 7.5vw, 7.5rem);
+  font-size: clamp(2.8rem, 7vw, 6.8rem);
   font-weight: 500;
   line-height: 0.95;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: #ffffff;
   margin: 0;
+}
+
+.demo-video-wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #141416;
 }
 
 .demo-video-container {
   width: 100%;
   position: relative;
-  background: #000000;
+  background: #141416 !important;
   overflow: hidden;
   border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  backdrop-filter: none !important;
 }
 
 .demo-video {
   width: 100%;
   height: auto;
   display: block;
-  border: none;
-  outline: none;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: #141416 !important;
 }
 
 .demo-audio-prompt {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
 }
 
 .demo-audio-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid var(--border);
+  padding: 0.75rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
   background: transparent;
-  color: var(--ink);
+  color: #ffffff;
   font-family: inherit;
   font-size: 0.9rem;
   font-weight: 500;
@@ -76,6 +112,35 @@
 }
 
 .demo-audio-btn:hover {
-  background: var(--ink);
-  color: var(--bg);
+  background: #ffffff;
+  color: #141416;
 }
+
+/* --------------------------------------------------------------------------
+   Seamless #141416 Footer Override (Eliminates White Space Gap Completely)
+   -------------------------------------------------------------------------- */
+
+.demo-page + .footer,
+.demo-page ~ .footer {
+  margin-top: 0 !important;
+  background: #141416 !important;
+}
+
+.demo-page + .footer .footer-curtain,
+.demo-page ~ .footer .footer-curtain {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Scoped Navbar Links Color Override — JUST FOR DEMO PAGE
+   -------------------------------------------------------------------------- */
+
+.demo-page-wrapper .nav-wordmark,
+.demo-page-wrapper .nav-link-item {
+  color: #ffffff !important;
+}
+
+.demo-page-wrapper .nav-link-item:hover {
+  color: var(--accent) !important;
+}
+

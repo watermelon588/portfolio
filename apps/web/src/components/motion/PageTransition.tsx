@@ -15,6 +15,15 @@ import { projects } from "@/data/projects";
 const PAGE_NAMES: Record<string, string> = {
   "/": "Home",
   "/work": "Work",
+  "/about": "About",
+  "/contact": "Contact",
+  "/neuron": "Neuron",
+  "/yapchat": "Yap Chat",
+  "/yap-chat": "Yap Chat",
+  "/forcaster": "FORCASTR",
+  "/forcastr": "FORCASTR",
+  "/skyguide": "SkyGuide AI",
+  "/demo": "SkyGuide Demo",
   "/ask": "Ask",
 };
 
@@ -22,11 +31,16 @@ function pageName(pathname: string): string {
   if (PAGE_NAMES[pathname]) return PAGE_NAMES[pathname];
   if (pathname.startsWith("/work/")) {
     const slug = pathname.substring("/work/".length);
+    if (slug === "skyguide-ai") return "SkyGuide AI";
+    if (slug === "neuron") return "Neuron";
+    if (slug === "yapchat") return "Yap Chat";
+    if (slug === "forcaster") return "FORCASTR";
     const project = projects.find((p) => p.slug === slug);
     if (project) return project.title;
   }
   if (pathname.startsWith("/work")) return "Work";
-  return "Page";
+  const cleaned = pathname.replace(/^\//, "").replace(/-/g, " ");
+  return cleaned ? cleaned.charAt(0).toUpperCase() + cleaned.slice(1) : "Work";
 }
 
 export function PageTransition() {

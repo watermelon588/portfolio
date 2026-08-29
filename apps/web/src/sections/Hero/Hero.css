@@ -93,13 +93,13 @@
   pointer-events: auto;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
   text-decoration: none;
   color: #ffffff;
   background: rgba(28, 29, 32, 0.45);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 0.55rem 1.6rem 0.55rem 0.55rem;
+  padding: 0.75rem 2.2rem 0.75rem 0.75rem;
   border-radius: 100px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
@@ -113,8 +113,8 @@
 }
 
 .hero-resume-globe {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 3.35rem;
+  height: 3.35rem;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.14);
   display: flex;
@@ -130,8 +130,8 @@
 }
 
 .hero-globe-icon {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: 1.55rem;
+  height: 1.55rem;
   animation: spinGlobe 28s linear infinite;
 }
 
@@ -151,7 +151,7 @@
 }
 
 .hero-resume-sub {
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   opacity: 0.65;
@@ -159,7 +159,7 @@
 }
 
 .hero-resume-title {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   font-weight: 400;
   letter-spacing: -0.01em;
   color: #ffffff;
