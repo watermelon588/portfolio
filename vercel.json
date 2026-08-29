@@ -1,6 +1,6 @@
 {
-  "buildCommand": "pnpm --filter web build",
-  "outputDirectory": "apps/web/dist",
+  "buildCommand": "pnpm --filter web build && node -e \"fs.cpSync('apps/web/dist', 'dist', {recursive: true})\"",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/(.*)",
