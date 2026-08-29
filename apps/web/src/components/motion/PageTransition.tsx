@@ -62,7 +62,10 @@ export function PageTransition() {
     }
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce || !root.current || !pathRef.current) return;
+    if (reduce || !root.current || !pathRef.current) {
+      if (root.current) gsap.set(root.current, { autoAlpha: 0 });
+      return;
+    }
 
     setLabel(pageName(pathname));
 
@@ -85,7 +88,8 @@ export function PageTransition() {
 
     tl.to(labelRef.current, { autoAlpha: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0)
       .to(labelRef.current, { autoAlpha: 0, y: -34, duration: 0.6, ease: "power3.in" }, 0.75)
-      .add(swipe.exit(), 0.7);
+      .add(swipe.exit(), 0.7)
+      .set(root.current, { autoAlpha: 0 });
 
     return () => {
       tl.kill();
