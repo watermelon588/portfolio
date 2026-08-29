@@ -7,7 +7,10 @@ import "./DemoPage.css";
 
 const videoModules = import.meta.glob<{ default: string }>("@/assets/skyguide/video/*.mp4", { eager: true });
 const demo2Video =
-  Object.entries(videoModules).find(([path]) => path.includes("demo 2.mp4"))?.[1]?.default ||
+  Object.entries(videoModules).find(([path]) => {
+    const p = decodeURIComponent(path).toLowerCase();
+    return p.includes("demo 2") || p.includes("demo2");
+  })?.[1]?.default ||
   Object.values(videoModules)[0]?.default ||
   "";
 
