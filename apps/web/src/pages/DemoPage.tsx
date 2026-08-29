@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { Navbar } from "@/components/nav/Navbar";
 import { Footer } from "@/sections/Footer/Footer";
 import { useMagnetic } from "@/components/motion/useMagnetic";
-import demo2Video from "@/assets/skyguide/video/demo 2.mp4";
+import demo2Video from "@/assets/skyguide/video/sky2.mp4";
 import "./DemoPage.css";
 
 export function DemoPage() {
