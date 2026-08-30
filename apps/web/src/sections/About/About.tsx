@@ -53,7 +53,7 @@ export function About() {
 
           <div className="about-copy">
             <p className="about-copy-text">
-              The combination of my pasion for design, code &amp; interaction
+              The combination of my passion for design, code &amp; interaction
               positions me somewhere in the web design world.
             </p>
             <Link
