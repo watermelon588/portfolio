@@ -45,15 +45,22 @@ export function About() {
               wordAnimationEnd="bottom center+=20%"
               rotationEnd="bottom center+=20%"
             >
-              Helping software teams turn ambitious ideas into AI-native visions, scalable backends, and robust systems that don’t fall apart .
+              Helping software teams turn ambitious ideas into AI-native
+              visions, scalable backends, and robust systems that don’t fall
+              apart .
             </ScrollReveal>
           </div>
 
           <div className="about-copy">
             <p className="about-copy-text">
-              The combination of my passion for design, code &amp; interaction positions me somewhere in the web design world.
+              The combination of my pasion for design, code &amp; interaction
+              positions me somewhere in the web design world.
             </p>
-            <Link className="about-btn-round magnetic" data-strength="36" to="/about">
+            <Link
+              className="about-btn-round magnetic"
+              data-strength="36"
+              to="/about"
+            >
               <span>ABOUT ME</span>
             </Link>
           </div>
