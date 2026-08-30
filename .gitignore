@@ -41,9 +41,6 @@ apps/web/src/assets/forcaster/Figma/figma.png
 apps/web/src/assets/skyguide/portfolio assets/poster.png
 apps/web/src/assets/skyguide/video/sky1.mp4
 
-# Resume PDF & source images
-*.pdf
-Rohit-Maity-Resume.pdf
+# Resume raw source files
 apps/web/src/data/*.pdf
-apps/web/public/*.pdf
 
