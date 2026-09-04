@@ -12,6 +12,7 @@ import { NeuronProjectPage } from "./pages/NeuronProjectPage";
 import { YapChatProjectPage } from "./pages/YapChatProjectPage";
 import { ForcasterProjectPage } from "./pages/ForcasterProjectPage";
 import { ContactPage } from "./pages/ContactPage";
+import { BlogPage } from "./pages/BlogPage";
 
 // All routes render under RootLayout (hosts the page-transition curtain). Every
 // nav link resolves to a real route. The `/ask` stub reserves
@@ -31,6 +32,7 @@ export const router = createBrowserRouter([
       { path: "/forcastr", element: <ForcasterProjectPage /> },
       { path: "/demo", element: <DemoPage /> },
       { path: "/about", element: <AboutPage /> },
+      { path: "/blog", element: <BlogPage /> },
       { path: "/contact", element: <ContactPage /> },
 
       { path: "/ask", element: <ScaffoldBoot note="AI assistant route — reserved (Phase 6)" /> },

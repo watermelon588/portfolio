@@ -22,6 +22,7 @@ export const GLOBAL_LINKS = {
   instagram: "https://www.instagram.com/rohit_0.0?igsi=MW1vb3poNWQxbzVydw==",
   discord: "toiletduck69",
   discordUrl: "https://discord.com",
+  hashnode: "https://hashnode.com/@zaxx",
 
   // Project GitHub Repositories
   projects: {

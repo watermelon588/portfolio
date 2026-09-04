@@ -1,0 +1,126 @@
+/* ==========================================================================
+   BlogPage (/blog) — Dedicated Technical Articles Index
+   Spacious editorial aesthetics consistent with Work & About pages.
+   ========================================================================== */
+
+.blogpage {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+/* Increased editorial side margins/padding for the entire blog page */
+.blogpage .container {
+  padding-inline: clamp(2.5rem, 8.5vw, 11rem);
+}
+
+/* --------------------------------------------------------------------------
+   Header / Hero Section
+--------------------------------------------------------------------------- */
+
+.blogpage-head {
+  padding-top: clamp(7rem, 15vh, 11.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.6rem);
+}
+
+.blogpage-head-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.blogpage-index {
+  font-size: clamp(0.8rem, 0.95vw, 0.92rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.blogpage-hashnode-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4em 1rem;
+  border-radius: 9999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  font-size: clamp(0.78rem, 0.9vw, 0.85rem);
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: border-color var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+}
+
+.blogpage-hashnode-badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.blogpage-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.blogpage-badge-arrow {
+  display: inline-flex;
+  width: 0.9rem;
+  height: 0.9rem;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.blogpage-chip-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.blogpage-hashnode-badge:hover .blogpage-badge-arrow {
+  transform: translate3d(2px, -2px, 0);
+}
+
+.blogpage-title {
+  font-size: clamp(2.5rem, 6.2vw, 5.6rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0;
+  max-width: 22ch;
+}
+
+.blogpage-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.blogpage-lead {
+  max-width: 50ch;
+  font-size: clamp(1.02rem, 1.3vw, 1.22rem);
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Posts Section
+--------------------------------------------------------------------------- */
+
+.blogpage-posts {
+  padding-bottom: clamp(6rem, 12vh, 11rem);
+}
+
+.blogpage-posts-list {
+  display: flex;
+  flex-direction: column;
+}

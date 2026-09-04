@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useMagnetic } from "@/components/motion/useMagnetic";
-import { navItems, socials, EMAIL } from "@/data/nav";
+import { navItems, topNavItems, socials, EMAIL } from "@/data/nav";
 import "./Navbar.css";
 
 // Navbar — right-opening staggered menu (accent underlay layers, straight edge,
@@ -38,7 +38,7 @@ function SocialIcon({ name }: { name: (typeof SOCIALS)[number] }) {
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             fill="currentColor"
-            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+            d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-3.95 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"
           />
         </svg>
       );
@@ -196,7 +196,7 @@ export function Navbar() {
         </Link>
 
         <div className="nav-links">
-          {navItems.map((item) => (
+          {topNavItems.map((item) => (
             <Link key={item.path} className="nav-link-item magnetic" data-strength="15" to={item.path}>
               {item.label}
             </Link>

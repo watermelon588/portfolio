@@ -228,10 +228,13 @@
   opacity: 0.82;
 }
 
-/* Circular magnetic "Get in touch" CTA button */
+/* Circular magnetic CTA buttons (See all works & Read blogs) */
 .aboutpage-cta-wrapper {
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  flex-wrap: wrap;
   margin-top: clamp(5rem, 10vh, 8rem);
   margin-bottom: clamp(9rem, 18vh, 16rem);
 }
