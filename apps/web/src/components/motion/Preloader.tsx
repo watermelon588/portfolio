@@ -12,6 +12,7 @@ import "./Preloader.css";
 // English role-words interleaved with Hindi + Bengali (डेवलपर = developer,
 // निर्माता = creator; ডিজাইনার = designer, শিল্পী = artist). "Weird" stays last.
 const WORDS = [
+  "Hello",
   "Developer",
   "डेवलपर",
   "Designer",
@@ -77,17 +78,25 @@ export function Preloader({ text }: { text?: string }) {
         const tl = gsap.timeline();
         tl.set(words, { opacity: 0, y: 22 });
         words.forEach((w, i) => {
-          const last = i === words.length - 1;
+          const isFirst = i === 0;
+          const isLast = i === words.length - 1;
+
+          // First word has a slower entrance and longer dwell time for clear readability
+          const inDuration = isFirst ? 0.28 : 0.12;
+          const outDuration = isFirst ? 0.18 : 0.1;
+          const enterPosition = isFirst ? 0.15 : "<0.16";
+          const exitPosition = isFirst ? "<0.45" : "<0.12";
+
           tl.to(
             w,
-            { opacity: 1, y: 0, duration: 0.12, ease: "power3.out" },
-            i === 0 ? 0.1 : "<0.16",
+            { opacity: 1, y: 0, duration: inDuration, ease: "power3.out" },
+            enterPosition,
           );
-          if (!last)
+          if (!isLast)
             tl.to(
               w,
-              { opacity: 0, y: -22, duration: 0.1, ease: "power3.in" },
-              "<0.12",
+              { opacity: 0, y: -22, duration: outDuration, ease: "power3.in" },
+              exitPosition,
             );
         });
         return tl;

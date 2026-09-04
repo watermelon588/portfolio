@@ -1,0 +1,287 @@
+/* ==========================================================================
+   BlogCard — Unified Persistent Component for Technical Blog Posts
+   Consistent editorial aesthetic matching Dennis Snellenberg / Portfolio system.
+   ========================================================================== */
+
+.blog-card {
+  position: relative;
+  width: 100%;
+  padding-block: clamp(2.5rem, 5vh, 4rem);
+  border-top: 1px solid var(--border);
+  transition: opacity var(--dur-base) var(--ease);
+}
+
+.blog-card:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+/* --------------------------------------------------------------------------
+   Top Bar: Index, Category, Date, Read Time
+--------------------------------------------------------------------------- */
+
+.blog-card-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(1.25rem, 2.5vh, 2rem);
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.blog-card-meta-left,
+.blog-card-meta-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.blog-card-index {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.blog-card-dot {
+  opacity: 0.4;
+}
+
+.blog-card-category {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Main Layout: Media on Left, Content on Right
+--------------------------------------------------------------------------- */
+
+.blog-card-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.5fr);
+  gap: clamp(2rem, 4vw, 4.5rem);
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   Media / Technical Diagram Preview
+--------------------------------------------------------------------------- */
+
+.blog-card-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0 !important;
+  overflow: hidden;
+  background: #0d1117;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  isolation: isolate;
+  box-shadow: none;
+  transition: border-color var(--dur-base) var(--ease),
+              transform var(--dur-base) var(--ease);
+}
+
+.blog-card-img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0 !important;
+}
+
+.blog-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0 !important;
+  transform: scale(1);
+  transition: transform var(--dur-smooth) var(--ease);
+  will-change: transform;
+}
+
+.blog-card:hover .blog-card-img,
+.blog-card-media:hover .blog-card-img {
+  transform: scale(1.04);
+}
+
+.blog-card-media:hover {
+  border-color: var(--accent);
+  box-shadow: none;
+}
+
+.blog-card-media-badge {
+  position: absolute;
+  top: clamp(0.6rem, 1vw, 0.9rem);
+  right: clamp(0.6rem, 1vw, 0.9rem);
+  padding: 0.35em 0.85em;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  pointer-events: none;
+  z-index: 2;
+  transition: background-color var(--dur-fast) var(--ease);
+}
+
+.blog-card-media:hover .blog-card-media-badge {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   Content: Title, Excerpt, Tags, CTA
+--------------------------------------------------------------------------- */
+
+.blog-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-title {
+  margin: 0 0 clamp(0.9rem, 1.8vh, 1.4rem) 0;
+  font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+
+.blog-card-title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.blog-card-title-link:hover,
+.blog-card:hover .blog-card-title-link {
+  color: var(--accent);
+}
+
+.blog-card-excerpt {
+  margin: 0 0 clamp(1.4rem, 2.5vh, 2rem) 0;
+  font-size: clamp(0.98rem, 1.15vw, 1.12rem);
+  font-weight: 400;
+  line-height: 1.62;
+  color: var(--ink);
+  opacity: 0.82;
+}
+
+/* --------------------------------------------------------------------------
+   Footer Row: Tags + Magnetic Action CTA
+--------------------------------------------------------------------------- */
+
+.blog-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: auto;
+}
+
+.blog-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.blog-card-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32em 0.85em;
+  font-size: clamp(0.72rem, 0.82vw, 0.8rem);
+  font-weight: 500;
+  color: var(--ink-2);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+}
+
+/* Magnetic Button matching prebuilt buttons */
+.blog-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: clamp(0.75rem, 1.1vh, 0.95rem) clamp(1.4rem, 1.8vw, 1.9rem);
+  background-color: var(--ink);
+  color: var(--surface);
+  border: 1px solid var(--ink);
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  will-change: transform;
+  box-shadow: none;
+  transition: background-color var(--dur-base) var(--ease),
+              border-color var(--dur-base) var(--ease),
+              color var(--dur-base) var(--ease);
+}
+
+.blog-card-cta:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.blog-card-cta-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.blog-card-btn-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.blog-card-cta:hover .blog-card-cta-arrow {
+  transform: translate3d(3px, -3px, 0);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+--------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .blog-card-main {
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 3vh, 2.25rem);
+  }
+
+  .blog-card-media {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-card-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .blog-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .blog-card-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
