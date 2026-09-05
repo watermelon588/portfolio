@@ -36,7 +36,7 @@ export function BlogPage() {
         <header className="blogpage-head container">
           <div className="blogpage-head-top">
             <span className="blogpage-index">
-              {String(blogs.length).padStart(2, "0")} Articles &bull; Engineering Notes
+              {String(blogs.length).padStart(2, "0")} {blogs.length === 1 ? "Article" : "Articles"} &bull; Engineering Notes
             </span>
 
             <a
@@ -60,8 +60,8 @@ export function BlogPage() {
           </h1>
 
           <p className="blogpage-lead">
-            In-depth breakdowns on orchestrating autonomous multi-agent AI systems,
-            distributed backend infrastructure, and scalable real-time protocols.
+            Deep dives into JavaScript engine mechanics, type systems, web architecture,
+            and software engineering fundamentals.
             Opening previews below &mdash; full articles hosted on Hashnode.
           </p>
         </header>

@@ -52,7 +52,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
           <div className="blog-card-img-wrapper">
             <img
               src={post.coverImage}
-              alt={`${post.title} technical architecture diagram`}
+              alt={`${post.title} cover image`}
               className="blog-card-img"
               loading="lazy"
             />

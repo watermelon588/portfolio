@@ -1,6 +1,4 @@
-import agenticAiCover from "@/assets/blogs/agentic-ai-architecture.jpg";
-import distributedSystemsCover from "@/assets/blogs/distributed-systems.jpg";
-import realtimeWebsocketsCover from "@/assets/blogs/realtime-websockets.jpg";
+import jsAbsurdCover from "@/assets/blogs/why-does-javascript-feel-so-absurd.jpg";
 
 /**
  * Technical blog post data contract.
@@ -17,7 +15,7 @@ export interface BlogPost {
   excerpt: string;
   /** Technical cover image / architectural diagram */
   coverImage: string;
-  /** Formatted date label, e.g. "AUG 2026" */
+  /** Formatted date label, e.g. "SEP 2026" */
   date: string;
   /** Estimated reading time */
   readTime: string;
@@ -27,47 +25,23 @@ export interface BlogPost {
   tags: string[];
   /** External Hashnode article link */
   articleUrl: string;
+  /** Optional full article markdown content */
+  content?: string;
 }
 
 export const blogs: BlogPost[] = [
   {
-    id: "agentic-ai-state-graphs",
-    title: "Orchestrating Autonomous Multi-Agent AI Systems with Stateful Graph Execution",
-    slug: "agentic-ai-state-graphs",
+    id: "why-does-javascript-feel-so-absurd",
+    title: "Why Does JavaScript Feel So AbSuRd?",
+    slug: "why-does-javascript-feel-so-absurd",
     excerpt:
-      "Single-prompt LLMs fail when tasks demand iterative reasoning, state preservation, and dynamic tool selection. Exploring how directed acyclic graphs and persistent memory primitives transform stochastic language models into predictable, production-grade autonomous agent clusters.",
-    coverImage: agenticAiCover,
-    date: "AUG 2026",
-    readTime: "7 MIN READ",
-    category: "AGENTIC AI",
-    tags: ["LangGraph", "Python", "FastAPI", "Multi-Agent"],
-    articleUrl: "https://hashnode.com/@zaxx",
-  },
-  {
-    id: "distributed-event-driven-architecture",
-    title: "Building Resilient Event-Driven Distributed Backends with Zero-Loss Replication",
-    slug: "distributed-event-driven-architecture",
-    excerpt:
-      "When synchronous RPC chains buckle under spike loads, event streaming decoupled by robust message brokers provides true fault isolation. A deep technical breakdown of handling idempotency, out-of-order delivery, and transactional outbox patterns across microservices.",
-    coverImage: distributedSystemsCover,
-    date: "JUL 2026",
-    readTime: "9 MIN READ",
-    category: "DISTRIBUTED SYSTEMS",
-    tags: ["Kafka", "Redis", "PostgreSQL", "Architecture"],
-    articleUrl: "https://hashnode.com/@zaxx",
-  },
-  {
-    id: "realtime-bidirectional-websockets",
-    title: "Scaling Real-Time Full-Duplex WebSockets to 100k Concurrent Connections",
-    slug: "realtime-bidirectional-websockets",
-    excerpt:
-      "HTTP polling cannot deliver the sub-50ms latency demanded by collaborative software and live communication. Analyzing socket heartbeats, horizontal cluster pub/sub synchronization, memory footprint tuning, and graceful reconnection strategies at scale.",
-    coverImage: realtimeWebsocketsCover,
-    date: "MAY 2026",
-    readTime: "6 MIN READ",
-    category: "SYSTEM ARCHITECTURE",
-    tags: ["WebSockets", "Pub/Sub", "Concurrency", "Performance"],
-    articleUrl: "https://hashnode.com/@zaxx",
+      "[] == false // true. 0.1 + 0.2 === 0.3 // false. typeof null // \"object\". NaN === NaN // false. JavaScript has some wonderfully weird corners. Exploring the underlying engine design decisions, IEEE 754 floating point arithmetic, abstract type coercion algorithms, and decades of backward compatibility that make JS behave the way it does.",
+    coverImage: jsAbsurdCover,
+    date: "SEP 2026",
+    readTime: "11 MIN READ",
+    category: "JAVASCRIPT INTERNALS",
+    tags: ["JavaScript", "Web Development", "Type Coercion", "Language Internals"],
+    articleUrl: "https://zaxx-blog.hashnode.dev/why-does-javascript-feel-so-absurd",
   },
 ];
 
