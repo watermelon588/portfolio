@@ -1,4 +1,5 @@
-import jsAbsurdCover from "@/assets/blogs/why-does-javascript-feel-so-absurd.jpg";
+import jsAbsurdCoverPart1 from "@/assets/blogs/why-does-javascript-feel-so-absurd-part-1.png";
+import jsAbsurdCoverPart2 from "@/assets/blogs/why-does-javascript-feel-so-absurd-part-2.png";
 
 /**
  * Technical blog post data contract.
@@ -31,17 +32,30 @@ export interface BlogPost {
 
 export const blogs: BlogPost[] = [
   {
-    id: "why-does-javascript-feel-so-absurd",
-    title: "Why Does JavaScript Feel So AbSuRd?",
-    slug: "why-does-javascript-feel-so-absurd",
+    id: "why-does-javascript-feel-so-absurd-part-1",
+    title: "Why Does JavaScript Feel So AbSuRd? Part - 1",
+    slug: "why-does-javascript-feel-so-absurd-part-1",
     excerpt:
       "[] == false // true. 0.1 + 0.2 === 0.3 // false. typeof null // \"object\". NaN === NaN // false. JavaScript has some wonderfully weird corners. Exploring the underlying engine design decisions, IEEE 754 floating point arithmetic, abstract type coercion algorithms, and decades of backward compatibility that make JS behave the way it does.",
-    coverImage: jsAbsurdCover,
+    coverImage: jsAbsurdCoverPart1,
     date: "SEP 2026",
     readTime: "11 MIN READ",
     category: "JAVASCRIPT INTERNALS",
     tags: ["JavaScript", "Web Development", "Type Coercion", "Language Internals"],
-    articleUrl: "https://zaxx-blog.hashnode.dev/why-does-javascript-feel-so-absurd",
+    articleUrl: "https://zaxx-blog.hashnode.dev/why-does-javascript-feel-so-absurd-part-1",
+  },
+  {
+    id: "why-does-javascript-feel-so-absurd-part-2",
+    title: "Why Does JavaScript Feel So AbSuRd? Part - 2",
+    slug: "why-does-javascript-feel-so-absurd-part-2",
+    excerpt:
+      "If Part 1 was about JavaScript doing suspicious things with values, Part 2 is where we meet what makes JavaScript feel like an actual programming language: Functions. Exploring first-class functions, higher-order functions, reduce(), currying, function composition, pipe(), lexical scope, the scope chain, and the mechanics behind `this`.",
+    coverImage: jsAbsurdCoverPart2,
+    date: "SEP 2026",
+    readTime: "11 MIN READ",
+    category: "FUNCTIONS & SCOPE",
+    tags: ["JavaScript", "Functions", "Scope & Closures", "Functional Programming"],
+    articleUrl: "https://zaxx-blog.hashnode.dev/why-does-javascript-feel-so-absurd-part-2",
   },
 ];
 
