@@ -117,6 +117,23 @@ export const neuronShowcaseItems: ShowcaseItem[] = [
   },
 ];
 
+// Current Pulse design screens (sample data).
+import screenHome from "@/assets/Neuron/docs/media/screens/01-home.jpg";
+import screenSearch from "@/assets/Neuron/docs/media/screens/02-search.jpg";
+import screenImageDetail from "@/assets/Neuron/docs/media/screens/03-image-detail.jpg";
+import screenDocuments from "@/assets/Neuron/docs/media/screens/04-documents.jpg";
+import screenDocumentChat from "@/assets/Neuron/docs/media/screens/05-document-chat.jpg";
+import screenProfile from "@/assets/Neuron/docs/media/screens/06-profile.jpg";
+
+const neuronCurrentScreens = [
+  { src: screenHome, alt: "Neuron home: the headline Search beyond words with one input for questions, files and voice" },
+  { src: screenSearch, alt: "Search results with web, image, video and news tabs and a result's relevance analysis" },
+  { src: screenImageDetail, alt: "Image result detail panel with rank, credits and ranking signals" },
+  { src: screenDocuments, alt: "Documents page with upload area and files marked ready, processing and failed" },
+  { src: screenDocumentChat, alt: "Document chat with an answer, numbered citations and the cited source passages" },
+  { src: screenProfile, alt: "Profile page with activity counts and account settings" },
+];
+
 import "./ProjectPage.css";
 import "./NeuronProjectPage.css";
 
@@ -689,6 +706,24 @@ export function NeuronProjectPage() {
               alt="Neuron Closing Brand Visual"
               className="neuron-fullbleed-img"
             />
+          </div>
+        </section>
+
+        {/* 08 — THE CURRENT INTERFACE (Pulse redesign screens) */}
+        <section className="dw-section container">
+          <span className="dw-kicker">08 — THE CURRENT INTERFACE</span>
+          <h2 className="dw-heading-lg">THE NEW DESIGN, SCREEN BY SCREEN.</h2>
+          <p className="dw-body-lg">
+            Neuron now runs on Pulse: graphite surfaces, one signal-orange accent, sharp edges and
+            monospaced data, across search, results, documents, chat and the profile.
+          </p>
+
+          <div className="dw-media-grid-2col" style={{ marginTop: "3rem" }}>
+            {neuronCurrentScreens.map((screen) => (
+              <div className="dw-media-container" key={screen.src}>
+                <img src={screen.src} alt={screen.alt} className="media-natural" loading="lazy" />
+              </div>
+            ))}
           </div>
         </section>
       </main>

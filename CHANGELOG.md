@@ -5,10 +5,19 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+### Changed + Fixed (design toggle removed, Closer Look reel)
+- **Current/Updated toggle removed; Updated (v2) is now permanent.** v2 branches folded into Hero, About, AboutPage, Footer and Gallery; `styles/v2.css` became `styles/refinements.css` (unscoped, `:root`-prefixed); `components/VariantToggle` deleted.
+- **Closer Look images now live in `assets/closer-look/<Project>/`**: copies of every image the reel used, resized to 800px tall WebP (about 4 MB instead of about 100 MB of originals). Delete a file there to drop it from the reel; the other pages are unaffected. The folder name is the project badge. (`data/gallery.ts`)
+- **Reel glitch fix:** cards size to their image, and lazy images loaded mid-drift, which kept changing the track width so the rows jumped and sped up. Images now load up front, the loop starts once the widths are final, speed is set in card-heights per second, and the per-card `will-change` layers are gone. (`sections/Gallery/`)
+
 ### Added (Shiori case study — work Session 4)
 - **`/work/shiori`**: dedicated case study for Shiori, a local anime and manga hub, with GitHub + live website actions, current app screens in both themes, architecture and contribution chapters. (`pages/ShioriProjectPage.*`, `data/projectEntries/shiori.ts`)
 - **Original website sections, transplanted from the Shiori site source**: the cut-out cast stage, the drifting manga wall and the tilted gallery wall, with their original markup, styles, art selection and motion. (`components/shiori/`, `public/shiori/g/`)
 - Card thumbnails: the Shiori laptop mockup plus two brand visuals; the laptop is also the next-case footer image.
+
+### Added (Neuron + YapChat current screens)
+- **Neuron:** new section `08 — The current interface` showing six current Pulse screens. Existing sections unchanged. (`pages/NeuronProjectPage.tsx`)
+- **YapChat:** the old mockup image in section 07 is replaced by a page-turn gallery of the ten current Pick Up screens. (`pages/YapChatProjectPage.tsx`, new `components/PageTurnGallery`)
 
 ### Added + Fixed (case-study content + preloader speed)
 - **Full case study now renders on every project page.** The rich `caseStudies[*].sections` (SkyGuide's problem → thinking → architecture → phone-as-instrument → experience → build/deploy) were defined but **never displayed** — only overview/metrics/gallery/stack showed. Each section is now a **story chapter slide** inside the existing pinned horizontal track, so the zoom-portal + horizontal-scroll motion is unchanged; the track just grows and the pin distance auto-scales. (`pages/ProjectPage.tsx`)

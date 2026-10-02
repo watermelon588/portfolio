@@ -2,6 +2,7 @@
 @import "tailwindcss";
 @import "./tokens.css";
 @import "./layout.css";
+@import "./refinements.css";
 
 /* Satoshi typeface wired from Fontshare. Falls back to system sans stack. */
 :root {

@@ -1,0 +1,64 @@
+/* Walkthru launch films: shared tokens and components. Fonts are declared in each index.html (lint wants them in-file). */
+:root {
+  --paper: #f4f1ea;
+  --bg: #f4f4f5;
+  --surface: #e9e9eb;
+  --ink: #1b1b1f;
+  --muted: #63636b;
+  --line: #dedee2;
+  --accent: #4d7274;
+  --coral: #ff5a4e;
+  --cobalt: #2f5bff;
+  --sun: #ffc93c;
+  --lime: #c6f432;
+  --sage: #e3ebdf;
+  --blush: #f7dcd4;
+  --butter: #f6efc4;
+  --mint: #dfeee6;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Geist, sans-serif; -webkit-font-smoothing: antialiased; }
+#root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--paper); }
+.clip { position: absolute; inset: 0; overflow: hidden; }
+.fill { position: absolute; inset: 0; }
+.center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.mono { font-family: "Geist Mono", monospace; }
+.w, .c { display: inline-block; will-change: transform, opacity; }
+.mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; }
+
+/* Scout */
+.scout { background-repeat: repeat-x; background-position: 0 0; display: block; }
+
+/* Browser frame: our own clean bar on top of the cropped app captures */
+.browser { position: relative; border-radius: 18px; background: #fff; overflow: hidden;
+  box-shadow: 0 1px 0 rgba(27,27,31,.06), 0 30px 80px -20px rgba(27,27,31,.28), 0 0 0 1px rgba(27,27,31,.08); }
+.browser .bar { height: 46px; display: flex; align-items: center; gap: 9px; padding: 0 18px; background: #fbfbfb; border-bottom: 1px solid var(--line); }
+.browser .dot { width: 12px; height: 12px; border-radius: 50%; background: #dcdce0; }
+.browser .url { margin-left: 14px; flex: 0 1 520px; height: 28px; border-radius: 14px; background: #f0f0f2; color: var(--muted);
+  font: 400 15px/28px "Geist Mono", monospace; padding: 0 14px; white-space: nowrap; overflow: hidden; }
+.browser .view { position: relative; overflow: hidden; background: #fafafa; }
+.browser video, .browser img.shot { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+/* Phone frame */
+.phone { position: relative; border-radius: 44px; background: #111; padding: 12px; box-shadow: 0 40px 80px -24px rgba(27,27,31,.4); }
+.phone .screen { border-radius: 34px; overflow: hidden; height: 100%; background: #fff; }
+.phone .screen img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Chips, pills, cards */
+.pill { display: inline-flex; align-items: center; gap: 12px; border-radius: 999px; padding: 0 30px; height: 64px; font-size: 26px; font-weight: 400; }
+.pill.ink { background: var(--ink); color: #fff; }
+.pill.ghost { border: 1.5px solid var(--ink); color: var(--ink); background: transparent; }
+.chip { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 0 18px; height: 40px; font-size: 18px;
+  background: #fff; border: 1px solid var(--line); color: var(--ink); white-space: nowrap; }
+.card { background: #fff; border-radius: 22px; box-shadow: 0 1px 0 rgba(27,27,31,.05), 0 24px 60px -24px rgba(27,27,31,.25), 0 0 0 1px rgba(27,27,31,.06); }
+.label { font: 500 15px/1 "Geist Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.shadow-soft { box-shadow: 0 30px 70px -30px rgba(27,27,31,.35); }
+
+/* Cursor */
+.cursor { position: absolute; left: 0; top: 0; width: 34px; height: 34px; z-index: 50; transform-origin: 6px 4px; }
+
+/* Odometer */
+.odo { display: inline-flex; line-height: 1; }
+.odo-col { display: inline-block; height: 1em; overflow: hidden; }
+.odo-reel { display: flex; flex-direction: column; }
+.odo-reel span { display: block; height: 1em; }

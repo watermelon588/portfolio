@@ -1,0 +1,23 @@
+[
+  {
+    "width": 320,
+    "scrollWidth": 320,
+    "missingImages": 0,
+    "links": 42,
+    "errors": []
+  },
+  {
+    "width": 736,
+    "scrollWidth": 736,
+    "missingImages": 0,
+    "links": 42,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "missingImages": 0,
+    "links": 42,
+    "errors": []
+  }
+]

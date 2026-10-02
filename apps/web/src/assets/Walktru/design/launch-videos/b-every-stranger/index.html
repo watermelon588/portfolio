@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Walkthru · Every stranger, every shape (variant B)</title>
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/kit/kit.js"></script>
+<link rel="stylesheet" href="assets/kit/base.css" />
+<style>
+  @font-face { font-family: "Geist"; src: url(assets/fonts/geist.woff2) format("woff2"); font-weight: 100 900; font-style: normal; }
+  @font-face { font-family: "Geist Mono"; src: url(assets/fonts/geist-mono.woff2) format("woff2"); font-weight: 100 900; font-style: normal; }
+
+  /* Variant B: reference 2 rhythm. Bold shape wipes, flat colour fields, Scout as the character inside the product. */
+  :root { --off: #fbf9f4; --cob: #2f5bff; --cob2: #6f8dff; --lav: #d4dcff; --cor: #ff5a4e; --pink: #ffb7c2; --sun: #ffc93c; --grn: #1f8a4c; --mint: #b9f0cb; }
+  #root { background: var(--off); }
+  .bold { font-weight: 500; letter-spacing: -0.03em; }
+  .word { font-size: 64px; font-weight: 500; letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
+  .shape { position: absolute; }
+  .rsq { border-radius: 22%; }
+  .oct { clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); }
+  .photo { position: absolute; overflow: hidden; border-radius: 6px; box-shadow: 0 20px 40px -20px rgba(27,27,31,.35); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .inlimg { display: inline-block; width: 74px; height: 58px; border-radius: 8px; overflow: hidden; vertical-align: middle; margin: 0 8px; }
+  .inlimg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .bubble { position: absolute; background: #fff; border-radius: 36px; padding: 22px 34px; font-size: 32px; font-weight: 500; letter-spacing: -0.02em; white-space: nowrap; box-shadow: 0 20px 50px -24px rgba(27,27,31,.35); }
+  .avatar { width: 84px; height: 84px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px -12px rgba(27,27,31,.35); overflow: hidden; }
+  .avatar img { width: 80%; height: 80%; object-fit: contain; }
+  .vwrap { position: absolute; opacity: 0; }
+  .wheel { position: absolute; left: 980px; top: 540px; width: 760px; height: 0; transform-style: preserve-3d; }
+  .wheel .it { position: absolute; left: 0; top: -40px; height: 80px; font-size: 64px; font-weight: 500; letter-spacing: -0.03em; color: #fff; white-space: nowrap; backface-visibility: hidden; }
+  .metric { position: absolute; width: 420px; height: 300px; background: #fff; border-radius: 22px; padding: 30px; box-shadow: 0 30px 60px -30px rgba(20,30,90,.5); overflow: hidden; }
+  .metric .big { font-size: 96px; font-weight: 400; letter-spacing: -0.05em; line-height: 1; }
+  .metric .sub { font-size: 20px; color: var(--muted); margin-top: 8px; }
+  .row { display: flex; align-items: center; gap: 18px; padding: 20px 26px; border-top: 1px solid var(--line); font-size: 24px; white-space: nowrap; }
+  .st { margin-left: auto; font-size: 18px; padding: 6px 14px; border-radius: 8px; }
+  .icon-tile { width: 132px; height: 132px; border-radius: 30px; background: #141416; display: flex; align-items: center; justify-content: center; }
+  .icon-tile img { width: 76%; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="60">
+
+  <!-- b01 Who tried -->
+  <section id="b01" class="clip" data-start="0" data-duration="1.52" data-track-index="1">
+    <div style="position:absolute;left:0;top:340px;width:100%;text-align:center"><span id="b01t" style="display:inline-block;font-size:330px;font-weight:500;letter-spacing:-0.05em;white-space:nowrap">Who tried</span></div>
+  </section>
+
+  <!-- b02 the question with photos inside -->
+  <section id="b02" class="clip" data-start="1.52" data-duration="1.5" data-track-index="1">
+    <div class="center"><div class="word" style="font-size:52px" id="b02t"><span class="w">Who</span> <span class="w">tried</span> <span class="w">your</span> <span class="inlimg" id="b02i1"><img src="assets/img/real/9c55794e80340ba804855de8f8c9c4d9.jpg" alt=""></span> <span class="w">app</span> <span class="inlimg" id="b02i2"><img src="assets/img/real/c01b0c61a4e78bcac6701da3b56c387e.jpg" alt=""></span> <span class="w">first?</span></div></div>
+  </section>
+
+  <!-- b03 Strangers -->
+  <section id="b03" class="clip" data-start="3.02" data-duration="2.01" data-track-index="1">
+    <div class="photo" id="b03p1" style="left:520px;top:300px;width:170px;height:120px"><img src="assets/img/real/b2df8e5ce17180fe79928b84dd07570e.jpg" alt=""></div>
+    <div class="photo" id="b03p2" style="left:1290px;top:150px;width:220px;height:200px"><img src="assets/img/real/74ec050060b053168dce06e43344d6e7.jpg" alt=""></div>
+    <div class="photo" id="b03p3" style="left:610px;top:640px;width:200px;height:150px"><img src="assets/img/real/1e9f1cc29cb4ce7bf737fd2b93fadab6.jpg" alt=""></div>
+    <div class="photo" id="b03p4" style="left:1200px;top:600px;width:170px;height:160px"><img src="assets/img/real/dfc36bdb5cc2e0e6f93062219ba73ca8.jpg" alt=""></div>
+    <div class="shape rsq" id="b03s1" style="left:440px;top:260px;width:110px;height:110px;background:var(--cob)"></div>
+    <div class="shape" id="b03s2" style="left:1140px;top:120px;width:90px;height:90px;background:var(--cor);border-radius:10px"></div>
+    <div class="shape" id="b03s3" style="left:1450px;top:430px;width:80px;height:80px;background:var(--sun);border-radius:10px"></div>
+    <div class="shape" id="b03s4" style="left:780px;top:600px;width:110px;height:110px;background:var(--mint);border-radius:50%"></div>
+    <div class="center"><div class="word" id="b03t" style="font-size:72px">Strangers</div></div>
+  </section>
+
+  <!-- b04 First look: big rotated shapes -->
+  <section id="b04" class="clip" data-start="5.03" data-duration="1.99" data-track-index="1">
+    <div class="shape rsq" id="b04a" style="left:-260px;top:-180px;width:900px;height:900px;background:var(--cob)"><div class="rsq" style="position:absolute;left:180px;top:180px;width:540px;height:540px;background:var(--lav)"></div></div>
+    <div class="shape rsq" id="b04b" style="left:1340px;top:-260px;width:820px;height:820px;background:var(--grn)"><div class="rsq" style="position:absolute;left:150px;top:150px;width:520px;height:520px;background:var(--mint)"></div><div class="rsq" style="position:absolute;left:290px;top:290px;width:240px;height:240px;background:var(--grn)"></div></div>
+    <div class="shape" id="b04c" style="left:640px;top:700px;width:900px;height:900px;border-radius:50%;background:var(--cor)"><div style="position:absolute;left:160px;top:120px;width:580px;height:580px;border-radius:40%;background:var(--pink)"></div></div>
+    <div class="center"><div class="word" id="b04t" style="font-size:60px">First look</div></div>
+  </section>
+
+  <!-- b05 Signup bars -->
+  <section id="b05" class="clip" data-start="7.02" data-duration="2.0" data-track-index="1">
+    <div id="b05bars" class="fill"></div>
+    <div style="position:absolute;left:0;top:330px;width:100%;text-align:center"><span class="word" id="b05t" style="display:inline-block;font-size:60px">Signup</span></div>
+  </section>
+
+  <!-- b06 photo collage -->
+  <section id="b06" class="clip" data-start="9.02" data-duration="1.5" data-track-index="1">
+    <div class="photo" id="b06p1" style="left:300px;top:240px;width:380px;height:300px"><img src="assets/img/real/fe90efaa4de3c72d14bb9598d06fad6b.jpg" alt=""></div>
+    <div class="photo" id="b06p2" style="left:840px;top:120px;width:260px;height:230px"><img src="assets/img/real/ca38d4076c4917226b4f14901ac050b8.jpg" alt=""></div>
+    <div class="photo" id="b06p3" style="left:1220px;top:300px;width:380px;height:280px"><img src="assets/img/real/someone-working--focused-1.jpg" alt=""></div>
+    <div class="photo" id="b06p4" style="left:700px;top:640px;width:300px;height:200px"><img src="assets/img/real/245769482eeddfccb40e57a4ad9732b9.jpg" alt=""></div>
+    <div class="photo" id="b06p5" style="left:1180px;top:690px;width:230px;height:240px"><img src="assets/img/real/6d760d51b1715fc46576e68b479c77e0.jpg" alt=""></div>
+  </section>
+
+  <!-- b07 rotating squares with the eye -->
+  <section id="b07" class="clip" data-start="10.52" data-duration="1.5" data-track-index="1" style="background:var(--cor)">
+    <div class="center"><div class="rsq" id="b07a" style="width:1500px;height:1500px;background:var(--pink);display:flex;align-items:center;justify-content:center">
+      <div class="rsq" id="b07b" style="width:900px;height:900px;background:var(--sun);display:flex;align-items:center;justify-content:center"><div id="b07dot" style="width:60px;height:60px;border-radius:50%;background:#fff"></div></div></div></div>
+  </section>
+
+  <!-- b08 nested octagons with Scout -->
+  <section id="b08" class="clip" data-start="12.02" data-duration="3.0" data-track-index="1" style="background:var(--off)">
+    <div class="center"><div id="b08ring" style="width:1400px;height:1400px;border-radius:50%;background:var(--lav);display:flex;align-items:center;justify-content:center">
+      <div class="oct" id="b08o1" style="width:980px;height:980px;background:var(--cob);display:flex;align-items:center;justify-content:center">
+        <div class="oct" id="b08o2" style="width:720px;height:720px;background:var(--cob2);display:flex;align-items:center;justify-content:center">
+          <div class="oct" id="b08o3" style="width:470px;height:470px;background:#fff;display:flex;align-items:center;justify-content:center;gap:16px">
+            <img id="b08m" src="assets/scout/scout-still-ink.png" alt="" style="height:70px"><span id="b08w" style="font-size:46px;font-weight:500;letter-spacing:-0.03em">Walkthru</span></div></div></div></div></div>
+  </section>
+
+  <!-- b09 circular photo reveal -->
+  <section id="b09" class="clip" data-start="15.02" data-duration="1.0" data-track-index="1" style="background:var(--off)">
+    <div class="fill" id="b09c" style="clip-path:circle(0% at 50% 50%)"><img src="assets/img/real/c01b0c61a4e78bcac6701da3b56c387e.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+  </section>
+
+  <!-- b10 cobalt field: circle photo + ring of words, then the wheel -->
+  <section id="b10" class="clip" data-start="16.02" data-duration="4.99" data-track-index="1" style="background:var(--cob);perspective:1400px">
+    <div id="b10circle" style="position:absolute;left:160px;top:250px;width:580px;height:580px;border-radius:50%;overflow:hidden"><img src="assets/img/screens/persona-phone.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+    <svg id="b10ring" data-layout-allow-overlap width="900" height="900" viewBox="0 0 900 900" style="position:absolute;left:0;top:90px">
+      <defs><path id="b10arc" d="M450,450 m-370,0 a370,370 0 1,1 740,0 a370,370 0 1,1 -740,0"/></defs>
+      <text font-family="Geist" font-size="34" font-weight="500" fill="#fff" letter-spacing="1"><textPath href="#b10arc">Journeys · SEO · AI search · Security · Fix prompt · MCP · Compare · AI answers · Watch · Teams · Journeys · SEO · AI search ·</textPath></text>
+    </svg>
+    <div data-layout-allow-overlap style="position:absolute;inset:0;-webkit-mask-image:linear-gradient(180deg,transparent 14%,#000 38%,#000 62%,transparent 86%);mask-image:linear-gradient(180deg,transparent 14%,#000 38%,#000 62%,transparent 86%);transform-style:preserve-3d"><div class="wheel" id="b10wheel" data-layout-allow-overlap></div></div>
+    <svg class="cursor" id="b10cur" viewBox="0 0 24 24" style="width:44px;height:44px"><path d="M3 2l7.5 19 2.6-7.9L21 10.5z" fill="#fff" stroke="#1b1b1f" stroke-width="1.4" stroke-linejoin="round"/></svg>
+  </section>
+
+  <!-- b11 five Scouts, one identity -->
+  <section id="b11" class="clip" data-start="21.01" data-duration="2.01" data-track-index="1" style="background:linear-gradient(180deg,var(--cob) 0%,#5a7bff 55%,#e9edff 100%)">
+    <div class="center"><div style="display:flex;gap:46px" id="b11row"></div></div>
+  </section>
+
+  <!-- b12 product, tilted -->
+  <section id="b12" class="clip" data-start="23.02" data-duration="4.0" data-track-index="1" style="background:radial-gradient(ellipse at 50% 120%,#c9d4ff 0%,var(--cob) 60%);perspective:1800px"></section>
+  <div class="vwrap" id="w12" style="left:210px;top:150px;width:1500px;height:729px;perspective:1800px">
+    <div class="browser" id="w12b" style="width:100%;height:100%">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Walkthru side panel · TripVerse</span></div>
+      <div class="view" style="height:683px"><video id="v12" src="assets/clips/goal.mp4" data-start="23.02" data-duration="4.0" data-media-start="0.6" data-track-index="2" muted playsinline></video></div>
+    </div>
+  </div>
+
+  <!-- b13 thinking aloud, Scout answers -->
+  <section id="b13" class="clip" data-start="27.02" data-duration="1.99" data-track-index="1" style="background:#fff">
+    <img src="assets/img/stills/chat.jpg" alt="" style="position:absolute;left:-120px;top:120px;width:900px;filter:blur(10px) grayscale(.4);opacity:.55">
+    <div class="bubble" id="b13q" style="left:820px;top:330px;font-size:34px;background:#f3f3f5;box-shadow:none">Can a stranger plan a trip here?</div>
+    <div style="position:absolute;left:820px;top:470px;display:flex;align-items:center;gap:18px" id="b13a">
+      <div class="avatar"><img src="assets/scout/scout-still-ink.png" alt=""></div>
+      <div class="bubble" style="position:relative;font-size:30px;background:#eef1ff;box-shadow:none;font-weight:400">Tried it. “NEW VOYAGE” did not open.</div></div>
+  </section>
+
+  <!-- b14 a question on cobalt, Scout's face -->
+  <section id="b14" class="clip" data-start="29.01" data-duration="2.01" data-track-index="1" style="background:linear-gradient(110deg,#e8edff 0%,#8ea6ff 35%,var(--cob) 100%)">
+    <div class="bubble" id="b14b" style="left:430px;top:420px;font-size:38px">Where is the trip budget?</div>
+    <div class="avatar" id="b14s" style="position:absolute;left:1180px;top:390px;width:150px;height:150px;background:var(--sun)"><img src="assets/scout/scout-still-ink.png" alt=""></div>
+    <div class="bubble" id="b14x1" style="left:1350px;top:230px;font-size:18px;filter:blur(3px);opacity:.7">Still on “Loading budget…”</div>
+    <div class="bubble" id="b14x2" style="left:560px;top:640px;font-size:18px;filter:blur(3px);opacity:.7">I would leave now.</div>
+    <div class="bubble" id="b14x3" style="left:1100px;top:720px;font-size:18px;filter:blur(3px);opacity:.7">Step 9 of 30</div>
+  </section>
+
+  <!-- b15 what should Scout test next -->
+  <section id="b15" class="clip" data-start="31.02" data-duration="3.0" data-track-index="1" style="background:linear-gradient(180deg,#fff4cf 0%,var(--sun) 100%)">
+    <div class="center" style="flex-direction:column;gap:26px">
+      <div class="avatar" id="b15s" style="width:110px;height:110px"><img src="assets/scout/scout-still-ink.png" alt=""></div>
+      <div id="b15h" style="font-size:44px;font-weight:500;letter-spacing:-0.03em">Hi Rohit, what should Scout test next?</div>
+      <div id="b15in" style="width:900px;min-height:96px;background:#fff;border-radius:48px;display:flex;align-items:center;padding:0 16px 0 40px;font-size:30px;box-shadow:0 20px 50px -24px rgba(120,80,0,.4)">
+        <span id="b15txt" style="flex:1;color:var(--ink)">Plan a 7-day trip to Japan, check the budget, then stop.</span>
+        <span id="b15go" style="width:64px;height:64px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg></span></div>
+    </div>
+    <svg class="cursor" id="b15cur" viewBox="0 0 24 24" style="width:40px;height:40px"><path d="M3 2l7.5 19 2.6-7.9L21 10.5z" fill="#1b1b1f" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  </section>
+
+  <!-- b16 fix these first table -->
+  <section id="b16" class="clip" data-start="34.02" data-duration="3.0" data-track-index="1" style="background:linear-gradient(120deg,#fff4cf 0%,#fff 40%,#eef1ff 100%);perspective:1800px">
+    <div class="card" id="b16t" style="position:absolute;left:260px;top:170px;width:1400px;border-radius:24px;overflow:hidden">
+      <div style="display:flex;align-items:center;gap:14px;padding:26px 26px 18px"><span style="font-size:32px;font-weight:500;letter-spacing:-0.02em">Fix these first</span><span class="chip" style="height:34px;font-size:16px">TripVerse · Small-business buyer</span></div>
+      <div id="b16rows"></div>
+    </div>
+  </section>
+
+  <!-- b17 shapes + notification -->
+  <section id="b17" class="clip" data-start="37.02" data-duration="2.0" data-track-index="1">
+    <div class="shape rsq" id="b17a" style="left:620px;top:120px;width:360px;height:360px;background:var(--cob)"><div class="rsq" style="position:absolute;left:90px;top:90px;width:180px;height:180px;background:var(--lav)"></div></div>
+    <div class="shape" id="b17b" style="left:980px;top:120px;width:300px;height:360px;background:var(--mint);border-radius:0 0 0 180px"></div>
+    <div class="shape" id="b17c" style="left:620px;top:480px;width:330px;height:420px;background:var(--cor)"></div>
+    <div class="shape" id="b17d" style="left:950px;top:480px;width:330px;height:420px;background:var(--sun);border-radius:0 210px 0 0"></div>
+    <div class="center"><div id="b17n" style="background:rgba(20,20,22,.88);color:#fff;border-radius:18px;padding:22px 26px;width:520px">
+      <div style="display:flex;align-items:center;gap:14px"><img src="assets/scout/scout-still-lime.png" alt="" style="height:36px"><span style="font-size:22px;line-height:1.35">Scout found 3 things worth fixing first.</span></div>
+      <div style="margin-top:16px;background:#fff;color:var(--ink);border-radius:10px;text-align:center;padding:10px;font-size:18px">Open the report</div></div></div>
+  </section>
+
+  <!-- b18 report tilted -->
+  <section id="b18" class="clip" data-start="39.02" data-duration="2.0" data-track-index="1" style="background:radial-gradient(ellipse at 50% 110%,#dfe5ff 0%,var(--cob) 70%);perspective:1800px">
+    <div class="browser" id="b18b" style="position:absolute;left:260px;top:160px;width:1400px;height:683px">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Launch readiness report</span></div>
+      <div class="view" style="height:637px"><img class="shot" src="assets/img/stills/report-head.jpg" alt=""></div>
+    </div>
+  </section>
+
+  <!-- b19 metric cards -->
+  <section id="b19" class="clip" data-start="41.02" data-duration="4.0" data-track-index="1" style="background:radial-gradient(ellipse at 50% 50%,#7f97ff 0%,var(--cob) 70%)">
+    <div id="b19track" style="position:absolute;left:0;top:0;width:100%;height:100%">
+      <div class="metric" id="b19m1" style="left:300px;top:390px"><div id="b19dots" style="display:grid;grid-template-columns:repeat(6,22px);gap:8px;position:absolute;left:30px;top:34px"></div>
+        <div style="position:absolute;right:30px;top:40px;text-align:right"><div class="big" id="b19n1">62</div><div class="sub">Launch Ready</div></div>
+        <div style="position:absolute;left:30px;bottom:28px;font-size:18px;padding:6px 14px;border-radius:8px;background:#f2f2f4">Review and act</div></div>
+      <div class="metric" id="b19m2" style="left:750px;top:390px"><div style="position:absolute;left:-60px;bottom:-60px;width:240px;height:240px;border-radius:50%;background:var(--sun)"></div>
+        <div style="position:absolute;right:30px;top:40px;text-align:right"><div class="big">5</div><div class="sub">stuck points found</div></div></div>
+      <div class="metric" id="b19m3" style="left:1200px;top:390px"><div style="position:absolute;left:30px;top:120px;width:150px;height:110px;border-radius:24px;background:var(--cor)"></div><div style="position:absolute;left:30px;top:90px;width:150px;height:110px;border-radius:24px;background:#ff8a80"></div><div style="position:absolute;left:30px;top:60px;width:150px;height:110px;border-radius:24px;background:var(--pink)"></div>
+        <div style="position:absolute;right:30px;top:40px;text-align:right"><div class="big">21</div><div class="sub">checks, one report</div></div></div>
+    </div>
+    <div class="metric" id="b19y" data-layout-allow-overlap style="left:750px;top:390px;background:var(--sun);opacity:0"><div style="position:absolute;left:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:#ffe27a"></div>
+      <div style="position:absolute;right:30px;top:40px;text-align:right"><div class="big" data-layout-allow-overlap>+29</div><div class="sub" data-layout-allow-overlap style="color:#6b4e00">after the fixes</div></div></div>
+  </section>
+
+  <!-- b20 the plan -->
+  <section id="b20" class="clip" data-start="45.02" data-duration="2.0" data-track-index="1" style="background:linear-gradient(90deg,#e7f8c4 0%,#fff 46%)">
+    <div style="position:absolute;left:760px;top:0;width:1160px;height:100%;background:#fff;box-shadow:-30px 0 60px -40px rgba(27,27,31,.3);padding:120px 90px">
+      <div style="display:flex;align-items:baseline;gap:14px"><span id="b20n" style="font-size:110px;font-weight:300;letter-spacing:-0.05em">91</span><span style="font-size:22px;color:var(--muted)">Launch Ready after the rerun</span></div>
+      <div style="font-size:26px;margin-top:20px;font-weight:500">Fix these first</div>
+      <div id="b20list" style="margin-top:20px;display:flex;flex-direction:column;gap:22px;font-size:26px"></div>
+      <div id="b20q" style="margin-top:46px;font-size:24px;color:var(--muted)">Open the fix pull request? <span style="margin-left:18px;color:#fff;background:var(--ink);padding:10px 20px;border-radius:10px">Open it</span></div>
+    </div>
+  </section>
+
+  <!-- b21 Scout inside the shapes -->
+  <section id="b21" class="clip" data-start="47.02" data-duration="1.5" data-track-index="1" style="background:#e9edff">
+    <div class="center"><div id="b21a" style="width:1300px;height:1300px;border-radius:50%;background:#c7d2ff;display:flex;align-items:center;justify-content:center">
+      <div class="rsq" id="b21b" style="width:860px;height:860px;background:var(--cob);display:flex;align-items:center;justify-content:center">
+        <div class="oct" id="b21c" style="width:600px;height:600px;background:radial-gradient(circle,#fff 30%,#a9b9ff 100%);display:flex;align-items:center;justify-content:center"><div id="b21s"></div></div></div></div></div>
+  </section>
+
+  <!-- b22 Done -->
+  <section id="b22" class="clip" data-start="48.52" data-duration="1.5" data-track-index="1" style="background:#fff">
+    <div class="center"><div id="b22c" style="width:520px;padding:40px 30px;border-radius:26px;background:#fff;border:4px solid var(--cob);box-shadow:0 0 0 10px #dbe2ff;text-align:center">
+      <img src="assets/scout/scout-still-ink.png" alt="" style="height:80px">
+      <div style="font-size:56px;font-weight:500;letter-spacing:-0.03em;margin-top:10px">Done!</div>
+      <div style="font-size:22px;color:var(--muted);margin-top:8px">Fixed 3. Nothing new broke.</div></div></div>
+  </section>
+
+  <!-- b23 who it is for -->
+  <section id="b23" class="clip" data-start="50.02" data-duration="2.99" data-track-index="1">
+    <div style="position:absolute;left:150px;top:180px;display:flex;gap:40px" id="b23row">
+      <div class="aud" style="width:510px;height:700px;border-radius:30px;background:var(--cor);position:relative;overflow:hidden"><img src="assets/img/real/1e9f1cc29cb4ce7bf737fd2b93fadab6.jpg" alt="" style="position:absolute;left:30px;right:30px;top:30px;width:450px;height:440px;object-fit:cover;border-radius:18px"><div style="position:absolute;left:34px;bottom:96px;font-size:48px;font-weight:500;color:#fff;letter-spacing:-0.03em">Indie hackers</div><div style="position:absolute;left:34px;bottom:44px;font-size:22px;color:#ffe2df">Shipped with Cursor, Lovable, Bolt or v0</div></div>
+      <div class="aud" style="width:510px;height:700px;border-radius:30px;background:var(--cob);position:relative;overflow:hidden"><img src="assets/img/real/someone-working--focused.jpg" alt="" style="position:absolute;left:30px;top:30px;width:450px;height:440px;object-fit:cover;border-radius:18px"><div style="position:absolute;left:34px;bottom:96px;font-size:48px;font-weight:500;color:#fff;letter-spacing:-0.03em">Founders</div><div style="position:absolute;left:34px;bottom:44px;font-size:22px;color:#dbe2ff">Your first honest user, before launch day</div></div>
+      <div class="aud" style="width:510px;height:700px;border-radius:30px;background:var(--sun);position:relative;overflow:hidden"><img src="assets/img/screens/workspace.jpg" alt="" style="position:absolute;left:30px;top:30px;width:450px;height:440px;object-fit:cover;border-radius:18px"><div style="position:absolute;left:34px;bottom:96px;font-size:48px;font-weight:500;color:var(--ink);letter-spacing:-0.03em">Agencies</div><div style="position:absolute;left:34px;bottom:44px;font-size:22px;color:#5c4400">Every client gets a report and a live badge</div></div>
+    </div>
+  </section>
+
+  <!-- b24 collage converges -->
+  <section id="b24" class="clip" data-start="53.01" data-duration="2.01" data-track-index="1">
+    <div class="shape rsq" id="b24a" style="left:700px;top:330px;width:180px;height:180px;background:var(--cob)"></div>
+    <div class="photo" id="b24b" style="left:880px;top:330px;width:200px;height:180px;border-radius:0"><img src="assets/img/doodles/e1ca98ec1cd5a1dfdb19e3d972270f78.jpg" alt=""></div>
+    <div class="photo" id="b24c" style="left:1080px;top:330px;width:160px;height:180px;border-radius:0"><img src="assets/img/real/dfc36bdb5cc2e0e6f93062219ba73ca8.jpg" alt=""></div>
+    <div class="shape" id="b24d" style="left:700px;top:510px;width:260px;height:200px;background:var(--cor)"></div>
+    <div class="photo" id="b24e" style="left:960px;top:510px;width:280px;height:200px;border-radius:0"><img src="assets/img/doodles/9d62b6a54152f4b54df8ac99bd04c4a6.jpg" alt=""></div>
+    <div class="shape" id="b24f" style="left:1240px;top:430px;width:120px;height:120px;background:var(--mint);border-radius:50%"></div>
+  </section>
+
+  <!-- b25 logo -->
+  <section id="b25" class="clip" data-start="55.02" data-duration="2.5" data-track-index="1">
+    <div class="center"><div style="display:flex;align-items:center;gap:26px"><div id="b25s"></div><div id="b25w" style="font-size:100px;font-weight:500;letter-spacing:-0.04em">Walkthru</div></div></div>
+  </section>
+
+  <!-- b26 tagline -->
+  <section id="b26" class="clip" data-start="57.52" data-duration="2.48" data-track-index="1">
+    <div class="center"><div id="b26t" class="word" style="font-size:58px">See where strangers get stuck.</div></div>
+    <div style="position:absolute;left:0;bottom:130px;width:100%;text-align:center"><span id="b26u" class="mono" style="display:inline-block;font-size:24px;color:var(--muted)">walkthru.dev · free to start</span></div>
+    <div id="b26dots" style="position:absolute;left:0;top:250px;width:100%;display:flex;justify-content:center;gap:16px"></div>
+  </section>
+
+  <!-- audio -->
+  <audio id="bgm" src="assets/music/happy-beats-business-moves-vol-1-by-ende-dot-app.mp3" data-start="0" data-duration="60" data-track-index="10" data-volume="1"></audio>
+  <audio id="fx1" src="assets/sfx/interface/drop_001.ogg" data-start="1.5" data-track-index="11" data-volume="0.6"></audio>
+  <audio id="fx2" src="assets/sfx/casino/card-fan-1.ogg" data-start="3.02" data-track-index="12" data-volume="0.55"></audio>
+  <audio id="fx3" src="assets/sfx/impact/impactSoft_medium_001.ogg" data-start="5.02" data-track-index="13" data-volume="0.6"></audio>
+  <audio id="fx4" src="assets/sfx/casino/chips-stack-2.ogg" data-start="7.1" data-track-index="14" data-volume="0.5"></audio>
+  <audio id="fx5" src="assets/sfx/impact/impactSoft_medium_003.ogg" data-start="12.0" data-track-index="15" data-volume="0.6"></audio>
+  <audio id="fx6" src="assets/sfx/impact/impactBell_heavy_003.ogg" data-start="16.02" data-track-index="16" data-volume="0.45"></audio>
+  <audio id="fx7" src="assets/sfx/interface/drop_002.ogg" data-start="21.05" data-track-index="17" data-volume="0.55"></audio>
+  <audio id="fx8" src="assets/sfx/ui/mouseclick1.ogg" data-start="33.3" data-track-index="18" data-volume="0.8"></audio>
+  <audio id="fx9" src="assets/sfx/casino/card-slide-2.ogg" data-start="41.05" data-track-index="19" data-volume="0.55"></audio>
+  <audio id="fx10" src="assets/sfx/casino/card-place-1.ogg" data-start="43.5" data-track-index="20" data-volume="0.6"></audio>
+  <audio id="fx11" src="assets/sfx/impact/impactGlass_light_002.ogg" data-start="48.55" data-track-index="21" data-volume="0.6"></audio>
+  <audio id="fx12" src="assets/sfx/casino/card-fan-1.ogg" data-start="50.05" data-track-index="22" data-volume="0.55"></audio>
+  <audio id="fx13" src="assets/sfx/impact/impactBell_heavy_000.ogg" data-start="56.2" data-track-index="23" data-volume="0.45"></audio>
+</div>
+
+<script>
+const tl = gsap.timeline({ paused: true });
+const A = K.at;
+const E = "expo.out";
+const BOUNCE = "back.out(1.7)";
+
+// b01: huge "Who tried", motion blur into focus
+{ const [s, d] = A("b01");
+  tl.fromTo("#b01t", { x: 420, filter: "blur(26px)", opacity: 0.4 }, { x: -60, filter: "blur(0px)", opacity: 1, duration: 0.9, ease: E }, s);
+  tl.to("#b01t", { scale: 0.18, opacity: 0, duration: 0.35, ease: "power3.in" }, s + 1.15); }
+
+// b02: the question, photos pop inside the sentence
+{ const [s] = A("b02");
+  tl.fromTo("#b02t .w", { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.55, ease: E, stagger: 0.06 }, s);
+  tl.fromTo(["#b02i1", "#b02i2"], { scale: 0, rotation: -12 }, { scale: 1, rotation: 0, duration: 0.5, ease: BOUNCE, stagger: 0.15 }, s + 0.35); }
+
+// b03: Strangers with drifting photos and squares
+{ const [s, d] = A("b03");
+  tl.fromTo("#b03t", { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: BOUNCE }, s);
+  ["#b03p1", "#b03p2", "#b03p3", "#b03p4", "#b03s1", "#b03s2", "#b03s3", "#b03s4"].forEach((id, i) => {
+    tl.fromTo(id, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: BOUNCE }, s + 0.1 + i * 0.06);
+    tl.to(id, { x: (i % 2 ? 40 : -40), y: (i % 3 - 1) * 30, rotation: (i % 2 ? 6 : -6), duration: d, ease: "sine.inOut" }, s);
+  }); }
+
+// b04: shapes swing in, rotate
+{ const [s, d] = A("b04");
+  tl.fromTo("#b04a", { x: -700, rotation: -40 }, { x: 0, rotation: -14, duration: 0.8, ease: E }, s);
+  tl.fromTo("#b04b", { x: 700, y: -300, rotation: 50 }, { x: 0, y: 0, rotation: 18, duration: 0.8, ease: E }, s + 0.06);
+  tl.fromTo("#b04c", { y: 600, rotation: 20 }, { y: 0, rotation: -8, duration: 0.8, ease: E }, s + 0.12);
+  tl.to(["#b04a", "#b04b", "#b04c"], { rotation: "+=8", duration: d - 0.8, ease: "none" }, s + 0.8);
+  tl.fromTo("#b04t", { rotation: -14, scale: 0.6, opacity: 0 }, { rotation: -8, scale: 1, opacity: 1, duration: 0.6, ease: BOUNCE }, s + 0.25); }
+
+// b05: Signup, pastel bars rising like a drop-off chart
+{ const [s] = A("b05");
+  const box = document.getElementById("b05bars");
+  const cols = ["#ff8a80", "#ff5a4e", "#e8424a", "#ffb7c2", "#ffd0d6", "#d4dcff"];
+  const hs = [520, 470, 380, 300, 240, 340];
+  hs.forEach((h, i) => {
+    const b = document.createElement("div");
+    Object.assign(b.style, { position: "absolute", left: (330 + i * 215) + "px", bottom: "0px", width: "225px", height: h + "px", background: cols[i], borderRadius: i === 1 ? "60px 60px 0 0" : "0" });
+    box.appendChild(b);
+    tl.fromTo(b, { yPercent: 100 }, { yPercent: 0, duration: 0.7, ease: E }, s + 0.1 + i * 0.07);
+  });
+  tl.fromTo("#b05t", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: E }, s); }
+
+// b06: collage floats
+{ const [s, d] = A("b06");
+  ["#b06p1", "#b06p2", "#b06p3", "#b06p4", "#b06p5"].forEach((id, i) => {
+    tl.fromTo(id, { scale: 0.6, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: E }, s + i * 0.07);
+    tl.to(id, { y: (i % 2 ? -50 : 50), duration: d, ease: "none" }, s);
+  }); }
+
+// b07: squares rotate, zoom into the eye
+{ const [s, d] = A("b07");
+  tl.fromTo("#b07a", { rotation: -30, scale: 0.5 }, { rotation: 10, scale: 1, duration: d, ease: "power2.out" }, s);
+  tl.fromTo("#b07b", { rotation: 40 }, { rotation: -20, duration: d, ease: "power2.out" }, s);
+  tl.fromTo("#b07dot", { scale: 0 }, { scale: 1, duration: 0.4, ease: BOUNCE }, s + 0.5);
+  tl.to("#b07dot", { scale: 40, duration: 0.45, ease: "power3.in" }, s + d - 0.45); }
+
+// b08: nested octagons open around the logo
+{ const [s, d] = A("b08");
+  tl.fromTo("#b08ring", { scale: 0.2 }, { scale: 1, duration: 0.9, ease: E }, s);
+  tl.fromTo("#b08o1", { rotation: -45, scale: 0.5 }, { rotation: 0, scale: 1, duration: 0.9, ease: E }, s + 0.05);
+  tl.fromTo("#b08o2", { rotation: 45, scale: 0.5 }, { rotation: 0, scale: 1, duration: 0.9, ease: E }, s + 0.1);
+  tl.fromTo("#b08o3", { rotation: -30, scale: 0.4 }, { rotation: 0, scale: 1, duration: 0.9, ease: E }, s + 0.15);
+  tl.fromTo(["#b08m", "#b08w"], { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: E, stagger: 0.12 }, s + 0.6);
+  tl.to(["#b08o1", "#b08o3"], { rotation: 22.5, duration: 1.4, ease: "power2.inOut" }, s + 1.4);
+  tl.to("#b08o2", { rotation: -22.5, duration: 1.4, ease: "power2.inOut" }, s + 1.4); }
+
+// b09: circle opens on a stranger
+{ const [s, d] = A("b09");
+  tl.fromTo("#b09c", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(75% at 50% 50%)", duration: d, ease: "power3.inOut" }, s); }
+
+// b10: ring of words, then the wheel
+{ const [s, d] = A("b10");
+  tl.fromTo("#b10circle", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7, ease: E }, s);
+  tl.fromTo("#b10ring", { rotation: 0, transformOrigin: "50% 50%" }, { rotation: -90, duration: 2.2, ease: "none" }, s);
+  tl.to(["#b10circle", "#b10ring"], { x: -900, opacity: 0, duration: 0.6, ease: "power3.in" }, s + 1.9);
+  const words = ["Journeys", "Think-aloud", "SEO", "AI search", "Security", "Fix prompt", "MCP server", "GitHub pull requests", "Rerun", "Compare", "AI answers", "Weekly watch", "Team workspace", "Branded PDF"];
+  const wheel = document.getElementById("b10wheel"); const R = 420, step = 18;
+  words.forEach((w, i) => { const it = document.createElement("div"); it.className = "it"; it.textContent = w; it.setAttribute("data-layout-allow-overlap", "");
+    it.style.transform = `rotateX(${-i * step}deg) translateZ(${R}px)`; wheel.appendChild(it); });
+  tl.set(wheel, { x: -380 }, s);
+  tl.fromTo(wheel, { rotationX: -40, opacity: 0, z: -R }, { rotationX: 0, opacity: 1, z: -R, duration: 0.6, ease: E }, s + 2.0);
+  tl.to(wheel, { rotationX: 9 * step, duration: 2.2, ease: "power2.inOut" }, s + 2.4);
+  tl.fromTo("#b10cur", { x: 1500, y: 900 }, { x: 1020, y: 560, duration: 0.8, ease: "power3.inOut" }, s + 2.6); }
+
+// b11: five Scouts in tiles
+{ const [s] = A("b11");
+  const row = document.getElementById("b11row");
+  [["ink", "Journeys"], ["cobalt", "AI search"], ["lime", "Security"], ["coral", "Fixes"], ["sun", "Watch"]].forEach(([c, l], i) => {
+    const w = document.createElement("div"); w.style.cssText = "display:flex;flex-direction:column;align-items:center;gap:16px";
+    w.innerHTML = `<div class="icon-tile" style="${c === "ink" ? "background:#fff" : ""}"><img src="assets/scout/scout-still-${c}.png" alt=""></div><div style="font-size:22px;color:#fff;font-weight:500">${l}</div>`;
+    row.appendChild(w);
+    tl.fromTo(w, { y: 60, opacity: 0, scale: 0.7 }, { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: BOUNCE }, s + 0.1 + i * 0.1);
+  }); }
+
+// b12: the side panel, tilted then flat
+{ const [s, d] = A("b12");
+  tl.set("#w12", { opacity: 1 }, s);
+  tl.fromTo("#w12b", { rotationY: -24, rotationX: 10, scale: 0.85, x: 120 }, { rotationY: -6, rotationX: 3, scale: 1, x: 0, duration: 1.4, ease: E }, s);
+  tl.to("#w12b", { rotationY: 0, rotationX: 0, scale: 1.02, duration: d - 1.4, ease: "power1.inOut" }, s + 1.4);
+  tl.set("#w12", { opacity: 0 }, s + d); }
+
+// b13: question, Scout answers
+{ const [s] = A("b13");
+  tl.fromTo("#b13q", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: E }, s + 0.1);
+  tl.fromTo("#b13a", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: E }, s + 0.7); }
+
+// b14: bubble, Scout's face
+{ const [s, d] = A("b14");
+  tl.fromTo("#b14b", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: BOUNCE }, s);
+  tl.fromTo("#b14s", { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.6, ease: BOUNCE }, s + 0.25);
+  ["#b14x1", "#b14x2", "#b14x3"].forEach((id, i) => tl.fromTo(id, { x: i % 2 ? -80 : 80 }, { x: i % 2 ? 60 : -60, duration: d, ease: "none" }, s)); }
+
+// b15: what should Scout test next
+{ const [s] = A("b15");
+  tl.fromTo("#b15s", { scale: 0, y: 30 }, { scale: 1, y: 0, duration: 0.5, ease: BOUNCE }, s);
+  K.rise(tl, document.getElementById("b15h"), s + 0.15, { stagger: 0.04 });
+  tl.fromTo("#b15in", { scaleX: 0.6, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.5, ease: E }, s + 0.4);
+  K.type(tl, document.getElementById("b15txt"), s + 0.8, 40);
+  tl.fromTo("#b15cur", { x: 1600, y: 950 }, { x: 1374, y: 662, duration: 0.8, ease: "power3.inOut" }, s + 1.4);
+  tl.to("#b15cur", { scale: 0.8, duration: 0.08, yoyo: true, repeat: 1 }, s + 2.28);
+  tl.to("#b15go", { scale: 0.86, duration: 0.08, yoyo: true, repeat: 1 }, s + 2.28); }
+
+// b16: findings table
+{ const [s, d] = A("b16");
+  const rows = [["coral", "Trip form is hard to find", "Journey", "Blocked", "#ffe1de", "#c93a30"], ["coral", "Budget stuck on “Loading budget…”", "Journey", "Blocked", "#ffe1de", "#c93a30"],
+    ["sun", "Voyage cards are not clickable", "Journey", "In review", "#fff1c2", "#7a5a00"], ["cobalt", "Canonical link missing", "SEO", "Fixed", "#dff6e7", "#1f7a45"],
+    ["lime", "No Content-Security-Policy", "Security", "Fixed", "#dff6e7", "#1f7a45"]];
+  const box = document.getElementById("b16rows");
+  rows.forEach(([c, t, k, st, bg, fg], i) => {
+    const r = document.createElement("div"); r.className = "row";
+    r.innerHTML = `<img src="assets/scout/scout-still-${c}.png" alt="" style="height:34px"><span>${t}</span><span class="mono" style="font-size:18px;color:var(--muted);margin-left:26px">${k}</span><span class="st" style="background:${bg};color:${fg}">${st}</span>`;
+    box.appendChild(r);
+    tl.fromTo(r, { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, ease: E }, s + 0.4 + i * 0.12);
+  });
+  tl.fromTo("#b16t", { rotationX: 18, rotationY: -12, y: 80, opacity: 0 }, { rotationX: 6, rotationY: -4, y: 0, opacity: 1, duration: 0.9, ease: E }, s);
+  tl.to("#b16t", { rotationX: 0, rotationY: 0, duration: d - 0.9, ease: "none" }, s + 0.9); }
+
+// b17: shapes snap, notification
+{ const [s] = A("b17");
+  [["#b17a", -400, 0], ["#b17b", 400, -200], ["#b17c", -300, 300], ["#b17d", 300, 300]].forEach(([id, x, y], i) =>
+    tl.fromTo(id, { x, y, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.6, ease: E }, s + i * 0.05));
+  tl.fromTo("#b17n", { y: 40, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: BOUNCE }, s + 0.5); }
+
+// b18: report tilts flat
+{ const [s, d] = A("b18");
+  tl.fromTo("#b18b", { rotationY: 22, rotationX: 8, scale: 0.8, opacity: 0 }, { rotationY: 4, rotationX: 2, scale: 0.98, opacity: 1, duration: 1.0, ease: E }, s);
+  tl.to("#b18b", { rotationY: 0, rotationX: 0, scale: 1.02, duration: d - 1.0, ease: "none" }, s + 1.0); }
+
+// b19: metric cards carousel
+{ const [s] = A("b19");
+  const dots = document.getElementById("b19dots");
+  for (let i = 0; i < 24; i++) { const d = document.createElement("span"); d.style.cssText = `width:22px;height:22px;border-radius:50%;background:${i < 15 ? "#3d5afe" : "#d4dcff"}`; dots.appendChild(d); }
+  tl.fromTo(["#b19m1", "#b19m2", "#b19m3"], { y: 120, opacity: 0, rotation: (i) => (i - 1) * 6 }, { y: 0, opacity: 1, rotation: 0, duration: 0.6, ease: E, stagger: 0.12 }, s);
+  tl.to("#b19track", { x: -450, duration: 0.8, ease: "power3.inOut" }, s + 1.4);
+  tl.to(["#b19m1", "#b19m3"], { scale: 0.9, duration: 0.5 }, s + 1.5);
+  tl.to("#b19m3", { opacity: 0, duration: 0.2 }, s + 2.45); // the yellow card takes its place
+  tl.fromTo("#b19y", { opacity: 0, scale: 0.6, rotation: -8 }, { opacity: 1, scale: 1.04, rotation: 0, duration: 0.6, ease: BOUNCE }, s + 2.48); }
+
+// b20: the plan, checked off
+{ const [s] = A("b20");
+  const items = ["Make the trip form easy to find", "Fix the budget loading hang", "Make voyage cards clickable"];
+  const box = document.getElementById("b20list");
+  items.forEach((t, i) => {
+    const r = document.createElement("div"); r.style.cssText = "display:flex;align-items:center;gap:18px";
+    r.innerHTML = `<span class="b20box" style="width:30px;height:30px;border:2px solid var(--ink);border-radius:6px;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M4 12l5 5 11-11" stroke="#1b1b1f" stroke-width="3" fill="none"/></svg></span>${t}`;
+    box.appendChild(r);
+    tl.fromTo(r, { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.4, ease: E }, s + 0.2 + i * 0.15);
+    tl.fromTo(r.querySelector("svg"), { scale: 0 }, { scale: 1, duration: 0.3, ease: BOUNCE }, s + 0.8 + i * 0.2);
+  });
+  tl.fromTo("#b20q", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, s + 1.4); }
+
+// b21: Scout inside the shapes
+{ const [s, d] = A("b21");
+  const sc = K.scout(document.getElementById("b21s"), "ink", 230);
+  K.walk(tl, sc, s, d);
+  tl.fromTo("#b21a", { scale: 2.2 }, { scale: 1, duration: 0.9, ease: E }, s);
+  tl.fromTo("#b21b", { rotation: -45 }, { rotation: 0, duration: 0.9, ease: E }, s);
+  tl.fromTo("#b21c", { rotation: 45, scale: 0.7 }, { rotation: 0, scale: 1, duration: 0.9, ease: E }, s); }
+
+// b22: Done
+{ const [s] = A("b22");
+  tl.fromTo("#b22c", { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.55, ease: BOUNCE }, s); }
+
+// b23: audience cards
+{ const [s, d] = A("b23");
+  document.querySelectorAll("#b23row .aud").forEach((c, i) => tl.fromTo(c, { y: 700, rotation: (i - 1) * 8 }, { y: 0, rotation: (i - 1) * 2, duration: 0.7, ease: E }, s + i * 0.15));
+  tl.to("#b23row", { x: -40, duration: d, ease: "none" }, s); }
+
+// b24: collage converges
+{ const [s, d] = A("b24");
+  [["#b24a", -500, -300], ["#b24b", 0, -500], ["#b24c", 500, -300], ["#b24d", -500, 400], ["#b24e", 300, 500], ["#b24f", 600, 0]].forEach(([id, x, y], i) =>
+    tl.fromTo(id, { x, y, opacity: 0, rotation: (i % 2 ? 20 : -20) }, { x: 0, y: 0, opacity: 1, rotation: 0, duration: 0.8, ease: E }, s + i * 0.05));
+  tl.to(["#b24a", "#b24b", "#b24c", "#b24d", "#b24e", "#b24f"], { scale: 0, opacity: 0, duration: 0.4, ease: "power3.in", stagger: 0.03 }, s + d - 0.55); }
+
+// b25: logo, Scout walks in
+{ const [s] = A("b25");
+  const sc = K.scout(document.getElementById("b25s"), "ink", 150);
+  tl.fromTo(sc, { x: -1000 }, { x: 0, duration: 1.3, ease: "power2.out" }, s);
+  K.walk(tl, sc, s, 1.3);
+  tl.fromTo("#b25w", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.7, ease: E }, s + 1.15); }
+
+// b26: tagline with five coloured dots
+{ const [s, d] = A("b26");
+  K.rise(tl, document.getElementById("b26t"), s + 0.05, { stagger: 0.06 });
+  const dots = document.getElementById("b26dots");
+  ["#2f5bff", "#ff5a4e", "#ffc93c", "#1f8a4c", "#1b1b1f"].forEach((c, i) => { const e = document.createElement("span"); e.style.cssText = `width:22px;height:22px;border-radius:${i % 2 ? "6px" : "50%"};background:${c};display:block`; dots.appendChild(e);
+    tl.fromTo(e, { scale: 0 }, { scale: 1, duration: 0.4, ease: BOUNCE }, s + 0.6 + i * 0.08); });
+  tl.fromTo("#b26u", { opacity: 0 }, { opacity: 1, duration: 0.5 }, s + 0.9);
+  tl.fromTo("#bgm", { volume: 1 }, { volume: 0, duration: 2.0, ease: "none" }, 58.0); }
+
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

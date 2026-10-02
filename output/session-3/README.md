@@ -39,3 +39,7 @@ Preserved all other dirty/user/Claude files. No source application edits, packag
 ## Subsequent authorized GitHub push — 3 October 2026
 
 Rohit subsequently requested a commit/push. The exact staged snapshot, excluding unrelated local design-version and Neuron/YapChat edits, passed TypeScript, registry Vitest and production build independently of the working tree. Required imported media and journal assets are included. The inherited bundle warning remains; this is not a comprehensive Session 5 pass. No branch switch or explicit deployment command is part of this push.
+
+## Live site CTA correction — 3 October 2026
+
+Copied Skyguide's original CTA arrangement and arrow directly into TripVerse: GitHub pill left, circular magnetic Live site right over the divider, original section margin/positioning and shared CSS. The Explore TripVerse pill is removed. TypeScript/whitespace checks pass; browser verifies correct live href, 178px circle with 50% radius and placement at 1280px. Screenshot: `tripverse-live-button.png`. Other layout/content is unchanged. This correction is local and uncommitted.

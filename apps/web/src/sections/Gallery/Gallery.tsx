@@ -6,37 +6,57 @@ import "./Gallery.css";
 
 // Gallery — full-bleed "closer look" across ALL projects, TWO rows drifting in
 // opposite directions. Square matted cards, buttery slow-down + lift on hover.
+// Reel speed in card-heights per second, so the drift feels the same at any
+// viewport size and however many images sit in assets/closer-look/.
+const SPEED = 2;
+
 export function Gallery() {
   const root = useRef<HTMLElement>(null);
   const track1 = useRef<HTMLDivElement>(null);
   const track2 = useRef<HTMLDivElement>(null);
   const tweens = useRef<gsap.core.Tween[]>([]);
 
-  const count = galleryImages.length;
-  const projectCount = new Set(galleryImages.map((image) => image.project)).size;
   const rowA = [...galleryImages, ...galleryImages];
   const reversed = [...galleryImages].reverse();
   const rowB = [...reversed, ...reversed];
 
   useGSAP(
     () => {
-      if (!root.current) return;
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      tweens.current = [];
-      if (reduce) return;
+      if (!root.current || !track1.current || !track2.current) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const a = track1.current;
+      const b = track2.current;
 
-      if (track1.current)
-        tweens.current.push(
-          gsap.to(track1.current, { xPercent: -50, duration: 60, ease: "none", repeat: -1 }),
+      // Cards size to their image, so the track width is only final once every
+      // image has loaded. Starting the -50% loop earlier made the rows jump and
+      // speed up each time an image arrived mid-drift.
+      const pending = gsap.utils
+        .toArray<HTMLImageElement>("img", root.current)
+        .filter((img) => !img.complete)
+        .map(
+          (img) =>
+            new Promise((done) => {
+              img.addEventListener("load", done, { once: true });
+              img.addEventListener("error", done, { once: true });
+            }),
         );
-      if (track2.current)
-        tweens.current.push(
-          gsap.fromTo(
-            track2.current,
-            { xPercent: -50 },
-            { xPercent: 0, duration: 60, ease: "none", repeat: -1 },
-          ),
-        );
+
+      let cancelled = false;
+      Promise.all(pending).then(() => {
+        if (cancelled) return;
+        const card = a.firstElementChild as HTMLElement | null;
+        const duration = a.scrollWidth / 2 / ((card?.offsetHeight || 380) * SPEED);
+        tweens.current = [
+          gsap.fromTo(a, { xPercent: 0 }, { xPercent: -50, duration, ease: "none", repeat: -1 }),
+          gsap.fromTo(b, { xPercent: -50 }, { xPercent: 0, duration, ease: "none", repeat: -1 }),
+        ];
+      });
+
+      return () => {
+        cancelled = true;
+        tweens.current.forEach((t) => t.kill());
+        tweens.current = [];
+      };
     },
     { scope: root },
   );
@@ -49,11 +69,9 @@ export function Gallery() {
   const renderCard = (item: GalleryImage, i: number) => (
     <figure className="gallery-item" key={i}>
       <div className="gallery-item-inner">
-        <img src={item.src} alt={`${item.project}: ${item.label}`} loading="lazy" draggable={false} />
+        <img src={item.src} alt={`${item.project}: ${item.label}`} decoding="async" draggable={false} />
         <span className="gallery-item-badge">{item.project}</span>
-        <figcaption className="gallery-caption">
-          <span className="gallery-caption-view">View ↗</span>
-        </figcaption>
+        <figcaption className="gallery-caption" />
       </div>
     </figure>
   );
@@ -61,10 +79,6 @@ export function Gallery() {
   return (
     <section className="gallery" id="gallery" ref={root}>
       <div className="gallery-head container">
-        <div className="gallery-head-row">
-          <span className="gallery-eyebrow">Selected screens</span>
-          <span className="gallery-count">{count} screens · {projectCount} projects</span>
-        </div>
         <h2 className="gallery-title">
           A closer <em>look</em>.
         </h2>

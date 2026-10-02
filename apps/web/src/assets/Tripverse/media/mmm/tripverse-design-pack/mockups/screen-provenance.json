@@ -1,0 +1,59 @@
+{
+  "screenshotCount": 13,
+  "screenshots": [
+    {
+      "file": "frontend/public/guide/06-studio-plan.png",
+      "sha256": "4a05494d74eae6c6cbd8fef766d420c49937783ccae0acbce61c383d026984af"
+    },
+    {
+      "file": "frontend/public/guide/23b-phone-chat.png",
+      "sha256": "ff646930af3b154d25405db782b3c7c04772430894642cd5a12f8725d3097282"
+    },
+    {
+      "file": "frontend/public/guide/23-phone-sketch.png",
+      "sha256": "662774b12304f896a7aaa599fd7519ac2ea31055baa0178129ce58c7422cad0d"
+    },
+    {
+      "file": "frontend/public/guide/08-studio-map.png",
+      "sha256": "464a31c89dfe2112d33262ed5fa5d4b0b00635b1418bd8878795a7f521d17b1f"
+    },
+    {
+      "file": "frontend/public/guide/16-build-day-plan.png",
+      "sha256": "b5162e0349974759e675bc2fa0124f9aed02d5cf3e193eeaf4b1d3e9dd6201cd"
+    },
+    {
+      "file": "frontend/public/guide/07c-sketch-day.png",
+      "sha256": "571e54760962c56c0b92868d6dc74dea296354fc75aa66a5c152d1146f19b5eb"
+    },
+    {
+      "file": "frontend/public/guide/19-build-budget-sync.png",
+      "sha256": "2e1e6bfc40df7686e0d00ec4f436b0533b86b51cf82f535ced37c194e1a08f28"
+    },
+    {
+      "file": "frontend/public/guide/13-budget-rows.png",
+      "sha256": "162183d5b7f0c9d02a789edc0efaac0408481582c11d29e676fbfd252e0546ee"
+    },
+    {
+      "file": "frontend/public/guide/05b-change-receipt.png",
+      "sha256": "b7e16580777ef569c6145d9128d8bb7d1d3929ed01b38a51b7f8e6130e41e3c2"
+    },
+    {
+      "file": "frontend/public/guide/10b-export-ready.png",
+      "sha256": "3486e722c4672b783a87c7a7b5b96f3af004a7b1b3ce0bb2dd85dbcd1a9fe91b"
+    },
+    {
+      "file": "frontend/public/guide/09-studio-3d.png",
+      "sha256": "ff40060db0ebfd23bd47e3fa4ded0d1a47be9da067f9531b35e6307715995836"
+    },
+    {
+      "file": "frontend/public/guide/24-explore.png",
+      "sha256": "898d6b8bbfbe2ecb262c97d141e32a8f6623274338f1437242e7502c85518d35"
+    },
+    {
+      "file": "frontend/public/guide/01-welcome.png",
+      "sha256": "6ec06b7f27ab003dbab229a11d02c29a2af582270ceae65b0071aadb0cdc8c63"
+    }
+  ],
+  "logo": "frontend/media/icons/Vector.svg",
+  "generatedUI": false
+}

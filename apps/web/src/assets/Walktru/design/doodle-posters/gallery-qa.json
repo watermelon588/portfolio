@@ -1,0 +1,29 @@
+{
+  "widths": [
+    {
+      "width": 1600,
+      "scrollWidth": 1600,
+      "imagesLoaded": true,
+      "links": 10
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "imagesLoaded": true,
+      "links": 10
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375,
+      "imagesLoaded": true,
+      "links": 10
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "imagesLoaded": true,
+      "links": 10
+    }
+  ],
+  "errors": []
+}

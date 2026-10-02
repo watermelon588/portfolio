@@ -1,0 +1,14 @@
+[
+  {
+    "n": 1,
+    "p": "art/01-planning-desk.png",
+    "prompt": "Edit this background art plate only. Remove all dried flower stems, blooms, branches and their shadows from the entire upper-left quadrant. Fill that area seamlessly with the same existing warm ivory paper texture. Keep everything else exactly unchanged: composition, dimensions, Himalayan photo at lower left, red paper, jumping travelers at far right, pencil and journal at bottom, lighting, tactile grain. No text, logo, device or UI. The top-left must be completely quiet paper for branding and headline.",
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-454d2ec9-fac5-4b48-9505-176c97744e55.png"
+  },
+  {
+    "n": 8,
+    "p": "art/08-take-trip-with-you.png",
+    "prompt": "Edit this background art plate only. Remove all flower stems, blooms, branches, leaves and their shadows from the entire upper-left paper sheet and upper middle copy area. Also remove the cup at upper right and the little flowers beside it, filling the cup area with the identical sage desk texture. Keep everything else exactly unchanged: dimensions, bone paper sheet boundaries, sage desk, notebook at far right, meadow and cartoon traveler bottom left, pink umbrella photo at bottom right, paper texture, daylight. Leave lower-edge tiny flowers untouched. No text, logo, UI or devices. Upper-left paper must be absolutely clear and quiet for exact branding.",
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-e6c4d600-72a0-4cbf-a0e6-c77e573925bf.png"
+  }
+]

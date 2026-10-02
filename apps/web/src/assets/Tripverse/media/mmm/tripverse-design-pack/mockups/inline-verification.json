@@ -1,0 +1,144 @@
+{
+  "bytes": 677159,
+  "fragmentOnly": true,
+  "logoExact": true,
+  "workingPackPngsMatch": true,
+  "checks": [
+    {
+      "width": 320,
+      "count": 10,
+      "distinctNames": 10,
+      "variants": [
+        {
+          "name": "The planning desk",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Pocket sketchbook",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "The whole route",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Build a day together",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Sketch meets studio",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "A budget with context",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Ask. Change. Keep going.",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Take your trip with you",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "One trip, four views",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Inspiration into a plan",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 736,
+      "count": 10,
+      "distinctNames": 10,
+      "variants": [
+        {
+          "name": "The planning desk",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Pocket sketchbook",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "The whole route",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Build a day together",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Sketch meets studio",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "A budget with context",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Ask. Change. Keep going.",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Take your trip with you",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "One trip, four views",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        },
+        {
+          "name": "Inspiration into a plan",
+          "loaded": true,
+          "imageFits": true,
+          "overflow": false
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

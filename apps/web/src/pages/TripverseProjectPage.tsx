@@ -120,11 +120,27 @@ export default function TripverseProjectPage() {
           <p className="dw-hero-tagline">{caseStudy.tagline}</p>
           <p className="dw-body-lg">A trip starts as a feeling. Turning it into days, places and decisions takes a little more. TripVerse brings the conversation and the journey into one workspace — with room to change your mind.</p>
         </section>
-        <section className="container dw-hero-cta-section">
-          <span className="footer-stripe" /><div className="footer-cta-row"><div className="footer-contacts">
-            <a className="footer-pill magnetic" data-strength="24" href={caseStudy.live} target="_blank" rel="noopener noreferrer"><span>Explore TripVerse ↗</span></a>
-            <a className="footer-pill magnetic" data-strength="24" href={caseStudy.github} target="_blank" rel="noopener noreferrer"><span>GitHub Repository ↗</span></a>
-          </div></div>
+        <section className="container" style={{ position: "relative", marginBottom: "4rem" }}>
+          <span className="footer-stripe" />
+          <div className="footer-cta-row">
+            <div className="footer-contacts">
+              {caseStudy.github && (
+                <a className="footer-pill magnetic" data-strength="24" href={caseStudy.github} target="_blank" rel="noopener noreferrer">
+                  <span>GitHub Repository ↗</span>
+                </a>
+              )}
+            </div>
+            {caseStudy.live && (
+              <a className="footer-round magnetic" data-strength="42" href={caseStudy.live} target="_blank" rel="noopener noreferrer">
+                <span className="footer-round-label">Live site</span>
+                <span className="footer-round-arrow">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" style={{ width: "100%", height: "100%" }}>
+                    <path fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" d="M7 17 17 7M8 7h9v9" />
+                  </svg>
+                </span>
+              </a>
+            )}
+          </div>
         </section>
         <section className="container dw-meta-section" aria-label="Project details">
           <div className="dw-meta-grid-3col">{[["Discipline", "Full-stack engineering / AI agents"], ["Architecture", "React · FastAPI · LangGraph"], ["Year", "2026"]].map(([label, value]) => <div className="dw-meta-col" key={label}><span className="dw-meta-label">{label}</span><span className="dw-meta-stripe" /><p className="dw-meta-val">{value}</p></div>)}</div>

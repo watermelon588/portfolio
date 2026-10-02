@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,6 +8,9 @@ import { useMagnetic } from "@/components/motion/useMagnetic";
 import "./Hero.css";
 
 gsap.registerPlugin(ScrollTrigger);
+
+// What I actually do, cycled under the static "Backend Engineer" line.
+const ROLES = ["Scalable APIs", "AI agents & RAG", "Realtime systems", "Distributed backends"];
 
 export function Hero() {
   const root = useRef<HTMLDivElement>(null);
@@ -21,6 +25,8 @@ export function Hero() {
 
       const textElements = trackRef.current.children;
       if (!textElements.length) return;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) return;
 
       let xPercent = -50;
       let direction = 1; // 1 = left to right, -1 = right to left
@@ -91,7 +97,35 @@ export function Hero() {
         });
       }
 
+      // Rotating role line + subtle cursor depth (name and portrait drift apart).
+      const cleanups: Array<() => void> = [];
+      const words = gsap.utils.toArray<HTMLElement>(".hero-role-roll-word");
+      if (words.length > 1) {
+        gsap.set(words, { yPercent: 110, visibility: "visible" });
+        gsap.set(words[0]!, { yPercent: 0 });
+        const tl = gsap.timeline({ repeat: -1 });
+        words.forEach((w, i) => {
+          const next = words[(i + 1) % words.length]!;
+          tl.to(w, { yPercent: -110, duration: 0.7, ease: "power3.inOut" }, "+=2")
+            .fromTo(next, { yPercent: 110 }, { yPercent: 0, duration: 0.7, ease: "power3.inOut" }, "<");
+        });
+        cleanups.push(() => tl.kill());
+      }
+      if (window.matchMedia("(hover: hover)").matches && root.current) {
+        const el = root.current;
+        const trackX = gsap.quickTo(".hero-title-track", "x", { duration: 1.2, ease: "power3" });
+        const imgX = gsap.quickTo(".hero-portrait-img", "x", { duration: 1.4, ease: "power3" });
+        const onMove = (e: MouseEvent) => {
+          const n = e.clientX / window.innerWidth - 0.5;
+          trackX(n * -40);
+          imgX(n * 18);
+        };
+        el.addEventListener("mousemove", onMove);
+        cleanups.push(() => el.removeEventListener("mousemove", onMove));
+      }
+
       return () => {
+        cleanups.forEach((c) => c());
         gsap.ticker.remove(onTick);
         st.kill();
         if (scrollTimeout) clearTimeout(scrollTimeout);
@@ -105,10 +139,16 @@ export function Hero() {
       {/* Background oversized title passing horizontally behind the portrait */}
       <div className="hero-title-container">
         <div className="hero-title-track" ref={trackRef}>
-          <h1 className="hero-title-text">Rohit Maity —&nbsp;</h1>
-          <h1 className="hero-title-text">Rohit Maity —&nbsp;</h1>
-          <h1 className="hero-title-text">Rohit Maity —&nbsp;</h1>
-          <h1 className="hero-title-text">Rohit Maity —&nbsp;</h1>
+          {[0, 1, 2, 3].map((i) => {
+            const Tag = i === 0 ? "h1" : "div";
+            return (
+              <Tag className="hero-title-text" key={i} aria-hidden={i > 0 || undefined}>
+                Rohit Maity
+                {" —"}
+                &nbsp;
+              </Tag>
+            );
+          })}
         </div>
       </div>
 
@@ -138,13 +178,13 @@ export function Hero() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.5"
-              className="hero-globe-icon"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="hero-download-icon"
               aria-hidden="true"
             >
-              <circle cx="12" cy="12" r="9" />
-              <path d="M3.6 9h16.8M3.6 15h16.8" />
-              <path d="M11.5 3a17 17 0 0 0 0 18M12.5 3a17 17 0 0 1 0 18" />
+              <path d="M12 4v11M7 10.5 12 15.5l5-5M5 20h14" />
             </svg>
           </div>
           <div className="hero-resume-details">
@@ -154,8 +194,8 @@ export function Hero() {
         </a>
 
         {/* Right side: Role & Arrow component */}
-        <div className="hero-role-block">
-          <div className="hero-role-arrow-box magnetic" data-strength="15">
+        <Link to="/work" className="hero-role-block hero-role-block--v2" aria-label="See my work">
+          <span className="hero-role-arrow-box magnetic" data-strength="15">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -164,18 +204,20 @@ export function Hero() {
               className="hero-role-arrow"
               aria-hidden="true"
             >
-              <path
-                d="M7 17L17 7M17 7H7M17 7V17"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </div>
-          <div className="hero-role-text">
-            <p className="hero-role-line">Freelance</p>
-            <p className="hero-role-line">Designer &amp; Developer</p>
-          </div>
-        </div>
+          </span>
+          <span className="hero-role-text">
+            <span className="hero-role-line hero-role-line--main">Backend Engineer</span>
+            <span className="hero-role-roll">
+              {ROLES.map((r) => (
+                <span className="hero-role-roll-word" key={r}>
+                  {r}
+                </span>
+              ))}
+            </span>
+          </span>
+        </Link>
       </div>
     </section>
   );

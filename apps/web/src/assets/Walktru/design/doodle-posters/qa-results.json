@@ -1,0 +1,101 @@
+{
+  "posters": 10,
+  "originalImageUses": 78,
+  "fonts": [
+    "Geist Variable",
+    "Geist Mono Variable"
+  ],
+  "errors": [],
+  "measurements": [
+    {
+      "slug": "fresh-eyes-club",
+      "name": "Fresh Eyes Club",
+      "width": 1600,
+      "height": 2000,
+      "ratio": "4:5",
+      "overflow": [],
+      "headingWeight": "200"
+    },
+    {
+      "slug": "the-second-look",
+      "name": "The Second Look",
+      "width": 1920,
+      "height": 1080,
+      "ratio": "16:9",
+      "overflow": [],
+      "headingWeight": "200"
+    },
+    {
+      "slug": "the-way-through",
+      "name": "The Way Through",
+      "width": 1080,
+      "height": 1920,
+      "ratio": "9:16",
+      "overflow": [],
+      "headingWeight": "200"
+    },
+    {
+      "slug": "one-clear-view",
+      "name": "One Clear View",
+      "width": 1600,
+      "height": 1600,
+      "ratio": "1:1",
+      "overflow": [],
+      "headingWeight": "200"
+    },
+    {
+      "slug": "signals-in-sight",
+      "name": "Signals in Sight",
+      "width": 2000,
+      "height": 1000,
+      "ratio": "2:1",
+      "overflow": [],
+      "headingWeight": "200"
+    },
+    {
+      "slug": "real-people-energy",
+      "name": "Real People Energy",
+      "width": 1440,
+      "height": 1920,
+      "ratio": "3:4",
+      "overflow": [],
+      "headingWeight": "200"
+    },
+    {
+      "slug": "build-test-better",
+      "name": "Build Test Better",
+      "width": 1800,
+      "height": 1200,
+      "ratio": "3:2",
+      "overflow": [],
+      "headingWeight": "200"
+    },
+    {
+      "slug": "scouts-second-look",
+      "name": "Scout’s Second Look",
+      "width": 2400,
+      "height": 800,
+      "ratio": "3:1",
+      "overflow": [],
+      "headingWeight": "200"
+    },
+    {
+      "slug": "from-noise-to-next",
+      "name": "From Noise to Next",
+      "width": 1280,
+      "height": 1920,
+      "ratio": "2:3",
+      "overflow": [],
+      "headingWeight": "200"
+    },
+    {
+      "slug": "the-outside-world",
+      "name": "The Outside World",
+      "width": 1920,
+      "height": 1200,
+      "ratio": "16:10",
+      "overflow": [],
+      "headingWeight": "200"
+    }
+  ]
+}

@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Walkthru · Ship Friday (variant A)</title>
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/kit/kit.js"></script>
+<link rel="stylesheet" href="assets/kit/base.css" />
+<style>
+  @font-face { font-family: "Geist"; src: url(assets/fonts/geist.woff2) format("woff2"); font-weight: 100 900; font-style: normal; }
+  @font-face { font-family: "Geist"; src: url(assets/fonts/geist-italic.woff2) format("woff2"); font-weight: 100 900; font-style: italic; }
+  @font-face { font-family: "Geist Mono"; src: url(assets/fonts/geist-mono.woff2) format("woff2"); font-weight: 100 900; font-style: normal; }
+
+  /* Variant A: reference 1 rhythm. Warm paper, tiny centred type, real product floating, iridescent scan light. */
+  .t-small { font-size: 44px; font-weight: 300; letter-spacing: -0.02em; color: var(--ink); white-space: nowrap; }
+  .t-small .m { color: #9a9a9f; }
+  .iri { position: absolute; inset: -12%; filter: blur(80px) saturate(1.25); }
+  .iri i { position: absolute; display: block; border-radius: 50%; }
+  .vwrap { position: absolute; opacity: 0; } /* stacks by DOM order, so overlay text can blend with the video below */
+  .over { pointer-events: none; }
+  .tile { position: absolute; overflow: hidden; border-radius: 10px; box-shadow: 0 30px 60px -30px rgba(27,27,31,.35); }
+  .tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .dark { background: #141416; }
+  .giant { font-size: 210px; font-weight: 300; letter-spacing: -0.055em; white-space: nowrap; color: #fff; mix-blend-mode: difference; line-height: 1; }
+  .tree { font-size: 40px; font-weight: 300; letter-spacing: -0.02em; color: #a7a7ac; line-height: 1.62; }
+  .tree .row { display: flex; align-items: center; gap: 16px; white-space: nowrap; }
+  .tree .ico { width: 26px; height: 30px; border: 2px solid currentColor; border-radius: 4px; flex: none; opacity: .8; }
+  .tree .chev { width: 26px; flex: none; text-align: center; }
+  .term { font: 400 92px/1 "Geist Mono", monospace; color: #f4f1ea; white-space: nowrap; letter-spacing: -0.02em; }
+  .term .hl { background: var(--cobalt); color: #fff; padding: 0 12px; }
+  .shield { position: absolute; width: 34px; height: 40px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="60">
+
+  <!-- s01 / Where / -->
+  <section id="s01" class="clip" data-start="0" data-duration="2.73" data-track-index="1">
+    <div class="center"><div class="t-small" id="s01t"><span class="m" id="s01a">/</span><span style="display:inline-block;width:46px"></span><span id="s01w">Where</span><span style="display:inline-block;width:46px"></span><span class="m" id="s01b">/</span></div></div>
+  </section>
+
+  <!-- s02 do strangers get stuck? collage over scan light -->
+  <section id="s02" class="clip" data-start="2.73" data-duration="2.18" data-track-index="1">
+    <div class="iri" id="s02iri">
+      <i style="width:900px;height:700px;left:-6%;top:-10%;background:#ffc9b8"></i>
+      <i style="width:800px;height:800px;left:55%;top:40%;background:#c7d6ff"></i>
+      <i style="width:600px;height:500px;left:30%;top:55%;background:#fff1b5"></i>
+    </div>
+    <div class="tile" id="s02a" style="left:120px;top:90px;width:430px;height:300px"><img src="assets/img/doodles/18230a5b96338c0dc5eba73b355ae4d0.jpg" alt=""></div>
+    <div class="tile" id="s02b" style="left:1380px;top:60px;width:300px;height:420px"><img src="assets/img/doodles/1d7e5f42491d149a6658f0943bf257de.jpg" alt=""></div>
+    <div class="tile" id="s02c" style="left:1260px;top:620px;width:520px;height:330px"><img src="assets/img/doodles/5ad38434e187bbb33f8f3dcf5fd8bb0d.jpg" alt=""></div>
+    <div class="tile" id="s02d" style="left:200px;top:640px;width:380px;height:340px"><img src="assets/img/mcp/849eb4b9e87dc4045b68c456a43c3fcc.jpg" alt=""></div>
+    <div class="tile" id="s02e" style="left:660px;top:120px;width:250px;height:180px"><img src="assets/img/doodles/7a423ad4727f1708b7371c55d92463f1.jpg" alt=""></div>
+    <div class="tile" id="s02f" style="left:860px;top:760px;width:300px;height:230px"><img src="assets/img/doodles/cfe6228d191f6f39ed21d2a116686c16.jpg" alt=""></div>
+    <div class="center"><div class="t-small" id="s02t">do strangers get <span style="color:var(--coral)">stuck?</span></div></div>
+  </section>
+
+  <!-- s03 floating product cards -->
+  <section id="s03" class="clip" data-start="4.91" data-duration="1.64" data-track-index="1" style="perspective:1600px">
+    <div class="fill" id="s03stage">
+      <img class="tile card" id="s03a" src="assets/img/stills/report-head.jpg" alt="" style="left:420px;top:250px;width:760px;height:346px;object-fit:cover">
+      <img class="tile card" id="s03b" src="assets/img/screens/extension-panel.png" alt="" style="left:1140px;top:180px;width:330px;height:470px;object-fit:cover;object-position:top">
+      <img class="tile card" id="s03c" src="assets/img/stills/score.jpg" alt="" style="left:620px;top:560px;width:640px;height:291px;object-fit:cover">
+      <img class="tile card" id="s03d" src="assets/img/stills/sidepanel.jpg" alt="" style="left:300px;top:520px;width:420px;height:300px;object-fit:cover;object-position:right top">
+      <img class="tile card" id="s03e" src="assets/img/screens/seo.jpg" alt="" style="left:1200px;top:640px;width:420px;height:240px;object-fit:cover">
+    </div>
+  </section>
+
+  <!-- s04 logo -->
+  <section id="s04" class="clip" data-start="6.55" data-duration="2.19" data-track-index="1">
+    <div class="center"><div style="display:flex;align-items:center;gap:22px">
+      <div id="s04s"></div><div id="s04w" style="font-size:78px;font-weight:400;letter-spacing:-0.035em">Walkthru</div>
+    </div></div>
+  </section>
+
+  <!-- s05 the goal prompt -->
+  <section id="s05" class="clip" data-start="8.74" data-duration="2.72" data-track-index="1">
+    <div class="center"><div class="card" id="s05card" style="width:1060px;padding:34px 38px 26px;border-radius:28px">
+      <div class="label" style="margin-bottom:18px">Give Scout a goal</div>
+      <div id="s05txt" style="font-size:38px;font-weight:300;letter-spacing:-0.02em;min-height:96px;line-height:1.3">Plan a 7-day trip from Kolkata to Japan, explore the budget, then stop.</div>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:18px">
+        <span class="chip" id="s05c1">Small-business buyer</span><span class="chip" id="s05c2">Your own browser</span><span class="chip" id="s05c3">Safe mode</span>
+        <div style="flex:1"></div>
+        <div id="s05send" style="width:62px;height:62px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center">
+          <svg width="26" height="26" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </div></div>
+    <svg class="cursor" id="s05cur" viewBox="0 0 24 24"><path d="M3 2l7.5 19 2.6-7.9L21 10.5z" fill="#1b1b1f" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  </section>
+
+  <!-- s06 the run, big, with the giant line -->
+  <section id="s06" class="clip" data-start="11.46" data-duration="2.18" data-track-index="1">
+    <div class="iri"><i style="width:900px;height:700px;left:50%;top:40%;background:#ffd9c9"></i><i style="width:900px;height:700px;left:-10%;top:-10%;background:#dbe4ff"></i></div>
+  </section>
+  <div class="vwrap browser" id="w06" style="left:210px;top:150px;width:1500px;height:729px">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">localhost:5173/new-voyage · Scout is testing</span></div>
+    <div class="view" style="height:683px"><video id="v06" src="assets/clips/run.mp4" data-start="11.46" data-duration="2.18" data-media-start="3.6" data-track-index="2" muted playsinline></video></div>
+  </div>
+  <section id="o06" class="clip over" data-start="11.46" data-duration="2.18" data-track-index="3">
+    <div style="position:absolute;left:0;top:420px;width:100%"><div class="giant" id="s06g">a stranger tries your app&nbsp;&nbsp;✺&nbsp;&nbsp;live.&nbsp;&nbsp;a stranger tries your app</div></div>
+  </section>
+
+  <!-- s07 the checks tree -->
+  <section id="s07" class="clip" data-start="13.64" data-duration="2.2" data-track-index="1">
+    <div style="position:absolute;left:420px;top:150px" class="tree" id="s07tree"></div>
+  </section>
+
+  <!-- s08 footage with Scout's path -->
+  <div class="vwrap" id="w08" style="left:0;top:0;width:1920px;height:1080px;overflow:hidden">
+    <video id="v08" src="assets/clips/ext-start.mp4" data-start="15.84" data-duration="2.72" data-media-start="1.0" data-track-index="2" muted playsinline style="width:2372px;height:1080px;object-fit:cover"></video>
+  </div>
+  <section id="o08" class="clip over" data-start="15.84" data-duration="2.72" data-track-index="3">
+    <svg width="1920" height="1080" style="position:absolute;inset:0">
+      <path id="s08path" d="M220 980 C 420 900, 520 760, 560 640 S 760 380, 1060 300 S 1380 210, 1500 150" fill="none" stroke="#2f5bff" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 16"/>
+    </svg>
+    <div id="s08scout" style="position:absolute;left:0;top:0;filter:drop-shadow(0 8px 14px rgba(27,27,31,.25))"></div>
+    <div class="chip" id="s08chip" style="position:absolute;left:96px;top:72px;height:52px;font-size:22px;padding:0 22px"><span style="width:10px;height:10px;border-radius:50%;background:var(--coral)"></span>Scout · step 3 of 30 · thinking aloud</div>
+  </section>
+
+  <!-- s09 connect to -->
+  <section id="s09" class="clip" data-start="18.56" data-duration="1.1" data-track-index="1">
+    <div class="center"><div style="display:flex;align-items:center;gap:20px">
+      <div id="s09chip" style="height:64px;border:2px solid var(--coral);color:var(--coral);border-radius:999px;padding:0 30px;display:flex;align-items:center;font-size:30px;font-weight:400;white-space:nowrap">Connect to <span id="s09name" style="margin-left:12px;color:var(--ink)">Claude Code</span></div>
+      <div id="s09link" style="width:64px;height:64px;border-radius:50%;border:2px solid #7d73ff;display:flex;align-items:center;justify-content:center">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7d73ff" stroke-width="2.2" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></div>
+    </div></div>
+  </section>
+
+  <!-- s10 gradient pills (transition) -->
+  <section id="s10" class="clip" data-start="19.66" data-duration="1.09" data-track-index="1">
+    <div id="s10a" style="position:absolute;left:880px;top:300px;width:420px;height:110px;border-radius:60px;background:linear-gradient(90deg,#ffd27a,#ff9b6b);filter:blur(18px)"></div>
+    <div id="s10b" style="position:absolute;left:560px;top:470px;width:780px;height:150px;border-radius:80px;background:linear-gradient(90deg,#ff7fb2,#ffb37a,#cfe0ff);filter:blur(22px)"></div>
+    <div id="s10c" style="position:absolute;left:520px;top:690px;width:360px;height:110px;border-radius:60px;background:linear-gradient(90deg,#ff8a6b,#ffc0a8);filter:blur(18px)"></div>
+  </section>
+
+  <!-- s11 dashboard -->
+  <section id="s11" class="clip" data-start="20.75" data-duration="2.71" data-track-index="1">
+    <div class="browser" id="s11b" style="position:absolute;left:150px;top:120px;width:1620px;height:784px">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">walkthru.dev/app</span></div>
+      <div class="view" style="height:738px"><img class="shot" id="s11img" src="assets/img/stills/dash.jpg" alt=""></div>
+    </div>
+    <div class="chip" id="s11c1" style="position:absolute;left:1240px;top:300px;height:56px;font-size:22px;background:linear-gradient(90deg,#ffe3a1,#ffc6b0);border:0">Scout · watching your report</div>
+    <div class="chip" id="s11c2" style="position:absolute;left:300px;top:760px;height:56px;font-size:22px;background:linear-gradient(90deg,#d6e2ff,#f6d8ff);border:0">One run, four layers of proof</div>
+    <div class="chip" id="s11c3" style="position:absolute;left:820px;top:470px;height:56px;font-size:22px;background:linear-gradient(90deg,#d8f5c0,#fff1b5);border:0">142 of 150 test runs left</div>
+  </section>
+
+  <!-- s12 phones over the scan light -->
+  <section id="s12" class="clip" data-start="23.46" data-duration="2.19" data-track-index="1">
+    <div class="iri" id="s12iri"><i style="width:1100px;height:800px;left:-10%;top:10%;background:#ffb8a3"></i><i style="width:900px;height:900px;left:45%;top:-20%;background:#bcd0ff"></i><i style="width:800px;height:600px;left:35%;top:60%;background:#fff0a8"></i></div>
+    <div class="phone" id="s12p1" style="position:absolute;left:560px;top:120px;width:380px;height:820px"><div class="screen"><img src="assets/img/posters/the-way-through.jpg" alt=""></div></div>
+    <div class="phone" id="s12p2" style="position:absolute;left:1000px;top:160px;width:380px;height:820px"><div class="screen" style="background:#141416;position:relative">
+      <img src="assets/img/stills/places.jpg" alt="" style="height:60%;object-fit:cover;object-position:8% 70%">
+      <div style="padding:28px 26px;color:#fff">
+        <div style="width:38px;height:38px;border-radius:10px;background:var(--lime);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10" stroke="#141416" stroke-width="3" fill="none"/></svg></div>
+        <div style="font-size:42px;font-weight:300;letter-spacing:-0.03em;margin-top:16px;line-height:1.05">Reached the goal</div>
+        <div class="mono" style="font-size:16px;color:#9a9aa0;margin-top:12px">Small-business buyer · 18 steps</div>
+      </div></div></div>
+  </section>
+
+  <!-- s13 the report in its frame -->
+  <section id="s13" class="clip" data-start="25.65" data-duration="2.19" data-track-index="1"></section>
+  <div class="vwrap browser" id="w13" style="left:190px;top:130px;width:1540px;height:747px">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">walkthru.dev/app/runs/ce727b1b · Launch readiness report</span></div>
+    <div class="view" style="height:701px"><video id="v13" src="assets/clips/report.mp4" data-start="25.65" data-duration="2.19" data-media-start="0.05" data-track-index="2" muted playsinline></video></div>
+  </div>
+
+  <!-- s14 dark arrow -->
+  <section id="s14" class="clip dark" data-start="27.84" data-duration="1.08" data-track-index="1">
+    <div class="center"><div style="display:flex;align-items:center;gap:26px">
+      <svg id="s14a" width="150" height="120" viewBox="0 0 150 120"><path d="M8 60h120M80 14l46 46-46 46" stroke="#c6f432" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div id="s14b" style="width:14px;height:150px;border-radius:4px;background:#7d73ff"></div>
+    </div></div>
+  </section>
+
+  <!-- s15 terminal -->
+  <section id="s15" class="clip dark" data-start="28.92" data-duration="3.82" data-track-index="1">
+    <div class="center" style="flex-direction:column;gap:46px">
+      <div class="term"><span style="color:#c6f432">→</span> <span id="s15cmd">claude mcp add</span> <span class="hl" id="s15hl">walkthru</span></div>
+      <div id="s15out" class="mono" style="font-size:30px;color:#9a9aa0;white-space:nowrap"><span style="color:#c6f432">✓</span> Connected. 23 tools: scan_site · get_fix_prompt · verify_finding · open_fix_pull_request</div>
+    </div>
+  </section>
+
+  <!-- s16 the editor (real capture) -->
+  <section id="s16" class="clip dark" data-start="32.74" data-duration="2.73" data-track-index="1"></section>
+  <div class="vwrap" id="w16" style="left:160px;top:110px;width:1600px;height:729px;border-radius:16px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08)">
+    <video id="v16" src="assets/clips/mcp-code.mp4" data-start="32.74" data-duration="2.73" data-media-start="6.2" data-track-index="2" muted playsinline style="width:100%;height:100%;object-fit:cover"></video>
+  </div>
+
+  <!-- s17 macro, black and white -->
+  <section id="s17" class="clip dark" data-start="35.47" data-duration="1.64" data-track-index="1">
+    <img id="s17a" src="assets/img/visual/ac225fd33875c5a4e7a8894d0120c250.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15)">
+    <img id="s17b" src="assets/img/visual/15c1d4e49ce99f2c7d6388d24f15bcfb.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);opacity:0">
+    <div class="fill" style="background:rgba(0,0,0,.38)"></div>
+    <div class="center"><div id="s17t" style="font-size:52px;font-weight:300;color:#fff;letter-spacing:-0.02em;text-shadow:0 2px 30px rgba(0,0,0,.6)">It sees what strangers see.</div></div>
+  </section>
+
+  <!-- s18 split: Scout's notes + the replay -->
+  <section id="s18" class="clip" data-start="37.11" data-duration="2.18" data-track-index="1">
+    <div class="card" id="s18card" style="position:absolute;left:110px;top:200px;width:520px;padding:30px 30px 26px">
+      <div style="display:flex;align-items:center;gap:14px"><div id="s18sc"></div><div><div class="label">Scout</div><div style="font-size:22px;margin-top:6px">Small-business buyer</div></div></div>
+      <div id="s18rows" style="margin-top:22px;display:flex;flex-direction:column;gap:14px;font-size:21px;line-height:1.35"></div>
+    </div>
+  </section>
+  <div class="vwrap browser" id="w18" style="left:680px;top:170px;width:1140px;height:565px">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">See every meaningful moment</span></div>
+    <div class="view" style="height:519px"><video id="v18" src="assets/clips/moments.mp4" data-start="37.11" data-duration="2.18" data-media-start="1.2" data-track-index="2" muted playsinline></video></div>
+  </div>
+
+  <!-- s19 Launch Ready -->
+  <section id="s19" class="clip" data-start="39.29" data-duration="2.18" data-track-index="1">
+    <div class="browser" id="s19b" style="position:absolute;left:250px;top:150px;width:1420px;height:692px">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Launch Ready score</span></div>
+      <div class="view" style="height:646px"><img class="shot" id="s19img" src="assets/img/stills/score.jpg" alt=""></div>
+    </div>
+    <div style="position:absolute;left:0;top:380px;width:100%;text-align:center"><span class="giant" id="s19g" style="display:inline-block">Launch&nbsp;✺&nbsp;Ready</span></div>
+  </section>
+
+  <!-- s20 thermal light + security check -->
+  <section id="s20" class="clip" data-start="41.47" data-duration="2.18" data-track-index="1">
+    <div class="iri" id="s20iri" style="filter:blur(46px) saturate(1.6)">
+      <i style="width:1200px;height:900px;left:-15%;top:-25%;background:#ff7a3d"></i>
+      <i style="width:900px;height:900px;left:40%;top:-10%;background:#ffd84a"></i>
+      <i style="width:1000px;height:700px;left:10%;top:45%;background:#7fb2ff"></i>
+      <i style="width:700px;height:700px;left:60%;top:50%;background:#ff9ec1"></i>
+      <i style="width:500px;height:400px;left:42%;top:30%;background:#fffbe8"></i>
+    </div>
+    <div class="center"><div id="s20btn" style="background:rgba(20,20,22,.88);color:#fff;border-radius:12px;padding:20px 30px;font-size:28px;display:flex;align-items:center;gap:14px">
+      <svg width="26" height="30" viewBox="0 0 24 28"><path d="M12 2l9 4v7c0 6-4 10-9 12-5-2-9-6-9-12V6z" fill="none" stroke="#c6f432" stroke-width="2.4"/></svg>Run passive security check</div></div>
+    <svg class="cursor" id="s20cur" viewBox="0 0 24 24"><path d="M3 2l7.5 19 2.6-7.9L21 10.5z" fill="#1b1b1f" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  </section>
+
+  <!-- s21 grid board -->
+  <section id="s21" class="clip" data-start="43.65" data-duration="2.19" data-track-index="1" style="background:#fafafa">
+    <svg width="1920" height="1080" style="position:absolute;inset:0" id="s21grid"></svg>
+    <div class="tile" id="s21a" style="left:120px;top:150px;width:300px;height:300px;border-radius:0"><img src="assets/img/visual/2da38d7cc1255b7a2b067b2ff2f2cb8a.jpg" alt="" style="filter:grayscale(1)"></div>
+    <div class="tile" id="s21b" style="left:540px;top:150px;width:480px;height:420px;border-radius:0"><img src="assets/img/real/someone-working--focused-2.jpg" alt="" style="filter:grayscale(1)"></div>
+    <div class="tile" id="s21c" style="left:1140px;top:390px;width:300px;height:300px;border-radius:0"><img src="assets/img/visual/e99d251a5c974b74f31a71a34b1593da.jpg" alt="" style="filter:grayscale(1)"></div>
+    <div id="s21s1" class="card" style="position:absolute;left:1500px;top:150px;width:300px;padding:22px 24px;border-radius:14px">
+      <div class="label">Launch Ready</div><div style="font-size:64px;font-weight:300;margin-top:10px;letter-spacing:-0.04em"><span id="s21odo">62</span> <span style="font-size:24px;color:var(--accent)">+29</span></div></div>
+    <div id="s21s2" class="mono" style="position:absolute;left:1500px;top:820px;background:#141416;color:#fff;font-size:20px;padding:12px 18px;border-radius:6px">Fixed 3 · New 0 · Still open 1</div>
+    <div id="s21s3" class="chip" style="position:absolute;left:120px;top:820px;height:50px;font-size:20px"><span style="width:10px;height:10px;border-radius:50%;background:var(--lime)"></span>21 checks · 0 passwords shared</div>
+  </section>
+
+  <!-- s22 fix dialog on light -->
+  <section id="s22" class="clip" data-start="45.84" data-duration="2.18" data-track-index="1">
+    <div class="iri" id="s22iri"><i style="width:1000px;height:800px;left:-10%;top:-20%;background:#ffd6c4"></i><i style="width:900px;height:800px;left:50%;top:30%;background:#d6e0ff"></i><i style="width:700px;height:600px;left:25%;top:55%;background:#fff3c2"></i></div>
+    <div class="center"><div class="card" id="s22card" style="width:780px;padding:30px 34px;border-radius:20px">
+      <div style="display:flex;align-items:center;gap:12px"><div style="font-size:30px;font-weight:400">Fix prompt</div><span class="chip" style="height:32px;font-size:16px">For your coding agent</span></div>
+      <div style="color:var(--muted);font-size:21px;margin-top:10px">3 grounded fixes · vercel.json · robots.txt · llms.txt</div>
+      <div style="display:flex;align-items:center;margin-top:26px;border-top:1px solid var(--line);padding-top:22px">
+        <div style="font-size:22px">Open a fix pull request</div><div style="flex:1"></div>
+        <div id="s22btn" style="background:var(--ink);color:#fff;border-radius:10px;padding:14px 22px;font-size:20px">Apply fixes</div></div>
+    </div></div>
+    <svg class="cursor" id="s22cur" viewBox="0 0 24 24"><path d="M3 2l7.5 19 2.6-7.9L21 10.5z" fill="#1b1b1f" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  </section>
+
+  <!-- s23 shield grid -->
+  <section id="s23" class="clip dark" data-start="48.02" data-duration="2.72" data-track-index="1">
+    <div class="fill" id="s23field"></div>
+    <div class="center"><svg id="s23big" width="200" height="236" viewBox="0 0 24 28"><path d="M12 2l9 4v7c0 6-4 10-9 12-5-2-9-6-9-12V6z" fill="none" stroke="#c6f432" stroke-width="1.6"/><path d="M8 14l3 3 5-6" stroke="#c6f432" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></div>
+    <div style="position:absolute;left:0;bottom:170px;width:100%;text-align:center"><span id="s23t" class="mono" style="display:inline-block;font-size:28px;color:#e9e9eb">Passive checks. Never an attack.</span></div>
+  </section>
+
+  <!-- s24 Launch -->
+  <section id="s24" class="clip" data-start="50.74" data-duration="2.18" data-track-index="1">
+    <div class="iri"><i style="width:1300px;height:500px;left:0;top:65%;background:#bcd3e8"></i><i style="width:1000px;height:400px;left:30%;top:58%;background:#ffd7bd"></i></div>
+    <div class="center"><div class="pill ink" id="s24btn" style="height:76px;font-size:30px;padding:0 40px">Launch</div></div>
+    <svg class="cursor" id="s24cur" viewBox="0 0 24 24"><path d="M3 2l7.5 19 2.6-7.9L21 10.5z" fill="#1b1b1f" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  </section>
+
+  <!-- s25 montage -->
+  <section id="s25" class="clip" data-start="52.92" data-duration="2.18" data-track-index="1">
+    <div class="browser" id="s25b" style="position:absolute;left:250px;top:150px;width:1420px;height:692px">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">walkthru.dev</span></div>
+      <div class="view" style="height:646px"><img class="shot" src="assets/img/stills/moments2.jpg" alt=""></div>
+    </div>
+  </section>
+  <div class="vwrap browser" id="w25" data-layout-allow-overlap style="left:250px;top:150px;width:1420px;height:692px">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">walkthru.dev</span></div>
+    <div class="view" style="height:646px"><video id="v25" src="assets/clips/landing.mp4" data-start="53.72" data-duration="1.38" data-media-start="0.3" data-track-index="2" muted playsinline></video></div>
+  </div>
+
+  <!-- s26 logo -->
+  <section id="s26" class="clip" data-start="55.1" data-duration="2.18" data-track-index="1">
+    <div class="center"><div style="display:flex;align-items:center;gap:26px">
+      <div id="s26s"></div><div id="s26w" style="font-size:96px;font-weight:400;letter-spacing:-0.035em">Walkthru</div>
+    </div></div>
+  </section>
+
+  <!-- s27 Scan it / tagline -->
+  <section id="s27" class="clip" data-start="57.28" data-duration="2.72" data-track-index="1">
+    <div class="center"><div id="s27pill" style="height:58px;border:2px solid var(--ink);border-radius:16px;padding:0 26px;display:flex;align-items:center;font-size:30px">Scan it</div></div>
+    <div class="center"><div id="s27t" class="t-small" style="font-size:52px" data-layout-allow-overlap>See where strangers get stuck.</div></div>
+    <div style="position:absolute;left:0;bottom:120px;width:100%;text-align:center"><span id="s27u" class="mono" style="display:inline-block;font-size:24px;color:var(--muted)">walkthru.dev · free to start</span></div>
+  </section>
+
+  <!-- audio -->
+  <audio id="bgm" src="assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3" data-start="0" data-duration="60" data-track-index="10" data-volume="0.8"></audio>
+  <audio id="fx1" src="assets/sfx/interface/drop_001.ogg" data-start="2.68" data-track-index="11" data-volume="0.55"></audio>
+  <audio id="fx2" src="assets/sfx/casino/card-fan-1.ogg" data-start="4.9" data-track-index="12" data-volume="0.6"></audio>
+  <audio id="fx3" src="assets/sfx/interface/bong_001.ogg" data-start="7.6" data-track-index="13" data-volume="0.45"></audio>
+  <audio id="fx4" src="assets/sfx/ui/mouseclick1.ogg" data-start="10.93" data-track-index="14" data-volume="0.8"></audio>
+  <audio id="fx5" src="assets/sfx/impact/impactSoft_medium_001.ogg" data-start="11.44" data-track-index="15" data-volume="0.6"></audio>
+  <audio id="fx6" src="assets/sfx/casino/card-slide-2.ogg" data-start="13.66" data-track-index="16" data-volume="0.5"></audio>
+  <audio id="fx7" src="assets/sfx/interface/switch_002.ogg" data-start="18.6" data-track-index="17" data-volume="0.6"></audio>
+  <audio id="fx8" src="assets/sfx/impact/impactSoft_medium_003.ogg" data-start="32.72" data-track-index="18" data-volume="0.6"></audio>
+  <audio id="fx9" src="assets/sfx/ui/mouseclick1.ogg" data-start="42.56" data-track-index="19" data-volume="0.8"></audio>
+  <audio id="fx10" src="assets/sfx/ui/mouseclick1.ogg" data-start="46.93" data-track-index="20" data-volume="0.8"></audio>
+  <audio id="fx11" src="assets/sfx/impact/impactGlass_light_002.ogg" data-start="49.6" data-track-index="21" data-volume="0.6"></audio>
+  <audio id="fx12" src="assets/sfx/ui/mouseclick1.ogg" data-start="51.29" data-track-index="22" data-volume="0.8"></audio>
+  <audio id="fx13" src="assets/sfx/impact/impactBell_heavy_000.ogg" data-start="55.4" data-track-index="23" data-volume="0.45"></audio>
+  <audio id="fx14" src="assets/sfx/keyboard/keypress-003.wav" data-start="29.2" data-track-index="24" data-volume="0.5"></audio>
+  <audio id="fx15" src="assets/sfx/keyboard/keypress-007.wav" data-start="29.55" data-track-index="25" data-volume="0.5"></audio>
+  <audio id="fx16" src="assets/sfx/keyboard/keypress-010.wav" data-start="29.9" data-track-index="26" data-volume="0.5"></audio>
+  <audio id="fx17" src="assets/sfx/interface/drop_002.ogg" data-start="31.0" data-track-index="27" data-volume="0.5"></audio>
+</div>
+
+<script>
+const tl = gsap.timeline({ paused: true, defaults: { lazy: false } }); // lazy first renders would land after the frame is captured
+const A = K.at;
+const E = "expo.out";
+
+// ---------- s01 / Where / ----------
+{ const [s] = A("s01");
+  tl.fromTo("#s01a", { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: E }, s + 0.15);
+  tl.fromTo("#s01b", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: E }, s + 0.15);
+  K.type(tl, document.getElementById("s01w"), s + 0.55, 14);
+  tl.to("#s01t", { opacity: 0, duration: 0.25 }, s + 2.4); }
+
+// ---------- s02 collage ----------
+{ const [s, d] = A("s02");
+  K.rise(tl, document.getElementById("s02t"), s + 0.15, { stagger: 0.07 });
+  ["#s02a", "#s02b", "#s02c", "#s02d", "#s02e", "#s02f"].forEach((id, i) => {
+    tl.fromTo(id, { clipPath: "inset(50% 50% 50% 50%)", scale: 1.15 }, { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 0.7, ease: E }, s + 0.1 + i * 0.08);
+    tl.to(id, { y: (i % 2 ? -30 : 30), x: (i % 3 - 1) * 20, duration: d, ease: "none" }, s);
+  });
+  tl.fromTo("#s02iri i", { scale: 0.8 }, { scale: 1.15, duration: d, ease: "sine.inOut", stagger: 0.1 }, s); }
+
+// ---------- s03 cards fly in ----------
+{ const [s, d] = A("s03");
+  const ids = ["#s03a", "#s03c", "#s03d", "#s03b", "#s03e"];
+  ids.forEach((id, i) => {
+    tl.fromTo(id, { z: -900, rotationY: i % 2 ? 24 : -24, rotationX: 10, opacity: 0, y: 80 },
+      { z: 0, rotationY: i % 2 ? 6 : -6, rotationX: 4, opacity: 1, y: 0, duration: 0.8, ease: E }, s + i * 0.07);
+  });
+  tl.fromTo("#s03stage", { rotationZ: -2, scale: 0.95 }, { rotationZ: 1, scale: 1.04, duration: d, ease: "none" }, s); }
+
+// ---------- s04 logo, Scout walks in ----------
+{ const [s] = A("s04");
+  const sc = K.scout(document.getElementById("s04s"), "ink", 112);
+  tl.fromTo(sc, { x: -700, opacity: 1 }, { x: 0, duration: 1.05, ease: "power2.out" }, s);
+  K.walk(tl, sc, s, 1.05);
+  tl.fromTo("#s04w", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.6, ease: E }, s + 1.0);
+  tl.to(["#s04s", "#s04w"], { opacity: 0, duration: 0.2 }, s + 2.0); }
+
+// ---------- s05 prompt ----------
+{ const [s] = A("s05");
+  tl.fromTo("#s05card", { y: 60, opacity: 0, scale: 0.97 }, { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: E }, s);
+  K.type(tl, document.getElementById("s05txt"), s + 0.35, 52);
+  tl.fromTo(["#s05c1", "#s05c2", "#s05c3"], { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.08, ease: E }, s + 0.5);
+  tl.fromTo("#s05cur", { x: 1500, y: 900 }, { x: 1414, y: 606, duration: 0.9, ease: "power3.inOut" }, s + 1.1);
+  tl.to("#s05cur", { scale: 0.8, duration: 0.08, yoyo: true, repeat: 1 }, s + 2.19); // beat-locked: 10.93s
+  tl.to("#s05send", { scale: 0.88, duration: 0.08, yoyo: true, repeat: 1 }, s + 2.19);
+  tl.to("#s05card", { y: -40, opacity: 0, duration: 0.3, ease: "power2.in" }, s + 2.4); }
+
+// ---------- s06 the run, big ----------
+{ const [s, d] = A("s06");
+  tl.set("#w06", { opacity: 1 }, s);
+  tl.fromTo("#w06", { scale: 1.08, y: 40 }, { scale: 0.96, y: 0, duration: d, ease: "power2.out" }, s);
+  tl.set("#w06", { opacity: 0 }, s + d);
+  tl.fromTo("#s06g", { x: 1950 }, { x: -1500, duration: d, ease: "none" }, s); }
+
+// ---------- s07 checks tree ----------
+{ const [s] = A("s07");
+  const rows = [
+    [0, "⌄", "Checks", false], [1, "", "Journeys in your own browser", false], [1, "", "First impression", false],
+    [1, "⌄", "Search and AI search", false], [2, "", "robots.txt and AI crawlers", false], [2, "", "llms.txt · Structured data", false],
+    [1, "⌄", "Security hygiene", false], [2, "", "Keys in JavaScript bundles", false], [5, "", "Where they got stuck", true],
+  ];
+  const tree = document.getElementById("s07tree");
+  rows.forEach(([lvl, chev, txt, hi], i) => {
+    const r = document.createElement("div"); r.className = "row"; r.style.paddingLeft = (lvl * 64) + "px";
+    if (hi) { r.style.color = "var(--ink)"; r.style.fontWeight = "400"; }
+    r.innerHTML = chev ? `<span class="chev">${chev}</span>${txt}` : `<span class="ico"></span>${txt}`;
+    tree.appendChild(r);
+    tl.fromTo(r, { opacity: 0, x: -24 }, { opacity: hi ? 1 : 0.92, x: 0, duration: 0.45, ease: E }, s + 0.1 + i * 0.13);
+  });
+  tl.fromTo(tree, { y: 30 }, { y: -40, duration: 2.2, ease: "none" }, s); }
+
+// ---------- s08 footage + path ----------
+{ const [s, d] = A("o08");
+  tl.set("#w08", { opacity: 1 }, s);
+  tl.fromTo("#v08", { scale: 1.12, x: -60 }, { scale: 1.0, x: -260, duration: d, ease: "none" }, s);
+  tl.set("#w08", { opacity: 0 }, s + d);
+  const path = document.getElementById("s08path");
+  const L = path.getTotalLength();
+  tl.fromTo(path, { strokeDashoffset: L, strokeDasharray: `${L} ${L}` }, { strokeDashoffset: 0, duration: 2.2, ease: "power1.inOut" }, s + 0.2);
+  const pts = []; for (let k = 0; k <= 22; k++) { const p = path.getPointAtLength((L * k) / 22); pts.push(p); }
+  const sc = K.scout(document.getElementById("s08scout"), "ink", 140); const sw = Number(sc.dataset.w);
+  tl.set(sc, { x: pts[0].x - sw / 2, y: pts[0].y - 132 }, s);
+  pts.slice(1).forEach((p, k) => tl.to(sc, { x: p.x - sw / 2, y: p.y - 132, duration: 2.2 / 22, ease: "none" }, s + 0.2 + (k * 2.2) / 22));
+  K.walk(tl, sc, s + 0.2, 2.5);
+  tl.fromTo("#s08chip", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, s + 0.4); }
+
+// ---------- s09 connect to ----------
+{ const [s] = A("s09");
+  tl.fromTo("#s09chip", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, s);
+  tl.fromTo("#s09name", { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.3, ease: E }, s + 0.35);
+  tl.fromTo("#s09link", { opacity: 0, x: -30, rotation: -90 }, { opacity: 1, x: 0, rotation: 0, duration: 0.45, ease: E }, s + 0.15); }
+
+// ---------- s10 pills streak ----------
+{ const [s, d] = A("s10");
+  tl.fromTo("#s10a", { x: 300 }, { x: -380, duration: d, ease: "power2.inOut" }, s);
+  tl.fromTo("#s10b", { x: -200 }, { x: 320, duration: d, ease: "power2.inOut" }, s);
+  tl.fromTo("#s10c", { x: 260 }, { x: -260, duration: d, ease: "power2.inOut" }, s); }
+
+// ---------- s11 dashboard ----------
+{ const [s, d] = A("s11");
+  tl.fromTo("#s11b", { y: 80, scale: 0.94, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.7, ease: E }, s);
+  tl.fromTo("#s11img", { scale: 1.0 }, { scale: 1.06, duration: d, ease: "none" }, s);
+  ["#s11c1", "#s11c3", "#s11c2"].forEach((id, i) => tl.fromTo(id, { opacity: 0, x: i % 2 ? -120 : 120 }, { opacity: 1, x: 0, duration: 0.6, ease: E }, s + 0.6 + i * 0.27)); } // beat-grid: 21.35, 21.62, 21.89 (snapped every other beat for reading)
+
+// ---------- s12 phones ----------
+{ const [s, d] = A("s12");
+  tl.fromTo("#s12p1", { y: 260, rotation: -6, opacity: 0 }, { y: 0, rotation: -3, opacity: 1, duration: 0.8, ease: E }, s);
+  tl.fromTo("#s12p2", { y: 300, rotation: 6, opacity: 0 }, { y: 0, rotation: 3, opacity: 1, duration: 0.8, ease: E }, s + 0.12);
+  tl.fromTo("#s12iri i", { x: -60 }, { x: 80, duration: d, ease: "sine.inOut", stagger: 0.1 }, s); }
+
+// ---------- s13 report ----------
+{ const [s, d] = A("s13");
+  tl.set("#w13", { opacity: 1 }, s);
+  tl.fromTo("#w13", { y: 60, scale: 0.97 }, { y: 0, scale: 1, duration: 0.7, ease: E }, s);
+  tl.set("#w13", { opacity: 0 }, s + d); }
+
+// ---------- s14 arrow ----------
+{ const [s] = A("s14");
+  tl.fromTo("#s14a", { x: -260, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: E }, s + 0.05);
+  tl.fromTo("#s14b", { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: E }, s + 0.3); }
+
+// ---------- s15 terminal ----------
+{ const [s] = A("s15");
+  const end = K.type(tl, document.getElementById("s15cmd"), s + 0.25, 16);
+  tl.fromTo("#s15hl", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: E, transformOrigin: "0% 50%" }, end + 0.1);
+  tl.fromTo("#s15out", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, end + 0.9); }
+
+// ---------- s16 editor ----------
+{ const [s, d] = A("s16");
+  tl.set("#w16", { opacity: 1 }, s);
+  tl.fromTo("#w16", { scale: 0.92, y: 50 }, { scale: 1.02, y: 0, duration: d, ease: "power2.out" }, s);
+  tl.set("#w16", { opacity: 0 }, s + d); }
+
+// ---------- s17 macro ----------
+{ const [s, d] = A("s17");
+  tl.fromTo("#s17a", { scale: 1.25, filter: "grayscale(1) contrast(1.15) blur(6px)" }, { scale: 1.05, filter: "grayscale(1) contrast(1.15) blur(0px)", duration: 0.9, ease: "power2.out" }, s);
+  tl.to("#s17b", { opacity: 1, duration: 0.15 }, s + 0.85);
+  tl.fromTo("#s17b", { scale: 1.2 }, { scale: 1.05, duration: 0.8, ease: "power2.out" }, s + 0.85);
+  K.rise(tl, document.getElementById("s17t"), s + 0.95, { stagger: 0.05 }); }
+
+// ---------- s18 split ----------
+{ const [s, d] = A("s18");
+  const sc = K.scout(document.getElementById("s18sc"), "ink", 56);
+  K.walk(tl, sc, s, d);
+  const notes = [["Step 4", "Clicked “NEW VOYAGE”", "It did not open the itinerary."], ["Step 9", "Opened Budget", "Still on “Loading budget…”. I would leave."]];
+  const box = document.getElementById("s18rows");
+  notes.forEach(([st, act, th], i) => {
+    const r = document.createElement("div");
+    r.innerHTML = `<div class="mono" style="font-size:15px;color:var(--muted)">${st} · ${act}</div><div style="margin-top:4px">“${th}”</div>`;
+    box.appendChild(r);
+    tl.fromTo(r, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, s + 0.35 + i * 0.45);
+  });
+  tl.fromTo("#s18card", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: E }, s);
+  tl.set("#w18", { opacity: 1 }, s);
+  tl.fromTo("#w18", { x: 80 }, { x: 0, duration: 0.7, ease: E }, s);
+  tl.set("#w18", { opacity: 0 }, s + d); }
+
+// ---------- s19 Launch Ready ----------
+{ const [s, d] = A("s19");
+  tl.fromTo("#s19b", { scale: 1.1, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: E }, s);
+  tl.fromTo("#s19img", { scale: 1.0, transformOrigin: "10% 10%" }, { scale: 1.12, duration: d, ease: "none" }, s);
+  tl.fromTo("#s19g", { x: 260, opacity: 0 }, { x: -60, opacity: 1, duration: d, ease: "power1.out" }, s + 0.2); }
+
+// ---------- s20 thermal + click ----------
+{ const [s, d] = A("s20");
+  document.querySelectorAll("#s20iri i").forEach((el, i) => tl.fromTo(el, { x: (i % 2 ? 160 : -160), y: (i % 3 - 1) * 90 }, { x: (i % 2 ? -140 : 160), y: (i % 3 - 1) * -80, duration: d, ease: "sine.inOut" }, s));
+  tl.fromTo("#s20btn", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: E }, s + 0.15);
+  tl.fromTo("#s20cur", { x: 1240, y: 820 }, { x: 1080, y: 560, duration: 0.8, ease: "power3.inOut" }, s + 0.2);
+  tl.to("#s20cur", { scale: 0.8, duration: 0.08, yoyo: true, repeat: 1 }, s + 1.09); // beat-locked: 42.56s
+  tl.to("#s20btn", { scale: 0.95, duration: 0.08, yoyo: true, repeat: 1 }, s + 1.09); }
+
+// ---------- s21 grid ----------
+{ const [s, d] = A("s21");
+  const g = document.getElementById("s21grid");
+  let svg = "";
+  for (let x = 120; x <= 1800; x += 120) svg += `<line x1="${x}" y1="0" x2="${x}" y2="1080" stroke="#e2e2e6" stroke-width="1"/>`;
+  for (let y = 150; y <= 1000; y += 120) svg += `<line x1="0" y1="${y}" x2="1920" y2="${y}" stroke="#e2e2e6" stroke-width="1"/>`;
+  for (let x = 120; x <= 1800; x += 120) for (let y = 150; y <= 1000; y += 120) svg += `<circle cx="${x}" cy="${y}" r="3" fill="#cfcfd4"/>`;
+  g.innerHTML = svg;
+  tl.fromTo(g, { opacity: 0 }, { opacity: 1, duration: 0.3 }, s);
+  ["#s21a", "#s21b", "#s21c"].forEach((id, i) => tl.fromTo(id, { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.6, ease: E }, s + 0.1 + i * 0.1));
+  tl.fromTo(["#s21s1", "#s21s3", "#s21s2"], { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.12, ease: E }, s + 0.35);
+  K.odometer(tl, document.getElementById("s21odo"), s + 0.6, 62, 91, 1.1); }
+
+// ---------- s22 dialog ----------
+{ const [s, d] = A("s22");
+  tl.fromTo("#s22card", { y: 40, opacity: 0, scale: 0.97 }, { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: E }, s);
+  tl.fromTo("#s22cur", { x: 1500, y: 800 }, { x: 1286, y: 610, duration: 0.8, ease: "power3.inOut" }, s + 0.25);
+  tl.to("#s22cur", { scale: 0.8, duration: 0.08, yoyo: true, repeat: 1 }, s + 1.09); // beat-locked: 46.93s
+  tl.to("#s22btn", { scale: 0.94, duration: 0.08, yoyo: true, repeat: 1 }, s + 1.09);
+  tl.to("#s22btn", { backgroundColor: "#4d7274", duration: 0.2 }, s + 1.2);
+  tl.fromTo("#s22iri i", { y: 40 }, { y: -50, duration: d, ease: "sine.inOut", stagger: 0.1 }, s); }
+
+// ---------- s23 shields ----------
+{ const [s, d] = A("s23");
+  const field = document.getElementById("s23field"); const rnd = K.rng(11);
+  const shield = c => `<svg class="shield" viewBox="0 0 24 28"><path d="M12 2l9 4v7c0 6-4 10-9 12-5-2-9-6-9-12V6z" fill="none" stroke="${c}" stroke-width="2"/></svg>`;
+  const items = [];
+  for (let r = 0; r < 7; r++) for (let c = 0; c < 15; c++) {
+    const div = document.createElement("div"); const x = 260 + c * 100 + (r % 2) * 50, y = 210 + r * 95;
+    const v = rnd(); const col = v < 0.62 ? "#c6f432" : v < 0.85 ? "#ff5a4e" : "#55555c";
+    div.innerHTML = v < 0.18 ? `<div style="position:absolute;left:${x + 12}px;top:${y + 14}px;width:8px;height:8px;border-radius:50%;background:#55555c"></div>` : shield(col).replace('class="shield"', `class="shield" style="left:${x}px;top:${y}px"`);
+    field.appendChild(div); items.push(div);
+  }
+  tl.fromTo(items, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, stagger: { each: 0.006, from: "center" }, ease: E }, s + 0.05);
+  tl.to(items, { opacity: 0, scale: 0.2, duration: 0.35, stagger: { each: 0.004, from: "edges" }, ease: "power2.in" }, s + 1.15);
+  tl.fromTo("#s23big", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.6)" }, s + 1.55);
+  tl.fromTo("#s23t", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, s + 1.8); }
+
+// ---------- s24 Launch ----------
+{ const [s] = A("s24");
+  tl.fromTo("#s24btn", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: E }, s);
+  tl.fromTo("#s24cur", { x: 1250, y: 760 }, { x: 1000, y: 562, duration: 0.45, ease: "power3.inOut" }, s + 0.05);
+  tl.to("#s24cur", { scale: 0.8, duration: 0.08, yoyo: true, repeat: 1 }, s + 0.55); // beat-locked: 51.29s
+  tl.to("#s24btn", { scale: 0.93, duration: 0.08, yoyo: true, repeat: 1 }, s + 0.55);
+  tl.to("#s24btn", { backgroundColor: "#4d7274", duration: 0.25 }, s + 0.7); }
+
+// ---------- s25 montage ----------
+{ const [s] = A("s25");
+  tl.fromTo("#s25b", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: E }, s);
+  tl.set("#w25", { opacity: 1 }, 53.72);
+  tl.set("#s25b", { opacity: 0 }, 53.72); // the video frame replaces the still one
+  tl.set("#w25", { opacity: 0 }, 55.1); }
+
+// ---------- s26 logo ----------
+{ const [s] = A("s26");
+  const sc = K.scout(document.getElementById("s26s"), "ink", 140);
+  tl.fromTo(sc, { x: -900 }, { x: 0, duration: 1.2, ease: "power2.out" }, s);
+  K.walk(tl, sc, s, 1.2);
+  tl.fromTo("#s26w", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.7, ease: E }, s + 1.05); }
+
+// ---------- s27 tagline ----------
+{ const [s, d] = A("s27");
+  tl.fromTo("#s27pill", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, s);
+  tl.to("#s27pill", { opacity: 0, scale: 1.05, duration: 0.25 }, s + 0.9);
+  K.rise(tl, document.getElementById("s27t"), s + 1.05, { stagger: 0.06 });
+  tl.fromTo("#s27u", { opacity: 0 }, { opacity: 1, duration: 0.5 }, s + 1.6);
+  tl.fromTo("#bgm", { volume: 0.8 }, { volume: 0, duration: 2.0, ease: "none" }, 58.0); }
+
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

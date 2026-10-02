@@ -113,6 +113,32 @@ export const yapShowcaseItems: ShowcaseItem[] = [
   },
 ];
 
+// Current "Pick Up" design screens for the page-turn gallery.
+import screenLanding from "@/assets/Yap chat/screenshots/landing.jpg";
+import screenLogin from "@/assets/Yap chat/screenshots/login.jpg";
+import screenChat from "@/assets/Yap chat/screenshots/chat.jpg";
+import screenProfile from "@/assets/Yap chat/screenshots/profile.jpg";
+import screenIncoming from "@/assets/Yap chat/screenshots/incoming-call.jpg";
+import screenCall from "@/assets/Yap chat/screenshots/video-call.jpg";
+import screenMobileLanding from "@/assets/Yap chat/screenshots/mobile-landing.jpg";
+import screenMobileChat from "@/assets/Yap chat/screenshots/mobile-chat.jpg";
+import screenMobileCall from "@/assets/Yap chat/screenshots/mobile-call.jpg";
+import screenTerms from "@/assets/Yap chat/screenshots/terms.jpg";
+import { PageTurnGallery, type PageTurnItem } from "@/components/PageTurnGallery/PageTurnGallery";
+
+const yapScreenPages: PageTurnItem[] = [
+  { src: screenLanding, caption: "Landing", alt: "Landing page with a hanging blue telephone and the headline Hello? It's your crew" },
+  { src: screenLogin, caption: "Log in", alt: "Log in screen with a cobalt photo collage beside the form" },
+  { src: screenChat, caption: "Chat room", alt: "Chat room with members, a conversation with photos and voice notes, and a profile panel" },
+  { src: screenProfile, caption: "Profile", alt: "Profile editor with avatar, name and bio" },
+  { src: screenIncoming, caption: "Incoming call", alt: "Incoming video call card with Decline and Pick up buttons" },
+  { src: screenCall, caption: "Group video call", alt: "Four-person video call with cameras off and call controls" },
+  { src: screenMobileLanding, caption: "Landing on a phone", alt: "Landing page on a phone" },
+  { src: screenMobileChat, caption: "Chat on a phone", alt: "Chat thread on a phone with voice notes and a shared photo" },
+  { src: screenMobileCall, caption: "Call on a phone", alt: "Video call on a phone with stacked tiles" },
+  { src: screenTerms, caption: "Terms & privacy", alt: "Terms and privacy page" },
+];
+
 import "./ProjectPage.css";
 import "./YapChatProjectPage.css";
 
@@ -641,14 +667,7 @@ export function YapChatProjectPage() {
             </div>
           </div>
 
-          <div className="dw-media-container" style={{ marginTop: "3rem" }}>
-            <img
-              src={yapPreview1}
-              alt="Testing &amp; Diagnostics Overview"
-              className="media-landscape"
-              style={{ objectFit: "contain", height: "auto" }}
-            />
-          </div>
+          <PageTurnGallery label="Yap Chat screens" items={yapScreenPages} />
 
           <div className="yap-tradeoff-box">
             <span className="yap-tradeoff-tag">BUILT WITH TRADE-OFFS</span>

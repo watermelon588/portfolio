@@ -1,0 +1,222 @@
+[
+  {
+    "key": "d6",
+    "source": "design/source-images/doodles/54d95088250314fb2737abb34a4b9ea3.jpg",
+    "original_dimensions": [
+      670,
+      812
+    ],
+    "preview_dimensions": [
+      561,
+      680
+    ]
+  },
+  {
+    "key": "d7",
+    "source": "design/source-images/doodles/5ad38434e187bbb33f8f3dcf5fd8bb0d.jpg",
+    "original_dimensions": [
+      736,
+      981
+    ],
+    "preview_dimensions": [
+      510,
+      680
+    ]
+  },
+  {
+    "key": "d9",
+    "source": "design/source-images/doodles/7a423ad4727f1708b7371c55d92463f1.jpg",
+    "original_dimensions": [
+      736,
+      575
+    ],
+    "preview_dimensions": [
+      680,
+      531
+    ]
+  },
+  {
+    "key": "d10",
+    "source": "design/source-images/doodles/7f0ab3de9f1d94d16d109d709f7aae83.jpg",
+    "original_dimensions": [
+      500,
+      313
+    ],
+    "preview_dimensions": [
+      500,
+      313
+    ]
+  },
+  {
+    "key": "d13",
+    "source": "design/source-images/doodles/9d62b6a54152f4b54df8ac99bd04c4a6.jpg",
+    "original_dimensions": [
+      736,
+      736
+    ],
+    "preview_dimensions": [
+      680,
+      680
+    ]
+  },
+  {
+    "key": "d14",
+    "source": "design/source-images/doodles/a908d91b15321f38f6168363e0b85cf0.jpg",
+    "original_dimensions": [
+      496,
+      947
+    ],
+    "preview_dimensions": [
+      356,
+      680
+    ]
+  },
+  {
+    "key": "d16",
+    "source": "design/source-images/doodles/b302233251d79885cb97c76798efb014.jpg",
+    "original_dimensions": [
+      500,
+      500
+    ],
+    "preview_dimensions": [
+      500,
+      500
+    ]
+  },
+  {
+    "key": "d21",
+    "source": "design/source-images/doodles/e1ca98ec1cd5a1dfdb19e3d972270f78.jpg",
+    "original_dimensions": [
+      564,
+      564
+    ],
+    "preview_dimensions": [
+      564,
+      564
+    ]
+  },
+  {
+    "key": "d22",
+    "source": "design/source-images/doodles/eb9add40089048816268319c66a5fed6.jpg",
+    "original_dimensions": [
+      1199,
+      673
+    ],
+    "preview_dimensions": [
+      680,
+      382
+    ]
+  },
+  {
+    "key": "d23",
+    "source": "design/source-images/doodles/f3723b3c9b922cc31308eb3b6ab3b0ea.jpg",
+    "original_dimensions": [
+      474,
+      570
+    ],
+    "preview_dimensions": [
+      474,
+      570
+    ]
+  },
+  {
+    "key": "d24",
+    "source": "design/source-images/doodles/f7cd61388246126f7d57d3d0846bb15b.jpg",
+    "original_dimensions": [
+      736,
+      770
+    ],
+    "preview_dimensions": [
+      650,
+      680
+    ]
+  },
+  {
+    "key": "i1",
+    "source": "design/source-images/illustration/15ae69afb5615f79fecb5da7141c056a.jpg",
+    "original_dimensions": [
+      926,
+      796
+    ],
+    "preview_dimensions": [
+      680,
+      585
+    ]
+  },
+  {
+    "key": "i6",
+    "source": "design/source-images/illustration/698889baad277bebef7f1940824375d9.jpg",
+    "original_dimensions": [
+      736,
+      736
+    ],
+    "preview_dimensions": [
+      680,
+      680
+    ]
+  },
+  {
+    "key": "i7",
+    "source": "design/source-images/illustration/7017e578750b6e4382dfae29f9b0a2e0.jpg",
+    "original_dimensions": [
+      1041,
+      1041
+    ],
+    "preview_dimensions": [
+      680,
+      680
+    ]
+  },
+  {
+    "key": "m0",
+    "source": "design/source-images/mcp-claude/16d33c0af5fa7ef5351bc3816bc0ec17.jpg",
+    "original_dimensions": [
+      736,
+      736
+    ],
+    "preview_dimensions": [
+      680,
+      680
+    ]
+  },
+  {
+    "key": "m2",
+    "source": "design/source-images/mcp-claude/72fb9c01614372df9e856fda79137b3b.jpg",
+    "original_dimensions": [
+      736,
+      736
+    ],
+    "preview_dimensions": [
+      680,
+      680
+    ]
+  },
+  {
+    "key": "m3",
+    "source": "design/source-images/mcp-claude/849eb4b9e87dc4045b68c456a43c3fcc.jpg",
+    "original_dimensions": [
+      736,
+      414
+    ],
+    "preview_dimensions": [
+      680,
+      383
+    ]
+  },
+  {
+    "key": "v1",
+    "source": "design/source-images/visual/2c57249732914c82c57d52eb5d2c49f4.jpg",
+    "original_dimensions": [
+      1200,
+      2597
+    ],
+    "preview_dimensions": [
+      314,
+      680
+    ]
+  },
+  {
+    "key": "brand",
+    "source": "src/assets/brand/walkthru-mark.png"
+  }
+]

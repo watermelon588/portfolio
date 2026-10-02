@@ -66,7 +66,7 @@ export function AboutPage() {
         <section className="aboutpage-hero container" id="who-i-am" ref={heroRef}>
           {/* Large dominant editorial headline */}
           <h1 className="aboutpage-headline">
-            Helping brands thrive <br /> in the digital world
+            Engineering systems <br /> that hold up
           </h1>
 
           {/* Thin horizontal divider line + large blue circular globe sitting on the line */}
@@ -93,7 +93,7 @@ export function AboutPage() {
             <div className="aboutpage-body-left">
               <span className="aboutpage-arrow-icon" aria-hidden="true">→</span>
               <p className="aboutpage-copy">
-                The combination of my passion for design, code &amp; interaction positions me somewhere in the web design world. I&rsquo;m Rohit — a full-stack developer interested in AI, software engineering, and creating robust systems that don&rsquo;t fall apart.
+                I’m Rohit, a backend engineer. I design APIs, data layers and AI pipelines that stay fast under load, and I care just as much about how they feel on the other side of the screen.
               </p>
             </div>
 
@@ -111,7 +111,7 @@ export function AboutPage() {
         {/* Section 02 — CURRENTLY (3-Column Editorial Grid matching Reference Layout) */}
         <section className="aboutpage-section container" id="currently">
           <div className="aboutpage-eyebrow-wrapper">
-            <span className="aboutpage-eyebrow">02 — CURRENTLY</span>
+            <span className="aboutpage-eyebrow">Currently</span>
           </div>
 
           <div className="aboutpage-currently-grid-three">
@@ -133,7 +133,7 @@ export function AboutPage() {
             data-strength="42"
             to="/work"
           >
-            <span className="aboutpage-btn-label">See all works</span>
+            <span className="aboutpage-btn-label">View all work</span>
             <span className="aboutpage-btn-arrow">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path

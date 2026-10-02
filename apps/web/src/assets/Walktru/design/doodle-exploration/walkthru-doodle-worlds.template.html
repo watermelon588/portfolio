@@ -1,0 +1,395 @@
+<style>
+__FONT_FACES__
+#walkthru-worlds{--wt-ink:#20211f;--wt-paper:#faf8ef;--wt-white:#fff;--wt-muted:#66665e;--wt-line:#deded4;--wt-blue:#244bdc;--wt-coral:#f08264;--wt-yellow:#f7e95d;--wt-lime:#d7f36a;--wt-font-sans:'Geist Variable',ui-sans-serif,system-ui,sans-serif;--wt-font-mono:'Geist Mono Variable',ui-monospace,monospace;color-scheme:light;font-family:var(--wt-font-sans);font-weight:400;-webkit-font-smoothing:antialiased;color:var(--wt-ink);width:100%}
+#walkthru-worlds *{box-sizing:border-box}
+#walkthru-worlds [hidden]{display:none!important}
+#walkthru-worlds .wt-page{min-height:940px;background:var(--wt-paper);position:relative;isolation:isolate;overflow-wrap:anywhere;display:flex;flex-direction:column}
+#walkthru-worlds h1,#walkthru-worlds h2,#walkthru-worlds h3,#walkthru-worlds p{margin:0;color:inherit}
+#walkthru-worlds h1{font-size:clamp(38px,6.6vw,72px);font-weight:200;line-height:1.04;letter-spacing:-.035em;text-wrap:balance}
+#walkthru-worlds h2{font-size:clamp(27px,3.8vw,43px);font-weight:300;letter-spacing:-.025em;line-height:1.1;text-wrap:balance}
+#walkthru-worlds h3{font-size:19px;line-height:1.25;letter-spacing:-.025em;font-weight:300;text-wrap:balance}
+#walkthru-worlds p{font-size:15px;line-height:1.65}
+#walkthru-worlds button,#walkthru-worlds input,#walkthru-worlds textarea{font:inherit}
+#walkthru-worlds button{cursor:inherit}
+#walkthru-worlds .wt-nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 38px;border-bottom:1px solid var(--wt-line)}
+#walkthru-worlds .wt-brand{display:flex;gap:9px;align-items:center;font-size:24px;font-weight:400;letter-spacing:-.025em;white-space:nowrap}
+#walkthru-worlds .wt-brand img{width:30px;height:34px;object-fit:contain}
+#walkthru-worlds .wt-navlinks{display:flex;gap:25px;align-items:center;font-size:13px}
+#walkthru-worlds .wt-button{border:1px solid var(--wt-ink);background:var(--wt-ink);color:var(--wt-white);border-radius:8px;padding:13px 20px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:14px;font-weight:400;min-height:44px;text-decoration:none;white-space:normal}
+#walkthru-worlds .wt-button:hover{box-shadow:3px 3px 0 var(--wt-coral);transform:translate(-1px,-1px)}
+#walkthru-worlds .wt-button.light{background:var(--wt-white);color:var(--wt-ink)}
+#walkthru-worlds .wt-button.outline{background:transparent;color:inherit;border-color:currentColor}
+#walkthru-worlds .wt-button.small{font-size:12px;padding:9px 14px}
+#walkthru-worlds .wt-link{padding:8px 0;border:0;background:transparent;color:inherit;font-size:13px;text-decoration:underline;text-underline-offset:4px}
+#walkthru-worlds .wt-tag{display:inline-flex;gap:7px;align-items:center;font-family:var(--wt-font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
+#walkthru-worlds .wt-note{font-family:var(--wt-font-sans);font-size:26px;line-height:1.2;font-weight:300;letter-spacing:-.025em}
+#walkthru-worlds .wt-serif{font-family:var(--wt-font-sans);font-weight:200;letter-spacing:-.035em}
+#walkthru-worlds .wt-muted{color:var(--wt-muted)}
+#walkthru-worlds .wt-mono{font-family:var(--wt-font-mono);font-size:12px;line-height:1.6}
+#walkthru-worlds strong{font-weight:500}
+#walkthru-worlds .wt-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
+#walkthru-worlds .wt-body{padding:38px}
+#walkthru-worlds .wt-art{display:block;width:100%;height:100%;object-fit:contain}
+#walkthru-worlds .wt-artboard{background:var(--wt-white);border:1px solid var(--wt-line);padding:14px;position:relative}
+#walkthru-worlds .wt-foot{display:flex;gap:14px;align-items:center;justify-content:space-between;border-top:1px solid var(--wt-line);padding:18px 38px;font-size:11px;letter-spacing:.03em;flex-wrap:wrap;margin-top:auto}
+#walkthru-worlds .wt-demo{font-size:11px;color:var(--wt-muted);letter-spacing:.04em}
+#walkthru-worlds .wt-result{margin-top:14px;font-size:13px;line-height:1.5;min-height:20px}
+#walkthru-worlds label{display:block;font-size:12px;font-weight:500;margin-bottom:7px}
+#walkthru-worlds input,#walkthru-worlds textarea{width:100%;background:var(--wt-white);color:var(--wt-ink);border:1px solid var(--wt-line);padding:13px 14px;border-radius:6px;min-height:44px;font-size:15px}
+#walkthru-worlds textarea{resize:vertical;min-height:100px;line-height:1.5}
+#walkthru-worlds .wt-rule{height:1px;background:var(--wt-line);margin:25px 0}
+#walkthru-worlds .wt-grid2{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+#walkthru-worlds .wt-pill{padding:6px 10px;border:1px solid var(--wt-line);border-radius:100px;font-size:11px;display:inline-block;background:var(--wt-white);color:var(--wt-ink)}
+#walkthru-worlds .wt-paperclip{position:absolute;top:-9px;left:45%;width:64px;height:23px;background:var(--wt-yellow);opacity:.8;transform:rotate(-6deg)}
+#walkthru-worlds .wt-hero-paper{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;padding:48px 38px 35px;align-items:center}
+#walkthru-worlds .wt-hero-paper h1{margin:15px 0 22px}
+#walkthru-worlds .wt-hero-paper p{max-width:35ch}
+#walkthru-worlds .wt-collage{height:420px;position:relative}
+#walkthru-worlds .wt-collage .crowd{position:absolute;width:71%;height:340px;right:14%;top:20px;transform:rotate(5deg);box-shadow:8px 8px 0 var(--wt-ink)}
+#walkthru-worlds .wt-collage .rooster{position:absolute;width:29%;height:190px;right:0;bottom:0;transform:rotate(-7deg)}
+#walkthru-worlds .wt-collage .quote{position:absolute;left:0;bottom:0;width:67%;background:var(--wt-yellow);padding:20px;transform:rotate(-3deg);border:1px solid var(--wt-ink)}
+#walkthru-worlds .wt-path-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;padding:24px 38px 40px}
+#walkthru-worlds .wt-path-strip>div{border-top:2px solid var(--wt-ink);padding-top:16px}
+#walkthru-worlds .wt-path-strip p{font-size:13px;margin-top:6px}
+#walkthru-worlds .wt-blue-page{background:var(--wt-blue);color:var(--wt-white);--wt-line:rgba(255,255,255,.24);--wt-muted:#dedfff}
+#walkthru-worlds .wt-blue-page .wt-brand img{background:var(--wt-white);border-radius:4px;padding:3px}
+#walkthru-worlds .wt-crowd-hero{display:grid;grid-template-columns:1fr .85fr;gap:25px;padding:38px;align-items:center}
+#walkthru-worlds .wt-crowd-hero h1{font-size:clamp(36px,6.5vw,70px)}
+#walkthru-worlds .wt-crowd-hero p{max-width:34ch;margin-top:22px}
+#walkthru-worlds .wt-faceposter{height:420px;background:var(--wt-white);padding:12px;transform:rotate(3deg);border-radius:3px}
+#walkthru-worlds .wt-persona-line{margin:0 38px 30px;padding:23px 0;border-top:1px solid var(--wt-line);display:grid;grid-template-columns:.8fr 1.4fr;gap:30px}
+#walkthru-worlds .wt-personas{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+#walkthru-worlds .wt-personas button{background:transparent;color:inherit;border:1px solid currentColor;border-radius:100px;padding:8px 12px;font-size:12px;min-height:40px}
+#walkthru-worlds .wt-personas button[aria-pressed=true]{background:var(--wt-yellow);color:var(--wt-ink);border-color:var(--wt-yellow)}
+#walkthru-worlds .wt-coral-page{background:#f8e2da;--wt-line:#d9b8ab}
+#walkthru-worlds .wt-editorial{display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center;padding:40px 38px}
+#walkthru-worlds .wt-editorial h1{font-size:clamp(44px,7.6vw,83px);line-height:.99;margin:12px 0 20px}
+#walkthru-worlds .wt-eye{background:var(--wt-coral);height:310px;transform:rotate(-4deg);position:relative;box-shadow:10px 10px 0 var(--wt-ink)}
+#walkthru-worlds .wt-eye img{object-fit:contain}
+#walkthru-worlds .wt-editorial-bottom{display:grid;grid-template-columns:1fr 1.9fr;gap:32px;padding:0 38px 28px}
+#walkthru-worlds .wt-editorial-bottom img{height:170px}
+#walkthru-worlds .wt-promises{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:25px;border-top:1px solid var(--wt-ink)}
+#walkthru-worlds .wt-promises p{font-size:12px;margin-top:8px}
+#walkthru-worlds .wt-letter-page{background:#edf0dc;--wt-line:#cbd0b7}
+#walkthru-worlds .wt-letter{display:grid;grid-template-columns:1fr .82fr;gap:40px;align-items:center;padding:46px 55px 35px}
+#walkthru-worlds .wt-letter h1{font-size:clamp(42px,6.4vw,70px);line-height:1.05;margin:16px 0 20px}
+#walkthru-worlds .wt-letter p{max-width:37ch}
+#walkthru-worlds .wt-letter-art{height:370px;background:var(--wt-white);border-radius:50% 50% 4px 4px;padding:28px}
+#walkthru-worlds .wt-letter-checks{padding:24px 55px 35px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;border-top:1px solid var(--wt-line)}
+#walkthru-worlds .wt-checklist{display:grid;gap:12px;font-size:13px}
+#walkthru-worlds .wt-shell{display:grid;grid-template-columns:178px minmax(0,1fr);min-height:940px}
+#walkthru-worlds .wt-sidebar{border-right:1px solid var(--wt-line);padding:24px 17px;display:flex;flex-direction:column;gap:26px}
+#walkthru-worlds .wt-sidebar .wt-brand{font-size:21px}
+#walkthru-worlds .wt-sidebar .wt-brand img{width:25px}
+#walkthru-worlds .wt-sidebar-menu{display:grid;gap:5px}
+#walkthru-worlds .wt-sidebar-menu span{font-size:12px;padding:10px 11px}
+#walkthru-worlds .wt-sidebar-menu .selected{background:var(--wt-yellow);font-weight:500;border-radius:5px}
+#walkthru-worlds .wt-sidebar-end{margin-top:auto;font-size:11px;color:var(--wt-muted)}
+#walkthru-worlds .wt-work{min-width:0;padding:27px 30px}
+#walkthru-worlds .wt-workhead{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:27px;font-size:12px;flex-wrap:wrap}
+#walkthru-worlds .wt-work h1{font-size:39px;line-height:1.1;margin:9px 0 15px}
+#walkthru-worlds .wt-notebook{display:grid;grid-template-columns:1.05fr .85fr;gap:36px;padding:46px;align-items:center}
+#walkthru-worlds .wt-notebook h1{font-size:54px;margin:12px 0 24px}
+#walkthru-worlds .wt-form{margin-top:28px;display:grid;gap:18px}
+#walkthru-worlds .wt-notebook-art{height:400px;transform:rotate(3deg);background:var(--wt-white);padding:22px;box-shadow:7px 7px 0 var(--wt-blue)}
+#walkthru-worlds .wt-onboard-bottom{padding:10px 46px 32px;display:flex;gap:22px;align-items:center;font-size:12px}
+#walkthru-worlds .wt-onboard-bottom img{height:80px;width:100px}
+#walkthru-worlds .wt-mission{display:grid;grid-template-columns:1fr 140px;gap:18px;background:#e7edd7;border:1px solid #c7d1b3;padding:23px;margin-top:24px;align-items:center}
+#walkthru-worlds .wt-mission img{height:175px}
+#walkthru-worlds .wt-mission input{margin-top:12px}
+#walkthru-worlds .wt-mission .wt-actions{margin-top:14px}
+#walkthru-worlds .wt-history{margin-top:28px}
+#walkthru-worlds .wt-history-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+#walkthru-worlds .wt-run-row{display:grid;grid-template-columns:1.1fr .8fr .45fr;gap:15px;align-items:center;border-top:1px solid var(--wt-line);padding:16px 0;font-size:12px}
+#walkthru-worlds .wt-run-row strong{display:block;font-size:13px;margin-bottom:3px}
+#walkthru-worlds .wt-mini-scout{display:flex;gap:12px;align-items:center;margin-top:22px;font-size:12px}
+#walkthru-worlds .wt-mini-scout img{width:31px;height:40px}
+#walkthru-worlds .wt-report-page{background:#fbfaf6;--wt-line:#dbd9ce}
+#walkthru-worlds .wt-report-header{display:grid;grid-template-columns:1.4fr .6fr;gap:20px;padding:28px 34px 20px;align-items:center}
+#walkthru-worlds .wt-report-header h1{font-size:40px;margin:10px 0 12px}
+#walkthru-worlds .wt-report-header img{height:145px;width:100%}
+#walkthru-worlds .wt-evidence{display:grid;grid-template-columns:175px minmax(0,1fr) 200px;margin:0 34px 25px;border:1px solid var(--wt-line);background:var(--wt-white)}
+#walkthru-worlds .wt-steps{padding:17px 12px;border-right:1px solid var(--wt-line)}
+#walkthru-worlds .wt-steps button{display:block;text-align:left;width:100%;background:transparent;border:0;border-radius:4px;padding:12px 10px;font-size:12px;line-height:1.4;color:var(--wt-ink)}
+#walkthru-worlds .wt-steps button[aria-pressed=true]{background:var(--wt-yellow)}
+#walkthru-worlds .wt-frame{padding:17px;min-width:0}
+#walkthru-worlds .wt-frame .wt-tag{font-size:11px}
+#walkthru-worlds .wt-evidence-model{padding:30px 15px;background:#f4f5ef;margin-top:18px;border:1px solid var(--wt-line);min-height:245px}
+#walkthru-worlds .wt-evidence-model h3{margin-bottom:16px;font-size:20px}
+#walkthru-worlds .wt-evidence-model input{margin:8px 0}
+#walkthru-worlds .wt-evidence-model .wt-failed{font-size:11px;background:#f9e4dc;padding:10px;color:#843c29;margin-top:8px}
+#walkthru-worlds .wt-inspector{padding:20px 15px;border-left:1px solid var(--wt-line);font-size:12px}
+#walkthru-worlds .wt-inspector p{font-size:12px;margin:14px 0}
+#walkthru-worlds .wt-inspector .wt-note{font-size:25px;margin-top:18px}
+#walkthru-worlds .wt-report-bottom{display:flex;gap:25px;align-items:center;justify-content:space-between;padding:0 34px 24px;flex-wrap:wrap}
+#walkthru-worlds .wt-atlas-header{display:grid;grid-template-columns:1.2fr .6fr;gap:20px;align-items:center}
+#walkthru-worlds .wt-atlas-header img{height:185px}
+#walkthru-worlds .wt-readiness{display:grid;grid-template-columns:.55fr 1.45fr;gap:26px;padding:25px 0;border-top:1px solid var(--wt-line);border-bottom:1px solid var(--wt-line);margin:22px 0}
+#walkthru-worlds .wt-score{font-size:78px;line-height:1;letter-spacing:-.035em;font-weight:200}
+#walkthru-worlds .wt-readiness .wt-score span{font-size:23px;letter-spacing:0}
+#walkthru-worlds .wt-readiness p{font-size:12px;margin-top:10px}
+#walkthru-worlds .wt-readiness ul{margin:0;padding:0;list-style:none;font-size:13px}
+#walkthru-worlds .wt-readiness li{display:flex;justify-content:space-between;gap:15px;padding:9px 0}
+#walkthru-worlds .wt-read-view{background:var(--wt-white);border:1px solid var(--wt-line);padding:23px;position:relative}
+#walkthru-worlds .wt-read-view h3{margin:14px 0 10px}
+#walkthru-worlds .wt-read-view p{font-size:13px;max-width:48ch}
+#walkthru-worlds .wt-fix-layout{display:grid;grid-template-columns:1fr .7fr;gap:25px;margin-top:26px;align-items:start}
+#walkthru-worlds .wt-fix-list{display:grid;gap:16px}
+#walkthru-worlds .wt-fix-item{border-bottom:1px solid var(--wt-line);padding-bottom:16px;display:grid;grid-template-columns:35px 1fr;gap:10px}
+#walkthru-worlds .wt-fix-item p{font-size:12px;margin-top:7px}
+#walkthru-worlds .wt-fix-note{padding:20px;background:var(--wt-yellow);transform:rotate(2deg);border:1px solid var(--wt-ink)}
+#walkthru-worlds .wt-fix-note img{height:185px;background:var(--wt-white);margin:15px 0}
+#walkthru-worlds .wt-prompt{margin-top:23px;background:var(--wt-white);border:1px solid var(--wt-line);padding:18px;font-size:12px;line-height:1.65}
+#walkthru-worlds .wt-cloud-page{background:#f5eee7;--wt-line:#daccbd}
+#walkthru-worlds .wt-cloud-head{padding:30px 38px 20px;display:grid;grid-template-columns:1.3fr .6fr;gap:30px;align-items:center}
+#walkthru-worlds .wt-cloud-head h1{font-size:56px;margin:12px 0 17px}
+#walkthru-worlds .wt-cloud-head img{height:160px}
+#walkthru-worlds .wt-cloud-path{margin:0 38px;display:grid;grid-template-columns:1fr 40px 1fr 40px 1fr;align-items:center;text-align:center;gap:8px}
+#walkthru-worlds .wt-cloud-node{padding:15px 12px;border:1px solid var(--wt-line);background:var(--wt-white);min-height:156px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px}
+#walkthru-worlds .wt-cloud-node img{height:75px;max-width:90px}
+#walkthru-worlds .wt-cloud-node p{font-size:12px}
+#walkthru-worlds .wt-cloud-arrow{font-family:var(--wt-font-sans);font-size:35px;font-weight:300}
+#walkthru-worlds .wt-connection{margin:25px 38px;padding:23px;border:1px solid var(--wt-line);background:var(--wt-white);display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:center}
+#walkthru-worlds .wt-connection h3{margin-bottom:12px}
+#walkthru-worlds .wt-connection p{font-size:12px}
+#walkthru-worlds .wt-command{border:1px solid var(--wt-line);background:var(--wt-paper);padding:14px;margin-bottom:14px;overflow-wrap:anywhere}
+#walkthru-worlds .wt-compare-header{display:grid;grid-template-columns:1fr 160px;gap:20px;align-items:center}
+#walkthru-worlds .wt-compare-header img{height:160px}
+#walkthru-worlds .wt-change-title{margin-top:24px;display:flex;gap:30px;align-items:center;border-top:1px solid var(--wt-line);border-bottom:1px solid var(--wt-line);padding:20px 0}
+#walkthru-worlds .wt-change-title strong{font-size:49px;letter-spacing:-.035em;font-weight:200}
+#walkthru-worlds .wt-comparison-row{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:15px;align-items:center;padding:15px 0;border-bottom:1px solid var(--wt-line);font-size:12px}
+#walkthru-worlds .wt-comparison-row.header{color:var(--wt-muted);font-size:11px}
+#walkthru-worlds .wt-status{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:5px 9px;width:fit-content;background:#eaf0d9;color:#314218}
+#walkthru-worlds .wt-status.open{background:#fae4dc;color:#763a28}
+#walkthru-worlds .wt-watchline{margin-top:22px;padding:20px;background:var(--wt-white);display:flex;gap:18px;align-items:center;justify-content:space-between;border:1px solid var(--wt-line);flex-wrap:wrap}
+#walkthru-worlds .wt-watchline p{font-size:12px;margin-top:5px}
+#walkthru-worlds .wt-team-head{display:grid;grid-template-columns:1.1fr .7fr;gap:15px;align-items:center}
+#walkthru-worlds .wt-team-head img{height:145px}
+#walkthru-worlds .wt-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+#walkthru-worlds .wt-board-col{background:#eeeee5;padding:14px;min-width:0}
+#walkthru-worlds .wt-board-col h3{font-size:13px;margin-bottom:15px}
+#walkthru-worlds .wt-task{background:var(--wt-white);border:1px solid var(--wt-line);padding:13px;margin-bottom:12px;min-height:143px}
+#walkthru-worlds .wt-task strong{font-size:13px;line-height:1.35;display:block;margin:8px 0}
+#walkthru-worlds .wt-task p{font-size:11px;line-height:1.6}
+#walkthru-worlds .wt-team-note{display:grid;grid-template-columns:82px 1fr;gap:20px;align-items:center;padding:20px 0;margin-top:12px}
+#walkthru-worlds .wt-team-note img{height:85px}
+#walkthru-worlds .wt-invite{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:18px}
+#walkthru-worlds .wt-launch-page{background:#f6ed98;--wt-line:#d9cd69}
+#walkthru-worlds .wt-launch-main{display:grid;grid-template-columns:1.1fr .75fr;gap:35px;align-items:center;padding:36px 38px 25px}
+#walkthru-worlds .wt-launch-main h1{font-size:clamp(42px,6.4vw,70px);margin:14px 0 20px}
+#walkthru-worlds .wt-launch-main img{height:310px;background:var(--wt-white);padding:18px;transform:rotate(3deg);box-shadow:8px 8px 0 var(--wt-ink)}
+#walkthru-worlds .wt-launch-bar{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;margin:0 38px;background:var(--wt-white);border:1px solid var(--wt-ink);padding:25px}
+#walkthru-worlds .wt-launch-bar p{font-size:13px;margin-top:12px}
+#walkthru-worlds .wt-launch-stamp{font-size:22px;font-weight:300;letter-spacing:-.025em;padding:19px;border:2px solid var(--wt-ink);transform:rotate(-3deg);align-self:center;text-align:center}
+#walkthru-worlds .wt-launch-stamp small{display:block;font-size:11px;font-weight:400;letter-spacing:.06em;margin-top:5px}
+#walkthru-worlds .wt-launch-cta{padding:30px 38px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(min-width:800px){#walkthru-worlds .wt-page{min-height:940px}}
+@media(max-width:760px){
+ #walkthru-worlds .wt-page{min-height:1300px}
+ #walkthru-worlds .wt-nav{padding:18px 22px;gap:12px;flex-wrap:wrap}
+ #walkthru-worlds .wt-navlinks{gap:13px;font-size:12px;flex-wrap:wrap}
+ #walkthru-worlds .wt-navlinks .wt-navtext{display:none}
+ #walkthru-worlds .wt-hero-paper,#walkthru-worlds .wt-crowd-hero,#walkthru-worlds .wt-editorial,#walkthru-worlds .wt-letter,#walkthru-worlds .wt-notebook,#walkthru-worlds .wt-launch-main{grid-template-columns:1fr;padding:30px 22px;gap:28px}
+ #walkthru-worlds .wt-collage{height:345px;max-width:450px;width:100%;margin:auto}
+ #walkthru-worlds .wt-collage .crowd{height:280px}
+ #walkthru-worlds .wt-collage .rooster{height:150px}
+ #walkthru-worlds .wt-faceposter{height:320px;max-width:360px;margin:auto}
+ #walkthru-worlds .wt-path-strip{padding:20px 22px;gap:16px}
+ #walkthru-worlds .wt-persona-line,#walkthru-worlds .wt-editorial-bottom,#walkthru-worlds .wt-letter-checks{grid-template-columns:1fr;gap:18px}
+ #walkthru-worlds .wt-persona-line{margin:0 22px 20px}
+ #walkthru-worlds .wt-editorial-bottom{padding:0 22px 25px}
+ #walkthru-worlds .wt-editorial-bottom>img{height:120px}
+ #walkthru-worlds .wt-eye{height:220px;max-width:420px;width:100%;margin:auto}
+ #walkthru-worlds .wt-letter-checks{padding:25px 22px}
+ #walkthru-worlds .wt-letter-art,#walkthru-worlds .wt-notebook-art{height:290px;max-width:400px;width:100%;margin:auto}
+ #walkthru-worlds .wt-onboard-bottom{padding:20px 22px}
+ #walkthru-worlds .wt-shell{grid-template-columns:1fr;grid-template-rows:auto 1fr;min-height:1300px}
+ #walkthru-worlds .wt-sidebar{border-right:0;border-bottom:1px solid var(--wt-line);padding:14px 22px;gap:13px}
+ #walkthru-worlds .wt-sidebar-menu{display:flex;flex-wrap:wrap;gap:2px}
+ #walkthru-worlds .wt-sidebar-menu span{padding:8px;font-size:11px}
+ #walkthru-worlds .wt-sidebar-end{display:none}
+ #walkthru-worlds .wt-work{padding:24px 22px}
+ #walkthru-worlds .wt-work h1{font-size:34px}
+ #walkthru-worlds input,#walkthru-worlds textarea{font-size:16px}
+ #walkthru-worlds .wt-report-header{padding:25px 22px;grid-template-columns:1fr 100px}
+ #walkthru-worlds .wt-report-header h1{font-size:32px}
+ #walkthru-worlds .wt-evidence{grid-template-columns:1fr;margin:0 22px 25px}
+ #walkthru-worlds .wt-steps{border-right:0;border-bottom:1px solid var(--wt-line);display:flex;gap:5px;flex-wrap:wrap}
+ #walkthru-worlds .wt-steps button{width:auto;flex:1;min-width:90px}
+ #walkthru-worlds .wt-inspector{border-left:0;border-top:1px solid var(--wt-line)}
+ #walkthru-worlds .wt-report-bottom{padding:0 22px 25px}
+ #walkthru-worlds .wt-atlas-header{grid-template-columns:1fr 100px}
+ #walkthru-worlds .wt-atlas-header img{height:140px}
+ #walkthru-worlds .wt-fix-layout{grid-template-columns:1fr}
+ #walkthru-worlds .wt-fix-note{transform:none}
+ #walkthru-worlds .wt-fix-note img{height:140px}
+ #walkthru-worlds .wt-cloud-head{padding:25px 22px;grid-template-columns:1fr 100px;gap:15px}
+ #walkthru-worlds .wt-cloud-head h1{font-size:38px}
+ #walkthru-worlds .wt-cloud-head img{height:115px}
+ #walkthru-worlds .wt-cloud-path{margin:0 22px;grid-template-columns:1fr;gap:8px}
+ #walkthru-worlds .wt-cloud-node{min-height:90px;flex-direction:row;justify-content:flex-start;text-align:left}
+ #walkthru-worlds .wt-cloud-node img{height:55px}
+ #walkthru-worlds .wt-cloud-arrow{transform:rotate(90deg);line-height:1;height:26px}
+ #walkthru-worlds .wt-connection{margin:22px;grid-template-columns:1fr;gap:20px}
+ #walkthru-worlds .wt-compare-header{grid-template-columns:1fr 100px}
+ #walkthru-worlds .wt-board{grid-template-columns:1fr}
+ #walkthru-worlds .wt-board-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ #walkthru-worlds .wt-board-col h3{grid-column:1/-1;margin-bottom:0}
+ #walkthru-worlds .wt-task{margin:0;min-height:110px}
+ #walkthru-worlds .wt-launch-main img{height:230px;max-width:360px;width:100%;margin:auto}
+ #walkthru-worlds .wt-launch-bar{grid-template-columns:1fr;margin:0 22px;gap:20px}
+ #walkthru-worlds .wt-launch-cta{padding:25px 22px}
+ #walkthru-worlds .wt-foot{padding:18px 22px}
+}
+@media(max-width:420px){
+ #walkthru-worlds .wt-page{min-height:1750px}
+ #walkthru-worlds .wt-nav .wt-brand{font-size:21px}
+ #walkthru-worlds .wt-navlinks .wt-button{padding:10px 12px;font-size:12px}
+ #walkthru-worlds .wt-path-strip,#walkthru-worlds .wt-promises{grid-template-columns:1fr;gap:15px}
+ #walkthru-worlds .wt-path-strip>div{padding-top:10px}
+ #walkthru-worlds .wt-promises{padding-top:15px}
+ #walkthru-worlds .wt-collage .quote{padding:13px;width:72%}
+ #walkthru-worlds .wt-collage .quote .wt-note{font-size:23px}
+ #walkthru-worlds .wt-notebook h1{font-size:40px}
+ #walkthru-worlds .wt-mission{grid-template-columns:1fr;padding:18px}
+ #walkthru-worlds .wt-mission img{height:110px}
+ #walkthru-worlds .wt-run-row{grid-template-columns:1fr .7fr}.wt-run-row>span:last-child{grid-column:2}
+ #walkthru-worlds .wt-report-header,#walkthru-worlds .wt-atlas-header,#walkthru-worlds .wt-cloud-head,#walkthru-worlds .wt-team-head{grid-template-columns:1fr}
+ #walkthru-worlds .wt-report-header img,#walkthru-worlds .wt-atlas-header img,#walkthru-worlds .wt-cloud-head img,#walkthru-worlds .wt-team-head img{height:100px}
+ #walkthru-worlds .wt-readiness{grid-template-columns:1fr;gap:20px}
+ #walkthru-worlds .wt-score{font-size:65px}
+ #walkthru-worlds .wt-compare-header{grid-template-columns:1fr 75px}
+ #walkthru-worlds .wt-compare-header img{height:110px}
+ #walkthru-worlds .wt-comparison-row{grid-template-columns:1.1fr .8fr .8fr;gap:8px;font-size:11px}
+ #walkthru-worlds .wt-status{padding:4px;font-size:11px}
+ #walkthru-worlds .wt-board-col{grid-template-columns:1fr}
+ #walkthru-worlds .wt-invite{grid-template-columns:1fr}
+ #walkthru-worlds .wt-letter{padding-inline:22px}
+}
+@media(prefers-reduced-motion:reduce){#walkthru-worlds *,#walkthru-worlds *::before,#walkthru-worlds *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}#walkthru-worlds .wt-button:hover{transform:none}}
+</style>
+<div id="walkthru-worlds" class="viz-carousel" aria-label="Walkthru doodle brand and interface concepts">
+ <section data-variant="Paper Playground" aria-label="Paper Playground landing page">
+  <div class="wt-page">
+   <header class="wt-nav"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div class="wt-navlinks"><span class="wt-navtext">How it works</span><span class="wt-navtext">Sample report</span><button class="wt-button small" data-local="A free scan checks public pages. A browser journey uses the extension and your chosen goal.">Scan my site <span aria-hidden="true">↗</span></button></div></header>
+   <div class="wt-hero-paper">
+    <div><span class="wt-tag">The launch check for apps built with AI</span><h1>Built with AI.<br>Ready for<br>real people?</h1><p>Let AI test users try your flows. See the friction, find the leaks, and know what to fix.</p><div class="wt-actions"><button class="wt-button" data-local="Demo selected: start with a public scan, then test a real journey in your own browser.">Scan my site <span aria-hidden="true">↗</span></button><button class="wt-link" data-local="Sample report: a blocked signup, its evidence, and the first fix to make.">See a sample report</button></div><div class="wt-result" aria-live="polite"></div></div>
+    <div class="wt-collage" aria-label="Original doodles introduce expressive test users"><div class="wt-artboard crowd"><span class="wt-paperclip"></span><img class="wt-art" data-asset="d21" alt="Original blue doodle portraits of many different people"></div><div class="wt-artboard rooster"><img class="wt-art" data-asset="d13" alt="Original blue and orange rooster doodle"></div><div class="quote"><p class="wt-note">“Wait. Where do I go next?”</p><p style="font-size:11px;margin-top:8px">Exactly the question you want before launch.</p></div></div>
+   </div>
+   <div class="wt-path-strip"><div><h3>Watch a stranger try.</h3><p>Real clicks. Your browser. Their perspective.</p></div><div><h3>Get the whole picture.</h3><p>Journeys, search readiness, passive security.</p></div><div><h3>Fix. Rerun. Feel ready.</h3><p>Evidence first. A clear next move.</p></div></div>
+   <footer class="wt-foot"><span>See where strangers get stuck.</span><span>Doodle-led brand study · Local interaction preview</span></footer>
+  </div>
+ </section>
+ <section data-variant="Cobalt Crowd" aria-label="Cobalt Crowd test user landing page" hidden>
+  <div class="wt-page wt-blue-page">
+   <header class="wt-nav"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div class="wt-navlinks"><span class="wt-navtext">Meet your test users</span><button class="wt-button light small" data-local="This concept leads with test users, then takes visitors into a browser journey.">Try a journey ↗</button></div></header>
+   <div class="wt-crowd-hero"><div><span class="wt-tag">Fresh eyes. Before launch.</span><h1>Your first users.<br>Before your<br>first users.</h1><p>You know every corner of your app. They don’t. That is where the useful feedback starts.</p><div class="wt-actions"><button class="wt-button light" data-local="Choose a goal and a test user. The real journey runs in your own Chrome session.">Meet my test user ↗</button></div><div class="wt-result" aria-live="polite"></div></div><div class="wt-faceposter"><img class="wt-art" data-asset="d7" alt="Original black and white expressive doodle faces on cobalt blue"></div></div>
+   <div class="wt-persona-line"><div><p class="wt-note">One site.<br>Different ways to get stuck.</p></div><div><div class="wt-personas" aria-label="Example test user perspectives"><button aria-pressed="true" data-perspective="visitor">First-time visitor</button><button aria-pressed="false" data-perspective="skeptic">Skeptic</button><button aria-pressed="false" data-perspective="hurried">In a hurry</button></div><p class="wt-perspective" aria-live="polite">“I clicked Get started. I’m still not sure what happens next.”</p><p style="font-size:11px;margin-top:12px">Illustrative perspectives, not quotes from real customers.</p></div></div>
+   <footer class="wt-foot"><span>AI test users. Observable journeys. Grounded findings.</span><span>Brand direction: expressive, bold, human</span></footer>
+  </div>
+ </section>
+ <section data-variant="Coral Observatory" aria-label="Coral Observatory launch check landing page" hidden>
+  <div class="wt-page wt-coral-page">
+   <header class="wt-nav"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div class="wt-navlinks"><span class="wt-navtext">The launch check</span><button class="wt-button small" data-local="The sample combines journey observations with separate deterministic page checks.">Explore the report ↗</button></div></header>
+   <div class="wt-editorial"><div><span class="wt-tag">A little curiosity. A lot of clarity.</span><h1 class="wt-serif">Look closer.<br>Launch wiser.</h1><p>Your app looks ready. Let’s see how it behaves.</p><div class="wt-actions"><button class="wt-button" data-local="Preview only: a public scan checks SEO, AI search readiness and passive security.">Scan my site ↗</button></div><div class="wt-result" aria-live="polite"></div></div><div class="wt-eye"><img class="wt-art" data-asset="m3" alt="Original eye and hand illustration on coral from the MCP reference folder"></div></div>
+   <div class="wt-editorial-bottom"><img class="wt-art" data-asset="d16" alt="Original bird and walking legs doodle"><div class="wt-promises"><div><h3>Can they get in?</h3><p>Follow the first visit through to the first useful screen.</p></div><div><h3>Can search read it?</h3><p>See what crawlers and AI search can actually understand.</p></div><div><h3>Anything leaking?</h3><p>Catch passive security hygiene issues before the handoff.</p></div></div></div>
+   <footer class="wt-foot"><span>One report. Three useful questions.</span><span>Brand direction: editorial curiosity</span></footer>
+  </div>
+ </section>
+ <section data-variant="Launch Letter" aria-label="Launch Letter founder landing page" hidden>
+  <div class="wt-page wt-letter-page">
+   <header class="wt-nav"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div class="wt-navlinks"><span class="wt-navtext">For people who ship</span><button class="wt-button small" data-local="Access requests are a founder-reviewed step in the current product.">Request access ↗</button></div></header>
+   <div class="wt-letter"><div><span class="wt-note">Dear person who built the thing,</span><h1 class="wt-serif">You’re too close<br>to see the<br>rough edges.</h1><p>That’s why Walkthru brings fresh eyes to your app, then turns what they find into a fix list.</p><div class="wt-actions"><button class="wt-button" data-local="Demo: enter a public URL to begin a scan. No real scan is sent from this mockup.">Scan my site ↗</button></div><div class="wt-result" aria-live="polite"></div></div><div class="wt-letter-art"><img class="wt-art" data-asset="d22" alt="Original blue doodle of a person absorbed in their laptop"></div></div>
+   <div class="wt-letter-checks"><div><h3>From “I think it works”<br>to “I know what to fix.”</h3><p style="margin-top:12px;font-size:13px">Made for solo founders, small teams, and agencies handing over something they care about.</p></div><div class="wt-checklist"><span>01 &nbsp; Try the journey in your own browser</span><span>02 &nbsp; Read the evidence, not a vague score</span><span>03 &nbsp; Fix the rough edge and rerun</span></div></div>
+   <footer class="wt-foot"><span>Your next launch deserves a second look.</span><span>Brand direction: personal, warm, thoughtful</span></footer>
+  </div>
+ </section>
+ <section data-variant="Launch Notebook" aria-label="Launch Notebook onboarding page" hidden>
+  <div class="wt-page">
+   <header class="wt-nav"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><span class="wt-pill">Your first journey</span></header>
+   <div class="wt-notebook"><div><span class="wt-note">Let’s start with one thing.</span><h1>What should<br>Scout try?</h1><p>Give your test user a goal. We’ll follow the journey in your own browser.</p><form class="wt-form" data-preview-form="journey"><div><label for="notebook-url">Website to test</label><input id="notebook-url" type="url" value="https://example.com" required></div><div><label for="notebook-goal">Goal for your test user</label><textarea id="notebook-goal" required>Find the free plan and reach the signup form.</textarea></div><button class="wt-button" type="submit">Preview my journey ↗</button><div class="wt-result" aria-live="polite"></div></form></div><div class="wt-notebook-art"><span class="wt-paperclip"></span><img class="wt-art" data-asset="d6" alt="Original loose colorful line drawings of people and places"></div></div>
+   <div class="wt-onboard-bottom"><img class="wt-art" data-asset="i6" alt="Original line illustration of a person walking"><div><strong>A fresh pair of eyes, inside your browser.</strong><p style="font-size:12px;margin-top:6px">The extension handles the journey. No password sharing.</p><span class="wt-demo">Preview only. No website will be visited.</span></div></div>
+   <footer class="wt-foot"><span>Choose a goal → Connect Chrome → Review the evidence</span><span>Product direction: friendly field notebook</span></footer>
+  </div>
+ </section>
+ <section data-variant="Fieldwork" aria-label="Fieldwork dashboard" hidden>
+  <div class="wt-page wt-shell">
+   <aside class="wt-sidebar"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div><span class="wt-tag">Your workspace</span><div class="wt-sidebar-menu" style="margin-top:13px"><span class="selected">Overview</span><span>Journeys</span><span>Search readiness</span><span>Findings</span><span>Connections</span></div></div><div class="wt-sidebar-end">Studio workspace<br>Scout is ready for a goal.</div></aside>
+   <main class="wt-work"><div class="wt-workhead"><span>Good morning, maker.</span><span class="wt-demo">Illustrative workspace data</span></div><span class="wt-note">Something worth shipping?</span><h1>Let’s give it<br>a second look.</h1><p class="wt-muted">Choose one flow. Scout will bring back the evidence.</p><form class="wt-mission" data-preview-form="dashboard"><div><h3>Your next journey</h3><label for="field-goal" style="margin-top:14px">Test user goal</label><input id="field-goal" value="Find pricing and start a free account" required><div class="wt-actions"><button type="submit" class="wt-button">Preview a run ↗</button><span class="wt-pill">First-time visitor</span></div><div class="wt-result" aria-live="polite"></div></div><img class="wt-art" data-asset="d23" alt="Original doodle of a person investigating with a desk fan"></form><div class="wt-history"><div class="wt-history-head"><h3>Recent field notes</h3><span class="wt-demo">Sample runs</span></div><div class="wt-run-row"><div><strong>Pricing → Signup</strong><span class="wt-muted">Today · First-time visitor</span></div><span>6 steps · 2 findings</span><span class="wt-status open">Blocked</span></div><div class="wt-run-row"><div><strong>Explore the dashboard</strong><span class="wt-muted">Yesterday · Skeptic</span></div><span>9 steps · 1 finding</span><span class="wt-status">Complete</span></div></div><div class="wt-mini-scout"><img data-asset="brand" alt="Scout walking bird"><span><strong>Scout</strong> · Ready when you are.</span></div></main>
+  </div>
+ </section>
+ <section data-variant="Journey Room" aria-label="Journey Room evidence report" hidden>
+  <div class="wt-page wt-report-page">
+   <header class="wt-nav"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div class="wt-navlinks"><span class="wt-navtext">Journey report</span><span class="wt-pill">Illustrative report</span></div></header>
+   <div class="wt-report-header"><div><span class="wt-tag">First-time visitor · Pricing to signup</span><h1>One small dead end.<br>One useful next move.</h1><p>Scout reached the signup form. The Continue button gave no visible feedback.</p></div><img class="wt-art" data-asset="d24" alt="Original pencil doodle of a puzzled face"></div>
+   <div class="wt-evidence"><div class="wt-steps" aria-label="Select an illustrative journey step"><button data-step="landing" aria-pressed="false">01 &nbsp; Open homepage</button><button data-step="pricing" aria-pressed="false">02 &nbsp; Find free plan</button><button data-step="signup" aria-pressed="true">03 &nbsp; Try signup</button><button data-step="stop" aria-pressed="false">04 &nbsp; Report the stop</button></div><div class="wt-frame"><span class="wt-tag">Illustrative evidence · not a capture</span><div class="wt-evidence-model"><h3 class="wt-step-heading">Create your account</h3><label for="evidence-email">Email address</label><input id="evidence-email" value="[masked]" readonly><button class="wt-button small" data-local="In this illustrative finding, the original button gives no feedback. The report recommends a clear pending or error state.">Continue</button><div class="wt-failed wt-step-detail">Clicked Continue. No visible state changed.</div></div><p class="wt-demo" style="margin-top:14px">Real reports preserve the captured viewport and mask form values.</p></div><aside class="wt-inspector"><span class="wt-pill">Needs attention</span><p><strong>Observed</strong><br><span class="wt-observed">No visible response after the click.</span></p><p><strong>Next fix</strong><br>Show pending, success or failure feedback.</p><p class="wt-note">Make the next step obvious.</p><div class="wt-result" aria-live="polite"></div></aside></div>
+   <div class="wt-report-bottom"><div><h3>Evidence before advice.</h3><p class="wt-muted" style="font-size:12px;margin-top:5px">Journey findings stay separate from technical checks.</p></div><button class="wt-button" data-local="Fix prompt preview: add clear submit feedback, preserve form state, and rerun the same goal.">Preview the fix ↗</button></div>
+   <footer class="wt-foot"><span>Grounded findings. Masked values. A clear next step.</span><span>Product direction: an evidence room</span></footer>
+  </div>
+ </section>
+ <section data-variant="Search Atlas" aria-label="Search Atlas AI search readiness workspace" hidden>
+  <div class="wt-page wt-shell">
+   <aside class="wt-sidebar"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div class="wt-sidebar-menu"><span>Overview</span><span>Journeys</span><span class="selected">Search readiness</span><span>Findings</span><span>Connections</span></div><div class="wt-sidebar-end">Readiness measures access<br>and understanding.</div></aside>
+   <main class="wt-work"><div class="wt-workhead"><span>Search readiness / example.com</span><span class="wt-demo">Illustrative results</span></div><div class="wt-atlas-header"><div><span class="wt-note">What can the outside world read?</span><h1>Good ideas deserve<br>to be understood.</h1><p class="wt-muted">See the version of your site that AI search can fetch.</p></div><img class="wt-art" data-asset="i1" alt="Original illustration of a person surrounded by browser windows"></div><div class="wt-readiness"><div><div class="wt-score">72<span>/100</span></div><p>Sample readiness score<br>2 useful fixes to review</p></div><ul><li><span>Homepage can be fetched</span><strong>Pass</strong></li><li><span>Core copy in initial HTML</span><strong>Pass</strong></li><li><span>Product structured data</span><strong>Review</strong></li><li><span>Pricing is understandable</span><strong>Review</strong></li></ul></div><div class="wt-read-view"><span class="wt-tag">What AI search sees · example</span><h3>“A workspace for planning your next trip.”</h3><p class="wt-muted">The product purpose is readable. The free plan details appear only after interaction.</p><div class="wt-actions"><button class="wt-button small" data-local="Fix preview: include the key plan details in crawlable HTML and add accurate product structured data.">Preview the fix pack ↗</button></div><div class="wt-result" aria-live="polite"></div></div><p class="wt-demo" style="margin-top:19px">Readiness is not a promise of citations or rankings.</p></main>
+  </div>
+ </section>
+ <section data-variant="Fix Studio" aria-label="Fix Studio prioritized findings and prompt workspace" hidden>
+  <div class="wt-page wt-shell">
+   <aside class="wt-sidebar"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div class="wt-sidebar-menu"><span>Overview</span><span>Journeys</span><span>Search readiness</span><span class="selected">Fix studio</span><span>Connections</span></div><div class="wt-sidebar-end">Find it. Fix it.<br>Prove it with a rerun.</div></aside>
+   <main class="wt-work"><div class="wt-workhead"><span>Fix studio / Pricing → Signup</span><span class="wt-demo">Illustrative findings</span></div><span class="wt-note">Let’s turn the rough edges into a plan.</span><h1>A small list.<br>A better launch.</h1><p class="wt-muted">Start with the blocker. Then make the next visit clearer.</p><div class="wt-fix-layout"><div class="wt-fix-list"><div class="wt-fix-item"><span class="wt-mono">P01</span><div><h3>Show signup feedback</h3><p>Continue gives no visible response.<br>Evidence: journey step 03.</p></div></div><div class="wt-fix-item"><span class="wt-mono">P02</span><div><h3>Make the free plan readable</h3><p>Include plan details in initial HTML.<br>Evidence: pricing page fetch.</p></div></div><div class="wt-fix-item"><span class="wt-mono">P03</span><div><h3>Give the next step a name</h3><p>Replace vague action copy with the actual outcome.<br>Evidence: homepage CTA.</p></div></div></div><div class="wt-fix-note"><p class="wt-note">Your coding agent<br>can take it from here.</p><img class="wt-art" data-asset="m2" alt="Original coral pixel character working at a laptop"><button class="wt-button small" data-prompt>Open fix prompt ↗</button></div></div><div class="wt-prompt" hidden><strong>Fix prompt preview</strong><p style="font-size:12px;margin-top:8px">Add pending and failure states to signup. Keep entered data on retry. Put key pricing copy in initial HTML. Rerun “Find pricing and start a free account” and verify visible feedback.</p></div><div class="wt-mini-scout"><img data-asset="brand" alt=""><span>Scout found it. Your agent fixes it. Scout checks again.</span></div></main>
+  </div>
+ </section>
+ <section data-variant="MCP Workshop" aria-label="MCP Workshop editor and AI connections page" hidden>
+  <div class="wt-page wt-cloud-page">
+   <header class="wt-nav"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div class="wt-navlinks"><span class="wt-navtext">Connections</span><span class="wt-pill">MCP · Concept preview</span></div></header>
+   <div class="wt-cloud-head"><div><span class="wt-note">Less tab hopping. More fixing.</span><h1>Your editor.<br>Our fresh eyes.</h1><p>Bring a scan, its evidence and the next rerun into your coding workflow.</p></div><img class="wt-art" data-asset="m0" alt="Original coral pixel character with a thought bubble"></div>
+   <div class="wt-cloud-path" aria-label="Editor to Walkthru to fix prompt"><div class="wt-cloud-node"><img class="wt-art" data-asset="d22" alt="Original laptop user doodle"><div><h3>Your editor</h3><p>Claude Code · Cursor · other agents</p></div></div><span class="wt-cloud-arrow" aria-hidden="true">→</span><div class="wt-cloud-node"><img class="wt-art" data-asset="brand" alt="Walkthru walking bird"><div><h3>Walkthru MCP</h3><p>Scan · Read evidence · Rerun</p></div></div><span class="wt-cloud-arrow" aria-hidden="true">→</span><div class="wt-cloud-node"><img class="wt-art" data-asset="i7" alt="Original line illustration of a person balancing devices"><div><h3>A clear fix plan</h3><p>Grounded findings for your agent</p></div></div></div>
+   <div class="wt-connection"><div><h3>Connect your workflow</h3><p>Use your account’s MCP configuration in a compatible client. This preview creates no credentials.</p><p class="wt-demo" style="margin-top:14px">Browser journeys still use the Chrome extension.</p></div><div><div class="wt-command wt-mono">scan → read fix prompt → make changes → rerun</div><button class="wt-button small" data-connect>Preview connection ↗</button><div class="wt-result" aria-live="polite"></div></div></div>
+   <footer class="wt-foot"><span>A useful bridge between observation and action.</span><span>Product direction: an approachable AI workshop</span></footer>
+  </div>
+ </section>
+ <section data-variant="Release Radar" aria-label="Release Radar rerun comparison workspace" hidden>
+  <div class="wt-page wt-shell">
+   <aside class="wt-sidebar"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div class="wt-sidebar-menu"><span>Overview</span><span>Journeys</span><span class="selected">Compare runs</span><span>Findings</span><span>Watch</span></div><div class="wt-sidebar-end">Every rerun is<br>a chance to know more.</div></aside>
+   <main class="wt-work"><div class="wt-workhead"><span>Compare / Pricing → Signup</span><span class="wt-demo">Illustrative rerun</span></div><div class="wt-compare-header"><div><span class="wt-note">A little less friction.</span><h1>You fixed it.<br>Here’s the proof.</h1><p class="wt-muted">Compare the same goal on the same site.</p></div><img class="wt-art" data-asset="d10" alt="Original doodle of a bird riding a skateboard"></div><div class="wt-change-title"><strong>2 fixed</strong><span class="wt-muted" style="font-size:13px">1 still open<br>0 new findings</span></div><div class="wt-comparison-row header"><span>Finding</span><span>Previous run</span><span>This run</span></div><div class="wt-comparison-row"><strong>Signup feedback</strong><span class="wt-status open">Blocked</span><span class="wt-status">Fixed</span></div><div class="wt-comparison-row"><strong>Free plan in HTML</strong><span class="wt-status open">Missing</span><span class="wt-status">Fixed</span></div><div class="wt-comparison-row"><strong>Vague action copy</strong><span class="wt-status open">Review</span><span class="wt-status open">Still open</span></div><div class="wt-watchline"><div><h3>Keep a quiet eye on it.</h3><p>Watch can notify you when measured checks change.</p></div><button class="wt-button small" data-watch aria-pressed="false">Preview watch</button></div><div class="wt-result" aria-live="polite"></div><p class="wt-demo" style="margin-top:16px">Unmeasured checks remain “not re-checked” in real comparisons.</p></main>
+  </div>
+ </section>
+ <section data-variant="Agency Wall" aria-label="Agency Wall shared findings workspace" hidden>
+  <div class="wt-page wt-shell">
+   <aside class="wt-sidebar"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div class="wt-sidebar-menu"><span>Overview</span><span>Shared reports</span><span class="selected">Findings board</span><span>Team</span><span>Settings</span></div><div class="wt-sidebar-end">Studio workspace<br>One shared view of what’s next.</div></aside>
+   <main class="wt-work"><div class="wt-workhead"><span>Studio / Client launch</span><span class="wt-demo">Illustrative team board</span></div><div class="wt-team-head"><div><span class="wt-note">Everyone on the same page.</span><h1>Better handoffs.<br>Fewer loose ends.</h1><p class="wt-muted">Evidence, owners, and the next move in one place.</p></div><img class="wt-art" data-asset="v1" alt="Original visual illustration of many people gathered together"></div><div class="wt-board"><div class="wt-board-col"><h3>To fix · 2</h3><article class="wt-task"><span class="wt-mono">P01 · Journey</span><strong>Signup gives no feedback</strong><p>Owner: frontend<br>Evidence: step 03</p></article><article class="wt-task"><span class="wt-mono">P02 · Search</span><strong>Plan copy hidden from crawlers</strong><p>Owner: content<br>Evidence: pricing fetch</p></article></div><div class="wt-board-col"><h3>In progress · 1</h3><article class="wt-task"><span class="wt-mono">P03 · Clarity</span><strong>Name the next action</strong><p>Owner: design<br>Evidence: homepage</p></article></div><div class="wt-board-col"><h3>Verified · 1</h3><article class="wt-task"><span class="wt-mono">P04 · SEO</span><strong>Page title restored</strong><p>Owner: frontend<br>Verified by rerun</p></article></div></div><div class="wt-team-note"><img class="wt-art" data-asset="d14" alt="Original doodle group of curious stick figures"><div><h3>A shared launch check.</h3><p style="font-size:12px;margin-top:6px">Give the next person the evidence, not just a task title.</p></div></div><form data-preview-form="invite"><label for="agency-email">Teammate email</label><div class="wt-invite"><input id="agency-email" type="email" placeholder="teammate@example.com" required><button class="wt-button small" type="submit">Preview invite ↗</button></div><div class="wt-result" aria-live="polite"></div></form></main>
+  </div>
+ </section>
+ <section data-variant="Launch Day" aria-label="Launch Day report completion and acquisition page" hidden>
+  <div class="wt-page wt-launch-page">
+   <header class="wt-nav"><div class="wt-brand"><img data-asset="brand" alt="">Walkthru</div><div class="wt-navlinks"><span class="wt-navtext">From first click to launch</span><span class="wt-pill">Illustrative report</span></div></header>
+   <div class="wt-launch-main"><div><span class="wt-note">A second look makes a difference.</span><h1>Ship something<br>you can<br>stand behind.</h1><p>A tested journey. An honest report.<br>A clear list of what still needs you.</p></div><img class="wt-art" data-asset="d9" alt="Original bright blue doodles of animals, plants, a lighthouse and birds"></div>
+   <div class="wt-launch-bar"><div><h3>Pricing to signup: completed.</h3><p>Two blockers were fixed and re-checked. One clarity issue remains open. That’s useful progress.</p><div class="wt-actions"><button class="wt-link" data-local="Illustrative recap: the signup response and crawlable pricing copy were re-checked. The CTA wording still needs review.">Read the remaining finding ↗</button></div><div class="wt-result" aria-live="polite"></div></div><div class="wt-launch-stamp">A little more launch ready.<small>EVIDENCE, NOT A GUARANTEE</small></div></div>
+   <div class="wt-launch-cta"><div><h3>Your next app deserves fresh eyes.</h3><p style="font-size:12px;margin-top:7px">Start with a scan. Find your first useful fix.</p></div><button class="wt-button" data-local="Demo selected: Scan my site starts a public check in the real application.">Scan my site ↗</button></div>
+   <footer class="wt-foot"><span>Walkthru. See where strangers get stuck.</span><span>Brand direction: optimistic, clear, grounded</span></footer>
+  </div>
+ </section>
+</div>
+<script>
+(() => {
+ const root = document.getElementById('walkthru-worlds');
+ const assets = __ASSET_DATA__;
+ root.querySelectorAll('[data-asset]').forEach(img => { img.src = assets[img.dataset.asset]; img.decoding = 'async'; });
+ const saved = window.openai?.widgetState?.privateContent;
+ if(saved?.promptOpen) root.querySelector('.wt-prompt').hidden=false;
+ function remember(modelContent,privateContent={}) { window.openai?.setWidgetState?.({modelContent,privateContent}).catch(()=>{}); }
+ function result(button,text) { const page=button.closest('.wt-page'); const local=button.closest('form,.wt-hero-paper,.wt-crowd-hero,.wt-editorial,.wt-letter,.wt-connection,.wt-inspector,.wt-launch-bar'); const target=local?.querySelector('.wt-result')||page.querySelector('.wt-result'); if(target) target.textContent=text; }
+ root.querySelectorAll('[data-local]').forEach(button => button.addEventListener('click',()=>result(button,button.dataset.local)));
+ const quotes={visitor:'“I clicked Get started. I’m still not sure what happens next.”',skeptic:'“Before I sign up, can I see what the free plan actually includes?”',hurried:'“I have two minutes. Just show me the fastest way to try it.”'};
+ root.querySelectorAll('[data-perspective]').forEach(button=>button.addEventListener('click',()=>{ root.querySelectorAll('[data-perspective]').forEach(b=>b.setAttribute('aria-pressed',String(b===button))); root.querySelector('.wt-perspective').textContent=quotes[button.dataset.perspective]; remember({concept:'Cobalt Crowd',perspective:button.textContent}); }));
+ root.querySelectorAll('[data-preview-form]').forEach(form=>{const button=form.querySelector('button');button.type='button';const preview=()=>{if(!form.reportValidity())return;const type=form.dataset.previewForm;const message=type==='invite'?'Invite preview ready. No email has been sent.':type==='dashboard'?'Run preview ready. Scout would use the connected Chrome extension. No run has started.':'Journey preview ready. Next: connect the extension and confirm the site and goal. No website has been visited.';form.querySelector('.wt-result').textContent=message;remember({concept:form.closest('[data-variant]').dataset.variant,action:'Previewed '+type});};button.addEventListener('click',preview);form.addEventListener('submit',event=>{event.preventDefault();preview();});});
+ const steps={landing:['Welcome to the app','The homepage loads and the main call to action is visible.','Homepage and call to action were visible.'],pricing:['Find the free plan','The free plan can be found on the pricing page.','Free plan reached from the homepage.'],signup:['Create your account','Clicked Continue. No visible state changed.','No visible response after the click.'],stop:['A grounded stopping point','The illustrative run stops here and preserves the observed issue.','Run stopped with a grounded finding.']};
+ root.querySelectorAll('[data-step]').forEach(button=>button.addEventListener('click',()=>{root.querySelectorAll('[data-step]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));const d=steps[button.dataset.step];root.querySelector('.wt-step-heading').textContent=d[0];root.querySelector('.wt-step-detail').textContent=d[1];root.querySelector('.wt-observed').textContent=d[2];remember({concept:'Journey Room',step:button.textContent.trim()});}));
+ root.querySelector('[data-prompt]').addEventListener('click',event=>{const panel=root.querySelector('.wt-prompt');panel.hidden=!panel.hidden;event.currentTarget.textContent=panel.hidden?'Open fix prompt ↗':'Close fix prompt';event.currentTarget.setAttribute('aria-expanded',String(!panel.hidden));remember({concept:'Fix Studio',promptOpen:!panel.hidden},{promptOpen:!panel.hidden});});
+ root.querySelector('[data-connect]').addEventListener('click',event=>result(event.currentTarget,'Preview connected: your editor can request a scan, read the fix prompt, and rerun. No real connection or key was created.'));
+ root.querySelector('[data-watch]').addEventListener('click',event=>{const b=event.currentTarget;const on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',String(on));b.textContent=on?'Watch preview on':'Preview watch';result(b,on?'Preview only: notify on meaningful measured changes. No watch or automation was created.':'Watch preview is off.');remember({concept:'Release Radar',watchPreview:on});});
+ if(globalThis.Tweak) {
+  root.querySelectorAll('[data-variant]').forEach(variant=>{const page=variant.querySelector('.wt-page');page.setAttribute('aria-label',variant.dataset.variant+' design');const state={corners:8,doodleSize:100};const render=()=>{page.querySelectorAll('.wt-button').forEach(b=>b.style.borderRadius=state.corners+'px');page.querySelectorAll('.wt-art').forEach(img=>{img.style.objectPosition='center';img.style.scale=String(state.doodleSize/100);});};const tweak=new Tweak({container:page,onChange:render});tweak.addSlider(state,'corners',{label:'Button corners',min:0,max:24,unit:'px'});tweak.addSlider(state,'doodleSize',{label:'Doodle scale',min:85,max:100,unit:'%'});});
+ }
+})();
+</script>

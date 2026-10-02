@@ -1,0 +1,201 @@
+{
+  "duration": 30,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "errors": [],
+  "checks": [
+    {
+      "time": 0,
+      "active": [
+        "s0"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 0.9,
+      "active": [
+        "s0"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 2.4,
+      "active": [
+        "s0"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 3.9,
+      "active": [
+        "s1"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 5.4,
+      "active": [
+        "s1"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 7.7,
+      "active": [
+        "s2"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 10.2,
+      "active": [
+        "s2"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 12.7,
+      "active": [
+        "s3"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 14.4,
+      "active": [
+        "s3"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 17.3,
+      "active": [
+        "s4"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 18.5,
+      "active": [
+        "s4"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 20.7,
+      "active": [
+        "s5"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 22.4,
+      "active": [
+        "s5"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 24.8,
+      "active": [
+        "s6"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 27.7,
+      "active": [
+        "s7"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    },
+    {
+      "time": 29.5,
+      "active": [
+        "s7"
+      ],
+      "missing": [],
+      "textOverflow": [],
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ]
+    }
+  ]
+}

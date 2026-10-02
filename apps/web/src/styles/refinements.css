@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Site-wide refinements (the "Updated" design, chosen 2026-10-03).
+   Selectors keep a :root prefix so they outrank the component stylesheets
+   they refine.
+   ========================================================================== */
+
+/* ---- Tokens: match the approved palette (ADR-014) ---- */
+:root {
+  --bg: #f6f6f6;
+  --radius-pill: 999px;
+
+  /* Type scale — every heading/label on the non-case-study pages maps to one step. */
+  --fs-display: clamp(3rem, 7vw, 6.4rem); /* page H1 + closing CTA */
+  --fs-h2: clamp(2rem, 4vw, 3.4rem); /* home section headings */
+  --fs-h3: clamp(1.4rem, 2.2vw, 2.2rem); /* card / column titles */
+  --fs-lead: clamp(1.05rem, 1.35vw, 1.25rem); /* intro paragraphs */
+  --fs-label: clamp(0.78rem, 0.95vw, 0.9rem); /* uppercase labels */
+
+  /* Page rhythm */
+  --page-top: clamp(7rem, 15vh, 11rem); /* first content below the fixed nav */
+}
+
+/* ---- Keyboard focus, site-wide ---- */
+:root :is(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* ---- Hero ---- */
+:root .hero-download-icon {
+  width: 1.45rem;
+  height: 1.45rem;
+  transition: transform var(--dur-base) var(--ease);
+}
+
+:root .hero-resume-pill:hover .hero-download-icon {
+  transform: translateY(2px);
+}
+
+:root .hero-role-block--v2 {
+  text-decoration: none;
+  color: #fff;
+}
+
+:root .hero-role-block--v2 .hero-role-arrow-box {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+:root .hero-role-block--v2:hover .hero-role-arrow-box {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+}
+
+:root .hero-role-line--main {
+  display: block;
+  font-size: clamp(1.1rem, 1.7vw, 1.6rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Rolling specialty line — one word visible, masked. */
+:root .hero-role-roll {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 1.4em;
+  font-size: clamp(0.95rem, 1.3vw, 1.2rem);
+  font-weight: 300;
+  opacity: 0.85;
+}
+
+:root .hero-role-roll-word {
+  position: absolute;
+  inset: 0 auto auto 0;
+  white-space: nowrap;
+}
+
+/* Without JS / reduced motion: show only the first specialty. */
+:root .hero-role-roll-word:not(:first-child) {
+  visibility: hidden;
+}
+
+/* ---- Footer: clamp had min > max, locking a 320px gap ---- */
+:root .footer {
+  margin-top: clamp(4rem, 12vh, 10rem);
+}
+
+
+
+/* ==========================================================================
+   Consistency pass — About, Blog, Contact, 404, Footer, Gallery
+   ========================================================================== */
+
+/* ---- Page H1s: one size, one weight ---- */
+:root :is(.aboutpage-headline, .blogpage-title, .placeholder-title, .footer-heading:not(.footer-next-heading)) {
+  font-size: var(--fs-display);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+/* ---- Section headings ---- */
+:root .gallery-title {
+  font-size: var(--fs-h2);
+  line-height: 1.05;
+}
+
+/* ---- Card / column titles ---- */
+:root :is(.aboutpage-currently-title, .blog-card-title) {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* ---- Lead paragraphs ---- */
+:root :is(.about-copy-text, .aboutpage-copy, .blogpage-lead, .placeholder-copy) {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+}
+
+/* ---- Uppercase labels: one size, weight and tracking ---- */
+:root :is(.about-eyebrow, .aboutpage-eyebrow, .aboutpage-currently-num, .blogpage-index, .placeholder-eyebrow, .footer-block h5) {
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---- Same distance from the nav on every page ---- */
+:root .aboutpage {
+  padding-top: var(--page-top);
+}
+:root .aboutpage-hero {
+  padding-top: 0;
+}
+:root :is(.blogpage-head) {
+  padding-top: var(--page-top);
+}
+
+/* ---- Same left edge on every page (matches nav + home sections) ---- */
+:root :is(.blogpage .container, .aboutpage-section, #currently) {
+  padding-inline: var(--page-padding);
+}
+
+/* Keep long-form reading widths comfortable now that gutters are shared. */
+:root .blogpage-lead {
+  max-width: 55ch;
+}

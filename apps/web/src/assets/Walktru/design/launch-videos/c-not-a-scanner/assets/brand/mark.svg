@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title">
+  <title id="title">Walkthru walking bird</title>
+  <path fill="#1b1b1f" d="M77 108 40 42q-2-4-7-2L13 50q-6 3-2 9c18 22 41 44 65 58 11 7 23 11 36 11 22 1 39-8 47-24 9-19 5-43 1-62l30-4q7-1 2-6L165 10c-12-10-28-9-37 1-8 9-9 21-13 32-10 26-23 49-38 65Z"/>
+  <circle cx="145" cy="22" r="7" fill="#f4f4f5"/>
+  <circle cx="145" cy="22" r="3" fill="#1b1b1f"/>
+  <g fill="none" stroke="#1b1b1f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+    <path d="m108 127-11 31-25 11-16 20m16-20-5 20m5-20 5 18m-5-18-13 11"/>
+    <path d="m124 127 22 28 6 29m0 0-1 12m1-12 11 10m-11-10 17 5"/>
+  </g>
+</svg>

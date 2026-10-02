@@ -1,0 +1,156 @@
+[
+  {
+    "n": 1,
+    "name": "planning-desk",
+    "refs": [
+      "creative/0122837f51fde74bc4e09eda85c20182.jpg",
+      "photography/01865dc7ec7c5885001d4a926370d16a.jpg"
+    ],
+    "scene": "Wide 16:9, top-down warm ivory travel-planning desk. Beautiful real linen and matte paper surface. Tiny torn Himalayan street photo lower left; cropped analog dune-and-jumping-traveler collage from reference 1 peeks from far right edge, with all lettering removed. A slim unbranded pencil and ivory folded travel journal at bottom edge. Sunlight from upper left gives calm physical depth. Leave entire upper-left 45% and central 65% open ivory for a headline and a large laptop plus phone later. Corners only, restrained two accent red paper slivers.",
+    "prompt": "Use case: product-mockup. Asset type: background art plate for a TripVerse AI travel-planning application mockup. Input images are style and photographic collage references only. Generate a fresh high-end art-directed backdrop inspired by them; do not copy their layout or foreign branding. Wide 16:9, top-down warm ivory travel-planning desk. Beautiful real linen and matte paper surface. Tiny torn Himalayan street photo lower left; cropped analog dune-and-jumping-traveler collage from reference 1 peeks from far right edge, with all lettering removed. A slim unbranded pencil and ivory folded travel journal at bottom edge. Sunlight from upper left gives calm physical depth. Leave entire upper-left 45% and central 65% open ivory for a headline and a large laptop plus phone later. Corners only, restrained two accent red paper slivers. CRITICAL: Create background stage only. No phones, laptops, tablets, monitors, screens, windows, interface, typography, letters, slogans, brand marks, logos, watermark, or readable text anywhere. Exact app screenshots, hardware, logo and brand typography will be composited separately. Be minimal and preserve the requested empty space. High resolution.",
+    "referenced_image_paths": [
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/0122837f51fde74bc4e09eda85c20182.jpg",
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/photography/01865dc7ec7c5885001d4a926370d16a.jpg"
+    ],
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-454d2ec9-fac5-4b48-9505-176c97744e55.png",
+    "originalGeneratedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-3d5631f7-4909-4d1e-9e45-60e907c4e3f2.png"
+  },
+  {
+    "n": 2,
+    "name": "pocket-sketchbook",
+    "refs": [
+      "creative/eb724a4d90897febad39382fcb2de5d1.jpg",
+      "photography/fb4c759d8867e5f247718e62e529b3fe.jpg"
+    ],
+    "scene": "Vertical 9:16 art-directed editorial paper composition. Soft warm bone across upper 35%, pale salmon paper below. At very bottom, torn monochrome alpine snow ridge with tiny two purple human silhouettes inspired by reference1, and a small snow-hiker photographic sliver inspired by reference2, never larger than15% of image. One cobalt paper ribbon runs around outer edge, not across center. Leave center x20%-80%, y30%-88% entirely clear pale salmon for a tall mobile phone; leave top clear ivory for typography. Touchable torn edges and subtle paper grain, playful but highly minimal.",
+    "prompt": "Use case: product-mockup. Asset type: background art plate for a TripVerse AI travel-planning application mockup. Input images are style and photographic collage references only. Generate a fresh high-end art-directed backdrop inspired by them; do not copy their layout or foreign branding. Vertical 9:16 art-directed editorial paper composition. Soft warm bone across upper 35%, pale salmon paper below. At very bottom, torn monochrome alpine snow ridge with tiny two purple human silhouettes inspired by reference1, and a small snow-hiker photographic sliver inspired by reference2, never larger than15% of image. One cobalt paper ribbon runs around outer edge, not across center. Leave center x20%-80%, y30%-88% entirely clear pale salmon for a tall mobile phone; leave top clear ivory for typography. Touchable torn edges and subtle paper grain, playful but highly minimal. CRITICAL: Create background stage only. No phones, laptops, tablets, monitors, screens, windows, interface, typography, letters, slogans, brand marks, logos, watermark, or readable text anywhere. Exact app screenshots, hardware, logo and brand typography will be composited separately. Be minimal and preserve the requested empty space. High resolution.",
+    "referenced_image_paths": [
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/eb724a4d90897febad39382fcb2de5d1.jpg",
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/photography/fb4c759d8867e5f247718e62e529b3fe.jpg"
+    ],
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-b8910059-8f79-4a9f-a8f6-d518442264e2.png"
+  },
+  {
+    "n": 3,
+    "name": "whole-route",
+    "refs": [
+      "creative/0ab1d5faf6b5a4e1a35c3ad80efa2f13.jpg",
+      "photography/230056cd59797104de333d0998479b71.jpg"
+    ],
+    "scene": "Wide 3:2 architectural art stage, warm off-white clay tabletop with a very low soft sage-green plinth along bottom edge. A city skyline photo, finely sliced into varying-width vertical paper strips inspired by the references, occupies only the far-right15% and lower-right corner. Two fine contour lines curl near bottom left. Leave upper-left copy zone 45% width and entire center clear for large landscape tablet. A single lime-yellow tiny circular paper element at lower-left. Perspective nearly overhead, soft directional daylight, sophistication of architectural model photography.",
+    "prompt": "Use case: product-mockup. Asset type: background art plate for a TripVerse AI travel-planning application mockup. Input images are style and photographic collage references only. Generate a fresh high-end art-directed backdrop inspired by them; do not copy their layout or foreign branding. Wide 3:2 architectural art stage, warm off-white clay tabletop with a very low soft sage-green plinth along bottom edge. A city skyline photo, finely sliced into varying-width vertical paper strips inspired by the references, occupies only the far-right15% and lower-right corner. Two fine contour lines curl near bottom left. Leave upper-left copy zone 45% width and entire center clear for large landscape tablet. A single lime-yellow tiny circular paper element at lower-left. Perspective nearly overhead, soft directional daylight, sophistication of architectural model photography. CRITICAL: Create background stage only. No phones, laptops, tablets, monitors, screens, windows, interface, typography, letters, slogans, brand marks, logos, watermark, or readable text anywhere. Exact app screenshots, hardware, logo and brand typography will be composited separately. Be minimal and preserve the requested empty space. High resolution.",
+    "referenced_image_paths": [
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/0ab1d5faf6b5a4e1a35c3ad80efa2f13.jpg",
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/photography/230056cd59797104de333d0998479b71.jpg"
+    ],
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-74dbea4d-32ce-44ee-9f6e-ca8f60ba0075.png"
+  },
+  {
+    "n": 4,
+    "name": "build-together",
+    "refs": [
+      "creative/7104fd9d15e028a7d725753d054a5bb4.jpg",
+      "creative/a71dca4294a442d7ed26e14f2d0da8b4.jpg"
+    ],
+    "scene": "Portrait 4:5 editorial mixed-media canvas, pale ice blue transitioning via a straight torn paper edge to bone upper35%. A cropped strip of cobalt stadium chairs sits along very bottom8%; tiny playful hand-drawn traveler figure from reference2 at far lower-left corner, no words. A single dark blue thread meanders from left border to bottom border like a journey, kept out of center. Leave central x10%-90% y32%-88% completely clear for two floating browser windows. Leave all top blank for headline. Minimal composition, real paper and fabric thread, crisp shadows only on little peripheral paper objects.",
+    "prompt": "Use case: product-mockup. Asset type: background art plate for a TripVerse AI travel-planning application mockup. Input images are style and photographic collage references only. Generate a fresh high-end art-directed backdrop inspired by them; do not copy their layout or foreign branding. Portrait 4:5 editorial mixed-media canvas, pale ice blue transitioning via a straight torn paper edge to bone upper35%. A cropped strip of cobalt stadium chairs sits along very bottom8%; tiny playful hand-drawn traveler figure from reference2 at far lower-left corner, no words. A single dark blue thread meanders from left border to bottom border like a journey, kept out of center. Leave central x10%-90% y32%-88% completely clear for two floating browser windows. Leave all top blank for headline. Minimal composition, real paper and fabric thread, crisp shadows only on little peripheral paper objects. CRITICAL: Create background stage only. No phones, laptops, tablets, monitors, screens, windows, interface, typography, letters, slogans, brand marks, logos, watermark, or readable text anywhere. Exact app screenshots, hardware, logo and brand typography will be composited separately. Be minimal and preserve the requested empty space. High resolution.",
+    "referenced_image_paths": [
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/7104fd9d15e028a7d725753d054a5bb4.jpg",
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/a71dca4294a442d7ed26e14f2d0da8b4.jpg"
+    ],
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-a9dadc27-ae05-4626-873d-32f07bbdc1d0.png"
+  },
+  {
+    "n": 5,
+    "name": "sketch-meets-studio",
+    "refs": [
+      "creative/a80e45a9a87f789931bf863590bf8263.jpg",
+      "creative/1cc08fc01181a676f894534fc73f42cf.jpg"
+    ],
+    "scene": "Very wide panoramic2:1 graphic art stage. Warm ivory matte canvas. Thin torn strip of black-and-white coastal cliff photographs across very bottom12% with sparse emerald, pink, cobalt and butter-yellow translucent paper rectangles as reference1; dreamy woven clouds and green hills from reference2 appear only as narrow vertical fabric-paper strip at far-left12%. Large blank center/right spanning x22%-95% y25%-80% for a floating sketchbook tablet. Top across image clear ivory for typography. Mid-century tactile collage with large negative space, no clutter, no text anywhere.",
+    "prompt": "Use case: product-mockup. Asset type: background art plate for a TripVerse AI travel-planning application mockup. Input images are style and photographic collage references only. Generate a fresh high-end art-directed backdrop inspired by them; do not copy their layout or foreign branding. Very wide panoramic2:1 graphic art stage. Warm ivory matte canvas. Thin torn strip of black-and-white coastal cliff photographs across very bottom12% with sparse emerald, pink, cobalt and butter-yellow translucent paper rectangles as reference1; dreamy woven clouds and green hills from reference2 appear only as narrow vertical fabric-paper strip at far-left12%. Large blank center/right spanning x22%-95% y25%-80% for a floating sketchbook tablet. Top across image clear ivory for typography. Mid-century tactile collage with large negative space, no clutter, no text anywhere. CRITICAL: Create background stage only. No phones, laptops, tablets, monitors, screens, windows, interface, typography, letters, slogans, brand marks, logos, watermark, or readable text anywhere. Exact app screenshots, hardware, logo and brand typography will be composited separately. Be minimal and preserve the requested empty space. High resolution.",
+    "referenced_image_paths": [
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/a80e45a9a87f789931bf863590bf8263.jpg",
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/1cc08fc01181a676f894534fc73f42cf.jpg"
+    ],
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-9e447f66-0150-4bb5-898e-1f3bdbf0a879.png"
+  },
+  {
+    "n": 6,
+    "name": "budget-context",
+    "refs": [
+      "creative/da2cf00108730c307eef30ac5ad6c1fa.jpg",
+      "creative/1e695b149696d39130420ccc0f7122b3.jpg"
+    ],
+    "scene": "Square sophisticated overhead travel-finance desk, very pale powder-blue paper background, bone paper clear at upper30%. Abstract sculptural folded paper waves in green and warm orange, inspired by first reference, occupy only bottom-left12%; narrow city-travel sliced photo strip from reference2 at far-right edge. A small closed cream journal and silver pencil just beyond bottom right corner. Entire center x12%-88% y32%-88% clear powder blue, for a landscape tablet and a precise upright ledger inset to be added later. Physical product-photography softness, restrained tactile aesthetic. No currency symbols, no charts, no lettering, no device.",
+    "prompt": "Use case: product-mockup. Asset type: background art plate for a TripVerse AI travel-planning application mockup. Input images are style and photographic collage references only. Generate a fresh high-end art-directed backdrop inspired by them; do not copy their layout or foreign branding. Square sophisticated overhead travel-finance desk, very pale powder-blue paper background, bone paper clear at upper30%. Abstract sculptural folded paper waves in green and warm orange, inspired by first reference, occupy only bottom-left12%; narrow city-travel sliced photo strip from reference2 at far-right edge. A small closed cream journal and silver pencil just beyond bottom right corner. Entire center x12%-88% y32%-88% clear powder blue, for a landscape tablet and a precise upright ledger inset to be added later. Physical product-photography softness, restrained tactile aesthetic. No currency symbols, no charts, no lettering, no device. CRITICAL: Create background stage only. No phones, laptops, tablets, monitors, screens, windows, interface, typography, letters, slogans, brand marks, logos, watermark, or readable text anywhere. Exact app screenshots, hardware, logo and brand typography will be composited separately. Be minimal and preserve the requested empty space. High resolution.",
+    "referenced_image_paths": [
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/da2cf00108730c307eef30ac5ad6c1fa.jpg",
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/1e695b149696d39130420ccc0f7122b3.jpg"
+    ],
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-f0a66a39-47b0-4798-907e-42f5e0a2f891.png"
+  },
+  {
+    "n": 7,
+    "name": "ask-change-keep-going",
+    "refs": [
+      "creative/328606a7aa2d3945dc5d4b488905e52f.jpg",
+      "photography/9ee62fd8c3c49e2074120c65d1bbb06c.jpg"
+    ],
+    "scene": "Portrait3:4 playful-minimal analog travel collage stage. Warm bone canvas everywhere, with pale apricot asymmetrical paper semicircle entering only from bottom-right edge. Tiny cutout hiker in orange jacket on a real mossy rock at bottom-left, from reference2. A tiny hand-drawn red hiking cap, inspired by reference1, as peripheral accent upper-right below25% of frame. Central70% and top-left45% entirely blank bone for an actual application window and a magnified receipt. Paper shadows gentle, witty but beautiful, sophisticated empty space; no text or logo.",
+    "prompt": "Use case: product-mockup. Asset type: background art plate for a TripVerse AI travel-planning application mockup. Input images are style and photographic collage references only. Generate a fresh high-end art-directed backdrop inspired by them; do not copy their layout or foreign branding. Portrait3:4 playful-minimal analog travel collage stage. Warm bone canvas everywhere, with pale apricot asymmetrical paper semicircle entering only from bottom-right edge. Tiny cutout hiker in orange jacket on a real mossy rock at bottom-left, from reference2. A tiny hand-drawn red hiking cap, inspired by reference1, as peripheral accent upper-right below25% of frame. Central70% and top-left45% entirely blank bone for an actual application window and a magnified receipt. Paper shadows gentle, witty but beautiful, sophisticated empty space; no text or logo. CRITICAL: Create background stage only. No phones, laptops, tablets, monitors, screens, windows, interface, typography, letters, slogans, brand marks, logos, watermark, or readable text anywhere. Exact app screenshots, hardware, logo and brand typography will be composited separately. Be minimal and preserve the requested empty space. High resolution.",
+    "referenced_image_paths": [
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/328606a7aa2d3945dc5d4b488905e52f.jpg",
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/photography/9ee62fd8c3c49e2074120c65d1bbb06c.jpg"
+    ],
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-b399a6dc-5d5e-44a2-adcb-9a0d9779e979.png"
+  },
+  {
+    "n": 8,
+    "name": "take-trip-with-you",
+    "refs": [
+      "creative/9a3bcec3abbbbe19da1d2437156e204c.jpg",
+      "photography/d5b1a87725d9a0b5ba237467eb952550.jpg"
+    ],
+    "scene": "Landscape4:3 overhead tactile travel flatlay, soft dusty sage desk under soft natural light. A warm bone rectangular paper sheet covers upper-left45%, edges largely straight, for typography. At bottom-right corner a small torn photo of pedestrians with pink umbrellas inspired by reference2. At bottom-left small hand-drawn traveler linework over pasture collage inspired by reference1. Tiny closed unbranded canvas passport-style notebook partially cropped off right edge. Center x13%-85% y30%-88% completely clear sage for a landscape tablet. Realistic grain and tiny physical details, calming daylight; absolutely no letters, fake tickets, interface, logos.",
+    "prompt": "Use case: product-mockup. Asset type: background art plate for a TripVerse AI travel-planning application mockup. Input images are style and photographic collage references only. Generate a fresh high-end art-directed backdrop inspired by them; do not copy their layout or foreign branding. Landscape4:3 overhead tactile travel flatlay, soft dusty sage desk under soft natural light. A warm bone rectangular paper sheet covers upper-left45%, edges largely straight, for typography. At bottom-right corner a small torn photo of pedestrians with pink umbrellas inspired by reference2. At bottom-left small hand-drawn traveler linework over pasture collage inspired by reference1. Tiny closed unbranded canvas passport-style notebook partially cropped off right edge. Center x13%-85% y30%-88% completely clear sage for a landscape tablet. Realistic grain and tiny physical details, calming daylight; absolutely no letters, fake tickets, interface, logos. CRITICAL: Create background stage only. No phones, laptops, tablets, monitors, screens, windows, interface, typography, letters, slogans, brand marks, logos, watermark, or readable text anywhere. Exact app screenshots, hardware, logo and brand typography will be composited separately. Be minimal and preserve the requested empty space. High resolution.",
+    "referenced_image_paths": [
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/9a3bcec3abbbbe19da1d2437156e204c.jpg",
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/photography/d5b1a87725d9a0b5ba237467eb952550.jpg"
+    ],
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-e6c4d600-72a0-4cbf-a0e6-c77e573925bf.png",
+    "originalGeneratedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-a9dd89ad-4228-4e4f-92d7-0ab13f0cd50d.png"
+  },
+  {
+    "n": 9,
+    "name": "four-views",
+    "refs": [
+      "creative/e5a9b966c60d501b4f680a8220f14455.jpg",
+      "creative/774470caa1f30628e74bc1baef5119de.jpg"
+    ],
+    "scene": "Landscape16:10 dark editorial product stage, deep warm charcoal ink matte canvas, not pure black. Slender strips of monochrome urban architecture from reference1 and elongated park/tree photograph from reference2 emerge only at far-right edge and bottom6%. Single tiny burnt-orange paper square near lower-left edge. Fine ghostlike topographic lines stay peripheral. Keep top-left45% and entire central80% perfectly clear charcoal for cream headline and four actual application windows. Museum installation aesthetic, controlled lighting, restraint, no glow or neon, no glass effect, no words or device.",
+    "prompt": "Use case: product-mockup. Asset type: background art plate for a TripVerse AI travel-planning application mockup. Input images are style and photographic collage references only. Generate a fresh high-end art-directed backdrop inspired by them; do not copy their layout or foreign branding. Landscape16:10 dark editorial product stage, deep warm charcoal ink matte canvas, not pure black. Slender strips of monochrome urban architecture from reference1 and elongated park/tree photograph from reference2 emerge only at far-right edge and bottom6%. Single tiny burnt-orange paper square near lower-left edge. Fine ghostlike topographic lines stay peripheral. Keep top-left45% and entire central80% perfectly clear charcoal for cream headline and four actual application windows. Museum installation aesthetic, controlled lighting, restraint, no glow or neon, no glass effect, no words or device. CRITICAL: Create background stage only. No phones, laptops, tablets, monitors, screens, windows, interface, typography, letters, slogans, brand marks, logos, watermark, or readable text anywhere. Exact app screenshots, hardware, logo and brand typography will be composited separately. Be minimal and preserve the requested empty space. High resolution.",
+    "referenced_image_paths": [
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/e5a9b966c60d501b4f680a8220f14455.jpg",
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/774470caa1f30628e74bc1baef5119de.jpg"
+    ],
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-5c43fabf-31ad-4c82-b0db-df71d556ba46.png"
+  },
+  {
+    "n": 10,
+    "name": "inspiration-to-plan",
+    "refs": [
+      "creative/35169f77d14878a39f31ec1ffac3e115.jpg",
+      "creative/522c99df708060d1708475ab7c4a44b9.jpg",
+      "photography/cd9708f418768bb287e3a7810a0a17c8.jpg"
+    ],
+    "scene": "Square joyful minimalist art collage stage, warm bone upper30%, very pale butter-yellow lower70%. Cropped luminous pixel-woven red tulip from reference1 at far-left edge below40%, tiny bold ink-and-blue illustrated traveler face from reference2 at bottom-right corner, tiny photographic round balloon detail from reference3 at lower-left. These decorative images together occupy less than15% of canvas. Leave entire center x15%-92% y30%-90% clear butter paper for actual desktop screen and one small floating welcome window. Premium editorial lightness, tactile cutout edges, no lettering, logos, devices, UI, or watermark.",
+    "prompt": "Use case: product-mockup. Asset type: background art plate for a TripVerse AI travel-planning application mockup. Input images are style and photographic collage references only. Generate a fresh high-end art-directed backdrop inspired by them; do not copy their layout or foreign branding. Square joyful minimalist art collage stage, warm bone upper30%, very pale butter-yellow lower70%. Cropped luminous pixel-woven red tulip from reference1 at far-left edge below40%, tiny bold ink-and-blue illustrated traveler face from reference2 at bottom-right corner, tiny photographic round balloon detail from reference3 at lower-left. These decorative images together occupy less than15% of canvas. Leave entire center x15%-92% y30%-90% clear butter paper for actual desktop screen and one small floating welcome window. Premium editorial lightness, tactile cutout edges, no lettering, logos, devices, UI, or watermark. CRITICAL: Create background stage only. No phones, laptops, tablets, monitors, screens, windows, interface, typography, letters, slogans, brand marks, logos, watermark, or readable text anywhere. Exact app screenshots, hardware, logo and brand typography will be composited separately. Be minimal and preserve the requested empty space. High resolution.",
+    "referenced_image_paths": [
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/35169f77d14878a39f31ec1ffac3e115.jpg",
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/creative/522c99df708060d1708475ab7c4a44b9.jpg",
+      "C:/Users/Rohit Maity/Desktop/coding/Webdev/project/TripVerse/frontend/media/mmm/photography/cd9708f418768bb287e3a7810a0a17c8.jpg"
+    ],
+    "generatedPath": "C:\\Users\\Rohit Maity\\.codex\\generated_images\\01a0f7ad-ef0b-7211-9887-3344ace48523\\exec-9a313013-f506-4dae-b6af-0dc228e001b3.png"
+  }
+]

@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Walkthru · Not a scanner (variant C)</title>
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/kit/kit.js"></script>
+<link rel="stylesheet" href="assets/kit/base.css" />
+<style>
+  @font-face { font-family: "Geist"; src: url(assets/fonts/geist.woff2) format("woff2"); font-weight: 100 900; font-style: normal; }
+  @font-face { font-family: "Geist"; src: url(assets/fonts/geist-italic.woff2) format("woff2"); font-weight: 100 900; font-style: italic; }
+  @font-face { font-family: "Geist Mono"; src: url(assets/fonts/geist-mono.woff2) format("woff2"); font-weight: 100 900; font-style: normal; }
+
+  /* Variant C: reference 3 rhythm. Editorial manifesto, one phrase per beat, paper tones, drawn marks. Geist only. */
+  :root { --cream: #f3eee3; --sage: #e2e9dd; --butter: #f6efc4; --teal: #8bb5b3; --orange: #d2693f; --blush: #eadfdb; --sky: #dfe7ee; --deep: #1b1b1f; }
+  #root { background: var(--cream); }
+  .m { font-size: 54px; font-weight: 400; letter-spacing: -0.025em; color: var(--ink); white-space: nowrap; line-height: 1.12; }
+  .m i { font-style: italic; font-weight: 300; }
+  .m b { font-weight: 600; }
+  .huge { font-weight: 900; letter-spacing: -0.06em; line-height: .86; white-space: nowrap; text-transform: uppercase; }
+  .full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .mult { mix-blend-mode: multiply; }
+  .draw { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .cap { font: 500 15px/1.4 "Geist Mono", monospace; letter-spacing: .08em; color: #55555b; text-transform: uppercase; }
+  #marks { position: absolute; inset: 0; pointer-events: none; z-index: 40; }
+  #marks .cm { position: absolute; width: 26px; height: 26px; }
+  .seg { position: absolute; background: #ff3b2f; border-radius: 6px; box-shadow: 0 0 24px rgba(255,59,47,.85), 0 0 60px rgba(255,59,47,.45); }
+  .vwrap { position: absolute; opacity: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="60">
+
+  <!-- c01 ready? -->
+  <section id="c01" class="clip" data-start="0" data-duration="1.6" data-track-index="1">
+    <div id="c01ring" style="position:absolute;left:640px;top:420px;width:220px;height:220px;border-radius:50%;background:conic-gradient(#e6e6e6,#8d8d92,#f5f5f5,#5f5f64,#d4d4d8,#e6e6e6);-webkit-mask:radial-gradient(circle,transparent 58%,#000 59%);mask:radial-gradient(circle,transparent 58%,#000 59%)"></div>
+    <div style="position:absolute;left:880px;top:200px" class="m"><i id="c01r" style="font-size:40px;color:#55555b">ready?</i></div>
+    <svg width="200" height="40" style="position:absolute;left:870px;top:256px"><path id="c01u" class="draw" d="M6 26 C 50 12, 120 10, 190 22"/></svg>
+  </section>
+
+  <!-- c02 Walkthru is working on something honest -->
+  <section id="c02" class="clip" data-start="1.6" data-duration="2.1" data-track-index="1">
+    <div id="c02ring" style="position:absolute;left:640px;top:420px;width:220px;height:220px;border-radius:50%;background:conic-gradient(#e6e6e6,#8d8d92,#f5f5f5,#5f5f64,#d4d4d8,#e6e6e6);-webkit-mask:radial-gradient(circle,transparent 58%,#000 59%);mask:radial-gradient(circle,transparent 58%,#000 59%)"></div>
+    <div style="position:absolute;left:930px;top:440px" class="m">
+      <div id="c02l1"><b>Walkthru</b> <i>is</i> <span style="display:inline-block;width:40px;height:40px;border-radius:50%;border:8px solid var(--teal);vertical-align:middle"></span> <i>working</i></div>
+      <div id="c02l2"><i>on something</i></div>
+      <div id="c02l3" style="margin-top:8px"><span style="font-size:40px">→</span> <b>honest</b></div>
+    </div>
+  </section>
+
+  <!-- c03 It has everything to do with your launch -->
+  <section id="c03" class="clip" data-start="3.7" data-duration="2.1" data-track-index="1">
+    <div id="c03p" style="position:absolute;left:150px;top:150px;width:860px;height:620px;overflow:hidden"><img class="full" src="assets/img/real/someone-working--focused-2.jpg" alt="" style="filter:grayscale(1)"></div>
+    <div style="position:absolute;left:1080px;top:230px" class="m"><div id="c03t"><b>It</b> <i>has everything</i></div><div id="c03t2"><i>to do with</i> <b>your launch</b></div></div>
+    <img id="c03d" class="mult" src="assets/img/doodles/d89ccd2da14edc4fc0fd6238b27f413c.jpg" alt="" style="position:absolute;left:1360px;top:470px;width:330px">
+  </section>
+
+  <!-- c04 STRANGERS -->
+  <section id="c04" class="clip" data-start="5.8" data-duration="2.64" data-track-index="1" style="background:var(--sage)">
+    <div style="position:absolute;left:0;top:250px;width:100%;text-align:center"><span id="c04w" class="huge" style="display:inline-block;font-size:330px;color:#cfd8c9">Strangers</span></div>
+    <div id="c04row" style="position:absolute;left:220px;top:300px;width:1480px;height:520px;display:flex;align-items:flex-end;justify-content:space-between;mix-blend-mode:multiply">
+      <img src="assets/img/illustration/65f3df16ef81c7692faaba31aa294aa5.jpg" alt="" style="height:470px">
+      <img src="assets/img/illustration/698889baad277bebef7f1940824375d9.jpg" alt="" style="height:430px">
+      <img src="assets/img/illustration/9271b8f0e0651a0057c06a608bf2b3a7.jpg" alt="" style="height:300px">
+      <img src="assets/img/illustration/d253da63771723486250cbfdd8c9fcdd.jpg" alt="" style="height:360px">
+      <img src="assets/img/illustration/468bc883dda769afbd066f44d5aa8b8a.jpg" alt="" style="height:440px">
+    </div>
+    <div style="position:absolute;left:0;top:880px;width:100%;text-align:center" class="m"><span id="c04t" style="display:inline-block;font-size:42px"><i>it has to do with</i> <b>every</b> <i>visitor</i></span></div>
+  </section>
+
+  <!-- c05 We are not -->
+  <section id="c05" class="clip" data-start="8.44" data-duration="1.06" data-track-index="1" style="background:var(--butter)">
+    <div class="center"><div class="m" style="display:flex;align-items:center;gap:28px"><span id="c05bar" style="width:3px;height:90px;background:var(--ink);display:block"></span><span id="c05t"><b>We are</b> <i>not</i></span></div></div>
+  </section>
+
+  <!-- c06 dramatic photo -->
+  <section id="c06" class="clip" data-start="9.5" data-duration="1.05" data-track-index="1">
+    <img id="c06i" class="full" src="assets/img/visual/71abf92815573017105ad1b13c5d2aa8.jpg" alt="">
+  </section>
+
+  <!-- c07 torn photo -->
+  <section id="c07" class="clip" data-start="10.55" data-duration="1.05" data-track-index="1" style="background:#e9e6df">
+    <div id="c07a" style="position:absolute;left:520px;top:180px;width:880px;height:720px;overflow:hidden;clip-path:polygon(0 0,52% 0,47% 30%,53% 55%,48% 78%,51% 100%,0 100%);box-shadow:0 30px 60px -30px rgba(0,0,0,.4)"><img class="full" src="assets/img/visual/a70828b55b5e9bc5c8e3dc5d7d00c724.jpg" alt=""></div>
+    <div id="c07b" style="position:absolute;left:520px;top:180px;width:880px;height:720px;overflow:hidden;clip-path:polygon(52% 0,100% 0,100% 100%,51% 100%,48% 78%,53% 55%,47% 30%);box-shadow:0 30px 60px -30px rgba(0,0,0,.4)"><img class="full" src="assets/img/visual/a70828b55b5e9bc5c8e3dc5d7d00c724.jpg" alt=""></div>
+  </section>
+
+  <!-- c08 brush strokes -->
+  <section id="c08" class="clip" data-start="11.6" data-duration="1.05" data-track-index="1">
+    <img class="full" src="assets/img/visual/b38b0bbb83672cf69a98b78b8bac968f.jpg" alt="" style="filter:grayscale(.6)">
+    <svg width="1920" height="1080" style="position:absolute;inset:0">
+      <path class="brush" d="M-40 260 C 400 200, 900 330, 1980 220" stroke="#fff" stroke-width="150" fill="none" stroke-linecap="round" opacity=".92"/>
+      <path class="brush" d="M-40 520 C 500 600, 1200 420, 1980 560" stroke="#fff" stroke-width="170" fill="none" stroke-linecap="round" opacity=".92"/>
+      <path class="brush" d="M-40 820 C 600 760, 1100 900, 1980 800" stroke="#fff" stroke-width="160" fill="none" stroke-linecap="round" opacity=".92"/>
+    </svg>
+  </section>
+
+  <!-- c09 red -->
+  <section id="c09" class="clip" data-start="12.65" data-duration="1.05" data-track-index="1">
+    <img id="c09i" class="full" src="assets/img/visual/baf33390a3dede8fed0c5b22a6a316bb.jpg" alt="">
+  </section>
+
+  <!-- c10 The time to guess is over -->
+  <section id="c10" class="clip" data-start="13.7" data-duration="3.16" data-track-index="1">
+    <div id="c10a" style="position:absolute;left:640px;top:260px;width:520px;height:330px;overflow:hidden;transform-origin:50% 50%"><img class="full" src="assets/img/visual/ac225fd33875c5a4e7a8894d0120c250.jpg" alt=""></div>
+    <div id="c10b" style="position:absolute;left:1020px;top:200px;width:330px;height:460px;overflow:hidden;box-shadow:0 20px 40px -20px rgba(0,0,0,.4)"><img class="full" src="assets/img/doodles/8daa70d9656bc2b7828753ae050c5d17.jpg" alt=""></div>
+    <div style="position:absolute;left:520px;top:160px" class="m"><span id="c10t1" style="display:inline-block;font-size:40px"><b>The time</b> <i>to</i></span></div>
+    <div style="position:absolute;left:640px;top:690px" class="m"><span id="c10t2" style="display:inline-block;font-size:40px"><i>guess</i> <b>is over</b></span></div>
+    <svg width="220" height="80" style="position:absolute;left:600px;top:730px"><path id="c10u" class="draw" d="M8 40 C 50 72, 120 70, 210 30"/></svg>
+    <div class="cap" style="position:absolute;left:520px;top:900px">No. 01 · Launch check</div>
+  </section>
+
+  <!-- c11 Walk -->
+  <section id="c11" class="clip" data-start="16.86" data-duration="1.57" data-track-index="1">
+    <div id="c11s" style="position:absolute;left:0;top:340px"></div>
+    <div style="position:absolute;left:520px;top:470px" class="m"><span id="c11w" style="display:inline-block;font-size:92px;font-weight:600;letter-spacing:-0.04em">Walk</span><span id="c11t" style="display:inline-block;font-size:92px;font-weight:300;letter-spacing:-0.04em">thru</span></div>
+    <div class="cap" style="position:absolute;left:1290px;top:840px">Fig. 1 · Scout, the test user</div>
+  </section>
+
+  <!-- c12 single words -->
+  <section id="c12" class="clip" data-start="18.43" data-duration="1.59" data-track-index="1">
+    <div class="fill" id="c12a" style="background:var(--sage)"><div class="center m" style="font-size:56px"><b>Strangers</b></div></div>
+    <div class="fill" id="c12b" style="background:var(--sky);opacity:0"><div class="center m" style="font-size:56px"><i>click</i></div></div>
+    <div class="fill" id="c12c" style="background:var(--butter);opacity:0"><div class="center m" style="font-size:56px"><b>differently</b></div></div>
+  </section>
+
+  <!-- c13 overhead photo -->
+  <section id="c13" class="clip" data-start="20.02" data-duration="2.63" data-track-index="1">
+    <img id="c13i" class="full" src="assets/img/real/6d760d51b1715fc46576e68b479c77e0.jpg" alt="">
+    <div class="fill" style="background:linear-gradient(90deg,rgba(0,0,0,.45),rgba(0,0,0,.05) 60%)"></div>
+    <div style="position:absolute;left:140px;top:430px;color:#fff" class="m"><div id="c13t1" style="color:#fff"><i>Treat every</i> <b>visitor</b></div><div id="c13t2" style="color:#fff"><i>the way they</i> <b style="color:var(--butter)">deserve</b></div></div>
+  </section>
+
+  <!-- c14 EVERY CLICK / IN YOUR APP -->
+  <section id="c14" class="clip" data-start="22.65" data-duration="2.11" data-track-index="1" style="background:var(--teal)">
+    <div class="center" style="flex-direction:column">
+      <div class="cap" id="c14k" style="color:#1b1b1f;font-size:18px;margin-bottom:16px">Every one of them</div>
+      <div id="c14a" class="huge" style="font-size:250px;color:#1b1b1f">Every click</div>
+      <div id="c14b" class="huge" style="font-size:250px;color:#1b1b1f;opacity:0;margin-top:-250px">In your app</div>
+      <div class="m" id="c14s" style="font-size:36px;margin-top:22px"><i>counted, step by step</i></div>
+    </div>
+    <div id="c14dots"></div>
+  </section>
+
+  <!-- c15 one silent error ends the visit -->
+  <section id="c15" class="clip" data-start="24.76" data-duration="1.57" data-track-index="1" style="background:var(--butter)">
+    <img id="c15d" class="mult" src="assets/img/doodles/b23f23a384f629236d6372397a602b7f.jpg" alt="" style="position:absolute;left:420px;top:160px;height:800px">
+    <div style="position:absolute;left:150px;top:300px" class="m"><span id="c15t"><b>one silent</b> <i>error</i></span></div>
+    <div id="c15box" style="position:absolute;left:1180px;top:430px;background:#1b1b1f;color:#fff;padding:22px 30px"><div style="font-size:30px;font-style:italic;font-weight:300;margin-bottom:10px">ends the</div><div style="font-size:120px;font-weight:600;letter-spacing:-0.05em;line-height:1.18">visit</div></div>
+  </section>
+
+  <!-- c16 would / leave -->
+  <section id="c16" class="clip" data-start="26.33" data-duration="1.06" data-track-index="1" style="background:var(--sage)">
+    <div class="center"><div class="m" style="font-size:58px"><span id="c16a"><i>they would</i></span> <b id="c16b">leave</b></div></div>
+    <svg width="260" height="200" style="position:absolute;left:1180px;top:560px"><path id="c16arrow" class="draw" d="M240 190 C 200 120, 120 80, 24 60"/><path id="c16head" class="draw" d="M58 36 L 22 60 L 60 80"/></svg>
+  </section>
+
+  <!-- c17 IMAGINE -->
+  <section id="c17" class="clip" data-start="27.39" data-duration="1.58" data-track-index="1">
+    <div class="center"><div id="c17w" class="huge" style="font-size:280px;position:relative">Imagine<span id="c17peel" style="position:absolute;right:-20px;top:-30px;width:150px;height:150px;background:linear-gradient(135deg,#d2693f 50%,#f0b48f 51%);border-radius:0 0 0 70px"></span></div></div>
+  </section>
+
+  <!-- c18 overhead crowd -->
+  <section id="c18" class="clip" data-start="28.97" data-duration="1.58" data-track-index="1">
+    <img id="c18i" class="full" src="assets/img/visual/2c57249732914c82c57d52eb5d2c49f4.jpg" alt="">
+    <div class="fill" style="background:rgba(0,0,0,.46)"></div>
+    <div class="center"><div class="m" style="color:#fff;font-size:72px"><span id="c18t"><b>your launch,</b> <i>checked</i></span></div></div>
+  </section>
+
+  <!-- c19 We're NOT just a scanner -->
+  <section id="c19" class="clip" data-start="30.55" data-duration="1.57" data-track-index="1" style="background:var(--orange)">
+    <div class="center"><div style="display:flex;align-items:center;gap:30px" class="m">
+      <i id="c19a" style="color:#fff;font-size:52px">We're</i>
+      <span id="c19not" class="huge" style="display:inline-block;font-size:300px;color:#fff3e8">Not</span>
+      <i id="c19b" style="color:#fff;font-size:52px">just a scanner</i></div></div>
+  </section>
+
+  <!-- c20 Grounded disk -->
+  <section id="c20" class="clip" data-start="32.12" data-duration="1.58" data-track-index="1" style="background:var(--blush)">
+    <div class="center"><div id="c20disk" style="width:640px;height:640px;border-radius:50%;background:#1b1b1f;display:flex;align-items:center;justify-content:center;margin-top:-140px">
+      <div style="width:200px;height:200px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center"><div style="width:52px;height:52px;border-radius:50%;background:#fff"></div></div></div></div>
+    <div style="position:absolute;left:0;top:880px;width:100%;text-align:center" class="m"><i id="c20t" style="display:inline-block;font-size:44px">Grounded in evidence</i></div>
+  </section>
+
+  <!-- c21 We walk -->
+  <section id="c21" class="clip" data-start="33.7" data-duration="1.06" data-track-index="1">
+    <div id="c21card" style="position:absolute;left:660px;top:330px;width:600px;height:380px;background:#d9d6cf;border-radius:22px;display:flex;align-items:center;padding-left:60px"><div class="m" style="font-size:56px"><b>We</b> <i>walk it</i></div></div>
+    <div id="c21dot" style="position:absolute;left:690px;top:640px;width:26px;height:26px;border-radius:50%;background:#fff"></div>
+  </section>
+
+  <!-- c22 NO -->
+  <section id="c22" class="clip" data-start="34.76" data-duration="1.05" data-track-index="1" style="background:var(--deep)">
+    <div class="center"><div id="c22box" style="position:relative;padding:16px 34px;border:2px solid #77777d">
+      <span id="c22w" class="huge" style="display:inline-block;font-size:200px;color:#e9e6df">No</span>
+      <span style="position:absolute;left:-8px;top:-8px;width:14px;height:14px;background:#e9e6df"></span><span style="position:absolute;right:-8px;top:-8px;width:14px;height:14px;background:#e9e6df"></span>
+      <span style="position:absolute;left:-8px;bottom:-8px;width:14px;height:14px;background:#e9e6df"></span><span style="position:absolute;right:-8px;bottom:-8px;width:14px;height:14px;background:#e9e6df"></span></div></div>
+    <div style="position:absolute;left:0;top:800px;width:100%;text-align:center" class="m"><i id="c22t" style="display:inline-block;color:#e9e6df;font-size:44px">guesses</i></div>
+  </section>
+
+  <!-- c23 quick words -->
+  <section id="c23" class="clip" data-start="35.81" data-duration="1.57" data-track-index="1">
+    <div class="fill" id="c23a" style="background:var(--blush)"><div class="center m" style="font-size:60px"><i>Going</i>&nbsp;<span style="display:inline-block;width:60px;border-bottom:4px solid #1b1b1f;margin-top:40px"></span></div></div>
+    <div class="fill" id="c23b" style="background:var(--cream);opacity:0"><div class="center m" style="font-size:60px"><b>We're</b></div></div>
+    <div class="fill" id="c23c" style="background:var(--cream);opacity:0"><div class="center m" style="font-size:74px;font-weight:600">honest</div></div>
+  </section>
+
+  <!-- c24 streaks -->
+  <section id="c24" class="clip" data-start="37.38" data-duration="1.57" data-track-index="1" style="background:#221a3a">
+    <div id="c24f" class="fill"></div>
+    <div class="center"><div class="m" style="color:#fff;font-size:64px;text-align:center;line-height:1.1"><div id="c24t1"><i>not just</i></div><div id="c24t2"><b>scanning pages</b></div></div></div>
+  </section>
+
+  <!-- c25 doodle flatlay, Launch checked -->
+  <section id="c25" class="clip" data-start="38.95" data-duration="2.05" data-track-index="1" style="background:#f4f6f1">
+    <img class="mult c25d" src="assets/img/doodles/7a423ad4727f1708b7371c55d92463f1.jpg" alt="" style="position:absolute;left:60px;top:40px;width:520px">
+    <img class="mult c25d" src="assets/img/doodles/9d62b6a54152f4b54df8ac99bd04c4a6.jpg" alt="" style="position:absolute;left:1440px;top:40px;width:420px">
+    <img class="mult c25d" src="assets/img/doodles/7f0ab3de9f1d94d16d109d709f7aae83.jpg" alt="" style="position:absolute;left:120px;top:700px;width:460px">
+    <img class="mult c25d" src="assets/img/doodles/f3723b3c9b922cc31308eb3b6ab3b0ea.jpg" alt="" style="position:absolute;left:1500px;top:640px;width:300px">
+    <img class="mult c25d" src="assets/img/doodles/51fa15c9f9a4a18ca8daa16a3636af3d.jpg" alt="" style="position:absolute;left:760px;top:760px;width:330px">
+    <div class="center" style="flex-direction:column"><div class="m" style="font-size:40px"><i>Launch</i></div><div class="m" id="c25w" style="font-size:96px;font-weight:600;letter-spacing:-0.04em">checked.</div><div class="m" style="font-size:34px;margin-top:10px"><i id="c25r" style="display:inline-block">that's right</i></div></div>
+    <svg width="240" height="40" style="position:absolute;left:840px;top:640px"><path id="c25u" class="draw" d="M6 20 C 60 34, 150 6, 232 18"/></svg>
+  </section>
+
+  <!-- c26 the zero -->
+  <section id="c26" class="clip" data-start="41.0" data-duration="1.0" data-track-index="1" style="background:#0b0b0c">
+    <div id="c26zero" style="position:absolute;left:880px;top:300px;width:160px;height:300px">
+      <div class="seg" style="left:20px;top:0;width:120px;height:24px"></div><div class="seg" style="left:0;top:20px;width:24px;height:122px"></div><div class="seg" style="right:0;top:20px;width:24px;height:122px"></div>
+      <div class="seg" style="left:0;top:158px;width:24px;height:122px"></div><div class="seg" style="right:0;top:158px;width:24px;height:122px"></div><div class="seg" style="left:20px;bottom:0;width:120px;height:24px"></div></div>
+    <div style="position:absolute;left:0;top:700px;width:100%;text-align:center" class="mono"><span id="c26t" style="display:inline-block;color:#e9e6df;font-size:30px;letter-spacing:.06em">passwords shared. It tests in your own signed-in tab.</span></div>
+  </section>
+
+  <!-- c27 the product as proof, with captions -->
+  <section id="c27" class="clip" data-start="42.0" data-duration="3.28" data-track-index="1">
+    <div id="c27a" style="position:absolute;left:140px;top:180px;width:1120px;height:510px;overflow:hidden"><img class="full" src="assets/img/stills/places.jpg" alt=""></div>
+    <div class="cap" id="c27ca" style="position:absolute;left:140px;top:710px">TripVerse · localhost:5173 · step 4 of 30</div>
+    <div style="position:absolute;left:1330px;top:180px" class="m"><span id="c27t" style="display:inline-block;font-size:40px"><i>but for</i> <b>every single</b> <i>step</i></span></div>
+    <div id="c27b" style="position:absolute;left:1330px;top:300px;width:450px;height:560px;overflow:hidden"><img class="full" src="assets/img/stills/moments.jpg" alt="" style="object-position:62% 0%"></div>
+    <div class="cap" id="c27cb" style="position:absolute;left:1330px;top:878px">Journey replay · every meaningful moment</div>
+  </section>
+
+  <!-- c28 the rerun fader -->
+  <section id="c28" class="clip" data-start="45.28" data-duration="1.06" data-track-index="1" style="background:#cfccc4">
+    <div class="center"><div style="width:180px;height:620px;border:3px solid #3c3c40;border-radius:12px;position:relative;background:#e8e5de">
+      <div class="cap" style="position:absolute;left:0;top:18px;width:100%;text-align:center;color:#3c3c40">Rerun</div>
+      <div style="position:absolute;left:84px;top:90px;width:12px;height:480px;background:#1b1b1f;border-radius:6px"></div>
+      <div id="c28knob" style="position:absolute;left:46px;top:470px;width:88px;height:54px;background:#f3f1ec;border:3px solid #3c3c40;border-radius:10px"><div style="margin:20px 12px;height:6px;background:var(--orange)"></div></div></div></div>
+  </section>
+
+  <!-- c29 but -->
+  <section id="c29" class="clip" data-start="46.34" data-duration="1.05" data-track-index="1" style="background:var(--sage)">
+    <div class="center"><div id="c29w" class="m" style="font-size:110px;font-weight:300">but</div></div>
+  </section>
+
+  <!-- c30 accounting for every click in every flow -->
+  <section id="c30" class="clip" data-start="47.39" data-duration="1.61" data-track-index="1">
+    <div class="photo c30p" style="position:absolute;left:150px;top:120px;width:300px;height:200px;overflow:hidden"><img class="full" src="assets/img/stills/sidepanel.jpg" alt="" style="object-position:100% 0"></div>
+    <div class="c30p" style="position:absolute;left:1430px;top:130px;width:330px;height:200px;overflow:hidden"><img class="full" src="assets/img/stills/budget.jpg" alt=""></div>
+    <div class="c30p" style="position:absolute;left:220px;top:720px;width:330px;height:230px;overflow:hidden"><img class="full" src="assets/img/stills/fixes.jpg" alt=""></div>
+    <div class="c30p" style="position:absolute;left:1360px;top:690px;width:360px;height:240px;overflow:hidden"><img class="full" src="assets/img/stills/vscode.jpg" alt=""></div>
+    <div style="position:absolute;left:640px;top:420px" class="m"><div id="c30t1">— <i>accounting</i> <i>for</i></div><div id="c30t2"><i>the</i> <b>every click</b></div><div id="c30t3"><i>in every flow</i> <span style="font-size:40px">→</span></div></div>
+  </section>
+
+  <!-- c31 for this to work -->
+  <section id="c31" class="clip" data-start="49.0" data-duration="1.0" data-track-index="1" style="background:var(--teal)">
+    <div class="center"><div class="m" id="c31t" style="font-size:52px"><i>for</i> <b>this</b> <i>to</i> <b>work</b></div></div>
+  </section>
+
+  <!-- c32 see it the way strangers do -->
+  <section id="c32" class="clip" data-start="50.0" data-duration="2.65" data-track-index="1" style="background:var(--blush)">
+    <img id="c32i" class="mult" src="assets/img/illustration/5ff01f3223aafdd9e4bd376ccfdda7af.jpg" alt="" style="position:absolute;left:1020px;top:140px;height:820px">
+    <div style="position:absolute;left:170px;top:380px" class="m"><div id="c32t1"><i>we need to see it</i></div><div id="c32t2"><i>the way</i> <b>strangers</b> <i>do</i></div></div>
+    <svg width="40" height="300" style="position:absolute;left:130px;top:360px"><path id="c32l" class="draw" d="M20 4 L 20 296"/></svg>
+  </section>
+
+  <!-- c33 checking everything, absolutely -->
+  <section id="c33" class="clip" data-start="52.65" data-duration="1.58" data-track-index="1" style="background:#20201f">
+    <div id="c33card" style="position:absolute;left:180px;top:90px;width:1560px;height:900px;background:var(--butter);border-radius:30px;overflow:hidden">
+      <img id="c33i" class="mult" src="assets/img/illustration/15ae69afb5615f79fecb5da7141c056a.jpg" alt="" style="position:absolute;left:420px;top:90px;height:720px">
+      <div style="position:absolute;left:1080px;top:470px" class="m"><span id="c33t" style="display:inline-block;font-size:48px"><i>checking</i> <b>everything</b></span></div>
+      <div style="position:absolute;left:150px;top:520px" class="m"><i id="c33a" style="display:inline-block;font-size:40px;color:#55555b">Absolutely.</i></div>
+      <div class="cap" style="position:absolute;left:740px;top:830px">Fig. 2 · 21 checks</div>
+    </div>
+  </section>
+
+  <!-- c34 Not after launch. But now. -->
+  <section id="c34" class="clip" data-start="54.23" data-duration="3.16" data-track-index="1" style="background:var(--orange)">
+    <div id="c34moons" class="fill"></div>
+    <div class="center"><div id="c34circle" style="width:460px;height:460px;border-radius:50%;background:#f3eee3;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <div class="m" style="font-size:42px"><i>Not after</i></div>
+      <div style="position:relative"><span class="m" style="font-size:78px;font-weight:300">launch</span><svg width="280" height="40" style="position:absolute;left:-14px;top:36px"><path id="c34strike" class="draw" d="M4 22 C 80 12, 180 26, 276 14" style="stroke-width:5"/></svg></div>
+      <div class="m" style="font-size:46px;margin-top:4px"><i id="c34now" style="display:inline-block;color:var(--orange);font-weight:500">But now.</i></div></div></div>
+  </section>
+
+  <!-- c35 logo -->
+  <section id="c35" class="clip" data-start="57.39" data-duration="2.61" data-track-index="1" style="background:#eef0ec">
+    <div id="c35ring" style="position:absolute;left:-260px;top:420px;width:900px;height:900px;border-radius:50%;background:conic-gradient(#e6e6e6,#7d7d82,#f5f5f5,#4f4f54,#d4d4d8,#e6e6e6);-webkit-mask:radial-gradient(circle,transparent 66%,#000 67%);mask:radial-gradient(circle,transparent 66%,#000 67%)"></div>
+    <div class="center"><div style="display:flex;align-items:center;gap:22px"><div id="c35s"></div><div class="m" style="font-size:64px"><b id="c35w">walkthru.dev</b> <span style="color:#8a8a8f">/</span> <i id="c35l">launch-check</i></div></div></div>
+    <svg width="380" height="40" style="position:absolute;left:1040px;top:600px"><path id="c35u" class="draw" d="M6 24 C 120 10, 260 30, 372 14"/></svg>
+  </section>
+
+  <!-- persistent registration marks (untimed overlay) -->
+  <div id="marks">
+    <svg class="cm" style="left:48px;top:44px" viewBox="0 0 26 26"><circle cx="13" cy="13" r="7" fill="none" stroke="#8a8a8f" stroke-width="1.5"/><path d="M13 0v26M0 13h26" stroke="#8a8a8f" stroke-width="1.5"/></svg>
+    <svg class="cm" style="right:48px;bottom:44px" viewBox="0 0 26 26"><path d="M0 13h26M13 0v26" stroke="#8a8a8f" stroke-width="1.5"/></svg>
+  </div>
+
+  <!-- audio -->
+  <audio id="bgm" src="assets/music/happy-beats-business-moves-vol-11-by-ende-dot-app.mp3" data-start="0" data-duration="60" data-track-index="10" data-volume="1"></audio>
+  <audio id="fx1" src="assets/sfx/impact/impactWood_light_002.ogg" data-start="1.6" data-track-index="11" data-volume="0.55"></audio>
+  <audio id="fx2" src="assets/sfx/impact/impactSoft_medium_001.ogg" data-start="5.8" data-track-index="12" data-volume="0.6"></audio>
+  <audio id="fx3" src="assets/sfx/casino/card-slide-2.ogg" data-start="10.55" data-track-index="13" data-volume="0.6"></audio>
+  <audio id="fx4" src="assets/sfx/impact/impactSoft_medium_003.ogg" data-start="16.86" data-track-index="14" data-volume="0.6"></audio>
+  <audio id="fx5" src="assets/sfx/interface/drop_001.ogg" data-start="22.65" data-track-index="15" data-volume="0.55"></audio>
+  <audio id="fx6" src="assets/sfx/impact/impactWood_light_002.ogg" data-start="30.55" data-track-index="16" data-volume="0.6"></audio>
+  <audio id="fx7" src="assets/sfx/interface/switch_002.ogg" data-start="41.0" data-track-index="17" data-volume="0.6"></audio>
+  <audio id="fx8" src="assets/sfx/casino/card-place-1.ogg" data-start="42.0" data-track-index="18" data-volume="0.55"></audio>
+  <audio id="fx9" src="assets/sfx/impact/impactSoft_medium_001.ogg" data-start="54.23" data-track-index="19" data-volume="0.6"></audio>
+  <audio id="fx10" src="assets/sfx/impact/impactBell_heavy_003.ogg" data-start="57.4" data-track-index="20" data-volume="0.45"></audio>
+</div>
+
+<script>
+const tl = gsap.timeline({ paused: true });
+const A = K.at;
+const E = "expo.out";
+const swap = (sel, at, dur = 0.5) => tl.fromTo(sel, { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, duration: dur, ease: E }, at);
+const draw = (sel, at, dur = 0.5) => { const p = document.querySelector(sel); const L = p.getTotalLength();
+  tl.fromTo(p, { strokeDasharray: `${L} ${L}`, strokeDashoffset: L }, { strokeDashoffset: 0, duration: dur, ease: "power2.inOut" }, at); };
+
+// c01 ready?
+{ const [s, d] = A("c01");
+  tl.fromTo("#c01ring", { rotation: -60, scale: 0.6, opacity: 0 }, { rotation: 0, scale: 1, opacity: 1, duration: 0.9, ease: E }, s);
+  tl.fromTo("#c01r", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, s + 0.3);
+  draw("#c01u", s + 0.6, 0.6); }
+
+// c02 Walkthru is working on something honest
+{ const [s] = A("c02");
+  tl.fromTo("#c02ring", { rotation: 0 }, { rotation: 140, duration: 2.1, ease: "none" }, s);
+  swap("#c02l1", s); swap("#c02l2", s + 0.5); // beat-grid: 2.12
+  swap("#c02l3", s + 1.58); } // beat-locked: 3.18s
+
+// c03 It has everything to do with your launch
+{ const [s, d] = A("c03");
+  tl.fromTo("#c03p", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: E }, s);
+  tl.fromTo("#c03p img", { scale: 1.15 }, { scale: 1, duration: d, ease: "none" }, s);
+  swap("#c03t", s + 0.25); swap("#c03t2", s + 0.55);
+  tl.fromTo("#c03d", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.6, ease: E }, s + 0.8); }
+
+// c04 STRANGERS behind the crowd
+{ const [s, d] = A("c04");
+  tl.fromTo("#c04w", { scale: 1.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: E }, s);
+  tl.fromTo("#c04row img", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: E, stagger: 0.08 }, s + 0.15);
+  tl.to("#c04row", { x: -40, duration: d, ease: "none" }, s);
+  swap("#c04t", s + 0.9); }
+
+// c05 We are not
+{ const [s] = A("c05");
+  tl.fromTo("#c05bar", { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: E }, s);
+  tl.fromTo("#c05t", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.45, ease: E }, s + 0.12); }
+
+// c06 dramatic photo
+{ const [s, d] = A("c06"); tl.fromTo("#c06i", { scale: 1.15 }, { scale: 1.02, duration: d, ease: "power2.out" }, s); }
+
+// c07 torn photo
+{ const [s, d] = A("c07");
+  tl.fromTo("#c07a", { x: 0, rotation: 0 }, { x: -90, rotation: -4, duration: d, ease: "power3.out" }, s + 0.15);
+  tl.fromTo("#c07b", { x: 0, rotation: 0 }, { x: 90, rotation: 4, duration: d, ease: "power3.out" }, s + 0.15); }
+
+// c08 brush strokes paint over
+{ const [s] = A("c08");
+  document.querySelectorAll("#c08 .brush").forEach((p, i) => { const L = p.getTotalLength();
+    tl.fromTo(p, { strokeDasharray: `${L} ${L}`, strokeDashoffset: L }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.inOut" }, s + 0.1 + i * 0.2); }); }
+
+// c09 red
+{ const [s, d] = A("c09"); tl.fromTo("#c09i", { scale: 1.2, x: 40 }, { scale: 1.05, x: 0, duration: d, ease: "power2.out" }, s); }
+
+// c10 The time to guess is over
+{ const [s, d] = A("c10");
+  tl.fromTo("#c10a", { clipPath: "inset(50% 0 50% 0)" }, { clipPath: "inset(0% 0 0% 0)", duration: 0.6, ease: E }, s);
+  tl.fromTo("#c10b", { y: 300, rotation: 8, opacity: 0 }, { y: 0, rotation: 3, opacity: 1, duration: 0.7, ease: E }, s + 0.3);
+  swap("#c10t1", s + 0.5); swap("#c10t2", s + 1.2);
+  draw("#c10u", s + 1.6, 0.6);
+  tl.to(["#c10a", "#c10b"], { y: -20, duration: d, ease: "none" }, s); }
+
+// c11 Walk: Scout walks across
+{ const [s, d] = A("c11");
+  const sc = K.scout(document.getElementById("c11s"), "ink", 380);
+  tl.fromTo(sc, { x: -420 }, { x: 1950, duration: d, ease: "none" }, s);
+  K.walk(tl, sc, s, d);
+  swap("#c11w", s + 0.1);
+  tl.fromTo("#c11t", { opacity: 0 }, { opacity: 1, duration: 0.3 }, s + 0.75); }
+
+// c12 Strangers / click / differently
+{ const [s] = A("c12");
+  tl.set("#c12b", { opacity: 1 }, s + 0.53); tl.set("#c12a", { opacity: 0 }, s + 0.53);
+  tl.set("#c12c", { opacity: 1 }, s + 1.06); tl.set("#c12b", { opacity: 0 }, s + 1.06); } // beat-grid: 18.96, 19.49
+
+// c13 overhead
+{ const [s, d] = A("c13");
+  tl.fromTo("#c13i", { scale: 1.1, rotation: 2 }, { scale: 1.0, rotation: 0, duration: d, ease: "none" }, s);
+  swap("#c13t1", s + 0.3); swap("#c13t2", s + 0.9); }
+
+// c14 EVERY CLICK / IN YOUR APP
+{ const [s, d] = A("c14");
+  swap("#c14k", s); tl.fromTo("#c14a", { scale: 1.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: E }, s + 0.05);
+  tl.set("#c14a", { opacity: 0 }, s + 1.05); tl.set("#c14b", { opacity: 1 }, s + 1.05); // beat-locked: 23.70s
+  swap("#c14s", s + 1.2);
+  const box = document.getElementById("c14dots"); const rnd = K.rng(5);
+  const cols = ["#f6efc4", "#ff5a4e", "#1b1b1f", "#f3eee3", "#2f5bff"];
+  for (let i = 0; i < 14; i++) { const e = document.createElement("div"); const sz = 24 + rnd() * 70;
+    Object.assign(e.style, { position: "absolute", left: (160 + rnd() * 1600) + "px", top: (120 + rnd() * 820) + "px", width: sz + "px", height: sz + "px", borderRadius: "50%", background: cols[i % 5], opacity: ".85" });
+    box.appendChild(e); tl.fromTo(e, { scale: 0 }, { scale: 1, duration: 0.4, ease: "back.out(2)" }, s + 0.2 + i * 0.07); } }
+
+// c15 one silent error ends the visit
+{ const [s] = A("c15");
+  tl.fromTo("#c15d", { opacity: 0, scale: 0.95 }, { opacity: 0.9, scale: 1, duration: 0.6, ease: E }, s);
+  swap("#c15t", s + 0.1);
+  tl.fromTo("#c15box", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.45, ease: E }, s + 0.5); }
+
+// c16 they would leave
+{ const [s] = A("c16");
+  swap("#c16a", s); swap("#c16b", s + 0.3); draw("#c16arrow", s + 0.35, 0.4); draw("#c16head", s + 0.72, 0.2); }
+
+// c17 IMAGINE with a peel
+{ const [s] = A("c17");
+  tl.fromTo("#c17w", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: E }, s);
+  tl.fromTo("#c17peel", { scale: 0, rotation: -30, transformOrigin: "100% 0%" }, { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(1.8)" }, s + 0.5); }
+
+// c18 overhead crowd
+{ const [s, d] = A("c18");
+  tl.fromTo("#c18i", { scale: 1.25 }, { scale: 1.05, duration: d, ease: "power1.out" }, s);
+  swap("#c18t", s + 0.3); }
+
+// c19 We're NOT just a scanner
+{ const [s] = A("c19");
+  tl.fromTo("#c19a", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: E }, s);
+  tl.fromTo("#c19not", { scale: 0.3, rotation: -25, opacity: 0 }, { scale: 1, rotation: -8, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, s + 0.2);
+  tl.fromTo("#c19b", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.4, ease: E }, s + 0.55); }
+
+// c20 grounded disk
+{ const [s, d] = A("c20");
+  tl.fromTo("#c20disk", { rotation: 0, y: -200 }, { rotation: 300, y: 0, duration: d, ease: "power2.out" }, s);
+  swap("#c20t", s + 0.4); }
+
+// c21 We walk it
+{ const [s] = A("c21");
+  tl.fromTo("#c21card", { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: E }, s);
+  tl.fromTo("#c21dot", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2)" }, s + 0.3); }
+
+// c22 NO guesses
+{ const [s] = A("c22");
+  tl.fromTo("#c22box", { scale: 1.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: E }, s);
+  swap("#c22t", s + 0.45); }
+
+// c23 Going _ / We're / honest
+{ const [s] = A("c23");
+  tl.set("#c23b", { opacity: 1 }, s + 0.52); tl.set("#c23a", { opacity: 0 }, s + 0.52);
+  tl.set("#c23c", { opacity: 1 }, s + 1.05); tl.set("#c23b", { opacity: 0 }, s + 1.05); } // beat-grid: 36.33, 36.86
+
+// c24 streaks
+{ const [s, d] = A("c24");
+  const f = document.getElementById("c24f"); const rnd = K.rng(21);
+  const cols = ["#ffd166", "#ff5a4e", "#7aa2ff", "#c6f432", "#ffffff"];
+  for (let i = 0; i < 60; i++) { const e = document.createElement("div"); const len = 120 + rnd() * 380;
+    Object.assign(e.style, { position: "absolute", left: (rnd() * 2200 - 200) + "px", top: (rnd() * 1080) + "px", width: "2px", height: len + "px", background: `linear-gradient(${cols[i % 5]}, transparent)`, opacity: (0.3 + rnd() * 0.6).toFixed(2) });
+    f.appendChild(e); tl.fromTo(e, { y: -300 - rnd() * 200, rotation: 18 }, { y: 400 + rnd() * 300, rotation: 18, duration: d, ease: "none" }, s); }
+  swap("#c24t1", s + 0.1); swap("#c24t2", s + 0.4); }
+
+// c25 Launch checked, that's right
+{ const [s, d] = A("c25");
+  tl.fromTo(".c25d", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.6, ease: E, stagger: 0.07 }, s);
+  tl.fromTo("#c25w", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: E }, s + 0.2);
+  tl.fromTo("#c25r", { opacity: 0, rotation: -6 }, { opacity: 1, rotation: -3, duration: 0.4, ease: E }, s + 0.9);
+  draw("#c25u", s + 1.1, 0.5); }
+
+// c26 the zero
+{ const [s] = A("c26");
+  tl.fromTo("#c26zero .seg", { opacity: 0 }, { opacity: 1, duration: 0.05, stagger: 0.04 }, s + 0.05);
+  tl.to("#c26zero", { opacity: 0.4, duration: 0.05, yoyo: true, repeat: 3 }, s + 0.4);
+  tl.fromTo("#c26t", { opacity: 0 }, { opacity: 1, duration: 0.3 }, s + 0.35); }
+
+// c27 product as proof
+{ const [s, d] = A("c27");
+  tl.fromTo("#c27a", { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.7, ease: E }, s);
+  tl.fromTo("#c27a img", { scale: 1.12 }, { scale: 1, duration: d, ease: "none" }, s);
+  tl.fromTo("#c27ca", { opacity: 0 }, { opacity: 1, duration: 0.4 }, s + 0.5);
+  swap("#c27t", s + 0.9);
+  tl.fromTo("#c27b", { clipPath: "inset(100% 0 0 0)" }, { clipPath: "inset(0% 0 0 0)", duration: 0.7, ease: E }, s + 1.3);
+  tl.fromTo("#c27cb", { opacity: 0 }, { opacity: 1, duration: 0.4 }, s + 1.8); }
+
+// c28 the rerun fader slides up
+{ const [s] = A("c28"); tl.fromTo("#c28knob", { y: 0 }, { y: -360, duration: 0.8, ease: "power3.inOut" }, s + 0.1); }
+
+// c29 but
+{ const [s] = A("c29"); tl.fromTo("#c29w", { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: E }, s); }
+
+// c30 accounting for every click
+{ const [s, d] = A("c30");
+  tl.fromTo(".c30p", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: E, stagger: 0.08 }, s);
+  swap("#c30t1", s + 0.1); swap("#c30t2", s + 0.4); swap("#c30t3", s + 0.7); }
+
+// c31 for this to work
+{ const [s] = A("c31"); K.rise(tl, document.getElementById("c31t"), s + 0.05, { stagger: 0.08 }); }
+
+// c32 see it the way strangers do
+{ const [s, d] = A("c32");
+  tl.fromTo("#c32i", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.8, ease: E }, s);
+  draw("#c32l", s + 0.1, 0.6); swap("#c32t1", s + 0.3); swap("#c32t2", s + 0.9); }
+
+// c33 checking everything, absolutely
+{ const [s, d] = A("c33");
+  tl.fromTo("#c33card", { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: E }, s);
+  tl.fromTo("#c33i", { scale: 1.08 }, { scale: 1, duration: d, ease: "none" }, s);
+  swap("#c33t", s + 0.3);
+  tl.fromTo("#c33a", { opacity: 0, rotation: -8 }, { opacity: 1, rotation: -4, duration: 0.4, ease: E }, s + 0.8); }
+
+// c34 Not after launch. But now.
+{ const [s] = A("c34");
+  const moons = document.getElementById("c34moons");
+  [[-40, 160], [150, 120], [300, 90], [420, 60], [1830, 160], [1680, 120], [1560, 90], [1470, 60]].forEach(([x, w], i) => {
+    const e = document.createElement("div");
+    Object.assign(e.style, { position: "absolute", left: x + "px", top: "150px", width: w + "px", height: "780px", borderRadius: "50%", background: "#f3eee3" });
+    moons.appendChild(e); tl.fromTo(e, { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: E }, s + i * 0.04); });
+  tl.fromTo("#c34circle", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.5)" }, s + 0.1);
+  draw("#c34strike", s + 1.0, 0.45); // beat-locked near 54.23 + 1.0
+  tl.fromTo("#c34now", { opacity: 0, y: 14, rotation: -4 }, { opacity: 1, y: 0, rotation: -2, duration: 0.45, ease: E }, s + 1.55); }
+
+// c35 logo
+{ const [s, d] = A("c35");
+  tl.fromTo("#c35ring", { rotation: -40 }, { rotation: 30, duration: d, ease: "power1.out" }, s);
+  const sc = K.scout(document.getElementById("c35s"), "ink", 110);
+  tl.fromTo(sc, { x: -700 }, { x: 0, duration: 1.0, ease: "power2.out" }, s);
+  K.walk(tl, sc, s, 1.0);
+  swap("#c35w", s + 0.6); swap("#c35l", s + 0.85); draw("#c35u", s + 1.2, 0.6);
+  tl.fromTo("#bgm", { volume: 1 }, { volume: 0, duration: 1.8, ease: "none" }, 58.2); }
+
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

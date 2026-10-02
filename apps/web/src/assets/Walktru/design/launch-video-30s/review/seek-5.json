@@ -1,0 +1,42 @@
+[
+  {
+    "id": "",
+    "style": "left:72px;top:145px;font-size:113px"
+  },
+  {
+    "id": "journey-title",
+    "style": "translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"
+  },
+  {
+    "id": "run-browser",
+    "style": "left: 450px; top: 325px; width: 1330px; height: 650px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate3d(0px, 0px, 0px) scale(1.0004, 1.0004);"
+  },
+  {
+    "id": "journey-scout",
+    "style": "left: 85px; top: 715px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate3d(10.5882px, 0px, 0px); background-position-x: -8019px;"
+  },
+  {
+    "id": "journey-walk",
+    "style": "left: 88px; top: 328px; width: 275px; height: 340px; translate: none; rotate: none; scale: none; opacity: 1; transform: rotate(-6deg);"
+  },
+  {
+    "id": "journey-route",
+    "style": "position:absolute;left:160px;top:270px;width:570px;height:430px"
+  },
+  {
+    "id": "route-line",
+    "style": "stroke-dasharray: 663.088; stroke-dashoffset: 0.3018;"
+  },
+  {
+    "id": "route-arrow",
+    "style": "stroke-dasharray: 52.4644; stroke-dashoffset: 52.4644;"
+  },
+  {
+    "id": "journey-pill",
+    "style": "left: 1470px; top: 197px; background: var(--yellow); translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"
+  },
+  {
+    "id": "wipe2",
+    "style": "background: var(--paper); translate: none; rotate: none; scale: none; transform: scale(0, 1);"
+  }
+]

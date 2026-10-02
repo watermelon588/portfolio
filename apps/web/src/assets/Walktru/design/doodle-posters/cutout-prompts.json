@@ -1,0 +1,27 @@
+{
+  "mode": "built-in ImageGen",
+  "use_case": "background-extraction",
+  "transparent_background": true,
+  "prompts": [
+    {
+      "output": "assets/journey-cutouts.png",
+      "inputs": [
+        "../source-images/doodles/7f0ab3de9f1d94d16d109d709f7aae83.jpg",
+        "../source-images/doodles/9d62b6a54152f4b54df8ac99bd04c4a6.jpg",
+        "../source-images/doodles/d89ccd2da14edc4fc0fd6238b27f413c.jpg",
+        "../source-images/doodles/eb9add40089048816268319c66a5fed6.jpg"
+      ],
+      "prompt_specification": "Extract the original subjects into a transparent 2 by 2 sprite sheet with four equal cells: skateboarding bird top left, blue and orange rooster top right, thin character bottom left, blue laptop maker bottom right. Preserve each source's original strokes, colors, texture and pose. Remove paper backgrounds and the word rad. only. Keep complete subjects inside their cells with generous spacing. Actual transparent alpha, no new artwork, labels, frames, shadows, glow or decorative effects."
+    },
+    {
+      "output": "assets/curiosity-cutouts.png",
+      "inputs": [
+        "../source-images/doodles/f3723b3c9b922cc31308eb3b6ab3b0ea.jpg",
+        "../source-images/illustration/7c196a8e6eba9b817704e97472bfb26a.jpg",
+        "../source-images/illustration/8f49c0aebf054ffd67db29c8ed940ae1.jpg",
+        "../source-images/illustration/7017e578750b6e4382dfae29f9b0a2e0.jpg"
+      ],
+      "prompt_specification": "Extract the original subjects into a transparent 2 by 2 sprite sheet with four equal cells: person standing beside fan top left, black bird with yellow eye top right, red monster bottom left, person with multiple devices bottom right. Preserve each source's original strokes, colors, texture and pose. Remove paper backgrounds. Keep complete subjects inside their cells with generous spacing. Actual transparent alpha, no new artwork, labels, frames, shadows, glow or decorative effects."
+    }
+  ]
+}

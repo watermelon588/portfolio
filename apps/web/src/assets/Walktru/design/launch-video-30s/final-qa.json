@@ -1,0 +1,225 @@
+{
+  "seekDeterministic": true,
+  "poseEqual": true,
+  "seekDifference": {
+    "changedPixels": 32,
+    "totalPixels": 2073600,
+    "rms": [
+      0.6359719795685155,
+      0.6242588197807654,
+      0.6189436503301012
+    ],
+    "bbox": [
+      657,
+      379,
+      663,
+      385
+    ]
+  },
+  "hashes": [
+    {
+      "time": 7.7,
+      "sha256": "1f53e8a766d20f0c20c2a362ed53889b3ae8c5348f6f087f94293bd7f042b9e8"
+    },
+    {
+      "time": 24.8,
+      "sha256": "1f4ac579c1d7d9a825a61eb46b83bb220ba335d98ec0f126fbf2f6e7b2c838a2"
+    },
+    {
+      "time": 29.5,
+      "sha256": "e235a7f58b2ad5e3da4764a7aa5719ae7d918ac128e702e1ac18fb6072d8ddd4"
+    },
+    {
+      "time": 3.9,
+      "sha256": "4725a85fa6c66973b8af2342fb31bd598269c5cf9291fa6e6a7e8f0693ed3a0f"
+    },
+    {
+      "time": 17.3,
+      "sha256": "60a2e0b83e49e0e70c3732595894787ed22a074620735be85f26d2cf9850fab5"
+    },
+    {
+      "time": 7.7,
+      "sha256": "ca443b0ec4c131bf16f3b5d17b1c960426c76e46ef131fe1c0d59213a57e7c07"
+    }
+  ],
+  "motion": [
+    {
+      "selector": "#hook-maker",
+      "poses": [
+        {
+          "x": 1472.4749755859375,
+          "y": 777.6175537109375,
+          "width": 507.4443359375,
+          "opacity": 0
+        },
+        {
+          "x": 1022.0573120117188,
+          "y": 541.8563232421875,
+          "width": 515.8853149414062,
+          "opacity": 1
+        }
+      ],
+      "changed": true
+    },
+    {
+      "selector": "#face0",
+      "poses": [
+        {
+          "x": 1289.890380859375,
+          "y": 144.4987030029297,
+          "width": 392.2281494140625,
+          "opacity": 0.5417
+        },
+        {
+          "x": 1050.85400390625,
+          "y": 180.53073120117188,
+          "width": 378.2919921875,
+          "opacity": 1
+        }
+      ],
+      "changed": true
+    },
+    {
+      "selector": "#run-browser",
+      "poses": [
+        {
+          "x": 825.0911865234375,
+          "y": 502.2120056152344,
+          "width": 1125.1943359375,
+          "opacity": 0.2918
+        },
+        {
+          "x": 450,
+          "y": 325,
+          "width": 1330,
+          "opacity": 1
+        }
+      ],
+      "changed": true
+    },
+    {
+      "selector": "#report-browser",
+      "poses": [
+        {
+          "x": -71.6905288696289,
+          "y": 268.76885986328125,
+          "width": 971.0015258789062,
+          "opacity": 0.4231
+        },
+        {
+          "x": 94.89080810546875,
+          "y": 241.969482421875,
+          "width": 1080.10791015625,
+          "opacity": 1
+        }
+      ],
+      "changed": true
+    },
+    {
+      "selector": "#check2",
+      "poses": [
+        {
+          "x": 220,
+          "y": 45,
+          "width": 1920,
+          "opacity": 0
+        },
+        {
+          "x": 85.59030151367188,
+          "y": 17.507099151611328,
+          "width": 1920,
+          "opacity": 0.611
+        }
+      ],
+      "changed": true
+    },
+    {
+      "selector": "#fix-paper",
+      "poses": [
+        {
+          "x": 1368.5364990234375,
+          "y": 390.398681640625,
+          "width": 794.1947021484375,
+          "opacity": 0
+        },
+        {
+          "x": 962.328857421875,
+          "y": 316.41064453125,
+          "width": 825.34228515625,
+          "opacity": 1
+        }
+      ],
+      "changed": true
+    },
+    {
+      "selector": "#launch-scout",
+      "poses": [
+        {
+          "x": 309.41650390625,
+          "y": 361.41650390625,
+          "width": 306.1669921875,
+          "opacity": 0.3497
+        },
+        {
+          "x": 290,
+          "y": 342,
+          "width": 345,
+          "opacity": 1
+        }
+      ],
+      "changed": true
+    },
+    {
+      "selector": "#final-word",
+      "poses": [
+        {
+          "x": 735,
+          "y": 465,
+          "width": 669.703125,
+          "opacity": 0
+        },
+        {
+          "x": 735,
+          "y": 370,
+          "width": 669.703125,
+          "opacity": 1
+        }
+      ],
+      "changed": true
+    }
+  ],
+  "player": {
+    "duration": 30,
+    "width": 1920,
+    "height": 1080,
+    "hasControls": true
+  },
+  "layouts": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320
+    }
+  ],
+  "audio": {
+    "input_i": "-16.18",
+    "input_tp": "-1.29",
+    "input_lra": "1.50",
+    "input_thresh": "-26.24",
+    "output_i": "-16.00",
+    "output_tp": "-1.50",
+    "output_lra": "1.40",
+    "output_thresh": "-26.03",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.00"
+  },
+  "decode": "full final video decoded successfully with FFmpeg",
+  "specification": "30 seconds, 900 frames, 1920x1080, 30 fps, H.264, stereo AAC"
+}

@@ -17,29 +17,6 @@
   margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
 }
 
-.gallery-head-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.gallery-eyebrow {
-  font-size: clamp(0.8rem, 1vw, 0.95rem);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-}
-
-.gallery-count {
-  font-size: clamp(0.72rem, 0.9vw, 0.85rem);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-}
-
 .gallery-title {
   margin: 0;
   font-size: clamp(1.9rem, 4vw, 3.4rem);
@@ -87,7 +64,6 @@
   padding: 0;
   border-radius: 0;
   box-shadow: 0 12px 34px -20px rgba(0, 0, 0, 0.4);
-  will-change: transform, opacity, filter;
   transition:
     transform 0.65s var(--ease),
     opacity 0.65s var(--ease),
@@ -185,20 +161,6 @@
 .gallery-item:hover .gallery-caption {
   opacity: 1;
   transform: translateY(0);
-}
-
-.gallery-caption-label {
-  font-size: clamp(0.82rem, 1.05vw, 0.98rem);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-.gallery-caption-view {
-  flex-shrink: 0;
-  font-size: clamp(0.72rem, 0.9vw, 0.85rem);
-  font-weight: 600;
-  color: #fff;
-  opacity: 0.85;
 }
 
 @media (max-width: 768px) {

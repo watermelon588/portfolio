@@ -44,3 +44,7 @@ apps/web/src/assets/skyguide/video/sky1.mp4
 # Resume raw source files
 apps/web/src/data/*.pdf
 
+
+# Over GitHub's 100 MB file limit; packaged copies of the png/ and jpg/ folders beside them (make_zip.py).
+apps/web/src/assets/Tripverse/media/mmm/tripverse-design-pack/mockups/tripverse-ten-mockups.zip
+apps/web/src/assets/Tripverse/media/mmm/tripverse-design-pack/posters/tripverse-ten-graphics.zip

@@ -10,7 +10,7 @@ This is the coordination source of truth for **Codex and Claude Code**. Read thi
 |---|---|---|---|---|---|
 | [ ] | 1 — Neuron + YapChat | Unassigned | NOT_STARTED | 2026-10-02 | Awaiting assignment; refresh both existing cases (Claude Code's attempt rolled back at Rohit's request) |
 | [x] | 2 — Walkthru | Codex | DONE | 2026-10-02 16:40 IST | Image parallax follow-up verified; approved layout/content preserved; claims released |
-| [x] | 3 — TripVerse | Codex | DONE | 2026-10-03 | Detailed case + original journals, selected order and 16 homepage gallery visuals complete; focused checks recorded; claims released |
+| [x] | 3 — TripVerse | Codex | DONE | 2026-10-03 | Skyguide CTA follow-up complete: GitHub pill left, circular Live site right; verified; claims released |
 | [x] | 4 — Shiori | Claude Code | DONE | 2026-10-03 | /work/shiori built with original cast stage, manga wall and gallery wall; checks pass; pushed; claims released |
 | [ ] | 5 — Final verification | Unassigned | NOT_STARTED | 2026-10-02 | Starts after Sessions 1–4 are DONE and all claims released |
 
@@ -45,7 +45,7 @@ Paths below are relative to this repository. Existing dirty work in RootLayout, 
 | Codex / shared integration — DONE, released | `apps/web/src/data/projects.ts`, `data/caseStudies.ts`, `data/projectRegistry.ts`, `pages/ProjectDetailRoute.tsx`, `routes.tsx`, `sections/Footer/Footer.tsx/.css`, `components/motion/Preloader.tsx`, registry test | Integration established. Freeze until Session 5 unless a specific exclusive claim is recorded. Preserve all pre-existing user changes. |
 | Session 1 | `pages/NeuronProjectPage.tsx`, `pages/NeuronProjectPage.css`, `pages/YapChatProjectPage.tsx`, `pages/YapChatProjectPage.css`, `data/projectEntries/neuron.ts`, `data/projectEntries/yapchat.ts`, derivatives under `assets/Neuron/docs/portfolio/` and `assets/Yap chat/screenshots/portfolio/` | Existing primitives/shared CSS read-only. Refresh preview and case metadata through the two owned entry files. |
 | Codex / Session 2 — DONE, released | `apps/web/src/pages/WalkthruProjectPage.tsx`, `apps/web/src/pages/WalkthruProjectPage.css`, `output/session-2/` | Image parallax follow-up complete. Entry/assets/shared components unchanged. Reopen via recorded claim before editing. |
-| Codex / Session 3 — DONE, released | `apps/web/src/pages/TripverseProjectPage.tsx`, `.css`, `data/projectEntries/tripverse.ts`, `components/tripverse/`, `assets/Tripverse/portfolio/`, `apps/web/public/images/journal/`, `output/session-3/` | Original journals/assets/fonts transplanted and checked. TripVerse entry activates the required four-row homepage selection. Reopen with a recorded claim before editing. |
+| Codex / Session 3 — DONE, released | `apps/web/src/pages/TripverseProjectPage.tsx`, `.css`, `data/projectEntries/tripverse.ts`, `components/tripverse/`, `assets/Tripverse/portfolio/`, `apps/web/public/images/journal/`, `output/session-3/` | Original case complete; Skyguide CTA correction verified. Reopen with a recorded claim before edits. |
 | Codex / Session 3 — shared gallery/showcase DONE, released | `apps/web/src/data/gallery.ts`, `apps/web/src/sections/Gallery/Gallery.tsx`, `apps/web/src/components/FeatureShowcase/FeatureShowcase.tsx` | Six-project reel includes 16 new authentic visuals; dynamic count/descriptive alt text; existing showcase supports Enter/Space. Existing motion preserved. |
 | Session 4 | `pages/ShioriProjectPage.tsx`, `.css`, `data/projectEntries/shiori.ts`, `components/shiori/`, `assets/Shiori (栞)/portfolio/` and copied art bundle | Original interactive cast stage/gallery wall must be transplanted. Keep local-app versus hosted-site distinction. |
 | Session 5 | Shared integration, gallery, accessibility fixes, dependency/lockfile updates and affected case paths after owners release them | Recheck sources; test and visually polish all five affected cases and home/work/next-case navigation. |
@@ -65,6 +65,20 @@ Existing projects keep their verified destination-specific footer mockups. Never
 ## Progress and handoffs
 
 **Current active Codex code claims:** None. Sessions 2 and 3 are complete and released. Session 4 can be assigned independently using its owned files. Session 5 still waits for all four implementation sessions. Historical entries below record resolved intermediate issues as well as handoffs; the newest completion entry takes precedence.
+
+### 2026-10-03 — Claude Code, toggle removal + Closer Look DONE
+
+- Rohit chose Updated (v2): toggle + `components/VariantToggle` deleted, v2 folded into Hero/About/AboutPage/Footer/Gallery, `styles/v2.css` became `styles/refinements.css`. New `assets/closer-look/<Project>/` (93 resized WebP copies) is the only source for `data/gallery.ts`. Gallery reel waits for image load before looping (fixes the jump/speed-up glitch). tsc -b passes; verified in the browser (5391). `.claude/launch.json` now runs web on 5391 (5173/5180 are taken by other apps). Uncommitted. Claims released.
+
+### 2026-10-03 — Codex, Live site follow-up DONE
+
+- Replaced the incorrect Explore TripVerse pill with Skyguide's original CTA row: GitHub pill on the left, circular magnetic Live site on the right across the divider. Copied the original arrow SVG, 42 magnetic strength, section positioning and 4rem margin. Reused shared CSS/useMagnetic; no other page/style/content edits.
+- TypeScript and changed-file whitespace check pass. Browser at 1280px confirms a 178px circle, 50% radius, correct `https://tripverse-0.vercel.app/` destination and GitHub-left/live-right layout. Evidence: `output/session-3/tripverse-live-button.png`.
+- This follow-up is local and uncommitted; the previous GitHub push remains commit 866cca2. All scoped claims released.
+
+### 2026-10-03 — Codex, Session 3 reopened for Live site button
+
+- Rohit requested Skyguide's exact live-button placement and treatment on TripVerse. Copy its original GitHub-left / circular Live site-right CTA row, arrow SVG, magnetic strengths and section spacing. Reuse shared styles and magnetic hook without changing other pages.
 
 ### 2026-10-03 — Codex, GitHub push authorized
 

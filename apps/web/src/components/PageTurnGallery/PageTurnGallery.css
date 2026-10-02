@@ -1,0 +1,108 @@
+.ptg {
+  width: 100%;
+  margin-top: 3rem;
+  outline: none;
+}
+
+.ptg:focus-visible .ptg-stage {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Turned pages swing out past the left edge; this clips them away. */
+.ptg-clip {
+  overflow: hidden;
+}
+
+.ptg-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  perspective: 2400px;
+  cursor: pointer;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.ptg-page {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.ptg-page.is-turned {
+  transform: rotateY(-180deg);
+}
+
+.ptg-face,
+.ptg-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  background: #f5f5f2;
+  border: 1px solid var(--border);
+}
+
+.ptg-back {
+  transform: rotateY(180deg);
+}
+
+.ptg-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.ptg-controls {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.ptg-controls .dw-pill-btn:disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.ptg-status {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.ptg-count {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.ptg-caption {
+  font-size: clamp(0.9rem, 1.05vw, 1rem);
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .ptg-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ptg-status {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ptg-page {
+    transition: none;
+  }
+}

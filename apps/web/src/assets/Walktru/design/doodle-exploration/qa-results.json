@@ -1,0 +1,382 @@
+{
+  "variants": 13,
+  "assets": 35,
+  "typography": {
+    "loadedFonts": [
+      "Geist Variable",
+      "Geist Mono Variable"
+    ],
+    "body": "\"Geist Variable\", ui-sans-serif, system-ui, sans-serif",
+    "headingWeight": "200",
+    "note": "\"Geist Variable\", ui-sans-serif, system-ui, sans-serif",
+    "technical": "\"Geist Mono Variable\", ui-monospace, monospace"
+  },
+  "errors": [],
+  "measurements": [
+    {
+      "width": 1024,
+      "name": "Paper Playground",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "Cobalt Crowd",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "Coral Observatory",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "Launch Letter",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "Launch Notebook",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "Fieldwork",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "Journey Room",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "Search Atlas",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "Fix Studio",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "MCP Workshop",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "Release Radar",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "Agency Wall",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1024,
+      "name": "Launch Day",
+      "height": 940,
+      "overflow": [],
+      "scrollWidth": 1024
+    },
+    {
+      "width": 736,
+      "name": "Paper Playground",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "Cobalt Crowd",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "Coral Observatory",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "Launch Letter",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "Launch Notebook",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "Fieldwork",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "Journey Room",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "Search Atlas",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "Fix Studio",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "MCP Workshop",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "Release Radar",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "Agency Wall",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 736,
+      "name": "Launch Day",
+      "height": 1300,
+      "overflow": [],
+      "scrollWidth": 736
+    },
+    {
+      "width": 375,
+      "name": "Paper Playground",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "Cobalt Crowd",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "Coral Observatory",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "Launch Letter",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "Launch Notebook",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "Fieldwork",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "Journey Room",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "Search Atlas",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "Fix Studio",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "MCP Workshop",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "Release Radar",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "Agency Wall",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 375,
+      "name": "Launch Day",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 375
+    },
+    {
+      "width": 320,
+      "name": "Paper Playground",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "Cobalt Crowd",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "Coral Observatory",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "Launch Letter",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "Launch Notebook",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "Fieldwork",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "Journey Room",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "Search Atlas",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "Fix Studio",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "MCP Workshop",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "Release Radar",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "Agency Wall",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    },
+    {
+      "width": 320,
+      "name": "Launch Day",
+      "height": 1750,
+      "overflow": [],
+      "scrollWidth": 320
+    }
+  ],
+  "interactions": "7 primary interactions and carousel navigation passed"
+}

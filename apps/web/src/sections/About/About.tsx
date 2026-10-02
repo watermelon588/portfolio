@@ -31,7 +31,7 @@ export function About() {
           <span className="about-eyebrow">About</span>
           <span className="about-availability">
             <i className="about-dot" aria-hidden="true" />
-            Available for work — 2026
+            Available for work in 2026
           </span>
         </div>
 
@@ -45,16 +45,13 @@ export function About() {
               wordAnimationEnd="bottom center+=20%"
               rotationEnd="bottom center+=20%"
             >
-              Helping software teams turn ambitious ideas into AI-native
-              visions, scalable backends, and robust systems that don’t fall
-              apart .
+              I build the backends products run on: fast APIs, AI pipelines and realtime systems that don’t fall apart.
             </ScrollReveal>
           </div>
 
           <div className="about-copy">
             <p className="about-copy-text">
-              The combination of my passion for design, code &amp; interaction
-              positions me somewhere in the web design world.
+              Backend engineer first. I sweat the systems nobody sees, then give them interfaces people enjoy using.
             </p>
             <Link
               className="about-btn-round magnetic"

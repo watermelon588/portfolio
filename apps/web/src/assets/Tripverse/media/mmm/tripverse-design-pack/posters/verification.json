@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "01-world",
+    "width": 2160,
+    "height": 2700,
+    "fonts": [
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "unloaded"
+      },
+      {
+        "family": "Geist Mono",
+        "status": "loaded"
+      }
+    ],
+    "items": [
+      {
+        "name": "lockup",
+        "text": "TripVerse",
+        "bounds": [
+          64,
+          56,
+          176.75,
+          39
+        ],
+        "inside": true
+      },
+      {
+        "name": "tag",
+        "text": "AI TRAVEL PLANNING",
+        "bounds": [
+          864.796875,
+          65,
+          151.203125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "eyebrow",
+        "text": "A TRIP THAT FEELS LIKE YOU",
+        "bounds": [
+          64,
+          133,
+          212.171875,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "H1",
+        "text": "A whole world\nof possibilities.",
+        "bounds": [
+          64,
+          167,
+          955,
+          215.8125
+        ],
+        "inside": true
+      },
+      {
+        "name": "body-copy",
+        "text": "Tell us what you love. Build a trip around it.",
+        "bounds": [
+          64,
+          1227,
+          760,
+          37.25
+        ],
+        "inside": true
+      },
+      {
+        "name": "footer",
+        "text": "Your imagination. A plan to match.\nStart planning →",
+        "bounds": [
+          64,
+          1282,
+          952,
+          40
+        ],
+        "inside": true
+      }
+    ],
+    "logoStroke": "currentColor"
+  },
+  {
+    "id": "02-city",
+    "width": 2160,
+    "height": 2160,
+    "fonts": [
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "unloaded"
+      },
+      {
+        "family": "Geist Mono",
+        "status": "loaded"
+      }
+    ],
+    "items": [
+      {
+        "name": "lockup",
+        "text": "TripVerse",
+        "bounds": [
+          64,
+          56,
+          176.75,
+          39
+        ],
+        "inside": true
+      },
+      {
+        "name": "tag",
+        "text": "AI TRAVEL PLANNING",
+        "bounds": [
+          864.796875,
+          65,
+          151.203125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "eyebrow",
+        "text": "PERSONAL ROUTES",
+        "bounds": [
+          64,
+          226,
+          122.40625,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "H1",
+        "text": "Your city.\nYour way.",
+        "bounds": [
+          64,
+          260,
+          455,
+          231.5
+        ],
+        "inside": true
+      },
+      {
+        "name": "body-copy",
+        "text": "The places you want.\nThe pace you choose.",
+        "bounds": [
+          64,
+          530,
+          370,
+          74.5
+        ],
+        "inside": true
+      },
+      {
+        "name": "footer",
+        "text": "Plan around your interests.\nStart planning →",
+        "bounds": [
+          64,
+          1012,
+          952,
+          40
+        ],
+        "inside": true
+      }
+    ],
+    "logoStroke": "currentColor"
+  },
+  {
+    "id": "03-bloom",
+    "width": 2160,
+    "height": 3840,
+    "fonts": [
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "unloaded"
+      },
+      {
+        "family": "Geist Mono",
+        "status": "loaded"
+      }
+    ],
+    "items": [
+      {
+        "name": "lockup",
+        "text": "TripVerse",
+        "bounds": [
+          64,
+          56,
+          176.75,
+          39
+        ],
+        "inside": true
+      },
+      {
+        "name": "tag",
+        "text": "AI TRAVEL PLANNING",
+        "bounds": [
+          864.796875,
+          65,
+          151.203125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "eyebrow",
+        "text": "LEAVE ROOM FOR POSSIBILITY",
+        "bounds": [
+          64,
+          196,
+          212.171875,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "H1",
+        "text": "Let your next\ntrip bloom.",
+        "bounds": [
+          64,
+          230,
+          950,
+          284.4375
+        ],
+        "inside": true
+      },
+      {
+        "name": "body-copy",
+        "text": "A place. A feeling. A little curiosity.\nLet’s turn them into a journey.",
+        "bounds": [
+          64,
+          1730,
+          880,
+          74.5
+        ],
+        "inside": true
+      },
+      {
+        "name": "footer",
+        "text": "Start with what moves you.\nStart planning →",
+        "bounds": [
+          64,
+          1852,
+          952,
+          40
+        ],
+        "inside": true
+      }
+    ],
+    "logoStroke": "currentColor"
+  },
+  {
+    "id": "04-route",
+    "width": 3840,
+    "height": 2160,
+    "fonts": [
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "unloaded"
+      },
+      {
+        "family": "Geist Mono",
+        "status": "loaded"
+      }
+    ],
+    "items": [
+      {
+        "name": "lockup",
+        "text": "TripVerse",
+        "bounds": [
+          92,
+          62,
+          176.75,
+          39
+        ],
+        "inside": true
+      },
+      {
+        "name": "tag",
+        "text": "AI TRAVEL PLANNING",
+        "bounds": [
+          1676.796875,
+          71,
+          151.203125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "eyebrow",
+        "text": "PLANNED AROUND YOU",
+        "bounds": [
+          92,
+          226,
+          146.890625,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "H1",
+        "text": "The route\nis yours.\nLet’s plan it.",
+        "bounds": [
+          92,
+          260,
+          725,
+          420.65625
+        ],
+        "inside": true
+      },
+      {
+        "name": "body-copy",
+        "text": "Your interests, your days, your travel rhythm.\nBring them together with TripVerse.",
+        "bounds": [
+          92,
+          781,
+          710,
+          71.25
+        ],
+        "inside": true
+      },
+      {
+        "name": "footer",
+        "text": "AI travel planning, with you in the picture.\nStart planning →",
+        "bounds": [
+          92,
+          1012,
+          1736,
+          40
+        ],
+        "inside": true
+      }
+    ],
+    "logoStroke": "currentColor"
+  },
+  {
+    "id": "05-detours",
+    "width": 3000,
+    "height": 2000,
+    "fonts": [
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "unloaded"
+      },
+      {
+        "family": "Geist Mono",
+        "status": "loaded"
+      }
+    ],
+    "items": [
+      {
+        "name": "lockup",
+        "text": "TripVerse",
+        "bounds": [
+          80,
+          62,
+          176.75,
+          39
+        ],
+        "inside": true
+      },
+      {
+        "name": "tag",
+        "text": "AI TRAVEL PLANNING",
+        "bounds": [
+          1268.796875,
+          71,
+          151.203125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "eyebrow",
+        "text": "A LITTLE OFF THE EXPECTED PATH",
+        "bounds": [
+          80,
+          162,
+          244.8125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "H1",
+        "text": "Make room\nfor detours.",
+        "bounds": [
+          80,
+          196,
+          800,
+          264.8125
+        ],
+        "inside": true
+      },
+      {
+        "name": "body-copy",
+        "text": "A plan should leave space\nfor the way you want to travel.",
+        "bounds": [
+          80,
+          492,
+          570,
+          71.25
+        ],
+        "inside": true
+      },
+      {
+        "name": "footer",
+        "text": "Find a route that feels right.\nStart planning →",
+        "bounds": [
+          80,
+          932,
+          1340,
+          40
+        ],
+        "inside": true
+      }
+    ],
+    "logoStroke": "currentColor"
+  },
+  {
+    "id": "06-pace",
+    "width": 2400,
+    "height": 3600,
+    "fonts": [
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "unloaded"
+      },
+      {
+        "family": "Geist Mono",
+        "status": "loaded"
+      }
+    ],
+    "items": [
+      {
+        "name": "lockup",
+        "text": "TripVerse",
+        "bounds": [
+          70,
+          56,
+          176.75,
+          39
+        ],
+        "inside": true
+      },
+      {
+        "name": "tag",
+        "text": "AI TRAVEL PLANNING",
+        "bounds": [
+          978.796875,
+          65,
+          151.203125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "eyebrow",
+        "text": "TRAVEL AT YOUR OWN RHYTHM",
+        "bounds": [
+          70,
+          215,
+          204,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "H1",
+        "text": "Less rush.\nMore wonder.",
+        "bounds": [
+          70,
+          249,
+          1060,
+          315.78125
+        ],
+        "inside": true
+      },
+      {
+        "name": "body-copy",
+        "text": "Make space for the stops that matter.\nChoose a daily pace that feels like you.",
+        "bounds": [
+          70,
+          625,
+          1060,
+          74.5
+        ],
+        "inside": true
+      },
+      {
+        "name": "footer",
+        "text": "Some moments deserve a little longer.\nStart planning →",
+        "bounds": [
+          70,
+          1732,
+          1060,
+          40
+        ],
+        "inside": true
+      }
+    ],
+    "logoStroke": "currentColor"
+  },
+  {
+    "id": "07-company",
+    "width": 2160,
+    "height": 2160,
+    "fonts": [
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "unloaded"
+      },
+      {
+        "family": "Geist Mono",
+        "status": "loaded"
+      }
+    ],
+    "items": [
+      {
+        "name": "lockup",
+        "text": "TripVerse",
+        "bounds": [
+          60,
+          56,
+          176.75,
+          39
+        ],
+        "inside": true
+      },
+      {
+        "name": "tag",
+        "text": "AI TRAVEL PLANNING",
+        "bounds": [
+          868.796875,
+          65,
+          151.203125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "eyebrow",
+        "text": "THERE’S NO ONE WAY TO TRAVEL",
+        "bounds": [
+          60,
+          115,
+          228.484375,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "H1",
+        "text": "Different people.\nDifferent journeys.",
+        "bounds": [
+          60,
+          149,
+          960,
+          196.21875
+        ],
+        "inside": true
+      },
+      {
+        "name": "body-copy",
+        "text": "Tell us your interests.\nGive your trip a little more of you.",
+        "bounds": [
+          60,
+          889,
+          780,
+          74.5
+        ],
+        "inside": true
+      },
+      {
+        "name": "footer",
+        "text": "Personal plans for curious people.\nStart planning →",
+        "bounds": [
+          60,
+          1012,
+          960,
+          40
+        ],
+        "inside": true
+      }
+    ],
+    "logoStroke": "currentColor"
+  },
+  {
+    "id": "08-perspective",
+    "width": 2160,
+    "height": 2700,
+    "fonts": [
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "unloaded"
+      },
+      {
+        "family": "Geist Mono",
+        "status": "loaded"
+      }
+    ],
+    "items": [
+      {
+        "name": "lockup",
+        "text": "TripVerse",
+        "bounds": [
+          64,
+          56,
+          176.75,
+          39
+        ],
+        "inside": true
+      },
+      {
+        "name": "tag",
+        "text": "AI TRAVEL PLANNING",
+        "bounds": [
+          864.796875,
+          65,
+          151.203125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "eyebrow",
+        "text": "BIG IDEAS. A LITTLE DIRECTION.",
+        "bounds": [
+          64,
+          132,
+          244.8125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "H1",
+        "text": "A little planning.\nA bigger horizon.",
+        "bounds": [
+          64,
+          166,
+          952,
+          209.9375
+        ],
+        "inside": true
+      },
+      {
+        "name": "body-copy",
+        "text": "Bring your destination into view.\nExplore your stops on the map and in 3D.",
+        "bounds": [
+          64,
+          1210,
+          830,
+          74.5
+        ],
+        "inside": true
+      },
+      {
+        "name": "footer",
+        "text": "See where your journey could take you.\nStart planning →",
+        "bounds": [
+          64,
+          1282,
+          952,
+          40
+        ],
+        "inside": true
+      }
+    ],
+    "logoStroke": "currentColor"
+  },
+  {
+    "id": "09-many-views",
+    "width": 3840,
+    "height": 1920,
+    "fonts": [
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "unloaded"
+      },
+      {
+        "family": "Geist Mono",
+        "status": "loaded"
+      }
+    ],
+    "items": [
+      {
+        "name": "lockup",
+        "text": "TripVerse",
+        "bounds": [
+          92,
+          62,
+          176.75,
+          39
+        ],
+        "inside": true
+      },
+      {
+        "name": "tag",
+        "text": "AI TRAVEL PLANNING",
+        "bounds": [
+          1676.796875,
+          71,
+          151.203125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "eyebrow",
+        "text": "THE BIG PICTURE, TOGETHER",
+        "bounds": [
+          92,
+          135,
+          204,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "H1",
+        "text": "One trip. Many ways to see it.",
+        "bounds": [
+          92,
+          169,
+          1740,
+          123.71875
+        ],
+        "inside": true
+      },
+      {
+        "name": "body-copy",
+        "text": "Your itinerary. Your map. Your 3D view. All part of the same journey.",
+        "bounds": [
+          92,
+          823,
+          1600,
+          35.625
+        ],
+        "inside": true
+      },
+      {
+        "name": "footer",
+        "text": "Bring the whole journey into focus.\nStart planning →",
+        "bounds": [
+          92,
+          892,
+          1736,
+          40
+        ],
+        "inside": true
+      }
+    ],
+    "logoStroke": "currentColor"
+  },
+  {
+    "id": "10-curious",
+    "width": 2400,
+    "height": 3200,
+    "fonts": [
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Instrument Serif",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "loaded"
+      },
+      {
+        "family": "Geist",
+        "status": "unloaded"
+      },
+      {
+        "family": "Geist Mono",
+        "status": "loaded"
+      }
+    ],
+    "items": [
+      {
+        "name": "lockup",
+        "text": "TripVerse",
+        "bounds": [
+          70,
+          56,
+          176.75,
+          39
+        ],
+        "inside": true
+      },
+      {
+        "name": "tag",
+        "text": "AI TRAVEL PLANNING",
+        "bounds": [
+          978.796875,
+          65,
+          151.203125,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "eyebrow",
+        "text": "GOOD TRIPS BEGIN WITH CURIOSITY",
+        "bounds": [
+          70,
+          197,
+          252.96875,
+          16
+        ],
+        "inside": true
+      },
+      {
+        "name": "H1",
+        "text": "Stay curious.",
+        "bounds": [
+          70,
+          231,
+          1060,
+          174.671875
+        ],
+        "inside": true
+      },
+      {
+        "name": "body-copy",
+        "text": "Follow the places that make you look twice.\nGive that curiosity a plan.",
+        "bounds": [
+          70,
+          1440,
+          980,
+          74.5
+        ],
+        "inside": true
+      },
+      {
+        "name": "footer",
+        "text": "Where would you go next?\nStart planning →",
+        "bounds": [
+          70,
+          1532,
+          1060,
+          40
+        ],
+        "inside": true
+      }
+    ],
+    "logoStroke": "currentColor"
+  }
+]

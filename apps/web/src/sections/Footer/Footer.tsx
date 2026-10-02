@@ -232,8 +232,8 @@ export function Footer({ nextProject }: FooterProps = {}) {
       <div className="footer-bottom container">
         <div className="footer-bottom-left">
           <div className="footer-block">
-            <h5>Version</h5>
-            <p>2026 &copy; Edition</p>
+            <h5>Rohit Maity</h5>
+            <p>© 2026</p>
           </div>
           <div className="footer-block">
             <h5>Local time</h5>
