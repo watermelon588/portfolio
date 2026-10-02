@@ -49,13 +49,14 @@
 .workpage-menu {
   position: relative;
   width: 100%;
-  /* Thinner, sleeker height for work bars */
-  height: clamp(380px, 52vh, 480px);
+  /* Each bar keeps the height it had with four projects; the list grows with
+     the catalogue instead of squeezing every row. --rows is set in Work.tsx. */
+  height: calc(var(--rows, 4) * clamp(95px, 13vh, 120px));
   border-block: 1px solid var(--border);
 }
 
 @media (max-width: 768px) {
   .workpage-menu {
-    height: clamp(320px, 48vh, 420px);
+    height: calc(var(--rows, 4) * clamp(80px, 12vh, 105px));
   }
 }

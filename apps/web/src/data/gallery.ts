@@ -10,7 +10,7 @@ const mods = import.meta.glob("../assets/closer-look/*/*.{png,jpg,jpeg,webp,avif
 }) as Record<string, string>;
 
 // Reel mixing order; any new project folder is appended after these.
-const ORDER = ["Walkthru", "TripVerse", "Skyguide AI", "Neuron", "Yapchat", "Forcaster"];
+const ORDER = ["Walkthru", "TripVerse", "Skyguide AI", "Neuron", "Shiori", "Yapchat", "Forcaster"];
 
 export interface GalleryImage {
   src: string;

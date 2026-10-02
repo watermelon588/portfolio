@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Preloader } from "@/components/motion/Preloader";
 import { Navbar } from "@/components/nav/Navbar";
 import { Footer } from "@/sections/Footer/Footer";
@@ -24,7 +25,7 @@ export function Work() {
           </p>
         </header>
 
-        <div className="workpage-menu">
+        <div className="workpage-menu" style={{ "--rows": projects.length } as CSSProperties}>
           <FlowingMenu
             items={toMenuItems(projects)}
             speed={18}
