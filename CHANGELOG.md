@@ -5,6 +5,11 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+### Added (Shiori case study — work Session 4)
+- **`/work/shiori`**: dedicated case study for Shiori, a local anime and manga hub, with GitHub + live website actions, current app screens in both themes, architecture and contribution chapters. (`pages/ShioriProjectPage.*`, `data/projectEntries/shiori.ts`)
+- **Original website sections, transplanted from the Shiori site source**: the cut-out cast stage, the drifting manga wall and the tilted gallery wall, with their original markup, styles, art selection and motion. (`components/shiori/`, `public/shiori/g/`)
+- Card thumbnails: the Shiori laptop mockup plus two brand visuals; the laptop is also the next-case footer image.
+
 ### Added + Fixed (case-study content + preloader speed)
 - **Full case study now renders on every project page.** The rich `caseStudies[*].sections` (SkyGuide's problem → thinking → architecture → phone-as-instrument → experience → build/deploy) were defined but **never displayed** — only overview/metrics/gallery/stack showed. Each section is now a **story chapter slide** inside the existing pinned horizontal track, so the zoom-portal + horizontal-scroll motion is unchanged; the track just grows and the pin distance auto-scales. (`pages/ProjectPage.tsx`)
 - **Sequential chapter numbering** across the whole track (`01 — Overview → 02 — Problem → … → NN — Core Stack`), computed at render so it stays coherent regardless of how many chapters/slides a project has. (`pages/ProjectPage.tsx`)

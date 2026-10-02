@@ -1,0 +1,102 @@
+/* ==========================================================================================
+ * Original Shiori site styles, copied from Shiori (栞)/site/assets/css/nagi.css (tokens, base,
+ * section spacing, buttons, link) and nagi-art.css (cast field, manga columns, 3D gallery wall,
+ * button sheen, link underline, reduced motion). The only change: every selector is prefixed
+ * with `.shiori-original` so the source and the portfolio cannot restyle each other.
+ * ======================================================================================== */
+.shiori-original {
+    --bg: #f6f8fb;
+    --paper: #ffffff;
+    --haze: #e7eefb;
+    --ink: #141a26;
+    --ink-2: #3a4356;
+    --muted: #6a7386;
+    --line: rgb(20 26 38 / 0.09);
+    --accent: #245cff;
+    --accent-ink: #ffffff;
+    --r: 20px;
+    --ease: cubic-bezier(0.23, 1, 0.32, 1);
+    --display: "Zen Maru Gothic", "M PLUS 1", system-ui, sans-serif;
+    --body: "M PLUS 1", system-ui, sans-serif;
+    --shadow: 0 1px 2px rgb(20 26 38 / 0.06), 0 30px 60px -36px rgb(20 40 90 / 0.45);
+    color-scheme: light;
+    background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: clip;
+}
+
+.shiori-original *, .shiori-original *::before, .shiori-original *::after { box-sizing: border-box; }
+.shiori-original img { max-width: 100%; display: block; }
+.shiori-original a { color: inherit; text-decoration: none; }
+.shiori-original h1, .shiori-original h2, .shiori-original h3 { font-family: var(--display); font-weight: 700; line-height: 1.12; margin: 0; letter-spacing: -0.01em; text-transform: none; }
+.shiori-original h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); }
+.shiori-original h3 { font-size: 1.25rem; }
+.shiori-original p { margin: 0; }
+.shiori-original :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+.shiori-original section { padding: clamp(5rem, 11vw, 9rem) clamp(1.25rem, 5vw, 4.5rem); }
+
+/* ------------------------------------------------------------------ buttons */
+.shiori-original .btn {
+    display: inline-flex; align-items: center; gap: 0.55rem; white-space: nowrap;
+    height: 3.1rem; padding: 0 1.5rem; border-radius: 999px; font-weight: 700; font-size: 0.98rem;
+    transition: transform 160ms var(--ease), background-color 200ms ease, box-shadow 200ms ease;
+}
+.shiori-original .btn i { font-size: 1.15rem; }
+.shiori-original .btn:active { transform: scale(0.97); }
+.shiori-original .btn--primary { background: var(--accent); color: var(--accent-ink); box-shadow: 0 12px 30px -14px rgb(36 92 255 / 0.8); }
+.shiori-original .link { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; color: var(--accent); }
+.shiori-original .link i { transition: transform 200ms var(--ease); }
+@media (hover: hover) and (pointer: fine) {
+    .shiori-original .btn--primary:hover { box-shadow: 0 16px 36px -12px rgb(36 92 255 / 0.9); transform: translateY(-1px); }
+    .shiori-original .link:hover i { transform: translateX(4px); }
+}
+
+/* ------------------------------------------------------------------ cast field */
+.shiori-original .cast-field { position: relative; text-align: center; display: grid; justify-items: center; gap: 1rem; overflow: hidden; background: radial-gradient(ellipse at 50% 60%, var(--haze), transparent 70%); }
+.shiori-original .cast-field p { color: var(--ink-2); max-width: 36rem; }
+.shiori-original .cast-field__stage { position: relative; width: 100%; height: clamp(26rem, 60vw, 44rem); margin-top: 2rem; }
+.shiori-original .figure {
+    position: absolute; bottom: 0; height: var(--h); will-change: transform;
+    filter: drop-shadow(0 22px 20px rgb(20 40 90 / 0.28));
+    transition: filter 300ms ease;
+}
+.shiori-original .figure img { height: 100%; width: auto; max-width: none; transition: transform 500ms var(--ease); }
+@media (hover: hover) and (pointer: fine) {
+    .shiori-original .figure:hover { filter: drop-shadow(0 30px 26px rgb(36 92 255 / 0.35)); z-index: 20; }
+    .shiori-original .figure:hover img { transform: translateY(-14px) scale(1.04); }
+}
+
+/* ------------------------------------------------------------------ manga columns */
+.shiori-original .ink { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; overflow: hidden; background: #0f131c; color: #eef2f8; }
+.shiori-original .ink__copy { display: grid; gap: 1.2rem; justify-items: start; }
+.shiori-original .ink__copy p { color: rgb(238 242 248 / 0.7); }
+.shiori-original .ink .link { color: #8fb0ff; }
+.shiori-original .ink__cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; height: 110vh; margin-block: -10vh; }
+.shiori-original .ink__col { display: grid; gap: 1rem; align-content: start; will-change: transform; }
+.shiori-original .ink__col img { width: 100%; border-radius: 10px; filter: grayscale(1) contrast(1.05); opacity: 0.9; transition: filter 400ms ease, opacity 300ms ease, transform 400ms var(--ease); }
+@media (hover: hover) and (pointer: fine) { .shiori-original .ink__col img:hover { opacity: 1; transform: scale(1.03); filter: grayscale(0) contrast(1.05); } }
+@media (max-width: 860px) { .shiori-original .ink { grid-template-columns: 1fr; } .shiori-original .ink__cols { grid-template-columns: repeat(2, 1fr); height: 70vh; margin-block: 0; overflow: hidden; border-radius: 14px; } .shiori-original .cast-field__stage { height: 22rem; margin-top: 1rem; } }
+
+/* ------------------------------------------------------------------ 3D gallery wall */
+.shiori-original .wall3d { position: relative; display: grid; gap: 3rem; justify-items: center; text-align: center; overflow: hidden; perspective: 1600px; }
+.shiori-original .wall3d__copy { display: grid; gap: 1rem; justify-items: center; }
+.shiori-original .wall3d__copy p { color: var(--ink-2); }
+.shiori-original .wall3d__plane { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 0.8rem; width: min(1500px, 120vw); transform-origin: 50% 0; transform-style: preserve-3d; }
+.shiori-original .wall3d__plane a { display: block; aspect-ratio: 3 / 4; border-radius: 12px; overflow: hidden; box-shadow: 0 16px 30px -18px rgb(20 40 90 / 0.5); transition: transform 350ms var(--ease), box-shadow 350ms ease; }
+.shiori-original .wall3d__plane img { width: 100%; height: 100%; object-fit: cover; }
+@media (hover: hover) and (pointer: fine) { .shiori-original .wall3d__plane a:hover { transform: translateZ(40px) scale(1.06); box-shadow: 0 30px 50px -20px rgb(36 92 255 / 0.5); } }
+@media (max-width: 860px) { .shiori-original .wall3d__plane { grid-template-columns: repeat(4, 1fr); width: 100%; } }
+
+/* ------------------------------------------------------------------ micro-interactions */
+.shiori-original .btn { position: relative; overflow: hidden; }
+.shiori-original .btn--primary::before {
+    content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.45) 50%, transparent 70%);
+    transform: translateX(-120%); transition: transform 700ms var(--ease);
+}
+@media (hover: hover) and (pointer: fine) { .shiori-original .btn--primary:hover::before { transform: translateX(120%); } }
+.shiori-original .link { background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; padding-bottom: 2px; transition: background-size 350ms var(--ease); }
+@media (hover: hover) and (pointer: fine) { .shiori-original .link:hover { background-size: 100% 2px; } }
+
+@media (prefers-reduced-motion: reduce) {
+    .shiori-original .btn, .shiori-original .link i { transition: none; }
+    .shiori-original .figure img, .shiori-original .ink__col img, .shiori-original .wall3d__plane a { transition: none; }
+}

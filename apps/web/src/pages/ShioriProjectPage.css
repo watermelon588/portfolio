@@ -1,0 +1,55 @@
+/* Shiori case study. Extends the shared dw-* vocabulary in ProjectPage.css; the original website
+   sections carry their own scoped styles (components/shiori/shiori-original.css). */
+
+/* Full-bleed art band */
+.shiori-band {
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  height: clamp(320px, 46vw, 720px);
+}
+
+.shiori-band img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+.shiori-live-note {
+  margin-top: 1.25rem;
+}
+
+.shiori-split {
+  margin-top: 1rem;
+}
+
+.shiori-tall {
+  max-width: 560px;
+}
+
+.shiori-split .dw-decision-item {
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 0.5rem 1.25rem;
+}
+
+.shiori-split .dw-decision-body {
+  grid-column: 2;
+}
+
+.shiori-phones {
+  max-width: 640px;
+  margin: clamp(3rem, 8vh, 5rem) auto 0;
+}
+
+.shiori-credit {
+  margin-top: 2rem;
+  max-width: 70ch;
+}
+
+/* The original website sections are full-width bands between case chapters. */
+.shiori-original {
+  position: relative;
+  z-index: 1;
+}

@@ -11,7 +11,7 @@ This is the coordination source of truth for **Codex and Claude Code**. Read thi
 | [ ] | 1 — Neuron + YapChat | Unassigned | NOT_STARTED | 2026-10-02 | Awaiting assignment; refresh both existing cases (Claude Code's attempt rolled back at Rohit's request) |
 | [x] | 2 — Walkthru | Codex | DONE | 2026-10-02 16:40 IST | Image parallax follow-up verified; approved layout/content preserved; claims released |
 | [x] | 3 — TripVerse | Codex | DONE | 2026-10-03 | Detailed case + original journals, selected order and 16 homepage gallery visuals complete; focused checks recorded; claims released |
-| [ ] | 4 — Shiori | Unassigned | NOT_STARTED | 2026-10-02 | Original character stage + gallery wall source transplant required |
+| [x] | 4 — Shiori | Claude Code | DONE | 2026-10-03 | /work/shiori built with original cast stage, manga wall and gallery wall; checks pass; pushed; claims released |
 | [ ] | 5 — Final verification | Unassigned | NOT_STARTED | 2026-10-02 | Starts after Sessions 1–4 are DONE and all claims released |
 
 Statuses: `NOT_STARTED`, `IN_PROGRESS`, `BLOCKED`, `DONE`. For BLOCKED, record the exact blocker and release unused files. DONE requires implementation and the session's focused checks, not only a draft.
@@ -141,3 +141,16 @@ Existing projects keep their verified destination-specific footer mockups. Never
 - Scope is additive only, not the full Session 1 plan: (1) append ONE new section of current Pulse screens to `pages/NeuronProjectPage.tsx`; (2) in `pages/YapChatProjectPage.tsx` replace only the old `Preview1.jpg` mockup image in section 07 with a page-turn gallery of the current Pick Up screens. No other existing section is changed or removed.
 - Claimed: `pages/NeuronProjectPage.tsx`, `pages/YapChatProjectPage.tsx`, new `components/PageTurnGallery/`. Will release when done.
 - Done, claims released. Neuron: new section `08 — THE CURRENT INTERFACE` appended after `07 — THE POINT` (six current Pulse screens in the existing `dw-media-grid-2col`); no existing section changed. YapChat: the old `Preview1.jpg` mockup in section 07 is replaced by `<PageTurnGallery>` with the ten current Pick Up screens; nothing else changed. New reusable component `components/PageTurnGallery` (props `items: {src, alt, caption?}[]`, `label`): CSS-transition page turn over the left edge, Prev/Next, arrow keys, tap halves, swipe; instant under reduced motion. Typecheck clean; no console errors.
+
+### 2026-10-03 — Claude Code, Session 4 claimed (push authorized)
+
+- Rohit authorized Session 4 (Shiori) and a GitHub push of it. Required original sections, copied from `Shiori (栞)/site`: cast field (`A cast that fills the frame.`), manga wall (`And the black-and-white pages.`), tilted gallery wall. Card thumbnails: one laptop mockup + two plain art visuals.
+- Exclusive paths: `pages/ShioriProjectPage.{tsx,css}`, `data/projectEntries/shiori.ts`, `components/shiori/`, `assets/Shiori (栞)/portfolio/` (and the supplied Shiori asset files it imports), `public/shiori/` if needed. Shared Gallery untouched unless separately claimed. Will push only Session 4 files, normal push.
+
+### 2026-10-03 — Claude Code, Session 4 DONE (claims released, pushed)
+
+- Built `/work/shiori` (`pages/ShioriProjectPage.{tsx,css}`, `data/projectEntries/shiori.ts`): existing case grammar only (hero, GitHub pill + circular Live site, 3-col meta, full-bleed art bands, aligned 2-col screen grids, split chapter, CaseFlow, decisions, conclusion). Images get only the standard scroll parallax. Live link is the hosted website; a note says the app runs locally. Seanime (5rahim, GPL-3.0) credited.
+- Transplanted the three required original sections from `Shiori (栞)/site` into `components/shiori/`: cast field, manga wall (`.ink`), tilted gallery wall (`.wall3d`). Same markup/copy, selection code (13 cut-outs a051…a108, 24 manga pages, seed-11 32-piece wall), CSS (selectors prefixed `.shiori-original`) and motion values. `gallery-data.js` byte-identical. Bridge: resolver `/shiori/g/`, gallery links to the hosted gallery, fonts/Phosphor links added once, full cleanup on unmount. Details in `components/shiori/README.md`. 69 source images in `public/shiori/g/`.
+- Thumbnails per Rohit: `images = [laptop, pig, tiger]` (laptop mockup + two plain brand visuals, WebP derivatives in `assets/Shiori (栞)/portfolio/thumbs/`), `nextCaseImage = laptop`. This intentionally overrides the earlier "laptop only in footers" rule for Shiori, at Rohit's explicit request.
+- Checks: TypeScript clean; registry test and production build pass on an isolated export of exactly the committed tree. Browser at 1280px: cast/manga/wall match Rohit's three live-site references; remount keeps 13 figures / 4 columns / 32 tiles; 375px no overflow; Neuron footer → Shiori (laptop), Shiori footer → YapChat; `/work` lists all seven in plan order; no console errors.
+- Committed only Session 4 files (plus this entry's board row and the Shiori CHANGELOG entry); all other local work, including Claude Code's uncommitted Neuron/YapChat additions and Codex's uncommitted follow-ups, left untouched. Normal push to origin/main.
