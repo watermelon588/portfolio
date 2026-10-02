@@ -7,6 +7,7 @@ import heroImg from "@/assets/hero/pfp.png";
 import { useMagnetic } from "@/components/motion/useMagnetic";
 import { LocalTime } from "@/components/motion/LocalTime";
 import { socials, EMAIL } from "@/data/nav";
+import { projects } from "@/data/projects";
 import "./Footer.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -42,6 +43,8 @@ export interface FooterProps {
 
 
 export function Footer({ nextProject }: FooterProps = {}) {
+  // Use the destination's explicit footer mockup; never borrow another case's.
+  const nextImage = projects.find((project) => project.slug === nextProject?.slug)?.nextCaseImage ?? nextProject?.image;
   const root = useRef<HTMLElement>(null);
   const curveRef = useRef<SVGPathElement>(null);
   useMagnetic(root);
@@ -71,19 +74,28 @@ export function Footer({ nextProject }: FooterProps = {}) {
         created.push(tw.scrollTrigger);
       }
 
-      // Curved reveal — the DARK footer rises up to cover the section, merging at
-      // the top. A light cover (matching the page above) sits over the footer and
-      // its curved bottom edge RISES, uncovering the dark footer from the bottom
-      // up until it flattens/merges at the top. Normalized 0–100; scrub lag = slow.
+      // Curved reveal: a cover painted in the colour of the section ABOVE the
+      // footer sits over the footer only. Its curved bottom edge rises as the
+      // footer scrolls in, uncovering the dark footer from the bottom up. It
+      // never extends above the footer, so page content stays visible.
       if (curveRef.current) {
         const path = curveRef.current;
+        const coverColor = () => {
+          let el: Element | null = root.current!.previousElementSibling ?? root.current!.parentElement;
+          while (el) {
+            const bg = getComputedStyle(el).backgroundColor;
+            if (bg && bg !== "transparent" && !bg.endsWith(", 0)")) return bg;
+            el = el.parentElement;
+          }
+          return getComputedStyle(document.body).backgroundColor;
+        };
+        path.style.fill = coverColor();
         const draw = (p: number) => {
           const q = Math.min(1, Math.max(0, p));
-          // Curved dark edge expands from the footer section and emerges to cover the viewport
-          const top = 100 * (1 - q);
+          const edge = 100 * (1 - q);
           const bulge = Math.sin(q * Math.PI) * 30;
-          const ctrl = top - bulge;
-          path.setAttribute("d", `M 0 ${top} Q 50 ${ctrl} 100 ${top} L 100 100 L 0 100 Z`);
+          const ctrl = edge - bulge;
+          path.setAttribute("d", `M 0 0 L 100 0 L 100 ${edge} Q 50 ${ctrl} 0 ${edge} Z`);
         };
         draw(0);
         const st = ScrollTrigger.create({
@@ -128,16 +140,18 @@ export function Footer({ nextProject }: FooterProps = {}) {
               </Link>
 
               {/* Image + Next Case button are one moving frame */}
-              {nextProject.image && (
+              {nextImage && (
                 <div className="footer-next-peek-viewport">
                   <Link
                     to={`/work/${nextProject.slug}`}
                     className="footer-next-peek-frame"
                   >
                     <img
-                      src={nextProject.image}
+                      src={nextImage}
                       alt={nextProject.title}
                       className="footer-next-preview-img"
+                      loading="lazy"
+                      decoding="async"
                     />
 
                     <span

@@ -13,6 +13,7 @@ export function Gallery() {
   const tweens = useRef<gsap.core.Tween[]>([]);
 
   const count = galleryImages.length;
+  const projectCount = new Set(galleryImages.map((image) => image.project)).size;
   const rowA = [...galleryImages, ...galleryImages];
   const reversed = [...galleryImages].reverse();
   const rowB = [...reversed, ...reversed];
@@ -48,7 +49,7 @@ export function Gallery() {
   const renderCard = (item: GalleryImage, i: number) => (
     <figure className="gallery-item" key={i}>
       <div className="gallery-item-inner">
-        <img src={item.src} alt={item.project} loading="lazy" draggable={false} />
+        <img src={item.src} alt={`${item.project}: ${item.label}`} loading="lazy" draggable={false} />
         <span className="gallery-item-badge">{item.project}</span>
         <figcaption className="gallery-caption">
           <span className="gallery-caption-view">View ↗</span>
@@ -62,7 +63,7 @@ export function Gallery() {
       <div className="gallery-head container">
         <div className="gallery-head-row">
           <span className="gallery-eyebrow">Selected screens</span>
-          <span className="gallery-count">{count} screens · 4 projects</span>
+          <span className="gallery-count">{count} screens · {projectCount} projects</span>
         </div>
         <h2 className="gallery-title">
           A closer <em>look</em>.

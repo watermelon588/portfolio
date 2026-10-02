@@ -1,0 +1,914 @@
+[
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\src\\components\\home\\v2\\journal\\TravelJournals.tsx",
+    "output": "apps\\web\\src\\components\\tripverse\\journal\\TravelJournals.tsx",
+    "sha256": "338c061dca566e2ea2ebaae3190d5dfdd899813084fb48fc8e694bdfbcf855dc",
+    "transfer": "import bridges + four bounded index assertions; original DOM/content/handlers/timings",
+    "source_sha256": "338c061dca566e2ea2ebaae3190d5dfdd899813084fb48fc8e694bdfbcf855dc",
+    "output_sha256": "c2b2379194a9a0a17f4e46e01950e487e02246538c7f060b16d53e1de55cfcb4"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\src\\components\\home\\v2\\journal\\journalContent.ts",
+    "output": "apps\\web\\src\\components\\tripverse\\journal\\journalContent.ts",
+    "sha256": "57167535a04426e7f2ad7ce9e1ffc0d66b7b9c1f5d60c02c7cfbce08b0ffacfb",
+    "transfer": "unchanged",
+    "source_sha256": "57167535a04426e7f2ad7ce9e1ffc0d66b7b9c1f5d60c02c7cfbce08b0ffacfb",
+    "output_sha256": "57167535a04426e7f2ad7ce9e1ffc0d66b7b9c1f5d60c02c7cfbce08b0ffacfb"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\src\\components\\home\\v2\\journal\\travel-journals.css",
+    "output": "apps\\web\\src\\components\\tripverse\\journal\\travel-journals.css",
+    "sha256": "738c57f6df6e442f45d31fcd78589046a2ceb3a27f7012d3ac366576b18a8907",
+    "transfer": "unchanged",
+    "source_sha256": "738c57f6df6e442f45d31fcd78589046a2ceb3a27f7012d3ac366576b18a8907",
+    "output_sha256": "738c57f6df6e442f45d31fcd78589046a2ceb3a27f7012d3ac366576b18a8907"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\src\\components\\home\\v2\\journal\\README.md",
+    "output": "apps\\web\\src\\components\\tripverse\\journal\\README.md",
+    "sha256": "6fd02a5be188d3e291db50afb1a38d5cd54238a017c612f34ad83af2562ea5b3",
+    "transfer": "unchanged",
+    "source_sha256": "6fd02a5be188d3e291db50afb1a38d5cd54238a017c612f34ad83af2562ea5b3",
+    "output_sha256": "6fd02a5be188d3e291db50afb1a38d5cd54238a017c612f34ad83af2562ea5b3"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\src\\hooks\\useReducedMotion.ts",
+    "output": "apps\\web\\src\\components\\tripverse\\useReducedMotion.ts",
+    "sha256": "4a854fa6a26885395217655ee60f9e0dadf42c0d6372eb08ad947f7d4526e680",
+    "transfer": "unchanged",
+    "source_sha256": "4a854fa6a26885395217655ee60f9e0dadf42c0d6372eb08ad947f7d4526e680",
+    "output_sha256": "4a854fa6a26885395217655ee60f9e0dadf42c0d6372eb08ad947f7d4526e680"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\alpine-walk.webp",
+    "output": "apps\\web\\public\\images\\journal\\alpine-walk.webp",
+    "sha256": "c29828a67b4f23aead5dcd19406df2c9cf5e0b8060ba6709b3795e1390e9a593",
+    "transfer": "unchanged",
+    "source_sha256": "c29828a67b4f23aead5dcd19406df2c9cf5e0b8060ba6709b3795e1390e9a593",
+    "output_sha256": "c29828a67b4f23aead5dcd19406df2c9cf5e0b8060ba6709b3795e1390e9a593"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\birds.webp",
+    "output": "apps\\web\\public\\images\\journal\\birds.webp",
+    "sha256": "c705ee3a0bd3fb1622b2a8e88659eb9326420ee8f37d2b935958e6243327acfe",
+    "transfer": "unchanged",
+    "source_sha256": "c705ee3a0bd3fb1622b2a8e88659eb9326420ee8f37d2b935958e6243327acfe",
+    "output_sha256": "c705ee3a0bd3fb1622b2a8e88659eb9326420ee8f37d2b935958e6243327acfe"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\blue-seats.webp",
+    "output": "apps\\web\\public\\images\\journal\\blue-seats.webp",
+    "sha256": "4172a9ac97303bb8bce6b75322e8b463a34b5d6c5860e5c48d6ec01ae7b342c8",
+    "transfer": "unchanged",
+    "source_sha256": "4172a9ac97303bb8bce6b75322e8b463a34b5d6c5860e5c48d6ec01ae7b342c8",
+    "output_sha256": "4172a9ac97303bb8bce6b75322e8b463a34b5d6c5860e5c48d6ec01ae7b342c8"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\camping.webp",
+    "output": "apps\\web\\public\\images\\journal\\camping.webp",
+    "sha256": "461c0a6a39ad69b8bf11258c693c7220eda485efcf9ca5c6db95e79e23fdebb3",
+    "transfer": "unchanged",
+    "source_sha256": "461c0a6a39ad69b8bf11258c693c7220eda485efcf9ca5c6db95e79e23fdebb3",
+    "output_sha256": "461c0a6a39ad69b8bf11258c693c7220eda485efcf9ca5c6db95e79e23fdebb3"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\city-type.webp",
+    "output": "apps\\web\\public\\images\\journal\\city-type.webp",
+    "sha256": "2c410a4452db5cb6c8db53b27ca38bde4bd93448be60526c90ee8318c417d615",
+    "transfer": "unchanged",
+    "source_sha256": "2c410a4452db5cb6c8db53b27ca38bde4bd93448be60526c90ee8318c417d615",
+    "output_sha256": "2c410a4452db5cb6c8db53b27ca38bde4bd93448be60526c90ee8318c417d615"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\cloud-daydream.webp",
+    "output": "apps\\web\\public\\images\\journal\\cloud-daydream.webp",
+    "sha256": "a822f27ed28d5ccdc032bad093bfad1cd2eb6c9d6ec73f22d1f32a8469500aa0",
+    "transfer": "unchanged",
+    "source_sha256": "a822f27ed28d5ccdc032bad093bfad1cd2eb6c9d6ec73f22d1f32a8469500aa0",
+    "output_sha256": "a822f27ed28d5ccdc032bad093bfad1cd2eb6c9d6ec73f22d1f32a8469500aa0"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\color-city.webp",
+    "output": "apps\\web\\public\\images\\journal\\color-city.webp",
+    "sha256": "dd164c44a1bb5d27a0d6771bb50e4006d9fcb63bdecd3897ea5a3cfee5c928d3",
+    "transfer": "unchanged",
+    "source_sha256": "dd164c44a1bb5d27a0d6771bb50e4006d9fcb63bdecd3897ea5a3cfee5c928d3",
+    "output_sha256": "dd164c44a1bb5d27a0d6771bb50e4006d9fcb63bdecd3897ea5a3cfee5c928d3"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\crosswalk.webp",
+    "output": "apps\\web\\public\\images\\journal\\crosswalk.webp",
+    "sha256": "f4c3176c764e22192428a55a9028effcdcbe3080b614591d6df4a0be79d09573",
+    "transfer": "unchanged",
+    "source_sha256": "f4c3176c764e22192428a55a9028effcdcbe3080b614591d6df4a0be79d09573",
+    "output_sha256": "f4c3176c764e22192428a55a9028effcdcbe3080b614591d6df4a0be79d09573"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\enjoy-now.webp",
+    "output": "apps\\web\\public\\images\\journal\\enjoy-now.webp",
+    "sha256": "43a693d04108d7b0a2eca1f202efd4936eb18e98c67c03ab02ff9b04f40cd29f",
+    "transfer": "unchanged",
+    "source_sha256": "43a693d04108d7b0a2eca1f202efd4936eb18e98c67c03ab02ff9b04f40cd29f",
+    "output_sha256": "43a693d04108d7b0a2eca1f202efd4936eb18e98c67c03ab02ff9b04f40cd29f"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\friends.webp",
+    "output": "apps\\web\\public\\images\\journal\\friends.webp",
+    "sha256": "e53aa767d78fc92a86fa812f42cec3294e353603ad323a8572bbbeed068ce752",
+    "transfer": "unchanged",
+    "source_sha256": "e53aa767d78fc92a86fa812f42cec3294e353603ad323a8572bbbeed068ce752",
+    "output_sha256": "e53aa767d78fc92a86fa812f42cec3294e353603ad323a8572bbbeed068ce752"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\grass-daydream.webp",
+    "output": "apps\\web\\public\\images\\journal\\grass-daydream.webp",
+    "sha256": "c894f4da16c328e4241996b547ccc7709229cdfbdcc09889becc58715e61afe9",
+    "transfer": "unchanged",
+    "source_sha256": "c894f4da16c328e4241996b547ccc7709229cdfbdcc09889becc58715e61afe9",
+    "output_sha256": "c894f4da16c328e4241996b547ccc7709229cdfbdcc09889becc58715e61afe9"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\green-trail.webp",
+    "output": "apps\\web\\public\\images\\journal\\green-trail.webp",
+    "sha256": "c87f4e60d7c06783288db4cec6277027ada839707e48c142915e1da9c146e0b9",
+    "transfer": "unchanged",
+    "source_sha256": "c87f4e60d7c06783288db4cec6277027ada839707e48c142915e1da9c146e0b9",
+    "output_sha256": "c87f4e60d7c06783288db4cec6277027ada839707e48c142915e1da9c146e0b9"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\laughter.webp",
+    "output": "apps\\web\\public\\images\\journal\\laughter.webp",
+    "sha256": "9d1cb9b86d700e6d96126ea621878e1e479941b4cd17539c44e3818dad1d52f5",
+    "transfer": "unchanged",
+    "source_sha256": "9d1cb9b86d700e6d96126ea621878e1e479941b4cd17539c44e3818dad1d52f5",
+    "output_sha256": "9d1cb9b86d700e6d96126ea621878e1e479941b4cd17539c44e3818dad1d52f5"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\moon.webp",
+    "output": "apps\\web\\public\\images\\journal\\moon.webp",
+    "sha256": "4e40609408bd1230455c6343e39bc25a4be67ced53c902aa2b179f642f7de57d",
+    "transfer": "unchanged",
+    "source_sha256": "4e40609408bd1230455c6343e39bc25a4be67ced53c902aa2b179f642f7de57d",
+    "output_sha256": "4e40609408bd1230455c6343e39bc25a4be67ced53c902aa2b179f642f7de57d"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\mountain-collage.webp",
+    "output": "apps\\web\\public\\images\\journal\\mountain-collage.webp",
+    "sha256": "814772f5f12b09dc832d943976f814f333ae4b576ae325d8e306ae032123172d",
+    "transfer": "unchanged",
+    "source_sha256": "814772f5f12b09dc832d943976f814f333ae4b576ae325d8e306ae032123172d",
+    "output_sha256": "814772f5f12b09dc832d943976f814f333ae4b576ae325d8e306ae032123172d"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\mountain-morning.webp",
+    "output": "apps\\web\\public\\images\\journal\\mountain-morning.webp",
+    "sha256": "d56ed4bb2dfd8dae76fc8d6b3aeb90a5736d22c3c38994ee35d244deaa97f0eb",
+    "transfer": "unchanged",
+    "source_sha256": "d56ed4bb2dfd8dae76fc8d6b3aeb90a5736d22c3c38994ee35d244deaa97f0eb",
+    "output_sha256": "d56ed4bb2dfd8dae76fc8d6b3aeb90a5736d22c3c38994ee35d244deaa97f0eb"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\ocean-play.webp",
+    "output": "apps\\web\\public\\images\\journal\\ocean-play.webp",
+    "sha256": "e77a78325174e5cc82dbe3feed35d362d6b6984c347201bd221ccd9b1d9d1d84",
+    "transfer": "unchanged",
+    "source_sha256": "e77a78325174e5cc82dbe3feed35d362d6b6984c347201bd221ccd9b1d9d1d84",
+    "output_sha256": "e77a78325174e5cc82dbe3feed35d362d6b6984c347201bd221ccd9b1d9d1d84"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\on-the-road.webp",
+    "output": "apps\\web\\public\\images\\journal\\on-the-road.webp",
+    "sha256": "496219d744ef65cd08e0a1d22744c0c5e4777157d70b5398248cd96f32d8b247",
+    "transfer": "unchanged",
+    "source_sha256": "496219d744ef65cd08e0a1d22744c0c5e4777157d70b5398248cd96f32d8b247",
+    "output_sha256": "496219d744ef65cd08e0a1d22744c0c5e4777157d70b5398248cd96f32d8b247"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\rainy-afternoon.webp",
+    "output": "apps\\web\\public\\images\\journal\\rainy-afternoon.webp",
+    "sha256": "c4c958028d2bd3c234b3c0cdf1249825931d21adb258603b5e07b1c182b72998",
+    "transfer": "unchanged",
+    "source_sha256": "c4c958028d2bd3c234b3c0cdf1249825931d21adb258603b5e07b1c182b72998",
+    "output_sha256": "c4c958028d2bd3c234b3c0cdf1249825931d21adb258603b5e07b1c182b72998"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\sky-streaks.webp",
+    "output": "apps\\web\\public\\images\\journal\\sky-streaks.webp",
+    "sha256": "6212169a9397f4325d4a7f357d9ccca7cd9828c35d31d283aef61dfcd73cc1f4",
+    "transfer": "unchanged",
+    "source_sha256": "6212169a9397f4325d4a7f357d9ccca7cd9828c35d31d283aef61dfcd73cc1f4",
+    "output_sha256": "6212169a9397f4325d4a7f357d9ccca7cd9828c35d31d283aef61dfcd73cc1f4"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\sunlit-pause.webp",
+    "output": "apps\\web\\public\\images\\journal\\sunlit-pause.webp",
+    "sha256": "a889b85ce7a0a7d5f8767265c093e69d2d617678c8c66b6b4c1fdb1e0befb049",
+    "transfer": "unchanged",
+    "source_sha256": "a889b85ce7a0a7d5f8767265c093e69d2d617678c8c66b6b4c1fdb1e0befb049",
+    "output_sha256": "a889b85ce7a0a7d5f8767265c093e69d2d617678c8c66b6b4c1fdb1e0befb049"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\surfers.webp",
+    "output": "apps\\web\\public\\images\\journal\\surfers.webp",
+    "sha256": "f06a8de1e79d0b4af05dab305c79d6438d8c3b8f4e072105c56676088f5c382a",
+    "transfer": "unchanged",
+    "source_sha256": "f06a8de1e79d0b4af05dab305c79d6438d8c3b8f4e072105c56676088f5c382a",
+    "output_sha256": "f06a8de1e79d0b4af05dab305c79d6438d8c3b8f4e072105c56676088f5c382a"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\tulips.webp",
+    "output": "apps\\web\\public\\images\\journal\\tulips.webp",
+    "sha256": "39b29a6884b1089139c1dc8ff35ad8a0fc0057e0f950cf2d290d71790955acad",
+    "transfer": "unchanged",
+    "source_sha256": "39b29a6884b1089139c1dc8ff35ad8a0fc0057e0f950cf2d290d71790955acad",
+    "output_sha256": "39b29a6884b1089139c1dc8ff35ad8a0fc0057e0f950cf2d290d71790955acad"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\images\\journal\\valley.webp",
+    "output": "apps\\web\\public\\images\\journal\\valley.webp",
+    "sha256": "6c7bcaccec7d1a1f7d027cb0f94d411d3e569d96d01a062d6bb6d5903c4ec708",
+    "transfer": "unchanged",
+    "source_sha256": "6c7bcaccec7d1a1f7d027cb0f94d411d3e569d96d01a062d6bb6d5903c4ec708",
+    "output_sha256": "6c7bcaccec7d1a1f7d027cb0f94d411d3e569d96d01a062d6bb6d5903c4ec708"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\lucide-react\\dist\\esm\\createLucideIcon.js",
+    "output": "apps\\web\\src\\components\\tripverse\\vendor\\lucide\\createLucideIcon.js",
+    "sha256": "3403ec30cd5fd75df2f8d783c08a2359bdff7dca0517e446aeba57a22b09a847",
+    "transfer": "unchanged",
+    "source_sha256": "3403ec30cd5fd75df2f8d783c08a2359bdff7dca0517e446aeba57a22b09a847",
+    "output_sha256": "3403ec30cd5fd75df2f8d783c08a2359bdff7dca0517e446aeba57a22b09a847"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\lucide-react\\dist\\esm\\defaultAttributes.js",
+    "output": "apps\\web\\src\\components\\tripverse\\vendor\\lucide\\defaultAttributes.js",
+    "sha256": "6e98f5f5f036543fe39a731f108f134fdc417a6e63d5205983687f6006ad16c1",
+    "transfer": "unchanged",
+    "source_sha256": "6e98f5f5f036543fe39a731f108f134fdc417a6e63d5205983687f6006ad16c1",
+    "output_sha256": "6e98f5f5f036543fe39a731f108f134fdc417a6e63d5205983687f6006ad16c1"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\lucide-react\\dist\\esm\\shared\\src\\utils.js",
+    "output": "apps\\web\\src\\components\\tripverse\\vendor\\lucide\\shared\\src\\utils.js",
+    "sha256": "799049956088d3ff15a5d4983cd56ffb8802921f649c38cea139c0c7155c48b0",
+    "transfer": "unchanged",
+    "source_sha256": "799049956088d3ff15a5d4983cd56ffb8802921f649c38cea139c0c7155c48b0",
+    "output_sha256": "799049956088d3ff15a5d4983cd56ffb8802921f649c38cea139c0c7155c48b0"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\lucide-react\\dist\\esm\\icons\\chevron-left.js",
+    "output": "apps\\web\\src\\components\\tripverse\\vendor\\lucide\\icons\\chevron-left.js",
+    "sha256": "54150c0031c8929ddbc42f90b2df80de6e98ffe47e82931b399cd0795873b9fa",
+    "transfer": "unchanged",
+    "source_sha256": "54150c0031c8929ddbc42f90b2df80de6e98ffe47e82931b399cd0795873b9fa",
+    "output_sha256": "54150c0031c8929ddbc42f90b2df80de6e98ffe47e82931b399cd0795873b9fa"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\lucide-react\\dist\\esm\\icons\\chevron-right.js",
+    "output": "apps\\web\\src\\components\\tripverse\\vendor\\lucide\\icons\\chevron-right.js",
+    "sha256": "2fbb34e7324abb095512703770f80ba84006fed2d35bd453fe7e7557cdbf32b8",
+    "transfer": "unchanged",
+    "source_sha256": "2fbb34e7324abb095512703770f80ba84006fed2d35bd453fe7e7557cdbf32b8",
+    "output_sha256": "2fbb34e7324abb095512703770f80ba84006fed2d35bd453fe7e7557cdbf32b8"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\lucide-react\\dist\\esm\\icons\\grid-2x2.js",
+    "output": "apps\\web\\src\\components\\tripverse\\vendor\\lucide\\icons\\grid-2x2.js",
+    "sha256": "02d88e9972ec051c6c92e2432a140dbd72b98409f52f693594810e68388866b3",
+    "transfer": "unchanged",
+    "source_sha256": "02d88e9972ec051c6c92e2432a140dbd72b98409f52f693594810e68388866b3",
+    "output_sha256": "02d88e9972ec051c6c92e2432a140dbd72b98409f52f693594810e68388866b3"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\lucide-react\\dist\\esm\\icons\\rotate-ccw.js",
+    "output": "apps\\web\\src\\components\\tripverse\\vendor\\lucide\\icons\\rotate-ccw.js",
+    "sha256": "f8f22382e72806393403d617f5e52de9b400b2ca3d465d18c89b47c7ef2104c0",
+    "transfer": "unchanged",
+    "source_sha256": "f8f22382e72806393403d617f5e52de9b400b2ca3d465d18c89b47c7ef2104c0",
+    "output_sha256": "f8f22382e72806393403d617f5e52de9b400b2ca3d465d18c89b47c7ef2104c0"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\lucide-react\\dist\\esm\\icons\\arrow-up-right.js",
+    "output": "apps\\web\\src\\components\\tripverse\\vendor\\lucide\\icons\\arrow-up-right.js",
+    "sha256": "d25d8596a16d8814f4233ab31667ea9aecee14f30c167ef32c3300a33940ac2a",
+    "transfer": "unchanged",
+    "source_sha256": "d25d8596a16d8814f4233ab31667ea9aecee14f30c167ef32c3300a33940ac2a",
+    "output_sha256": "d25d8596a16d8814f4233ab31667ea9aecee14f30c167ef32c3300a33940ac2a"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\lucide-react\\dist\\esm\\icons\\move-horizontal.js",
+    "output": "apps\\web\\src\\components\\tripverse\\vendor\\lucide\\icons\\move-horizontal.js",
+    "sha256": "1964142c649ba74237b4faae9d1f3bd8790d4fef8448a6546b56a5b552ae8d22",
+    "transfer": "unchanged",
+    "source_sha256": "1964142c649ba74237b4faae9d1f3bd8790d4fef8448a6546b56a5b552ae8d22",
+    "output_sha256": "1964142c649ba74237b4faae9d1f3bd8790d4fef8448a6546b56a5b552ae8d22"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\lucide-react\\LICENSE",
+    "output": "apps\\web\\src\\components\\tripverse\\vendor\\lucide\\LICENSE",
+    "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "transfer": "unchanged",
+    "source_sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "output_sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\fonts\\InstrumentSerif-Regular.ttf",
+    "output": "apps\\web\\src\\components\\tripverse\\fonts\\InstrumentSerif-Regular.ttf",
+    "sha256": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+    "transfer": "unchanged",
+    "source_sha256": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+    "output_sha256": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\fonts\\InstrumentSerif-Italic.ttf",
+    "output": "apps\\web\\src\\components\\tripverse\\fonts\\InstrumentSerif-Italic.ttf",
+    "sha256": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+    "transfer": "unchanged",
+    "source_sha256": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+    "output_sha256": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\fonts\\Geist-Regular.ttf",
+    "output": "apps\\web\\src\\components\\tripverse\\fonts\\Geist-Regular.ttf",
+    "sha256": "ccce59465ae5c61930ada5453834f60500fbd95084d85db63e0e65fad0125455",
+    "transfer": "unchanged",
+    "source_sha256": "ccce59465ae5c61930ada5453834f60500fbd95084d85db63e0e65fad0125455",
+    "output_sha256": "ccce59465ae5c61930ada5453834f60500fbd95084d85db63e0e65fad0125455"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\fonts\\Geist-Medium.ttf",
+    "output": "apps\\web\\src\\components\\tripverse\\fonts\\Geist-Medium.ttf",
+    "sha256": "a8eefb873ba9c9020665f8a98302697ce1f3b79ab2deef6ee508c0ca6a82e876",
+    "transfer": "unchanged",
+    "source_sha256": "a8eefb873ba9c9020665f8a98302697ce1f3b79ab2deef6ee508c0ca6a82e876",
+    "output_sha256": "a8eefb873ba9c9020665f8a98302697ce1f3b79ab2deef6ee508c0ca6a82e876"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\fonts\\GeistMono-Regular.ttf",
+    "output": "apps\\web\\src\\components\\tripverse\\fonts\\GeistMono-Regular.ttf",
+    "sha256": "7022da390e9b401ea35b722f8ed2376948e70add10954bc798839b4bfe17ef3f",
+    "transfer": "unchanged",
+    "source_sha256": "7022da390e9b401ea35b722f8ed2376948e70add10954bc798839b4bfe17ef3f",
+    "output_sha256": "7022da390e9b401ea35b722f8ed2376948e70add10954bc798839b4bfe17ef3f"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\fonts\\InstrumentSerif-OFL.txt",
+    "output": "apps\\web\\src\\components\\tripverse\\fonts\\InstrumentSerif-OFL.txt",
+    "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521",
+    "transfer": "unchanged",
+    "source_sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521",
+    "output_sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\fonts\\Geist-OFL.txt",
+    "output": "apps\\web\\src\\components\\tripverse\\fonts\\Geist-OFL.txt",
+    "sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+    "transfer": "unchanged",
+    "source_sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+    "output_sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\fonts\\GeistMono-OFL.txt",
+    "output": "apps\\web\\src\\components\\tripverse\\fonts\\GeistMono-OFL.txt",
+    "sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+    "transfer": "unchanged",
+    "source_sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+    "output_sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\@fontsource\\caveat\\files\\caveat-latin-400-normal.woff2",
+    "output": "apps\\web\\src\\components\\tripverse\\fonts\\caveat-latin-400-normal.woff2",
+    "sha256": "d0b7b931b8980049327e8f8f9ac264617c8200b8422d62e886473d3d9527bad3",
+    "transfer": "unchanged",
+    "source_sha256": "d0b7b931b8980049327e8f8f9ac264617c8200b8422d62e886473d3d9527bad3",
+    "output_sha256": "d0b7b931b8980049327e8f8f9ac264617c8200b8422d62e886473d3d9527bad3"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\@fontsource\\caveat\\files\\caveat-latin-600-normal.woff2",
+    "output": "apps\\web\\src\\components\\tripverse\\fonts\\caveat-latin-600-normal.woff2",
+    "sha256": "d51e2283010e661d9f3dafdc9ff4b82b2ebcb2f7aa43ca48a105f5f68d46cc32",
+    "transfer": "unchanged",
+    "source_sha256": "d51e2283010e661d9f3dafdc9ff4b82b2ebcb2f7aa43ca48a105f5f68d46cc32",
+    "output_sha256": "d51e2283010e661d9f3dafdc9ff4b82b2ebcb2f7aa43ca48a105f5f68d46cc32"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\node_modules\\@fontsource\\caveat\\LICENSE",
+    "output": "apps\\web\\src\\components\\tripverse\\fonts\\Caveat-OFL.txt",
+    "sha256": "163a2b400e16916ad3196296c946c526d0efce6baf22a2164269ffc62fb9f671",
+    "transfer": "unchanged",
+    "source_sha256": "163a2b400e16916ad3196296c946c526d0efce6baf22a2164269ffc62fb9f671",
+    "output_sha256": "163a2b400e16916ad3196296c946c526d0efce6baf22a2164269ffc62fb9f671"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\01-welcome.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\01-welcome.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 52528,
+    "transfer": "lossless WebP",
+    "source_sha256": "6ec06b7f27ab003dbab229a11d02c29a2af582270ceae65b0071aadb0cdc8c63",
+    "output_sha256": "03f628657090512887f0045e6883d7c1f0ba4b7b5304542cfabcaf23cac44327"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\05b-change-receipt-512-666-736-76.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\05b-change-receipt-512-666-736-76.webp",
+    "original_size": [
+      736,
+      76
+    ],
+    "render_size": [
+      736,
+      76
+    ],
+    "bytes": 5006,
+    "transfer": "lossless WebP",
+    "source_sha256": "7fc34e059135d0c864d2f94c5f86bcb2fc01f623ad6a51c344a9300bbe21d4e3",
+    "output_sha256": "7b035cffa6b0d39f0b401f08517eab3be6ebbef5d095dc2d299da3bd3ed7bc55"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\05b-change-receipt.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\05b-change-receipt.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 63200,
+    "transfer": "lossless WebP",
+    "source_sha256": "b7e16580777ef569c6145d9128d8bb7d1d3929ed01b38a51b7f8e6130e41e3c2",
+    "output_sha256": "5f611fa82a5440d09656f00cbc59398c2c2eec3a77d610e1458b6b0ec594bcf5"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\06-studio-plan.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\06-studio-plan.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 52890,
+    "transfer": "lossless WebP",
+    "source_sha256": "4a05494d74eae6c6cbd8fef766d420c49937783ccae0acbce61c383d026984af",
+    "output_sha256": "00ca85cad32d9e2ec9fbcc17abf6003b5ccab78bc4564ac9327c8b4342dfc47e"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\07c-sketch-day.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\07c-sketch-day.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 277920,
+    "transfer": "lossless WebP",
+    "source_sha256": "571e54760962c56c0b92868d6dc74dea296354fc75aa66a5c152d1146f19b5eb",
+    "output_sha256": "f83f9af7382b62db941b7cdf945f67a0d4eb1ae450ef973295c096916e0fb7f9"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\08-studio-map.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\08-studio-map.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 280320,
+    "transfer": "lossless WebP",
+    "source_sha256": "464a31c89dfe2112d33262ed5fa5d4b0b00635b1418bd8878795a7f521d17b1f",
+    "output_sha256": "551c6166722b30aec31e1fefadf9c85b6a4ee6c2da5df3118c7c0f0d18d2f2ea"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\09-studio-3d.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\09-studio-3d.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 133896,
+    "transfer": "lossless WebP",
+    "source_sha256": "ff40060db0ebfd23bd47e3fa4ded0d1a47be9da067f9531b35e6307715995836",
+    "output_sha256": "93fcf53cb01905160bb00a8fb80db2e59a8743c3fd250fb43f98fd569337b67f"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\10b-export-ready.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\10b-export-ready.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 55062,
+    "transfer": "lossless WebP",
+    "source_sha256": "3486e722c4672b783a87c7a7b5b96f3af004a7b1b3ce0bb2dd85dbcd1a9fe91b",
+    "output_sha256": "3251cd2e8a5cc81be5b9331d329b86f93816e17ad8302fd94d145d8952bff81e"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\13-budget-rows-720-0-720-900.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\13-budget-rows-720-0-720-900.webp",
+    "original_size": [
+      720,
+      900
+    ],
+    "render_size": [
+      720,
+      900
+    ],
+    "bytes": 23066,
+    "transfer": "lossless WebP",
+    "source_sha256": "9f2adae3d824b5a4485ac3e9d9329ed9cd01417a840ef42ab7786268c121f837",
+    "output_sha256": "6b9b40695945e01f5083415998b6a999aea88263d1cc07ca9edf5b6f41ff58a9"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\13-budget-rows.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\13-budget-rows.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 61186,
+    "transfer": "lossless WebP",
+    "source_sha256": "162183d5b7f0c9d02a789edc0efaac0408481582c11d29e676fbfd252e0546ee",
+    "output_sha256": "2ca7727fcddd8775512389c2f269a98df914c2c8689ce374e5969f331cce7114"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\16-build-day-plan-464-525-832-248.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\16-build-day-plan-464-525-832-248.webp",
+    "original_size": [
+      832,
+      248
+    ],
+    "render_size": [
+      832,
+      248
+    ],
+    "bytes": 15080,
+    "transfer": "lossless WebP",
+    "source_sha256": "0e681b2d3cb1fedf75dee28ced67d10390e8b682e73eb98995ac697fb4423b78",
+    "output_sha256": "eb2c9ccd431e169e123e356230bb91da064c5186920e6c8987da50f1229bebeb"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\16-build-day-plan.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\16-build-day-plan.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 75936,
+    "transfer": "lossless WebP",
+    "source_sha256": "b5162e0349974759e675bc2fa0124f9aed02d5cf3e193eeaf4b1d3e9dd6201cd",
+    "output_sha256": "5e4336c20de7f106e9dc1f10b487beaeeb8adf1f27d187874c7b55ab5fb427f6"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\19-build-budget-sync-720-0-720-900.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\19-build-budget-sync-720-0-720-900.webp",
+    "original_size": [
+      720,
+      900
+    ],
+    "render_size": [
+      720,
+      900
+    ],
+    "bytes": 35800,
+    "transfer": "lossless WebP",
+    "source_sha256": "8f5e1ada21df88939fb7335506d334aa8d1393a2ce07a373c0a7023d116a96d7",
+    "output_sha256": "bb829bed16dca1ae5bb36abe9386b7cca0c0d39f592577e0e7381a35420f0976"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\19-build-budget-sync.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\19-build-budget-sync.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 90528,
+    "transfer": "lossless WebP",
+    "source_sha256": "2e1e6bfc40df7686e0d00ec4f436b0533b86b51cf82f535ced37c194e1a08f28",
+    "output_sha256": "23f7436ead9999cb6f0d9d3fc2e1c9a8c18f8806dbd154c6203f94f56228f399"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\23-phone-sketch.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\23-phone-sketch.webp",
+    "original_size": [
+      780,
+      1688
+    ],
+    "render_size": [
+      780,
+      1688
+    ],
+    "bytes": 335676,
+    "transfer": "lossless WebP",
+    "source_sha256": "662774b12304f896a7aaa599fd7519ac2ea31055baa0178129ce58c7422cad0d",
+    "output_sha256": "89e99b810692bdfa7bd3ce4f54702f1cc7fb29864956234cd5b8f9db19d4ddcd"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\23b-phone-chat.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\23b-phone-chat.webp",
+    "original_size": [
+      780,
+      1688
+    ],
+    "render_size": [
+      780,
+      1688
+    ],
+    "bytes": 66252,
+    "transfer": "lossless WebP",
+    "source_sha256": "ff646930af3b154d25405db782b3c7c04772430894642cd5a12f8725d3097282",
+    "output_sha256": "6b9d3cee4c0908a13ace993be504b2298d834823675d8054e65b87662fb2f346"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-design-pack\\mockups\\screens\\24-explore.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\24-explore.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 792984,
+    "transfer": "lossless WebP",
+    "source_sha256": "898d6b8bbfbe2ecb262c97d141e32a8f6623274338f1437242e7502c85518d35",
+    "output_sha256": "832b9a6019edb16e930517293045fba79a74d9cda185cabf994f731562ae7bde"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\guide\\02-brief-step-1.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\02-brief-step-1.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 46308,
+    "transfer": "lossless WebP",
+    "source_sha256": "4b2589beac6a421019524bf994238960133e7237e1cc2d21c42d7bfe5d6c96ad",
+    "output_sha256": "3e4b73ae2a3cc7fc76a1b4283f415011c04d1a5b1447c5c32f41e718277d4b7c"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\guide\\02d-guide-picker.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\02d-guide-picker.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 71158,
+    "transfer": "lossless WebP",
+    "source_sha256": "c75e2a0dd45df84549e15e3b2c07e43c2bd2e7923165a196e9057db090c5bc00",
+    "output_sha256": "492cf61057c64b15aef5ee483ef9cfe32c999298fcad2e02e748a1942eae8ccd"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\guide\\03-planning-choice.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\03-planning-choice.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 53194,
+    "transfer": "lossless WebP",
+    "source_sha256": "376c2840ff5820f425fa3944185eedb704098a03ee1e516abd96cfe14016e0ac",
+    "output_sha256": "16d09ddd7b779c5ae58938fb1277d2602035ccf5d167625e0a19defafaa883be"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\guide\\04-one-shot-itinerary.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\04-one-shot-itinerary.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 66970,
+    "transfer": "lossless WebP",
+    "source_sha256": "8ebb117a282b32e1fe4cb21401bd0f0eb317b8bc46bd27dca08e81e2a499a04d",
+    "output_sha256": "78e135e9a109e9eaea401d7981cc43a7ccfb919d46f41956c7d9b39f2b41295a"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\guide\\12-budget-suggestions.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\12-budget-suggestions.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 74288,
+    "transfer": "lossless WebP",
+    "source_sha256": "438e9a3507cfb521cf64f4dc435162324726f4d7c54ec7119a660f36b42bf019",
+    "output_sha256": "55c09deaaa2bff5b7cfad496d4b411e74e7062c1b43592cc23a6ee499c565f33"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\TripVerse\\frontend\\public\\guide\\21-build-live-sketch-done.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\screens\\21-build-live-sketch-done.webp",
+    "original_size": [
+      1440,
+      900
+    ],
+    "render_size": [
+      1440,
+      900
+    ],
+    "bytes": 236882,
+    "transfer": "lossless WebP",
+    "source_sha256": "28e56699a0a192735a32c8d2611f39baa84742ac924d581cf8bb43f700e7f1ac",
+    "output_sha256": "6f30e372bd12e3f97577c2801786aa126efbf087a5477cdac612ffb96921063d"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-mockups\\02-pocket-sketchbook.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\compositions\\02-pocket-sketchbook.webp",
+    "original_size": [
+      2160,
+      3840
+    ],
+    "render_size": [
+      1080,
+      1920
+    ],
+    "bytes": 270284,
+    "transfer": "responsive WebP",
+    "source_sha256": "9d5f1d442621f4136bd47a7649d0be717e50a7a635e8f67c59ce06549b91aa2d",
+    "output_sha256": "d05d5e9e7b4146520105f281e43bc75a1481ebe1607c38982c73399b9cd2fef1"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-mockups\\03-whole-route.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\compositions\\03-whole-route.webp",
+    "original_size": [
+      3072,
+      2048
+    ],
+    "render_size": [
+      1920,
+      1280
+    ],
+    "bytes": 291724,
+    "transfer": "responsive WebP",
+    "source_sha256": "b690efa5217424ff32fca019d737baa469390a84a507d3ec207e5b953082754f",
+    "output_sha256": "901ad85f0536ad222541532b96746c4f3b3285c50327ebd3ce5846941ecc3e6d"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-mockups\\04-build-together.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\compositions\\04-build-together.webp",
+    "original_size": [
+      2400,
+      3000
+    ],
+    "render_size": [
+      1536,
+      1920
+    ],
+    "bytes": 332064,
+    "transfer": "responsive WebP",
+    "source_sha256": "680ea0426249b1ca687787f40d19635a6eab6df8d76bb2bc1acacbe93502e663",
+    "output_sha256": "a26a26591e2ac1e1cd0fb923ff84640ce942b6cd1e91294bfaf20b8ac83ae859"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-mockups\\05-sketch-meets-studio.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\compositions\\05-sketch-meets-studio.webp",
+    "original_size": [
+      3840,
+      1920
+    ],
+    "render_size": [
+      1920,
+      960
+    ],
+    "bytes": 310274,
+    "transfer": "responsive WebP",
+    "source_sha256": "47bb3c1fedc4f19df975504201387c35833f2b0e6941761769bffd10dbcfc00c",
+    "output_sha256": "1d05b0a149d7eb5a9133864379a776000387338ed11e32bd019f4bb54a40e1ea"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-mockups\\06-budget-context.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\compositions\\06-budget-context.webp",
+    "original_size": [
+      2880,
+      2880
+    ],
+    "render_size": [
+      1920,
+      1920
+    ],
+    "bytes": 359808,
+    "transfer": "responsive WebP",
+    "source_sha256": "2bbee2601376bc9f869493c4884c1e03cb6c4785b31d834257afcb547bd71f8c",
+    "output_sha256": "8b4d0019a828f2fa7247b3327974f27d33ad1c585bdb8cad4030cb2b30aa9aee"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-mockups\\07-ask-change-keep-going.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\compositions\\07-ask-change-keep-going.webp",
+    "original_size": [
+      2400,
+      3200
+    ],
+    "render_size": [
+      1440,
+      1920
+    ],
+    "bytes": 372236,
+    "transfer": "responsive WebP",
+    "source_sha256": "ac58a8c8af04e7cafe1901b8202263a324a0063af5696112d6234e70e230a8ee",
+    "output_sha256": "4d3e64f046627339be883eef64ae88ddd84fa145aef0e67208d402f49a2b2eff"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-mockups\\08-take-trip-with-you.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\compositions\\08-take-trip-with-you.webp",
+    "original_size": [
+      2880,
+      2160
+    ],
+    "render_size": [
+      1920,
+      1440
+    ],
+    "bytes": 365328,
+    "transfer": "responsive WebP",
+    "source_sha256": "f3b8a39963f6b7f2e63a9dec5651c2eb1434938478a249377cc42ca68d8eef74",
+    "output_sha256": "3ac9affdb7aa9953b282bddac4060aefe4ce478077bd4d1b9cc7b49da88e1bca"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-mockups\\09-one-trip-four-views.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\compositions\\09-one-trip-four-views.webp",
+    "original_size": [
+      3200,
+      2000
+    ],
+    "render_size": [
+      1920,
+      1200
+    ],
+    "bytes": 258974,
+    "transfer": "responsive WebP",
+    "source_sha256": "3f831b4643c07ba62454ddffda6cae32cc47676c37316c9f591b4f3640655c8d",
+    "output_sha256": "33805ec9cc823bc7f860b1bf1902455549e4c1014ce75b88548637712285eb58"
+  },
+  {
+    "source": "C:\\Users\\Rohit Maity\\Desktop\\coding\\Webdev\\project\\portfolio\\apps\\web\\src\\assets\\Tripverse\\media\\mmm\\tripverse-mockups\\10-inspiration-to-plan.png",
+    "output": "apps\\web\\src\\assets\\Tripverse\\portfolio\\compositions\\10-inspiration-to-plan.webp",
+    "original_size": [
+      2880,
+      2880
+    ],
+    "render_size": [
+      1920,
+      1920
+    ],
+    "bytes": 319546,
+    "transfer": "responsive WebP",
+    "source_sha256": "1b77f93e92e003da00e60ec845e54eec7811f565d748bde9f144ed4417fa5186",
+    "output_sha256": "82d21902ef9a07829992c7da95ac581318dbf35dcee242149ec6bf9685f5e66f"
+  }
+]

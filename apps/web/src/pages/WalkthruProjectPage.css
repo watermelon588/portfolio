@@ -1,0 +1,63 @@
+/* Product-specific compositions; typography, gutters, controls and chapter spacing
+   come from the existing case-page and Footer styles. */
+.walkthru-case { --ink-2: color-mix(in srgb, var(--ink) 65%, var(--bg) 35%); }
+.walkthru-case .walkthru-intro { padding-bottom: 2rem; }
+.walkthru-case .walkthru-status { margin: 0; text-align: right; font-size: .85rem; color: var(--ink-2); }
+.walkthru-chapter-heading { max-width: 75rem; margin-bottom: clamp(2.5rem, 5vw, 5rem); }
+.walkthru-capture { margin: 0; width: 100%; min-width: 0; }
+.walkthru-capture img { display: block; width: 100%; height: auto; }
+.walkthru-image-link { display: block; cursor: zoom-in; }
+.walkthru-image-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.walkthru-capture figcaption, .walkthru-film figcaption, .walkthru-note {
+  color: var(--ink-2); font-size: .85rem; line-height: 1.6; margin: 1rem 0 0; max-width: 85ch;
+}
+.walkthru-case .walkthru-capture + .walkthru-capture { margin-top: clamp(2rem, 4vw, 4rem); }
+.walkthru-art-opener { overflow: hidden; width: 100%; background: #1536af; }
+.walkthru-art-opener img { display: block; width: 100%; height: auto; }
+.walkthru-personas { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(.75rem, 1.5vw, 1.5rem); }
+.walkthru-personas figure { margin: 0; min-width: 0; }
+.walkthru-personas img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+.walkthru-personas figcaption { margin-top: 1rem; font-size: clamp(.8rem, 1vw, 1rem); }
+.walkthru-editorial-pair { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 6rem); align-items: center; margin-top: clamp(3rem, 7vw, 7rem); }
+.walkthru-evidence-detail { grid-template-columns: 1.2fr .8fr; }
+.walkthru-text-block .dw-body-lg { font-size: clamp(1rem, 1.2vw, 1.2rem); }
+.walkthru-photo-pair { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(1.5rem, 3vw, 3rem); align-items: center; margin-bottom: clamp(3rem, 6vw, 6rem); }
+.walkthru-case .walkthru-poster-gallery { margin-top: 2rem; }
+.walkthru-poster-gallery .ag-panel__frame { background: transparent; }
+.walkthru-poster-gallery .ag-panel:not(.ag-panel--active) img { object-fit: cover; object-position: center; }
+.walkthru-poster-gallery .ag-panel:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.walkthru-system { border-block: 1px solid var(--border); margin-block: 3rem; padding-block: 2.5rem; }
+.walkthru-system .case-flow { margin-top: 0; }
+.walkthru-system-loop { border-top: 1px solid var(--border); margin: 2rem 0 0; padding-top: 1.5rem; font-size: .95rem; line-height: 1.6; }
+.walkthru-stack { color: var(--ink-2); font-size: .85rem; line-height: 1.8; margin-top: 2.5rem; }
+.walkthru-film { margin: 0; }
+.walkthru-film video { display: block; width: 100%; height: auto; background: var(--ink); }
+.walkthru-reflection { margin-top: clamp(5rem, 9vw, 9rem); }
+.walkthru-case .walkthru-closing { padding-bottom: clamp(6rem, 12vw, 12rem); }
+
+@media (max-width: 900px) {
+  .walkthru-editorial-pair, .walkthru-evidence-detail { grid-template-columns: 1fr; }
+  .walkthru-personas { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 2rem; }
+  .walkthru-case .walkthru-poster-gallery { height: 450px !important; }
+}
+@media (max-width: 600px) {
+  .walkthru-case .container { padding-inline: 1.5rem; }
+  .walkthru-case .dw-hero-title { font-size: clamp(3.3rem, 12vw, 4.5rem); }
+  .walkthru-case .dw-meta-grid-3col { grid-template-columns: 1fr; gap: 2rem; }
+  .walkthru-case .walkthru-status { text-align: left; padding-top: 1rem; }
+  .walkthru-personas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .walkthru-photo-pair { grid-template-columns: 1fr; }
+  .walkthru-case .dw-decision-item { grid-template-columns: 2rem 1fr; gap: 1rem; }
+  .walkthru-case .dw-decision-body { grid-column: 2; }
+}
+@media (max-width: 520px) {
+  /* The reused accordion becomes a readable art sequence on small screens. */
+  .walkthru-case .walkthru-poster-gallery { height: auto !important; gap: 1.5rem; }
+  .walkthru-poster-gallery .ag-panel { flex: 0 0 auto !important; width: 100%; min-height: 0; aspect-ratio: 4 / 5; }
+  .walkthru-poster-gallery .ag-panel:nth-child(2) { aspect-ratio: 1; }
+  .walkthru-poster-gallery .ag-panel:nth-child(4) { aspect-ratio: 9 / 16; }
+  .walkthru-poster-gallery .ag-panel:not(.ag-panel--active) img { object-fit: contain; object-position: top; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .walkthru-case [data-walk-reveal], .walkthru-case [data-walk-parallax], .walkthru-poster-gallery, .walkthru-art-opener img { transform: none !important; opacity: 1 !important; }
+}

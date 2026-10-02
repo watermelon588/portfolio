@@ -1,0 +1,75 @@
+/* Portfolio case primitives frame the product's own images and original books. */
+.tripverse-page { background: var(--bg); color: var(--ink); overflow-x: clip; }
+.tripverse-case { --ink-2: color-mix(in srgb, var(--ink) 65%, var(--bg) 35%); }
+.tripverse-case .tripverse-intro { padding-bottom: 2rem; }
+.tripverse-chapter { max-width: 75rem; margin-bottom: clamp(2.5rem, 5vw, 5rem); }
+.tripverse-capture { margin: 0; width: 100%; min-width: 0; }
+.tripverse-capture img { display: block; width: 100%; height: auto; }
+.tripverse-image-link { display: block; cursor: zoom-in; }
+.tripverse-image-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.tripverse-capture figcaption { margin-top: 1rem; max-width: 85ch; color: var(--ink-2); font-size: .85rem; line-height: 1.6; }
+.tripverse-destination { margin: 0; position: relative; overflow: hidden; height: clamp(360px, 55vw, 760px); }
+.tripverse-destination img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tripverse-destination figcaption { position: absolute; left: clamp(3rem, 7.5vw, 9.5rem); bottom: 2rem; max-width: 60ch; padding: .5rem .75rem; background: var(--bg); color: var(--ink); font-size: .85rem; }
+.tripverse-case .tripverse-first-plan { padding-top: clamp(3rem, 6vw, 6rem) !important; }
+.tripverse-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); align-items: start; }
+.tripverse-pair .tripverse-capture:nth-child(2) { margin-top: clamp(2rem, 5vw, 5rem); }
+.tripverse-offset-pair { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(2rem, 5vw, 6rem); align-items: center; margin-top: clamp(3rem, 6vw, 6rem); }
+.tripverse-offset-pair .dw-body-lg { font-size: clamp(1rem, 1.2vw, 1.2rem); }
+.tripverse-receipt-detail { max-width: 60rem; margin-top: clamp(2rem, 4vw, 4rem); }
+.tripverse-following-note { max-width: 85ch; margin-top: clamp(2rem, 4vw, 4rem); }
+.tripverse-art-spread { padding-bottom: clamp(2rem, 4vw, 4rem); }
+.tripverse-budget-pair { display: grid; grid-template-columns: .6fr 1fr; gap: clamp(2rem, 5vw, 6rem); align-items: center; }
+.tripverse-phones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 6vw, 6rem); max-width: 54rem; margin-inline: auto; }
+.tripverse-phones .tripverse-capture:nth-child(2) { padding-top: clamp(2rem, 5vw, 5rem); }
+.tripverse-studio .showcase-stage { height: clamp(300px, 43vw, 660px); }
+.tripverse-studio .showcase-card { aspect-ratio: 8 / 5; }
+.tripverse-studio .showcase-card--active { width: 72%; }
+.tripverse-studio .showcase-card--previous, .tripverse-studio .showcase-card--next { width: 54%; }
+.tripverse-studio .showcase-card--far-left, .tripverse-studio .showcase-card--far-right { width: 40%; }
+.tripverse-studio .showcase-card-img { object-fit: contain; }
+.tripverse-studio .showcase-card:focus-visible { outline: 2px solid var(--ink); outline-offset: -3px; }
+.tripverse-system { border-block: 1px solid var(--border); margin-block: 3rem; padding-block: 2.5rem; }
+.tripverse-system .case-flow { margin-top: 0; }
+.tripverse-system-note { border-top: 1px solid var(--border); margin: 2rem 0 0; padding-top: 1.5rem; font-size: .95rem; line-height: 1.6; }
+.tripverse-stack { color: var(--ink-2); font-size: .85rem; line-height: 1.8; margin-top: 2.5rem; }
+.tripverse-case .tripverse-art-gallery { margin-top: 2rem; }
+.tripverse-art-gallery .ag-panel__frame { background: transparent; }
+.tripverse-art-gallery .ag-panel:not(.ag-panel--active) img { object-fit: cover; object-position: center; }
+.tripverse-art-gallery .ag-panel:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.tripverse-outside { margin: 0; }
+.tripverse-outside img { width: 100%; max-height: 720px; object-fit: cover; display: block; }
+.tripverse-case .tripverse-closing { padding-bottom: clamp(6rem, 12vw, 12rem); }
+
+@media (max-width: 900px) {
+  .tripverse-offset-pair, .tripverse-budget-pair { grid-template-columns: 1fr; }
+  .tripverse-budget-pair > .tripverse-capture { max-width: 36rem; margin-inline: auto; }
+  .tripverse-case .tripverse-art-gallery { height: 450px !important; }
+}
+@media (max-width: 600px) {
+  .tripverse-case .container { padding-inline: 1.5rem; }
+  .tripverse-case .dw-hero-title { font-size: clamp(3.3rem, 12vw, 4.5rem); }
+  .tripverse-case .dw-meta-grid-3col { grid-template-columns: 1fr; gap: 2rem; }
+  .tripverse-destination figcaption { left: 1.5rem; right: 1.5rem; bottom: 1.5rem; }
+  .tripverse-pair, .tripverse-phones { grid-template-columns: 1fr; }
+  .tripverse-phones { max-width: 24rem; }
+  .tripverse-pair .tripverse-capture:nth-child(2) { margin-top: 1rem; }
+  .tripverse-phones .tripverse-capture:nth-child(2) { padding-top: 1rem; }
+  .tripverse-studio .showcase-stage { height: 260px; }
+  .tripverse-studio .showcase-card--active { width: 92%; }
+  .tripverse-case .dw-decision-item { grid-template-columns: 2rem 1fr; gap: 1rem; }
+  .tripverse-case .dw-decision-body { grid-column: 2; }
+}
+@media (max-width: 520px) {
+  .tripverse-case .tripverse-art-gallery { height: auto !important; gap: 1.5rem; }
+  .tripverse-art-gallery .ag-panel { flex: 0 0 auto !important; width: 100%; min-height: 0; aspect-ratio: 4 / 5; }
+  .tripverse-art-gallery .ag-panel:nth-child(2), .tripverse-art-gallery .ag-panel:nth-child(5) { aspect-ratio: 1; }
+  .tripverse-art-gallery .ag-panel:nth-child(3) { aspect-ratio: 3 / 4; }
+  .tripverse-art-gallery .ag-panel:nth-child(4) { aspect-ratio: 4 / 3; }
+  .tripverse-art-gallery .ag-panel:nth-child(6) { aspect-ratio: 9 / 16; }
+  .tripverse-art-gallery .ag-panel:not(.ag-panel--active) img { object-fit: contain; object-position: top; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tripverse-case [data-trip-reveal], .tripverse-case [data-trip-parallax], .tripverse-destination img { transform: none !important; opacity: 1 !important; }
+  .tripverse-studio .showcase-card, .tripverse-studio .showcase-card-img { transition: none; }
+}

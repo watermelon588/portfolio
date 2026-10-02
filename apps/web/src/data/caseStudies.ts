@@ -1,4 +1,5 @@
 import { GLOBAL_LINKS } from "./links";
+import type { ProjectEntry } from "./projectRegistry";
 
 export interface CaseSection {
   kicker: string;
@@ -16,7 +17,7 @@ export interface CaseStudy {
   stack: string[];
 }
 
-export const caseStudies: Record<string, CaseStudy> = {
+const baseCaseStudies: Record<string, CaseStudy> = {
   "skyguide-ai": {
     tagline: "A real-time celestial matchmaking & telescope-alignment copilot.",
     live: GLOBAL_LINKS.live.skyguide,
@@ -268,4 +269,10 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
     stack: ["Notion Workspace", "Progress Formulas", "Streak Algorithms", "Gamification UI"],
   },
+};
+
+const entries = import.meta.glob<ProjectEntry>("./projectEntries/*.ts", { eager: true });
+export const caseStudies: Record<string, CaseStudy> = {
+  ...baseCaseStudies,
+  ...Object.fromEntries(Object.values(entries).map(({ project, caseStudy }) => [project.slug, caseStudy])),
 };

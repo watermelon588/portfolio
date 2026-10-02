@@ -1,0 +1,23 @@
+Expanded query: planner, itinerary, budget, studio, journal, research, export
+BFS: 230 connected nodes; starts: One normalized trip for the studio, sketchbook and exports, whichever planner…, Deterministic, persistent trip budget ledger. The itinerary creates coverage…, Prompt for revising or discussing an existing itinerary without re-researching…
+One normalized trip for the studio, sketchbook and exports, whichever planner… | source=L193
+Deterministic, persistent trip budget ledger. The itinerary creates coverage… | source=L1
+Prompt for revising or discussing an existing itinerary without re-researching… | source=L102
+put_trip_budget_settings() | source=L148
+services/budget.py | source=L1
+research.py | source=L1
+The newest itinerary message payload: graph, plus copilot or day_plan when… | source=L53
+apply_agent_budget() | source=L79
+BudgetSettingsUpdate | source=L14
+post_trip_budget_item() | source=L158
+update_budget_settings() | source=L253
+add_budget_item() | source=L267
+latest_itinerary_payload() | source=L52
+Persistent trip budget inputs; totals are always derived from these rows. | source=L1
+extract_itinerary() | source=L341
+app_agents_trip_planner_planning_state | source=
+update_budget_item() | source=L275
+BudgetItemResponse | source=L41
+One normalized trip for the studio, sketchbook and exports, whichever planner… --rationale_for [EXTRACTED]--> get_trip_document()
+Deterministic, persistent trip budget ledger. The itinerary creates coverage… --rationale_for [EXTRACTED]--> services/budget.py
+Prompt for revising or discussing an existing itinerary without re-researching… --rationale_for [EXTRACTED]--> build_followup_prompt()

@@ -104,7 +104,10 @@ export function Preloader({ text }: { text?: string }) {
 
       // Sub-animation: fading/sliding in the main content beneath
       const mainReveal = () => {
-        return gsap.from("main", {
+        // Main is a sibling of this scoped overlay, not a descendant.
+        const main = document.querySelector("main");
+        if (!main) return gsap.timeline();
+        return gsap.from(main, {
           y: 70,
           autoAlpha: 0,
           duration: 1.5,

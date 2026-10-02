@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import { Work } from "./pages/Work";
 import { AboutPage } from "./pages/AboutPage";
 import { ProjectPage } from "./pages/ProjectPage";
+import { ProjectDetailRoute } from "./pages/ProjectDetailRoute";
 import { DemoPage } from "./pages/DemoPage";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/work", element: <Work /> },
-      { path: "/work/:slug", element: <ProjectPage /> },
+      { path: "/work/:slug", element: <ProjectDetailRoute /> },
       { path: "/skyguide", element: <ProjectPage /> },
       { path: "/neuron", element: <NeuronProjectPage /> },
       { path: "/yapchat", element: <YapChatProjectPage /> },
@@ -40,4 +41,3 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
-

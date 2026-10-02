@@ -63,6 +63,12 @@ export function FeatureShowcase({
               key={item.title || index}
               className={`showcase-card ${cardClass}`}
               onClick={(e) => handleCardClick(index, e)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setActive(index);
+                }
+              }}
               role="button"
               tabIndex={0}
               aria-label={`View ${item.title}`}

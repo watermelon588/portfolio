@@ -1,0 +1,143 @@
+/*
+ * ============================================================================
+ * TripVerse v2 — Premium Utilitarian Minimalism
+ * ============================================================================
+ *
+ * A warm-monochrome, document-style design system for the marketing surface.
+ * Everything is scoped under `.tripverse-original` so the legacy `.sharp-ui` surfaces
+ * (/create, /explore, auth, profile) keep their neo-brutalist language until
+ * they are migrated.
+ *
+ * Type:   Instrument Serif (editorial display) · Geist (UI) · Geist Mono (meta)
+ * Colour: warm bone canvas, charcoal ink, 1px hairlines, washed pastel spots
+ * Depth:  hairlines and whitespace — never heavy shadow
+ */
+
+.tripverse-original {
+  /* ---- Type ------------------------------------------------------------ */
+  --tv-serif: 'Instrument Serif', 'Newsreader', 'Lyon Text', Georgia, serif;
+  --tv-sans: 'Geist', 'SF Pro Display', 'Switzer', 'Helvetica Neue', system-ui, sans-serif;
+  --tv-mono: 'Geist Mono', 'SF Mono', 'JetBrains Mono', ui-monospace, monospace;
+
+  /* ---- Canvas & surface ------------------------------------------------ */
+  --tv-canvas: #fbfbfa;
+  --tv-canvas-warm: #f7f6f3;
+  --tv-surface: #ffffff;
+  --tv-surface-sunk: #f9f9f8;
+
+  /* ---- Ink -------------------------------------------------------------- */
+  --tv-ink: #111111;
+  --tv-ink-soft: #2f3437;
+  /* WCAG AA for small text (4.5:1) on every canvas and tint: muted 5.1–5.8:1, faint 4.5–4.9:1. */
+  --tv-muted: #666562;
+  --tv-faint: #72716e;
+
+  /* ---- Structure -------------------------------------------------------- */
+  --tv-line: #eaeaea;
+  --tv-line-soft: rgba(0, 0, 0, 0.06);
+  --tv-line-strong: #dcdcda;
+
+  /* ---- Washed pastel spots (semantic only, never decorative) ------------ */
+  --tv-red-bg: #fdebec;
+  --tv-red-fg: #9f2f2d;
+  --tv-blue-bg: #e1f3fe;
+  --tv-blue-fg: #1f6c9f;
+  --tv-green-bg: #edf3ec;
+  --tv-green-fg: #346538;
+  --tv-yellow-bg: #fbf3db;
+  --tv-yellow-fg: #956400;
+
+  /* ---- Radius ----------------------------------------------------------- */
+  --tv-r-sm: 4px;
+  --tv-r-md: 8px;
+  --tv-r-lg: 12px;
+
+  /* ---- Rhythm ----------------------------------------------------------- */
+  --tv-gutter: clamp(1.25rem, 4vw, 3rem);
+  --tv-section: clamp(5rem, 11vw, 9rem);
+  --tv-max: 1240px;
+
+  --tv-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  background-color: var(--tv-canvas);
+  color: var(--tv-ink);
+  font-family: var(--tv-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.tripverse-original.tripverse-original--paper {
+  --tv-canvas: #ffffff;
+}
+
+.tripverse-original.tripverse-original--bone {
+  --tv-canvas: #f7f6f3;
+}
+
+/* Dark inversion — used by the full-bleed photographic hero variants. */
+.tripverse-original .tv-invert {
+  --tv-ink: #f4f3f1;
+  --tv-ink-soft: #e6e4e0;
+  --tv-muted: rgba(244, 243, 241, 0.62);
+  --tv-faint: rgba(244, 243, 241, 0.42);
+  --tv-line: rgba(255, 255, 255, 0.16);
+  --tv-line-soft: rgba(255, 255, 255, 0.1);
+  --tv-line-strong: rgba(255, 255, 255, 0.24);
+  --tv-surface: rgba(255, 255, 255, 0.06);
+  color: var(--tv-ink);
+}
+
+/* ==========================================================================
+ * Base elements
+ * ========================================================================== */
+
+.tripverse-original *,
+.tripverse-original *::before,
+.tripverse-original *::after {
+  box-sizing: border-box;
+}
+
+.tripverse-original ::selection {
+  background: var(--tv-ink);
+  color: var(--tv-canvas);
+}
+
+/*
+ * Element resets use `:where()` so they contribute zero specificity. Written
+ * plainly (`.tripverse-original button`) they would score 0,1,1 and silently beat every
+ * single-class component rule below — `.tv-btn--primary` would lose its fill.
+ */
+.tripverse-original :where(h1, h2, h3, h4) {
+  margin: 0;
+  font-weight: 400;
+}
+
+.tripverse-original :where(p) {
+  margin: 0;
+}
+
+.tripverse-original :where(a) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tripverse-original :where(button) {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* ==========================================================================
+ * Layout
+ * ========================================================================== */
+
+.tripverse-original .tv-container {
+  width: 100%;
+  max-width: var(--tv-max);
+  margin-inline: auto;
+  padding-inline: var(--tv-gutter);
+}
+

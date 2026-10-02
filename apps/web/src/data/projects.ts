@@ -1,4 +1,5 @@
 import type { FlowingMenuItem } from "@/components/vendor/reactbits/FlowingMenu/FlowingMenu";
+import { mergeProjects, selectHomeProjects, type ProjectEntry } from "./projectRegistry";
 
 // Real project artwork (ADR-017: asset-driven), imported so Vite fingerprints
 // them. Each project carries 2–3 preview images for the horizontal-scroll
@@ -34,9 +35,11 @@ export interface Project {
   frameColor: string;
   /** Inner image aspect ratio for the cursor preview (e.g. "4 / 5"). */
   ratio: string;
+  /** Destination-specific laptop mockup, exclusively for next-case footers. */
+  nextCaseImage?: string;
 }
 
-export const projects: Project[] = [
+const baseProjects: Project[] = [
   {
     slug: "skyguide-ai",
     title: "Skyguide AI",
@@ -44,6 +47,7 @@ export const projects: Project[] = [
     role: "AI Assistant",
     year: "2026",
     images: [skyguideHero, skyguide3, skyguide1],
+    nextCaseImage: skyguideHero,
     frameColor: "#0B1E3B", // deep navy — night sky
     ratio: "4 / 5",
   },
@@ -54,6 +58,7 @@ export const projects: Project[] = [
     role: "Web Platform",
     year: "2026",
     images: [neuron1, neuron2, neuron3],
+    nextCaseImage: neuron1,
     frameColor: "#241640", // deep violet
     ratio: "4 / 5",
   },
@@ -64,6 +69,7 @@ export const projects: Project[] = [
     role: "Realtime Chat",
     year: "2025",
     images: [yap1, yap2, yap3],
+    nextCaseImage: yap1,
     frameColor: "#0F3A2E", // deep green
     ratio: "3 / 4",
   },
@@ -74,13 +80,17 @@ export const projects: Project[] = [
     role: "Weather App",
     year: "2025",
     images: [forcasterHero, forcaster2, forcaster3],
+    nextCaseImage: forcasterHero,
     frameColor: "#123246", // deep sky blue
     ratio: "4 / 5",
   },
 ];
 
-/** Home "Selected Work" shows the dev projects with hover previews. */
-export const devProjects = projects.filter((p) => p.category === "dev");
+const entries = import.meta.glob<ProjectEntry>("./projectEntries/*.ts", { eager: true });
+export const projects = mergeProjects(baseProjects, Object.values(entries));
+
+/** Four selected rows; activate the requested set once both new agents are ready. */
+export const devProjects = selectHomeProjects(projects);
 
 /** Adapt projects into the shape FlowingMenu consumes. */
 export function toMenuItems(list: Project[] = projects): FlowingMenuItem[] {
