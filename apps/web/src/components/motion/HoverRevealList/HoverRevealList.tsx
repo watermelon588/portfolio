@@ -22,7 +22,7 @@ export interface HoverRevealItem {
 const canHover = () =>
   typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches;
 
-export function HoverRevealList({ items }: { items: HoverRevealItem[] }) {
+export function HoverRevealList({ items, preloadImages = false }: { items: HoverRevealItem[]; preloadImages?: boolean }) {
   const root = useRef<HTMLDivElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
@@ -33,6 +33,26 @@ export function HoverRevealList({ items }: { items: HoverRevealItem[] }) {
   const xToRef = useRef<((value: number) => void) | null>(null);
   const yToRef = useRef<((value: number) => void) | null>(null);
   const rToRef = useRef<((value: number) => void) | null>(null);
+
+  // Warm only the small home-page thumbnails as the list approaches the viewport.
+  // Touch devices never display this preview, so they do not download its images.
+  useEffect(() => {
+    if (!preloadImages || !canHover() || !root.current) return;
+    const images: HTMLImageElement[] = [];
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry?.isIntersecting) return;
+      observer.disconnect();
+      for (const src of new Set(items.flatMap((item) => item.images))) {
+        const image = new Image();
+        image.decoding = "async";
+        image.fetchPriority = "low";
+        image.src = src;
+        images.push(image);
+      }
+    }, { rootMargin: "700px 0px" });
+    observer.observe(root.current);
+    return () => { observer.disconnect(); images.length = 0; };
+  }, [items, preloadImages]);
 
   // Magnetic cursor-follow — set up once.
   useGSAP(
@@ -170,7 +190,7 @@ export function HoverRevealList({ items }: { items: HoverRevealItem[] }) {
         >
           <div className="hrl-strip" ref={stripRef}>
             {strip.map((src, i) => (
-              <img className="hrl-strip-img" key={i} src={src} alt="" draggable={false} />
+              <img className="hrl-strip-img" key={i} src={src} alt="" decoding="async" draggable={false} />
             ))}
           </div>
         </div>

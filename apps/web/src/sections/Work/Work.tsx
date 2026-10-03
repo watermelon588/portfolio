@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { HoverRevealList } from "@/components/motion/HoverRevealList/HoverRevealList";
 import ScrollReveal from "@/components/vendor/reactbits/ScrollReveal/ScrollReveal";
 import { devProjects } from "@/data/projects";
+import { selectedWorkImages } from "@/data/selectedWorkImages";
 import "./Work.css";
 
 // Selected Work — the home-page project index. Uses the cursor-follow reveal
@@ -26,12 +27,13 @@ export function Work() {
 
       <div className="work-list container">
         <HoverRevealList
+          preloadImages
           items={devProjects.map((p) => ({
             title: p.title,
             role: p.role,
             year: p.year,
             href: `/work/${p.slug}`,
-            images: p.images,
+            images: selectedWorkImages[p.slug] ?? p.images,
             frameColor: p.frameColor,
             ratio: p.ratio,
           }))}
