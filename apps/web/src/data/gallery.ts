@@ -34,7 +34,7 @@ const byProject = new Map<string, GalleryImage[]>(ORDER.map((p) => [p, []]));
 for (const [path, src] of Object.entries(mods).sort(([a], [b]) => a.localeCompare(b))) {
   const [project, file] = path.split("/").slice(-2) as [string, string];
   if (!byProject.has(project)) byProject.set(project, []);
-  byProject.get(project)!.push({ src, label: humanize(file), project });
+  byProject.get(project)!.push({ src, label: humanize(file), project: project === "Shiori" ? "Shiori (栞)" : project });
 }
 
 /** Round-robin interleave so the reel mixes projects. */

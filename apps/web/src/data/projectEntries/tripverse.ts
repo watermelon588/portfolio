@@ -1,12 +1,18 @@
 import type { ProjectEntry } from "../projectRegistry";
-import plan from "@/assets/Tripverse/portfolio/screens/06-studio-plan.webp";
-import studio from "@/assets/Tripverse/portfolio/compositions/09-one-trip-four-views.webp";
-import sketch from "@/assets/Tripverse/portfolio/compositions/05-sketch-meets-studio.webp";
-import laptop from "@/assets/Tripverse/mockups/tripverse-laptop-v1.png";
+import laptop from "@/assets/Tripverse/tripverse-laptop-mockup.png";
+import creative from "@/assets/Tripverse/media/mmm/creative/658d7564cca8603cc43dd7afc6a8f73e.jpg";
+import city from "@/assets/Tripverse/media/mmm/tripverse-posters/02-city.png";
 
 export const project: ProjectEntry["project"] = {
-  slug: "tripverse", title: "TripVerse", category: "dev", role: "AI Travel Planner", year: "2026",
-  images: [plan, studio, sketch], nextCaseImage: laptop, frameColor: "#717b61", ratio: "16 / 10",
+  slug: "tripverse",
+  title: "TripVerse",
+  category: "dev",
+  role: "AI Travel Planner",
+  year: "2026",
+  images: [laptop, creative, city],
+  nextCaseImage: laptop,
+  frameColor: "#717b61",
+  ratio: "16 / 10",
 };
 
 export const caseStudy: ProjectEntry["caseStudy"] = {

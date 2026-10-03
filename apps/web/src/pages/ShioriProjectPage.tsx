@@ -73,7 +73,7 @@ export default function ShioriProjectPage() {
 
   useEffect(() => {
     const before = document.title;
-    document.title = "Shiori — Rohit Maity";
+    document.title = "Shiori (栞) — Rohit Maity";
     return () => { document.title = before; };
   }, []);
 
@@ -112,17 +112,17 @@ export default function ShioriProjectPage() {
   }, []);
 
   return <>
-    <Preloader text="Shiori" />
+    <Preloader text="Shiori (栞)" />
     <Navbar />
     <main className="shiori-page" ref={root}>
       <div className="dw-case-study shiori-case">
         <section className="dw-section container" style={{ paddingBottom: "2rem" }}>
           <span className="dw-kicker">01 — A private anime &amp; manga hub</span>
-          <h1 className="dw-hero-title">Shiori</h1>
+          <h1 className="dw-hero-title">Shiori (栞)</h1>
           <p className="dw-hero-tagline">{caseStudy.tagline}</p>
           <p className="dw-body-lg" style={{ marginTop: "-1.5rem" }}>
             Stream, download, read and track from one program on your own computer. No ads, no
-            pop-ups and no Shiori account.
+            pop-ups and no Shiori (栞) account.
           </p>
         </section>
 
@@ -145,7 +145,7 @@ export default function ShioriProjectPage() {
               </a>
             )}
           </div>
-          <p className="dw-body-muted shiori-live-note">The live site is Shiori's website. The app itself runs locally on your computer.</p>
+          <p className="dw-body-muted shiori-live-note">The live site is Shiori (栞)'s website. The app itself runs locally on your computer.</p>
         </section>
 
         <section className="container dw-meta-section" aria-label="Project details">
@@ -160,17 +160,17 @@ export default function ShioriProjectPage() {
           </div>
         </section>
 
-        <Band src={torii} alt="A red torii gate on a grassy mountain under drifting clouds, a still from Shiori's website hero" />
+        <Band src={torii} alt="A red torii gate on a grassy mountain under drifting clouds, a still from Shiori (栞)'s website hero" />
 
         <section className="dw-section container">
-          <Shot src={discover} alt="Shiori's Discover page in the calm Nagi theme, with trending anime and banner art" />
+          <Shot src={discover} alt="Shiori (栞)'s Discover page in the calm Nagi theme, with trending anime and banner art" />
         </section>
 
         <section className="dw-section container">
           <Chapter number="02 — Your own bookmark" title="One program. Your computer.">
-            Shiori is a personal build of the open-source media server Seanime, with its own
+            Shiori (栞) is a personal build of the open-source media server Seanime, with its own
             interface, security layer and website. You run it and open it in your browser. It hosts
-            no media and there is no Shiori account: your copy, your password, your folders.
+            no media and there is no Shiori (栞) account: your copy, your password, your folders.
           </Chapter>
         </section>
 
@@ -181,8 +181,8 @@ export default function ShioriProjectPage() {
             mood never changes where things are.
           </Chapter>
           <div className="dw-media-grid-2col" style={{ marginTop: "3rem" }}>
-            <Shot src={homeNagi} alt="Shiori home in the Nagi theme: soft sky colours and continue-watching rows" />
-            <Shot src={homeRanbu} alt="Shiori home in the Ranbu theme: bold poster colours and the same layout" />
+            <Shot src={homeNagi} alt="Shiori (栞) home in the Nagi theme: soft sky colours and continue-watching rows" />
+            <Shot src={homeRanbu} alt="Shiori (栞) home in the Ranbu theme: bold poster colours and the same layout" />
           </div>
         </section>
       </div>
@@ -200,7 +200,7 @@ export default function ShioriProjectPage() {
                 <div className="dw-decision-item">
                   <span className="dw-decision-num">01</span>
                   <h3 className="dw-decision-title">Watch online</h3>
-                  <p className="dw-decision-body">Anime pages open on the player. If a streaming source fails, Shiori moves to the next one on its own.</p>
+                  <p className="dw-decision-body">Anime pages open on the player. If a streaming source fails, Shiori (栞) moves to the next one on its own.</p>
                 </div>
                 <div className="dw-decision-item">
                   <span className="dw-decision-num">02</span>
@@ -216,7 +216,7 @@ export default function ShioriProjectPage() {
             </div>
           </div>
           <div className="dw-media-grid-2col" style={{ marginTop: "clamp(3rem, 8vh, 5rem)" }}>
-            <Shot src={downloads} alt="The Downloads page of Shiori's built-in torrent client" />
+            <Shot src={downloads} alt="The Downloads page of Shiori (栞)'s built-in torrent client" />
             <Shot src={autoDownloader} alt="Auto downloader rules for new episodes" />
           </div>
         </section>
@@ -243,14 +243,14 @@ export default function ShioriProjectPage() {
             screen.
           </Chapter>
           <div className="dw-media-grid-2col" style={{ marginTop: "3rem" }}>
-            <Shot src={sidebar} alt="Shiori's expandable sidebar navigation" />
+            <Shot src={sidebar} alt="Shiori (栞)'s expandable sidebar navigation" />
             <Shot src={search} alt="Search by title, genre, season or format" />
             <Shot src={schedule} alt="The airing schedule" />
             <Shot src={settings} alt="Settings for the library, client and sources" />
           </div>
           <div className="dw-media-grid-2col shiori-phones">
-            <Shot src={mobileNagi} alt="Shiori on a phone in the Nagi theme" w={390} h={844} />
-            <Shot src={mobileRanbu} alt="Shiori on a phone in the Ranbu theme" w={390} h={844} />
+            <Shot src={mobileNagi} alt="Shiori (栞) on a phone in the Nagi theme" w={390} h={844} />
+            <Shot src={mobileRanbu} alt="Shiori (栞) on a phone in the Ranbu theme" w={390} h={844} />
           </div>
         </section>
 
@@ -309,12 +309,12 @@ export default function ShioriProjectPage() {
             </div>
           </div>
           <p className="dw-body-muted shiori-credit">
-            Built on Seanime by 5rahim, licensed GPL-3.0; Shiori's app changes are GPL-3.0 as well.
+            Built on Seanime by 5rahim, licensed GPL-3.0; Shiori (栞)'s app changes are GPL-3.0 as well.
             Anime and manga titles, characters and artwork belong to their creators.
           </p>
         </section>
 
-        <Band src={skyward} alt="An anime girl in a pink jacket with her arms open to a bright blue sky, a still from Shiori's website" />
+        <Band src={skyward} alt="An anime girl in a pink jacket with her arms open to a bright blue sky, a still from Shiori (栞)'s website" />
 
         <section className="dw-section container">
           <Chapter number="09 — A website with its own craft" title="The way in, built by hand.">
@@ -323,7 +323,7 @@ export default function ShioriProjectPage() {
             here as they do on the site.
           </Chapter>
           <div className="dw-media-grid-2col" style={{ marginTop: "3rem" }}>
-            <Shot src={siteHero} alt="The Shiori website hero: Your anime, kept like a bookmark" />
+            <Shot src={siteHero} alt="The Shiori (栞) website hero: Your anime, kept like a bookmark" />
             <Shot src={siteWorlds} alt="The website's Two worlds section, wiping Nagi into Ranbu" />
             <Shot src={siteTour} alt="The website's tour, panning sideways across app screens" />
             <Shot src={sitePop} alt="The Ranbu Pop version of the website" />
@@ -342,12 +342,12 @@ export default function ShioriProjectPage() {
             <span className="dw-conclusion-accent">KEPT LIKE A BOOKMARK.</span>
           </h2>
           <p className="dw-body-lg">
-            Shiori is a personal media environment: one place for the shows and pages you love, on
+            Shiori (栞) is a personal media environment: one place for the shows and pages you love, on
             your own machine, dressed in two moods. The parts that matter most are the quiet ones:
             nothing to sign up for, nothing uploaded, and a page that opens where you left off.
           </p>
         </section>
-        <Band src={cityLights} alt="A girl looking over a city of warm lights at dusk, a still from Shiori's website" />
+        <Band src={cityLights} alt="A girl looking over a city of warm lights at dusk, a still from Shiori (栞)'s website" />
       </div>
     </main>
     <Footer nextProject={next ? { title: next.title, slug: next.slug, image: next.nextCaseImage ?? next.images[0], role: next.role } : undefined} />

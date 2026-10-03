@@ -1,8 +1,7 @@
 import type { ProjectEntry } from "../projectRegistry";
-import dashboard from "@/assets/Walktru/hero-dashboard.webp";
-import report from "@/assets/Walktru/report.png";
-import secondLook from "@/assets/Walktru/portfolio/the-second-look.webp";
 import laptop from "@/assets/Walktru/mockups/walkthru-laptop-v1.png";
+import secondLook from "@/assets/Walktru/design/doodle-posters/posters/the-second-look.png";
+import realPeople from "@/assets/Walktru/design/doodle-posters/posters/real-people-energy.png";
 
 export const project: ProjectEntry["project"] = {
   slug: "walkthru",
@@ -10,7 +9,7 @@ export const project: ProjectEntry["project"] = {
   category: "dev",
   role: "AI Browser Agent",
   year: "2026",
-  images: [dashboard, secondLook, report],
+  images: [laptop, realPeople,secondLook],
   nextCaseImage: laptop,
   frameColor: "#4d7274",
   ratio: "16 / 10",
